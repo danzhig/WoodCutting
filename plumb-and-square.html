@@ -263,6 +263,8 @@ svg text{font-family:var(--f-ui)}
 .table{fill:var(--tool);fill-opacity:.35;stroke:var(--tool-edge);stroke-width:1}
 .blade{fill:var(--cut);opacity:.9}
 .blade-g{fill:none;stroke:var(--cut);stroke-width:1.4;stroke-dasharray:5 3}
+.bladebody{fill:var(--tool);fill-opacity:.55;stroke:var(--cut);stroke-width:1.6}
+.slot{fill:var(--tool-edge);fill-opacity:.35;stroke:var(--tool-edge);stroke-width:.8}
 .hatch-bg{fill:var(--waste-bg)}
 .hatch-ln{stroke:var(--cut);stroke-width:1.3}
 .xh-ln{stroke:var(--cut);stroke-width:1}
@@ -774,24 +776,331 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
      ===================================================================== -->
 <section class="guide" data-letter="B" data-title="Measure & Mark" data-sub="The tools that tell you what to cut: tapes, squares, protractors, bevels, levels and lines, and how to measure corners, slopes and square.">
   <div class="guide-intro">
-    <div class="prose"><p>Every cut starts with a measurement and a mark. This guide covers how to hold, read and trust each layout tool, then how to measure the thing you actually need to cut: a corner, a slope, a length to the long point.</p></div>
+    <div class="prose"><p>Every cut starts with a measurement and a mark. The first sections cover how to hold, read and trust each layout tool. The last two cover measuring the thing you actually need to cut (a corner, a slope, a length to the long point) and checking that what you built is square.</p></div>
+    <div class="keypoints"><h3>Key points</h3><ul>
+      <li>A tape’s hook slides on purpose: it corrects for its own thickness on inside and outside measurements.</li>
+      <li>Speed squares and saws read from square (0° = square line); protractors read from the edge (90° = square line).</li>
+      <li>Measure corners on the side the trim wraps around, then use saw = 90° − corner ÷ 2.</li>
+      <li>Any rectangle is square when its two diagonals are equal. 3-4-5 makes a right angle anywhere.</li>
+      <li>Check every tool once: flip a square, flip a level. Half the difference is the error.</li>
+    </ul></div>
+  </div>
+
+  <div class="gsection" data-title="Straight measuring">
+    <article class="topic" id="b-tape-hook" data-title="The tape hook and true zero">
+      <div class="prose">
+        <p>The metal hook on the end of a tape measure is loose on purpose. It slides by exactly its own thickness. When you hook it over the end of a board and pull, it slides out; when you push it against a wall for an inside measurement, it slides in. Either way, the measurement starts from the true end. This is called <dfn>true zero</dfn>.</p>
+        <p>If the hook is bent or its rivets are worn, every reading is off by the same amount. For the most accurate work, <dfn>burn an inch</dfn>: measure from the 1″ mark instead of the hook, then subtract 1″ from the reading.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="tapeHook"></div>
+        <figcaption>The hook (thickness exaggerated) slides out when pulled over an edge and in when pushed against a wall, so both readings start at the true end.</figcaption></figure>
+      <div class="block formula"><div class="tag">Method</div>
+        <div class="eq">burning an inch: length = reading − 1″</div></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>You hold the 1″ mark on the end of a shelf and read 31⅜″ at the far end.</p>
+        <ol class="steps"><li><span class="mono">31⅜ − 1 = 30⅜″</span></li></ol>
+        <p class="answer">The shelf is 30⅜″ long, measured without trusting the hook.</p></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>“Fixing” the loose hook by bending or tightening it. That makes every measurement wrong by the hook’s thickness. If two tapes disagree, compare them both against a steel rule, and use one tape for the whole project.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#a-tape"></a><a class="ref" href="#b-story-stick"></a></p>
+    </article>
+
+    <article class="topic" id="b-story-stick" data-title="Folding rules and story sticks">
+      <div class="prose">
+        <p>A <dfn>folding rule</dfn> is rigid, so it measures inside spaces (between walls, inside a cabinet) without the sag or hook of a tape. Many have a brass extension slide for exact inside readings.</p>
+        <p>A <dfn>story stick</dfn> skips numbers altogether. You hold a straight stick against the real thing and mark the positions on the stick itself: shelf heights, the rise of each stair, where studs fall. Then you hold the stick against the new part and transfer the marks. No reading means no misreading.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="storyStick"></div>
+        <figcaption>A story stick marked with shelf heights from one cabinet side, then held against the second side to transfer them exactly.</figcaption></figure>
+      <ol class="steps steplist">
+        <li>Cut a straight, clean stick a little longer than the part.</li>
+        <li>Hold it tight against the reference and mark each position with a sharp pencil and a label (“S1”, “S2”).</li>
+        <li>Hold it against the new part with the same end registered, and transfer each mark.</li>
+      </ol>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Four shelves in a bookcase, with two sides that must match.</p>
+        <ol class="steps"><li>Mark all four shelf heights on the stick from the first side.</li><li>Transfer to the second side, with the stick’s bottom on the floor line both times.</li></ol>
+        <p class="answer">Every shelf is level across the case, even if the plan’s numbers were rounded.</p></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Registering the stick from different ends on the two parts. Mark “BOTTOM” on the stick and always start from the same reference edge.</p></div>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Squares">
+    <article class="topic" id="b-speed-square" data-title="Speed square: parts and 90°/45° lines">
+      <div class="prose">
+        <p>The <dfn>speed square</dfn> (also called a rafter square) is a thick right triangle, usually 7″ or 12″, with a raised <dfn>lip</dfn> along one side. It is the framer’s everyday marking tool and, held against a board, a circular-saw guide.</p>
+        <ul>
+          <li>Hook the lip on the board’s edge and the leg that runs across the board marks a square (90°) line.</li>
+          <li>The long side (hypotenuse) marks a 45° line.</li>
+          <li>The corner where the two short legs meet is the <dfn>pivot</dfn>. The degree scale runs along the hypotenuse; other scales (“COMMON”, “HIP-VAL”) give roof pitches.</li>
+          <li>Notches along the leg let you hold a pencil at a fixed distance from the edge for marking a line along the board.</li>
+        </ul>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="speedSquare"></div>
+        <figcaption>A 7″ speed square hooked on the edge of a 2×6. Pencil lines are dark.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Marking a square crosscut on a 2×6 at 30″.</p>
+        <ol class="steps"><li>Mark 30″ on the edge with a crow’s foot.</li><li>Hook the lip on that edge, slide the square until its leg touches the mark.</li><li>Draw along the leg across the face.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Letting the lip ride up on the edge (or on a splinter). The line then runs off square. Press the lip down and in with your fingers and pull the pencil toward you.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-speed-pivot"></a><a class="ref" href="#d-cs-square"></a></p>
+    </article>
+
+    <article class="topic" id="b-speed-pivot" data-title="Speed square: pivoting to any angle">
+      <div class="prose">
+        <p>For angles other than 90° and 45°, hold the <em>pivot</em> corner on the board’s edge at your mark and swing the square until the board’s edge crosses the degree scale at the angle you want. Then draw along the leg that runs from the pivot.</p>
+        <p>On most speed squares the degree scale reads like a saw: 0° gives a square line, and the number is how far the line leans away from square. Check yours once: pivot to 0 and compare the line with one drawn using the lip. If they match, your scale reads from square.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="speedPivot"></div>
+        <figcaption>Pivoted to 30°: the board’s edge crosses the scale at 30, and the pencil line leans 30° from square (60° from the edge).</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Marking the end of a brace that needs a 40° saw setting (<a class="ref" href="#c-braces"></a>).</p>
+        <ol class="steps"><li>Pivot on the edge at your mark.</li><li>Swing until the edge reads 40 on the degree scale.</li><li>Draw along the pivot leg. Check: the line should look like a cut the saw at 40° would make.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Drawing along the wrong edge of the square after pivoting. Only the leg that runs from the pivot corner gives the angle on the scale. The hypotenuse gives something else.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#g-speed-square-rafter"></a><a class="ref" href="#c-saw-vs-geometry"></a></p>
+    </article>
+
+    <article class="topic" id="b-framing-square" data-title="Framing square">
+      <div class="prose">
+        <p>The <dfn>framing square</dfn> (steel square) is a large L: a 24″ × 2″ <dfn>blade</dfn> and a 16″ × 1½″ <dfn>tongue</dfn>, meeting at the <dfn>heel</dfn>. It checks and marks square on big work (wall corners, sheet goods) and, with small clamp-on <dfn>stair gauges</dfn>, lays out repeated angles like stair steps and rafter cuts.</p>
+        <p>Its angle work is done by numbers, not degrees: set one number on the blade and another on the tongue against the edge of a board, and the square makes the angle of that rise and run.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="framingSquare"></div>
+        <figcaption>Left: the parts. Right: set at 12 on the blade and 6 on the tongue along a board’s edge, the square draws a 6-in-12 slope.</figcaption></figure>
+      <div class="block formula"><div class="tag">Rule</div>
+        <div class="eq">blade number : tongue number = run : rise</div>
+        <p class="where">Line up the blade at the run and the tongue at the rise on the same edge; the tongue then marks a plumb line and the blade a level line for that slope.</p></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Check a plywood sheet corner: hold the heel in the corner, blade along one edge, tongue along the other.</p>
+        <ol class="steps"><li>Both edges touch the square along their full length: the corner is square.</li><li>A gap opening toward the tongue’s end shows how far it is out over 16″.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Dropping the square. A framing square that has been dropped on its corner is often no longer square. Check it with the flip test (<a class="ref" href="#b-combo-square"></a>) before trusting it.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#g-stair-layout"></a><a class="ref" href="#g-step-off"></a></p>
+    </article>
+
+    <article class="topic" id="b-combo-square" data-title="Combination square and the flip test">
+      <div class="prose">
+        <p>The <dfn>combination square</dfn> is a steel rule that slides through a cast head and locks anywhere along it. The head has a 90° face and a 45° face. It is more accurate than a speed square and does four jobs: square lines, 45° lines, depth measurement (lock the rule sticking out of the head), and marking a line parallel to an edge (hold a pencil at the end of the rule and slide the head along).</p>
+        <p>Any square can be checked with the <dfn>flip test</dfn>: draw a line along the blade, flip the square over and draw again from the same point. If the two lines don’t coincide, the square is off by half the gap.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="comboSquare"></div>
+        <figcaption>Left: marking a square line. Right: the flip test, with the error exaggerated. The gap between the two lines is twice the square’s error.</figcaption></figure>
+      <div class="block formula"><div class="tag">Flip test</div>
+        <div class="eq">square’s error = gap between the two lines ÷ 2</div></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>On the flip test, the two lines are ¹⁄₃₂″ apart at 6″ from the edge.</p>
+        <ol class="steps"><li>Error: <span class="mono">¹⁄₃₂ ÷ 2 = ¹⁄₆₄″</span> over 6″</li><li>As an angle: <span class="mono">arctan(0.0156 ÷ 6) ≈ 0.15°</span></li></ol>
+        <p class="answer">Fine for framing, not for furniture. Many squares can be trued by filing or tapping the head; otherwise, replace it.</p></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Checking a square against another square. If both are off the same way, they agree and fool you. The flip test needs only a straight edge and a pencil.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#d-ms-calibrate"></a><a class="ref" href="#d-ts-setup"></a></p>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Angle tools">
+    <article class="topic" id="b-protractor" data-title="Protractor">
+      <div class="prose">
+        <p>A <dfn>protractor</dfn> is the half-circle marked 0° to 180°. Put its center mark on the corner of the angle, line its base up with one side, and read where the other side crosses the scale.</p>
+        <p>Most protractors have two scales running in opposite directions. Use the scale that reads <strong>0 on the side your baseline runs</strong>. A protractor reads geometry: a square line reads 90°, so convert before setting a saw (<a class="ref" href="#c-saw-vs-geometry"></a>).</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="protractorRead"></div>
+        <figcaption>Left: a protractor on a board’s edge, reading a 60° line. Right: the same line reads 60 on the outer scale and 120 on the inner, because they start from opposite ends.</figcaption></figure>
+      <div class="block formula"><div class="tag">Conversion</div>
+        <div class="eq">saw setting = 90° − protractor reading</div>
+        <p class="where">For an angle measured from the board’s edge to the cut line.</p></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A drawing shows a brace end at 62° from the edge.</p>
+        <ol class="steps"><li>Protractor on the drawing: 62° (from the edge side).</li><li>Saw: <span class="mono">90 − 62 = 28°</span></li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Reading the wrong scale and getting 118° instead of 62°. Ask whether the angle you are measuring is sharper or blunter than a square corner, and pick the number that matches.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-angle-finder"></a></p>
+    </article>
+
+    <article class="topic" id="b-angle-finder" data-title="Two-arm angle finder">
+      <div class="prose">
+        <p>A <dfn>protractor angle finder</dfn> is two straight arms hinged at a round scale. Open the arms into a corner, lock them, and read the angle between them. It measures real corners in place, where a flat protractor can’t reach.</p>
+        <p>Many trim models print a second scale that shows the miter-saw setting directly (half the corner, converted to the saw scale). Read the label next to the scale so you know which number you are looking at.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="angleFinder"></div>
+        <figcaption>An angle finder opened into a 135° bay-window corner, arms flat on the walls.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <ol class="steps"><li>Arms against both walls: the scale reads 135°.</li><li>Saw: <span class="mono">90 − 135 ÷ 2 = 22.5°</span></li><li>The miter scale on the tool (if it has one) should read 22.5.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Pressing the arms into the drywall tape and mud bulge right at the corner. Hold them a few inches out along each wall, where the wall is flat.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-inside-outside"></a><a class="ref" href="#c-odd-corners"></a></p>
+    </article>
+
+    <article class="topic" id="b-bevel" data-title="Sliding T-bevel">
+      <div class="prose">
+        <p>The <dfn>sliding T-bevel</dfn> (bevel gauge) is a handle and a thin blade joined by a wing nut. It has no scale. It copies an angle from one place and carries it to another: from a corner to the wood, from a drawing to the saw, or from one leg to its three siblings.</p>
+        <p>Because nothing is read, nothing is misread. When you need a number, lay the locked bevel on a protractor.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="bevelTool"></div>
+        <figcaption>Left: marking a board with a bevel set to 60° from the edge. Right: setting the saw by holding the locked bevel against the fence and swinging the blade to match.</figcaption></figure>
+      <ol class="steps steplist">
+        <li>Loosen the wing nut, set the handle against one surface and the blade against the other, lock.</li>
+        <li>On the wood: handle against the edge, draw along the blade.</li>
+        <li>On a miter saw (unplugged): handle against the fence, swing the saw until the blade lies flat along the bevel’s blade.</li>
+      </ol>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Four chair legs need the same splay angle as a sample leg.</p>
+        <ol class="steps"><li>Set the bevel from the sample leg and lock it.</li><li>Mark or check all four legs from the same bevel setting.</li></ol>
+        <p class="answer">All four match the sample, and you never needed to know the number.</p></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Knocking the blade while carrying the bevel. Tighten the wing nut firmly, and re-check the setting on the original if the bevel has been set down with other tools.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-copy-angle"></a></p>
+    </article>
+
+    <article class="topic" id="b-digital" data-title="Digital angle finders and gauges">
+      <div class="prose">
+        <p>A <dfn>digital angle finder</dfn> looks like the two-arm finder but shows the angle on a screen, often to 0.1°. Many have a <em>hold</em> button to freeze the reading when you can’t see the screen.</p>
+        <p>A <dfn>digital angle gauge</dfn> is a small magnetic cube that measures tilt relative to whatever you zeroed it on. Set it on the saw table, press zero, then stick it on the blade: it reads the blade’s tilt directly. It is the easiest way to set an exact bevel.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="digitalTools"></div>
+        <figcaption>Left: a digital angle finder in a corner. Right: a magnetic gauge zeroed on the table, then stuck to the blade, reading its tilt.</figcaption></figure>
+      <ol class="steps steplist">
+        <li>Angle gauge: raise the blade fully, set the gauge on the table, press zero.</li>
+        <li>Stick it on the blade body (not the teeth) and tilt the blade until the reading matches.</li>
+        <li>Lock the tilt, then re-check: locking can shift it a few tenths.</li>
+      </ol>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Setting a 43.1° bevel for the splayed planter in <a class="ref" href="#c-compound-settings"></a>.</p>
+        <ol class="steps"><li>Zero on the table. Stick to the blade. Tilt until it reads 43.1.</li><li>Lock and re-read: 43.2. Nudge back and lock again.</li></ol>
+        <p class="answer">A saw’s bevel scale can’t be read to a tenth; the gauge can.</p></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Zeroing on the floor or a bench instead of the saw table. The gauge measures relative to wherever it was zeroed, so zero it on the surface the cut is measured from.</p></div>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Level, plumb and lines">
+    <article class="topic" id="b-level" data-title="Spirit levels and the flip test">
+      <div class="prose">
+        <p>A <dfn>level</dfn> tells you whether a surface is horizontal (<dfn>level</dfn>) or vertical (<dfn>plumb</dfn>). The bubble sits between the lines when it is. The longer the level, the more it averages out small bumps, so use a 4′ level for walls and a 2′ level for shelves.</p>
+        <p>Check a level the same way as a square: read it, turn it end for end on the same spot, and read again. If the bubble moves, the level is off, and the true level is halfway between the two readings.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="levelFlip"></div>
+        <figcaption>The flip test on a level (tilt exaggerated). If the bubble sits off-center the same way in both positions, the surface is out; if it moves, the level is out.</figcaption></figure>
+      <div class="block formula"><div class="tag">Rule of thumb</div>
+        <div class="eq">out of level over L = L × (rise per 12) ÷ 12</div>
+        <p class="where">Lift the low end until the bubble centers; the gap under it is how far out the surface is over the level’s length.</p></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>On a shelf, lifting one end of a 24″ level by ⅛″ centers the bubble.</p>
+        <ol class="steps"><li>The shelf is ⅛″ out over 24″, so ¼″ over a 48″ shelf.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Checking a long wall with a short level held in one spot. Slide it along, or use a long level on a straight board, so a local bump doesn’t hide a lean.</p></div>
+    </article>
+
+    <article class="topic" id="b-plumb" data-title="Plumb bobs and lasers">
+      <div class="prose">
+        <p>A <dfn>plumb bob</dfn> is a pointed weight on a string. Gravity makes the string perfectly vertical, so it transfers a point straight down (from a ceiling mark to the floor) or checks a post for plumb over its whole height.</p>
+        <p>A <dfn>laser level</dfn> projects a level or plumb line across a room. It does the same job faster over long distances, but check it with a flip test occasionally, just like a spirit level.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="plumbLaser"></div>
+        <figcaption>Left: a plumb bob transfers the top-plate position to the floor. Right: a laser projects a level line along a wall for chair-rail height.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Placing a bottom plate directly under a top plate that is already nailed to the ceiling joists.</p>
+        <ol class="steps"><li>Hang the bob from the plate’s edge at each end. Let it settle.</li><li>Mark the floor under the point; snap a chalk line between the marks.</li></ol>
+        <p class="answer">The studs will stand plumb between the plates.</p></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Marking while the bob still swings, or in a draft. Let it settle, or steady it in a bucket of water.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-chalk"></a></p>
+    </article>
+
+    <article class="topic" id="b-chalk" data-title="Chalk lines">
+      <div class="prose">
+        <p>A <dfn>chalk line</dfn> is a string wound through powdered chalk. Stretch it tight between two marks and snap it: it leaves a perfectly straight line, as long as you need. Framers use it for plate lines on floors, cut lines on sheet goods and rows of roof shingles.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="chalkLine"></div>
+        <figcaption>Snapping a cut line across a sheet of plywood: pull tight, lift straight up at the middle, let go.</figcaption></figure>
+      <ol class="steps steplist">
+        <li>Hook or hold the line on the first mark; pull it tight over the second.</li>
+        <li>Lift the string straight up (not sideways) near the middle, a couple of inches.</li>
+        <li>Let go. For long lines, have someone hold the middle down and snap each half.</li>
+      </ol>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Ripping a 4×8 sheet to 23½″ wide with a circular saw.</p>
+        <ol class="steps"><li>Mark 23½″ from the factory edge at both ends of the sheet.</li><li>Snap a line between the marks, then cut on the waste side (<a class="ref" href="#d-cs-rip"></a>).</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Snapping sideways or with a slack line, which bows the line. Pull tight and lift straight up.</p></div>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Scribing and copying shapes">
+    <article class="topic" id="b-contour" data-title="Contour gauge">
+      <div class="prose">
+        <p>A <dfn>contour gauge</dfn> is a row of thin sliding pins in a holder. Press it against a shape (a molding profile, a door casing, a pipe) and the pins take the shape; lock them and trace the outline onto your board.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="contour"></div>
+        <figcaption>Pressed against a baseboard profile, the pins copy its shape for tracing onto flooring or a new piece.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Fitting a floor board around a door casing.</p>
+        <ol class="steps"><li>Press the gauge against the casing at floor level; lock it.</li><li>Trace the outline on the board, aligned with where the board will sit. Cut with a jigsaw or coping saw.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Pressing at an angle so the pins slide unevenly. Hold the gauge square to the surface and push straight in.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#e-coping-how"></a></p>
+    </article>
+
+    <article class="topic" id="b-scribe" data-title="Scribing to an uneven wall">
+      <div class="prose">
+        <p><dfn>Scribing</dfn> copies the bumps of a wall onto a board so it can be cut to fit tight. Put the board in place (a countertop end, a shelf, a cabinet side), set a compass to the widest gap, then run the compass point along the wall with the pencil on the board. The pencil draws the wall’s shape, offset by the gap.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="scribe"></div>
+        <figcaption>Scribing a shelf end to a wavy wall. Cut to the scribe line and the shelf closes up tight all along.</figcaption></figure>
+      <ol class="steps steplist">
+        <li>Hold the board level and square in position, touching the wall at its closest point.</li>
+        <li>Set the compass to the widest gap.</li>
+        <li>Keep the compass legs horizontal (don’t tilt it) and trace along the wall.</li>
+        <li>Cut to the line, back-beveling slightly so only the front edge touches.</li>
+      </ol>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A shelf touches the wall at one point with a ¼″ gap at its widest.</p>
+        <ol class="steps"><li>Set the compass to ¼″.</li><li>Trace. Where the gap was widest, the line lands right on the board’s end: nothing comes off there. Where the board touched the wall, the line runs ¼″ in.</li><li>Cut to the line and slide the shelf ¼″ toward the wall. It now touches all along.</li></ol>
+        <p class="answer">The shelf ends up ¼″ further into the wall than where it first touched, so start with a board ¼″ long if the final length matters.</p></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Tilting the compass as you go, which changes the distance. Keep both legs in a horizontal line the whole way.</p></div>
+    </article>
   </div>
 
   <div class="gsection" data-title="Measuring what you need to cut">
-    <article class="topic" id="b-layout-tools" data-title="The four layout tools">
-        <div class="prose">
-          <ul>
-            <li><b>Speed square</b> (rafter square): a thick triangle with a lip. Hook the lip on the edge; the leg draws a 90° line and the long side draws a 45° line. For other angles, hold the corner marked <em>PIVOT</em> on the edge and swing the square until the edge of the board lines up with the number you want on the degree scale. Most speed-square degree scales read like the saw (0 = square); check yours by drawing the 0 line and comparing it with the 90° leg.</li>
-            <li><b>Combination square</b>: a steel ruler that slides through a cast head. The head has a 90° face and a 45° face. It only does those two angles, but very accurately, and it doubles as a depth gauge and marking gauge.</li>
-            <li><b>Sliding bevel</b> (bevel gauge): a handle and a blade locked by a wing nut. It has no scale; it <em>copies</em> an angle from a corner, a drawing or a protractor and carries it to the wood or the saw.</li>
-            <li><b>Protractor</b>: a half-circle marked 0° to 180°. Put the center mark on your point with the base along the edge and read where your line crosses the scale. It reads geometry (90° = square), so convert before setting the saw.</li>
-          </ul>
-        </div>
-        <figure class="fig"><div class="art cols2" data-fig="tools"></div>
-          <figcaption>Each tool sitting on a board (top view). Pencil lines are dark; each tool’s reference face presses against the board’s edge.</figcaption></figure>
-        <div class="block mistake"><div class="tag">Common mistake</div>
-          <p>Letting the tool’s fence lift off the edge while you mark. Press the lip or head firmly against the edge with one hand and draw with the other, pulling the pencil toward you with its point tight against the blade.</p></div>
+    <article class="topic" id="b-which-tool" data-title="Which tool for which measurement">
+      <div class="prose"><p>Before cutting, you need one number: an angle for the saw or a length on the tape. This page is the quick decision guide.</p></div>
+      <figure class="fig"><div class="art cols2" data-fig="whichTool"></div>
+        <figcaption>The four most common jobs: an inside corner, an outside corner, a slope, and a blade tilt.</figcaption></figure>
+      <div class="tablewrap"><table class="plain"><caption>From the thing you measure to the number on the saw</caption>
+        <thead><tr><th scope="col" class="txt">Measuring</th><th scope="col" class="txt">Best tool</th><th scope="col" class="txt">You read</th><th scope="col" class="txt">Put on the saw</th></tr></thead>
+        <tbody>
+          <tr><th scope="row" class="txt">Inside corner (baseboard, crown, frame)</th><td class="txt">Angle finder or sliding bevel + protractor</td><td class="txt">Corner angle C (e.g. 135°)</td><td class="txt">Miter 90° − C ÷ 2</td></tr>
+          <tr><th scope="row" class="txt">Outside corner</th><td class="txt">Angle finder wrapped around the corner</td><td class="txt">Wall angle C (e.g. 90°)</td><td class="txt">Miter 90° − C ÷ 2</td></tr>
+          <tr><th scope="row" class="txt">Slope (stair, roof, ramp)</th><td class="txt">Level + tape, or digital angle finder</td><td class="txt">Rise per 12″ or degrees</td><td class="txt">Plumb cut: slope angle; level cut: 90° − slope</td></tr>
+          <tr><th scope="row" class="txt">Blade tilt</th><td class="txt">Digital angle gauge</td><td class="txt">Degrees from table</td><td class="txt">Bevel directly</td></tr>
+          <tr><th scope="row" class="txt">A drawing’s angle</th><td class="txt">Protractor</td><td class="txt">Angle from the edge</td><td class="txt">90° − reading</td></tr>
+          <tr><th scope="row" class="txt">Round part’s diameter</th><td class="txt">Calipers</td><td class="txt">Diameter</td><td class="txt">Set calipers, size with a parting tool (<a class="ref" href="#h-calipers"></a>)</td></tr>
+        </tbody></table></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Going straight from a measured angle to the saw without asking “full corner or half? geometry or saw scale?” Write down which one you measured next to the number.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-inside-outside"></a><a class="ref" href="#b-slope"></a></p>
     </article>
+
+    <article class="topic" id="b-inside-outside" data-title="Measuring inside and outside corners">
+      <div class="prose">
+        <p>Trim wraps around corners two ways. An <dfn>inside corner</dfn> points away from you (where two walls meet inside a room). An <dfn>outside corner</dfn> points toward you (the corner of a chimney breast or a hallway opening).</p>
+        <p>Measure the angle <strong>on the side the trim wraps around</strong>: inside corners from the room side, outside corners with the tool’s arms wrapped around the corner. Both give an angle under 180°, and both use the same saw formula.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="insideOutside"></div>
+        <figcaption>Top views. Left: an angle finder in an inside corner. Right: wrapped around an outside corner.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div><div class="eq">saw = 90° − measured angle ÷ 2</div></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <ol class="steps">
+          <li>Inside corner reads 91°: <span class="mono">90 − 45.5 = 44.5°</span></li>
+          <li>Outside corner reads 88°: <span class="mono">90 − 44 = 46°</span></li>
+        </ol>
+        <p class="answer">Neither is 45°. Walls that are 1–2° out are normal; see <a class="ref" href="#e-in-out-corners"></a> for which way the long point goes.</p></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Measuring an outside corner from the room side and getting 270°, then halving that. Wrap the arms around the corner so they read the wall’s own angle.</p></div>
+    </article>
+
     <article class="topic" id="b-copy-angle" data-title="Copying an angle and halving it">
         <div class="prose">
           <ol>
@@ -811,6 +1120,28 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
           <p>Measuring the corner at the floor, where drywall mud and tape build up. Measure at the height the trim will actually sit, and check a second spot along the corner.</p></div>
       <p class="seealso"><b>See also</b><a class="ref" href="#c-odd-corners"></a></p>
     </article>
+
+    <article class="topic" id="b-slope" data-title="Measuring a slope">
+      <div class="prose">
+        <p>To measure a slope (a sloped ceiling, a roof, a ramp, the line of existing stairs) you want either its pitch (rise per 12″) or its angle. Two quick ways:</p>
+        <ul>
+          <li><b>Level and tape:</b> hold a level horizontal with one end on the slope, and measure straight down from the level’s 12″ mark to the slope. That drop is the rise per 12.</li>
+          <li><b>Digital angle finder:</b> lay it on the slope and read degrees directly.</li>
+        </ul>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="slopeMeasure"></div>
+        <figcaption>A 24″ level held level against a sloped rafter; the drop at the 12″ mark is the rise per foot.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div>
+        <div class="eq">angle = arctan(drop at 12″ ÷ 12)</div></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>The drop at 12″ is 3½″.</p>
+        <ol class="steps"><li>Pitch: 3½-in-12.</li><li>Angle: <span class="mono">arctan(3.5 ÷ 12) = 16.26°</span></li></ol>
+        <p class="answer">A board that must sit plumb against this slope gets a 16.3° plumb cut (<a class="ref" href="#c-plumb-level"></a>).</p></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Measuring over 6″ and forgetting to double it. If you measure over any length other than 12″, scale it: rise per 12 = drop × 12 ÷ length.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#c-pitch"></a></p>
+    </article>
+
     <article class="topic" id="b-mark-long-point" data-title="Marking to the long point, cutting on the waste side">
         <div class="prose">
           <p>Hook the tape on the long point, mark the length on the same edge with a small “V” (a <dfn>crow’s foot</dfn>) whose tip is exactly on the number, and put an X on the waste side. Then line the blade up so its teeth just touch the tip of the V from the waste side. The kerf then comes out of the waste, and the keeper is exactly the length you marked.</p>
@@ -824,6 +1155,44 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
         <div class="block mistake"><div class="tag">Common mistake</div>
           <p>Cutting pairs to length separately. Clamp opposite sides together (or use a <dfn>stop block</dfn>, a block clamped to the saw fence at the right distance) so pairs come out identical, even if they are a hair off the plan.</p></div>
       <p class="seealso"><b>See also</b><a class="ref" href="#a-kerf"></a><a class="ref" href="#c-inside-outside"></a></p>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Checking square">
+    <article class="topic" id="b-diagonals" data-title="Checking square with diagonals">
+      <div class="prose">
+        <p>A four-sided shape with equal opposite sides is a rectangle (square corners) exactly when its two <dfn>diagonals</dfn> are equal. This is the fastest way to check a frame, a cabinet, a wall or a deck, because you only need a tape.</p>
+        <p>If one diagonal is longer, push the two corners at the ends of the long diagonal toward each other until both diagonals match.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="diagonals"></div>
+        <figcaption>Left: equal diagonals mean square corners. Right: a racked frame (exaggerated) has one long and one short diagonal.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div>
+        <div class="eq">diagonal of a true rectangle = √(width² + height²)</div>
+        <div class="eq">fix: push the long diagonal’s corners by half the difference</div></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A 48″ × 30″ frame. Diagonals measure 56¾″ and 56½″.</p>
+        <ol class="steps"><li>Target: <span class="mono">√(48² + 30²) = 56.60″</span> ≈ 56⅝″</li><li>Difference: ¼″. Push the corners of the 56¾″ diagonal together by about ⅛″.</li></ol>
+        <p class="answer">Both diagonals now read 56⅝″ and every corner is square.</p></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Checking diagonals before the opposite sides are equal. Diagonals only prove square on a shape whose opposite sides already match.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#g-square-wall"></a></p>
+    </article>
+
+    <article class="topic" id="b-345" data-title="The 3-4-5 triangle">
+      <div class="prose">
+        <p>A triangle whose sides are 3, 4 and 5 units long always has a perfect right angle between the 3 and 4 sides. That lets you lay out a square corner of any size with just a tape: measure 3 along one line, 4 along the other, and adjust until the diagonal between the marks is exactly 5.</p>
+        <p>Scale it up for accuracy on big layouts: 6-8-10, 9-12-15 or 12-16-20 (feet or any unit).</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="threeFourFive"></div>
+        <figcaption>Squaring a deck corner: 6′ along the house, 8′ along the side, 10′ across.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div><div class="eq">3² + 4² = 5²  (9 + 16 = 25)</div></div>
+      <div class="tablewrap"><table data-table="threeFourFive"><caption>3-4-5 scaled up</caption></table></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Squaring a wall layout off an existing wall.</p>
+        <ol class="steps"><li>Mark 6′ along the existing wall from the corner.</li><li>Swing a tape 8′ from the corner along the new line.</li><li>Move the new line until the diagonal between the marks is 10′ exactly.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Using a small 3-4-5 (in feet) for a 30-foot wall. A ⅛″ error over 3′ becomes 1¼″ over 30′. Use the biggest triangle that fits.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#g-deck-layout"></a></p>
     </article>
   </div>
 </section>
@@ -1240,6 +1609,562 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
       <div class="block mistake"><div class="tag">Common mistake</div>
         <p>Tapering the outside faces. Mark the top of every leg with its position (front-left, etc.) and an arrow toward the inside corner of the table before laying out.</p></div>
       <p class="seealso"><b>See also</b><a class="ref" href="#d-ts-taper-jig"></a></p>
+    </article>
+  </div>
+</section>
+
+<!-- src/guides/d-saw-guide.html -->
+<!-- =====================================================================
+     GUIDE D · THE SAW GUIDE
+     ===================================================================== -->
+<section class="guide" data-letter="D" data-title="The Saw Guide" data-sub="How each saw works, what its scales read, how to set it up and check it, the cuts it does best, and how to run it safely: miter saw, table saw, circular saw, hand saws, jigsaw and coping saw.">
+  <div class="guide-intro">
+    <div class="prose"><p>Each saw has its own scales, its own strengths and its own way of hurting people. For every saw this guide covers the parts and scales, setup and calibration, the main cuts, capacity limits, blade choice, and safety. The table saw gets the longest section because it does the most and demands the most care.</p></div>
+    <div class="keypoints"><h3>Key points</h3><ul>
+      <li>Miter and bevel scales on miter saws read 0° at square. Table-saw miter gauges vary by brand: check yours with a square.</li>
+      <li>Table-saw kickback comes from wood touching the rising teeth at the back of the blade. The riving knife, a straight fence, push sticks and standing out of line prevent it.</li>
+      <li>Never use the table-saw fence as a length stop for crosscuts; use a stop block set before the blade.</li>
+      <li>A circular saw and a jigsaw cut on the upstroke: put the good face down. A table saw and miter saw cut downward: good face up.</li>
+      <li>Check every saw with a test cut: flip one piece and any error shows double.</li>
+    </ul></div>
+  </div>
+
+  <!-- ===================== D1 MITER SAW ===================== -->
+  <div class="gsection" data-title="Miter saw">
+    <article class="topic" id="d-ms-anatomy" data-title="Parts and scales of a miter saw">
+      <div class="prose">
+        <p>A <dfn>miter saw</dfn> (chop saw) is a circular blade on a hinged arm that you pull down through a board held against a <dfn>fence</dfn>. The arm sits on a <dfn>turntable</dfn> that swings left and right for miters, and it tilts for bevels. A <dfn>sliding miter saw</dfn> also slides forward and back on rails, so it can cut much wider boards.</p>
+        <ul>
+          <li><b>Miter scale:</b> on the front of the turntable, 0° = square cut. Click-stops (<dfn>detents</dfn>) usually sit at 0°, 15°, 22.5°, 31.6° (for crown molding), and 45°, both sides.</li>
+          <li><b>Bevel scale:</b> behind the blade, 0° = blade vertical. Many saws tilt one way only; a <dfn>dual-bevel</dfn> saw tilts both ways.</li>
+          <li><b>Kerf slot:</b> the slot in the table insert shows exactly where the blade exits. Line your mark up with its edge.</li>
+        </ul>
+      </div>
+      <figure class="fig"><div class="art" data-fig="msAnatomy"></div>
+        <figcaption>Left: a miter saw from above, swung to 30°. Right: from the front, tilted to a 45° bevel.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Setting 24.5° (between detents) for the out-of-square bay corner in <a class="ref" href="#b-copy-angle"></a>.</p>
+        <ol class="steps"><li>Squeeze the detent override so the turntable moves freely.</li><li>Swing to 24.5° on the scale, lock the miter handle.</li><li>Make a test cut on scrap and check it against the corner.</li></ol></div>
+      <div class="block safety"><div class="tag">Safety</div><ul>
+        <li>Keep hands out of the marked no-hands zone, usually about 6″ each side of the blade.</li>
+        <li>Wood must be flat on the table and tight to the fence; never cut freehand.</li>
+        <li>Let the blade reach full speed before cutting and stop completely before lifting it.</li>
+      </ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Locking the miter handle after the turntable has crept off the number. Read the scale again after locking; many saws shift a few tenths when the lock bites.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#c-saw-vs-geometry"></a><a class="ref" href="#d-ms-calibrate"></a></p>
+    </article>
+
+    <article class="topic" id="d-ms-safety" data-title="Safe hands at the miter saw">
+      <div class="prose">
+        <p>A miter saw is safe when three things are true: your hands are well away from the blade’s path, the wood can’t move, and the offcut has somewhere to go. Most accidents come from holding short pieces with fingers near the blade, reaching across the blade, or grabbing offcuts while it is still spinning.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="msSafety"></div>
+        <figcaption>Top view. The hatched zone is where hands never go. Hold the wood on the side away from the cut, or clamp it.</figcaption></figure>
+      <div class="block safety"><div class="tag">Safety rules</div><ul>
+        <li>No-hands zone: about 6″ either side of the blade, and never cross your arms over its path.</li>
+        <li>Clamp any piece too short to hold outside the zone, or cut it from a longer board.</li>
+        <li>Support long boards level with the table at both ends so they don’t tip and pinch the blade.</li>
+        <li>Let the blade stop before lifting it or reaching for an offcut.</li>
+        <li>Unplug before changing blades or adjusting under the guard.</li>
+        <li>Wear eye and hearing protection.</li>
+      </ul></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>You need a 3″-long block with 45° ends.</p>
+        <ol class="steps"><li>Don’t cut a 3″ scrap. Miter the end of a 2-foot board first.</li><li>Measure 3″, clamp the board, cut the second miter. The block falls free; the hand holding the long board stays a foot away.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Pulling a sliding saw toward you through the wood. Pull the head out first, lower it, then <em>push</em> it back through the cut. Pulling into the wood lets the blade climb toward you.</p></div>
+    </article>
+
+    <article class="topic" id="d-ms-capacity" data-title="Cutting capacity and wide boards">
+      <div class="prose">
+        <p>Every miter saw has a maximum width it can cut, and that width shrinks when you swing the saw. The angled cut line is longer than the board is wide (it is width ÷ cos(miter)), but the blade can only travel so far. A bevel reduces the height the saw can cut through.</p>
+        <p>Your manual has a capacity chart. As a rough guide, a 10″ non-sliding saw cuts a 2×6 square but only a 2×4 at a 45° miter.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="msCapacity"></div>
+        <figcaption>The blade can travel the same distance across the fence at any angle. At 45° that reaches across a narrower board.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula (rough)</div>
+        <div class="eq">width capacity at miter m ≈ capacity at 0° × cos(m)</div></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A saw that crosscuts 5½″ at 0°:</p>
+        <ol class="steps"><li>At 45°: <span class="mono">5.5 × 0.707 = 3.9″</span></li><li>At 22.5°: <span class="mono">5.5 × 0.924 = 5.1″</span></li></ol>
+        <p class="answer">A 2×4 (3½″) fits at 45°; a 2×6 (5½″) does not.</p></div>
+      <div class="block tip"><div class="tag">Boards wider than capacity</div><ul class="steps">
+        <li>For square cuts: cut halfway, flip the board over end-for-end, line the blade up with the first kerf and finish. It needs care to match.</li>
+        <li>Use a circular saw with a speed square or straightedge (<a class="ref" href="#d-cs-square"></a>).</li>
+        <li>Use a table saw with a crosscut sled (<a class="ref" href="#d-ts-sled"></a>).</li>
+      </ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Forcing a board that is just too wide. The blade stops short of the back edge and leaves a sliver, and people then try to finish it by lifting the board into the blade. Check the capacity before you start a cut.</p></div>
+    </article>
+
+    <article class="topic" id="d-ms-pairs" data-title="Left- and right-hand pieces">
+      <div class="prose">
+        <p>The two ends of a frame piece lean opposite ways, and the two pieces meeting at a corner are mirror images. There are two ways to get the second angle:</p>
+        <ul>
+          <li><b>Swing the saw:</b> cut one end with the saw at 45° left, the other at 45° right. The board keeps the same face up and the same edge on the fence. This is the only method for molding with a profile.</li>
+          <li><b>Flip the board:</b> keep the saw at 45° one way and turn the board over. It saves resetting the saw, but only works for plain square-edged stock.</li>
+        </ul>
+      </div>
+      <figure class="fig"><div class="art" data-fig="msPairs"></div>
+        <figcaption>One frame piece: its left end cut with the saw swung right, its right end with the saw swung left. Long points both on the outside (fence) edge.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A picture frame from molding with a rabbet on the back.</p>
+        <ol class="steps"><li>Face up, rabbet edge against the fence, for every cut.</li><li>End 1: saw at 45° right. Measure the LP length. End 2: saw at 45° left.</li></ol>
+        <p class="answer">All four pieces come out identical, with the profile facing the same way.</p></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Flipping profiled molding to get the second angle. The profile ends up upside down on one end, and the corners won’t match. Swing the saw instead.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#a-long-short-point"></a><a class="ref" href="#e-in-out-corners"></a></p>
+    </article>
+
+    <article class="topic" id="d-ms-stop" data-title="Stop blocks and repeat cuts">
+      <div class="prose">
+        <p>A <dfn>stop block</dfn> clamped to the fence (or a fence extension) at the right distance from the blade makes every piece identical without measuring each one. Set it once from the side of the blade that faces the stop, then just slide each board up to it and cut.</p>
+        <p>Chamfer or notch the bottom corner of the stop so sawdust doesn’t pack against it and push pieces long.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="msStop"></div>
+        <figcaption>A stop block set 31″ from the left side of the blade kerf, for the long-point length of a frame piece.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Four frame pieces at 31″ LP–LP.</p>
+        <ol class="steps"><li>Miter one end of each board first (saw at 45° right).</li><li>Swing to 45° left. Set the stop so a mitered board’s long point touches it with 31″ to the blade.</li><li>Cut all four second ends against the stop.</li></ol></div>
+      <div class="block safety"><div class="tag">Safety</div><ul>
+        <li>The stop goes on the <em>keeper</em> side. Never trap an offcut between the blade and a stop; it can be thrown.</li>
+      </ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Measuring to the wrong side of the kerf. Set the stop by measuring to the tooth that leans toward the stop, or better, cut one test piece and measure it.</p></div>
+    </article>
+
+    <article class="topic" id="d-ms-calibrate" data-title="Calibrating 0° and 45°">
+      <div class="prose">
+        <p>Detents wear, and saws get knocked. Checking takes five minutes and saves a whole project. Check the blade square to the table (bevel at 0°), square to the fence (miter at 0°), then 45°.</p>
+        <p>A test cut is more sensitive than a square: cut a wide board, flip one piece over and push the cut edges together. Any gap is <em>twice</em> the saw’s error, because the flip reverses it.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="msCalibrate"></div>
+        <figcaption>Left: checking the blade against the fence with a square (saw unplugged, blade lowered). Right: the flip test, with the error exaggerated.</figcaption></figure>
+      <ol class="steps steplist">
+        <li>Unplug. Lower the blade and lock it down. Hold a square against the fence and the blade body (not the teeth).</li>
+        <li>Adjust the miter scale or detent plate per the manual until the square touches evenly.</li>
+        <li>Test-cut a wide board; flip one half; check the joint. Repeat with two 45° pieces checked against a square.</li>
+      </ol>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Flipped test pieces from a 5½″-wide board show a ¹⁄₃₂″ gap at one end.</p>
+        <ol class="steps"><li>The saw’s error is half: <span class="mono">¹⁄₆₄″</span> over 5½″.</li><li>Angle: <span class="mono">arctan(0.0156 ÷ 5.5) ≈ 0.16°</span>.</li></ol>
+        <p class="answer">Small, but on an octagon’s 16 cut ends it adds up to 2.6° (<a class="ref" href="#c-errors"></a>). Adjust it.</p></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Checking against the teeth. Teeth are set wider than the blade body and give a false reading. Put the square on the flat of the blade between teeth.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-combo-square"></a></p>
+    </article>
+  </div>
+
+  <!-- ===================== D2 TABLE SAW ===================== -->
+  <div class="gsection" data-title="Table saw">
+    <article class="topic" id="d-ts-anatomy" data-title="Parts of a table saw">
+      <div class="prose">
+        <p>On a <dfn>table saw</dfn> the blade sticks up through a flat table and you push the wood into it. The blade stays put; the wood moves. That makes it the best tool for long straight rips and accurate repeat cuts, and it is why guiding the wood safely matters so much.</p>
+        <ul>
+          <li><b>Rip fence:</b> the long guide parallel to the blade that sets the width of a rip.</li>
+          <li><b>Miter slots</b> and <b>miter gauge:</b> the gauge slides in a slot to push wood across the blade for crosscuts.</li>
+          <li><b>Throat plate:</b> the insert around the blade.</li>
+          <li><b>Riving knife:</b> a curved steel fin just behind the blade that rises and falls with it and keeps the kerf from closing on the blade. Some saws use a fixed <dfn>splitter</dfn> instead.</li>
+          <li><b>Blade guard</b> and <b>anti-kickback pawls:</b> the clear cover over the blade and the toothed fingers that dig in if wood moves backward.</li>
+          <li><b>Height and tilt wheels:</b> raise the blade and tilt it for bevels.</li>
+        </ul>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="tsAnatomy"></div>
+        <figcaption>A table saw from above, with the operator at the bottom. The blade spins toward you at the top of its arc.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Which part does each cut use?</p>
+        <ol class="steps"><li>Ripping a 2×6 down to 3½″: rip fence set 3½″ from the blade.</li><li>Cutting a 1×4 to 18″ long: miter gauge or crosscut sled, never the fence.</li><li>A 45° bevel rip: tilt wheel, fence on the side the blade tilts away from.</li></ol></div>
+      <div class="block safety"><div class="tag">Safety</div><ul>
+        <li>Keep the riving knife installed for every through-cut.</li>
+        <li>Read the next topic, on kickback, before your first cut.</li>
+      </ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Removing the riving knife “because it gets in the way” and never putting it back. It is the single most effective protection against kickback.</p></div>
+    </article>
+
+    <article class="topic" id="d-ts-kickback" data-title="Kickback and where to stand">
+      <div class="prose">
+        <p><dfn>Kickback</dfn> is when the saw grabs the wood and throws it back at the operator, often hard enough to injure, and sometimes pulls the operator’s hand toward the blade as it goes.</p>
+        <p>It happens at the <strong>back</strong> of the blade. Up front, the teeth move down and toward you, pressing the wood onto the table. At the back, the teeth rise up and come toward you. If the wood touches those rising teeth (because the kerf closes, the board twists away from the fence, or an offcut gets trapped), they lift it and fire it forward.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="tsKickback"></div>
+        <figcaption>Left: side view. Front teeth push down; rear teeth rise. Right: top view. The kickback line runs straight back toward the operator from the blade; stand to one side of it.</figcaption></figure>
+      <div class="block safety"><div class="tag">What prevents kickback</div><ul>
+        <li><b>Riving knife</b> in place, so the kerf can’t close on the rear teeth.</li>
+        <li><b>Fence parallel to the blade</b>, or the back end toed out slightly (about ¹⁄₆₄″), never toward the blade.</li>
+        <li><b>Stand to the side</b> of the blade line, never directly behind it.</li>
+        <li><b>Push the wood all the way past the blade</b> with a push stick, keeping it tight to the fence.</li>
+        <li><b>Never use the fence as a stop for crosscuts</b>, and never cut freehand.</li>
+        <li>Don’t reach over the blade; let the cut piece go past, turn the saw off, then retrieve it.</li>
+      </ul></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Ripping a 2×4 that has been drying in the sun. Halfway through, the kerf starts to close behind the blade (the wood had built-up stress).</p>
+        <ol class="steps"><li>With a riving knife: the knife holds the kerf open; the cut finishes.</li><li>Without one: the pinched wood rides up the rear teeth and kicks back.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Standing directly behind the board to push hard. If it kicks back, it comes straight at you. Stand beside the line and push with a stick.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#d-ts-push"></a><a class="ref" href="#d-ts-setup"></a></p>
+    </article>
+
+    <article class="topic" id="d-ts-push" data-title="Push sticks, featherboards and blade height">
+      <div class="prose">
+        <p>Three simple things keep your hands far from the blade and the wood under control:</p>
+        <ul>
+          <li><dfn>Push stick</dfn>/<dfn>push block</dfn>: a notched stick or a handle with a grippy base that pushes the wood the last part of the way. Use one whenever your hand would come within about 6″ of the blade (any rip narrower than about 6″).</li>
+          <li><dfn>Featherboard</dfn>: a board with flexible fingers, clamped to the table or fence, that keeps the wood pressed against the fence. Place it <em>ahead</em> of the blade, never beside or behind it, or it will pinch the kerf.</li>
+          <li><b>Blade height:</b> set the teeth to clear the top of the wood by about ⅛″–¼″. Less blade above the wood is less blade to touch.</li>
+        </ul>
+      </div>
+      <figure class="fig"><div class="art" data-fig="tsPush"></div>
+        <figcaption>Left: blade height about ¼″ above the wood (side view). Right: a featherboard ahead of the blade and a push stick finishing the cut (top view).</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Ripping a 1×4 (¾″ thick) to 2½″ wide.</p>
+        <ol class="steps"><li>Blade height: <span class="mono">¾ + ¼ = 1″</span> above the table.</li><li>Fence at 2½″. Featherboard on the table before the blade, pressing toward the fence.</li><li>Feed by hand until the back end reaches the table edge, then finish with the push stick between the blade and fence.</li></ol></div>
+      <div class="block safety"><div class="tag">Safety</div><ul>
+        <li>Keep a push stick on the saw at all times so it is always within reach.</li>
+        <li>Push sticks are cheap and made to be cut. Replace them when chewed up.</li>
+      </ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>A featherboard placed level with or past the blade. It squeezes the kerf shut on the rear teeth, the exact condition that causes kickback.</p></div>
+    </article>
+
+    <article class="topic" id="d-ts-setup" data-title="Setup: blade, fence and tilt">
+      <div class="prose">
+        <p>A table saw is accurate only if three things line up: the blade parallel to the miter slots, the fence parallel to the blade, and the blade square to the table at 0° tilt (and at 45° when tilted). Check them when the saw is new, after moving it, and whenever cuts come out wrong.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="tsSetup"></div>
+        <figcaption>Left: measuring from a miter slot to the same tooth at the front and back of the blade. Right: squaring the blade with a digital gauge zeroed on the table.</figcaption></figure>
+      <ol class="steps steplist">
+        <li><b>Blade to slot:</b> unplug. Mark one tooth. Measure from the slot to that tooth at the front, rotate the blade by hand to bring the tooth to the back, measure again. The two should match within a few thousandths.</li>
+        <li><b>Fence to blade:</b> measure from the fence to the same slot at front and back. Parallel, or the back end a hair (≈ ¹⁄₆₄″) further from the blade.</li>
+        <li><b>Tilt:</b> raise the blade fully. Zero a digital gauge on the table, stick it on the blade, set 0.0° and 45.0°, and adjust the tilt stops.</li>
+      </ol>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Slot-to-tooth reads 5.235″ at the front and 5.250″ at the back.</p>
+        <ol class="steps"><li>Difference: 0.015″ over the tooth-to-tooth distance (about 8″ on a 10″ blade).</li><li>Loosen the trunnion bolts (per the manual) and tap the back of the trunnion toward the slot until the readings match.</li></ol>
+        <p class="answer">Cuts stop burning on one side, and crosscuts come out square.</p></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Aligning the fence to the blade before the blade is aligned to the slot. Always blade first, then fence, then any sleds and jigs that ride in the slot.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-digital"></a><a class="ref" href="#d-ts-sled"></a></p>
+    </article>
+
+    <article class="topic" id="d-ts-rip" data-title="Rip cuts and narrow strips">
+      <div class="prose">
+        <p>A rip on the table saw runs the board along the fence, so the width comes out even along the whole length. The piece between the blade and the fence is normally the keeper.</p>
+        <p>For thin strips (under about ½″), don’t cut them between the blade and fence, where they can be trapped and thrown. Cut them on the <em>far</em> side of the blade instead, using a <dfn>thin-rip jig</dfn> in the miter slot to set the width, and move the fence over for each strip.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="tsRip"></div>
+        <figcaption>Left: a normal rip, keeper between blade and fence. Right: thin strips cut off the far side, with a thin-rip jig setting the width.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Ripping a 2×6 (5½″) into two equal pieces with a ⅛″ kerf.</p>
+        <ol class="steps"><li>Each piece: <span class="mono">(5.5 − 0.125) ÷ 2 = 2.6875″</span> = 2¹¹⁄₁₆″</li><li>Set the fence 2¹¹⁄₁₆″ from the blade (measure to a tooth set toward the fence).</li></ol>
+        <p class="answer">Both pieces come out 2¹¹⁄₁₆″ wide.</p></div>
+      <div class="block safety"><div class="tag">Safety</div><ul>
+        <li>The board’s edge against the fence must be straight. Joint or rip a crooked edge straight first.</li>
+        <li>Use a push stick for the last 12″, and keep pushing until the wood is fully past the riving knife.</li>
+        <li>Support long boards at the outfeed end so they don’t tip up off the table.</li>
+      </ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Ripping a board with a curved (crowned) edge against the fence. The board rocks, the cut wanders, and it can bind. Put a straight edge on the fence, or snap a line and cut it straight with a circular saw first.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#a-crosscut-rip"></a><a class="ref" href="#a-defects"></a></p>
+    </article>
+
+    <article class="topic" id="d-ts-bevel" data-title="Bevel rips and chamfers">
+      <div class="prose">
+        <p>Tilt the blade and rip along the fence to cut a bevel along a board’s length (a <dfn>bevel rip</dfn>), or just clip the corner (a <dfn>chamfer</dfn>). The rule for safety: <strong>the blade should tilt away from the fence</strong>. If it tilts toward the fence, the piece between the blade and the fence ends up underneath the tilted blade and boxed in by the fence, with nowhere to go but back at you.</p>
+        <p>Most saws tilt left (<dfn>left-tilt</dfn>), so the fence stays on the right. On a right-tilt saw, move the fence to the left side of the blade for bevel rips.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="tsBevel"></div>
+        <figcaption>Front views. Left: blade tilting away from the fence; the side under the blade is open. Right: tilting toward the fence traps the piece between blade and fence (don’t).</figcaption></figure>
+      <div class="block formula"><div class="tag">Where the blade meets the wood</div>
+        <div class="eq">width at the far face = width at the near face − T × tan(bevel)</div>
+        <p class="where">Same offset formula as <a class="ref" href="#c-bevel-length"></a>, with T = board thickness.</p></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Beveling both edges of ¾″ stock at 22.5° for an octagonal column wrap.</p>
+        <ol class="steps"><li>Offset through ¾″: <span class="mono">0.75 × tan 22.5° = 0.31″</span> ≈ <span class="mono">⁵⁄₁₆″</span></li><li>Each stave’s inside face is <span class="mono">2 × ⁵⁄₁₆″ = ⅝″</span> narrower than its outside face.</li></ol></div>
+      <div class="block safety"><div class="tag">Safety</div><ul>
+        <li>Blade tilts away from the fence. Re-check the riving knife clears at full tilt.</li>
+        <li>Tilted blades expose more tooth: keep push sticks in use for the whole cut.</li>
+      </ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Setting the fence distance with the blade vertical, then tilting. The tilt moves where the blade meets the table. Tilt first, then set the fence and make a test cut.</p></div>
+    </article>
+
+    <article class="topic" id="d-ts-miter-gauge" data-title="Crosscuts with the miter gauge">
+      <div class="prose">
+        <p>For crosscuts, the wood rides on the <dfn>miter gauge</dfn>, which slides in a miter slot. The fence stays out of the way. An auxiliary wooden face screwed to the gauge (and extending past the blade) supports the wood right up to the cut and holds a stop block.</p>
+        <p><strong>Check the gauge’s scale.</strong> Some read 0° for a square cut, like a miter saw; others read 90° for square, like a protractor. The only way to know is to set it to its “square” mark and check against a square.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="tsMiterGauge"></div>
+        <figcaption>Left: a crosscut with the miter gauge and a stop block <em>before</em> the blade. Right: the two scale conventions.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>You need a 30° saw setting (60° to the edge) and your gauge reads 90° at square.</p>
+        <ol class="steps"><li>Its scale reads geometry: set it to <span class="mono">90 − 30 = 60°</span>.</li><li>On a gauge that reads 0° at square, you would set 30°.</li></ol></div>
+      <div class="block safety"><div class="tag">Safety</div><ul>
+        <li><b>Never</b> use the rip fence as a length stop for a crosscut: the offcut gets trapped between blade and fence and is thrown. Clamp a stop block to the fence well <em>in front of</em> the blade instead, so the piece is free by the time it reaches the blade.</li>
+        <li>Hold the wood firmly to the gauge face; clamp it for angled cuts, where it tends to creep.</li>
+      </ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Trusting the gauge’s detents for picture frames. Gauges often have slop in the slot. For frames, a miter sled is much more accurate (<a class="ref" href="#d-ts-miter-sled"></a>).</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#c-saw-vs-geometry"></a></p>
+    </article>
+
+    <article class="topic" id="d-ts-sled" data-title="Crosscut sleds and the 5-cut method">
+      <div class="prose">
+        <p>A <dfn>crosscut sled</dfn> is a plywood base with runners in both miter slots and a fence square to the blade. The wood sits still on the sled while the whole sled slides, so it cuts wide boards square and safely.</p>
+        <p>The sled is only as good as its fence. The <dfn>5-cut method</dfn> measures fence error very precisely: cut all four edges of a square panel in turn (rotating it the same way each time), then cut a thin strip off the first edge. Any error builds up four times, so the strip tapers by four times the error.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="tsSled"></div>
+        <figcaption>Left: a crosscut sled (top view). Right: the 5-cut test. Cuts 1 to 4 go around the panel; cut 5 takes a strip whose taper is four times the fence error (exaggerated).</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div>
+        <div class="eq">error per cut = (A − B) ÷ 4, over the strip length L</div>
+        <div class="eq">move the fence end = (A − B) ÷ 4 × fence length ÷ L</div>
+        <p class="where">A and B = strip width at each end (use calipers). The fence pivots about one end.</p></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>18″ square panel. The strip measures 0.265″ at one end and 0.253″ at the other. Fence is 24″ long.</p>
+        <ol class="steps"><li><span class="mono">A − B = 0.012″</span></li><li>Error per cut: <span class="mono">0.012 ÷ 4 = 0.003″</span> over 18″ (0.0095°)</li><li>Move the fence end: <span class="mono">0.003 × 24 ÷ 18 = 0.004″</span></li></ol>
+        <p class="answer">Four thousandths of an inch: a sheet of paper. Tap the fence, re-tighten, and repeat the test until the difference is under 0.004″.</p></div>
+      <div class="block safety"><div class="tag">Safety</div><ul>
+        <li>Put a thick block on the back of the sled fence where the blade exits, so the blade never emerges from the fence.</li>
+        <li>Keep hands behind the fence line and out of the blade path; add a stop so the sled can’t be pushed far enough to expose the blade.</li>
+      </ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Rotating the panel the wrong way between cuts, or flipping it over. Keep the same face up and turn it the same direction every time, or the errors cancel instead of adding.</p></div>
+    </article>
+
+    <article class="topic" id="d-ts-miter-sled" data-title="Miter sleds for frames">
+      <div class="prose">
+        <p>A <dfn>miter sled</dfn> has two fences at 45° to the blade and exactly 90° to each other, forming a V. Cut one end of a frame piece against the left fence and the mating end against the right fence. Because the fences are 90° apart, the two cuts always add up to 90°, even if each is slightly off 45°.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="tsMiterSled"></div>
+        <figcaption>A 45° miter sled. Pieces cut on the left and right fences meet at a perfect 90° corner.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>The fences are 44.8° and 45.2° to the blade, but exactly 90° to each other.</p>
+        <ol class="steps"><li>Mating ends: <span class="mono">44.8 + 45.2 = 90°</span></li><li>Every corner closes square; only the joint line leans a tiny 0.2° from the diagonal.</li></ol></div>
+      <div class="block safety"><div class="tag">Safety</div><ul><li>Clamp short pieces to the fence; your hands stay outside the V.</li></ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Cutting both ends of every piece on the same fence. Then errors add instead of cancel. Always cut mating ends on opposite fences.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#c-polygons"></a><a class="ref" href="#c-errors"></a></p>
+    </article>
+
+    <article class="topic" id="d-ts-taper-jig" data-title="Taper jig">
+      <div class="prose">
+        <p>Tapers run at angles far too shallow to set on a scale, so a <dfn>taper jig</dfn> sets them by distance. The common kind is two boards hinged at one end, with an adjustable stop that holds them apart. The jig rides against the fence; the leg rides against the jig. Opening the jig by a measured gap at a known distance from the hinge sets the taper angle.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="tsTaperJig"></div>
+        <figcaption>A hinged taper jig (top view) opened ³⁄₁₆″ at 12″ from the hinge, for a 0.9° taper.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div>
+        <div class="eq">gap = distance from hinge × tan(taper angle)</div>
+        <div class="eq">or: gap at the leg’s length = material removed</div></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>The leg from <a class="ref" href="#c-taper"></a>: ⅜″ off over 24″ (0.895°).</p>
+        <ol class="steps"><li>Gap at 12″ from the hinge: <span class="mono">12 × tan 0.895° = 0.1875″</span> = ³⁄₁₆″</li><li>Set the fence so the blade meets the leg exactly at the start mark.</li><li>Cut the first inside face. Turn the leg 90° to the second inside face and cut again with the same setting.</li></ol>
+        <p class="answer">For tapers on two <em>opposite</em> faces, the second cut needs double the gap, because the first tapered face now lies against the jig.</p></div>
+      <div class="block safety"><div class="tag">Safety</div><ul>
+        <li>Clamp the leg to the jig (toggle clamps are ideal) so it can’t twist into the blade.</li>
+        <li>Push the jig, not the leg, and keep going until both are past the riving knife.</li>
+      </ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Measuring the gap at the far end of a jig that is longer than the leg and forgetting to scale. Measure the gap at the distance you calculated for, or recompute for where you measure.</p></div>
+    </article>
+
+    <article class="topic" id="d-ts-dado" data-title="Grooves, dadoes and rabbets">
+      <div class="prose">
+        <p>Not every table-saw cut goes all the way through. Three flat-bottomed slots are common in cabinets and boxes:</p>
+        <ul>
+          <li><dfn>Groove</dfn>: a slot running with the grain (for a drawer bottom).</li>
+          <li><dfn>Dado</dfn>: a slot across the grain (for a shelf end).</li>
+          <li><dfn>Rabbet</dfn>: a step along an edge or end (for a cabinet back or a picture-frame recess).</li>
+        </ul>
+        <p>Cut them with several passes of a regular blade, or with a <dfn>dado stack</dfn>: a set of blades and chippers that cut the full width in one pass (it needs its own throat plate).</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="tsDado"></div>
+        <figcaption>End views of a groove, a dado and a rabbet in ¾″ stock.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A ¼″-deep dado for a ¾″ shelf, cut with a ⅛″ blade.</p>
+        <ol class="steps"><li>Blade height ¼″.</li><li>Width ¾″: <span class="mono">¾ ÷ ⅛ = 6</span> overlapping passes, moving the stop ⅛″ each time (or one pass with a ¾″ dado stack).</li></ol>
+        <p class="answer">A dado about ⅓ of the side’s thickness holds a shelf well without weakening the side.</p></div>
+      <div class="block safety"><div class="tag">Safety</div><ul>
+        <li>For non-through cuts, follow your saw’s manual for the riving-knife position (many lower it to just below the blade top). A fixed splitter usually has to come off; put it back afterward.</li>
+        <li>Never cut a dado against the fence with a long board end-on; use the miter gauge or a sled.</li>
+      </ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Cutting the dado to the shelf’s nominal thickness. Plywood sold as ¾″ is often ²³⁄₃₂″. Measure the actual shelf and sneak up on the width with test cuts.</p></div>
+    </article>
+
+    <article class="topic" id="d-ts-sheet" data-title="Sheet goods">
+      <div class="prose">
+        <p>A 4×8 sheet of plywood weighs 50–70 pounds and is too big to control on most table saws alone. The reliable approach: <strong>break it down</strong> into manageable pieces with a circular saw first (<a class="ref" href="#d-cs-rip"></a>), then make the final, accurate cuts on the table saw.</p>
+        <p>If you do rip full sheets on the table saw, you need support on three sides: an outfeed table behind the saw and a side support on the left, all level with the table.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="tsSheet"></div>
+        <figcaption>Ripping a half sheet: outfeed support behind the saw, side support on the left, factory edge against the fence.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Cabinet sides 23¼″ deep from a 48″-wide sheet.</p>
+        <ol class="steps"><li>Circular saw: rough-cut the sheet into two pieces about 24″ wide.</li><li>Table saw: factory edge against the fence, rip each to 23¼″.</li></ol></div>
+      <div class="block safety"><div class="tag">Safety</div><ul>
+        <li>Keep the sheet flat and tight to the fence the whole cut; a sheet that lifts or twists can kick back with a lot of mass behind it.</li>
+        <li>Get help or supports; never catch a falling sheet with the blade running.</li>
+      </ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Using a cut edge as the reference for the next rip. Use the straight factory edge against the fence for the first rip of each piece.</p></div>
+    </article>
+
+    <article class="topic" id="d-ts-blades" data-title="Choosing a blade">
+      <div class="prose">
+        <p>Blades differ in tooth count, tooth shape and thickness:</p>
+        <ul>
+          <li><b>Rip blades</b> (about 24 teeth on 10″): few, flat-topped teeth (<dfn>FTG</dfn>) that chisel along the grain fast.</li>
+          <li><b>Crosscut blades</b> (60–80 teeth): many alternating bevel teeth (<dfn>ATB</dfn>) that slice across fibres cleanly.</li>
+          <li><b>Combination</b> (40–50 teeth): a compromise that stays on the saw most of the time.</li>
+          <li><b>Kerf:</b> full-kerf blades cut about ⅛″; thin-kerf about ³⁄₃₂″, easier for low-power saws but they flex more.</li>
+        </ul>
+      </div>
+      <figure class="fig"><div class="art" data-fig="tsBlades"></div>
+        <figcaption>Tooth shapes seen from the front: flat-top (rip) and alternating bevel (crosscut). More teeth, finer cut, slower feed.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Building a set of cabinets from plywood and solid-wood face frames.</p>
+        <ol class="steps"><li>Plywood and face-frame crosscuts: 60–80T ATB to avoid splintering the veneer.</li><li>Ripping 8/4 hardwood: 24T rip blade, which won’t burn or bog down.</li></ol></div>
+      <div class="block safety"><div class="tag">Safety</div><ul><li>Unplug before changing blades. Use a blade rated for your saw’s RPM, and check the teeth point toward you at the top of the blade.</li></ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Ripping thick hardwood with a fine crosscut blade. The small gullets clog, the blade heats and burns the wood, and you push harder, which is when accidents happen.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#a-kerf"></a></p>
+    </article>
+  </div>
+
+  <!-- ===================== D3 CIRCULAR SAW ===================== -->
+  <div class="gsection" data-title="Circular saw">
+    <article class="topic" id="d-cs-setup" data-title="Depth, bevel and the base plate">
+      <div class="prose">
+        <p>The <dfn>circular saw</dfn> is the framer’s workhorse: you move the saw, not the wood, so it cuts anything you can reach, from 2×12s to full sheets. Its blade spins so the teeth come <em>up</em> through the wood from underneath, which means splinters appear on the top face. Cut with the good face down.</p>
+        <ul>
+          <li><b>Depth:</b> set the blade about ¼″ below the bottom of the board. Less blade exposed, less kickback, cleaner cut.</li>
+          <li><b>Bevel:</b> the base plate (shoe) tilts from 0° to 45° or more; the scale reads 0° with the blade square to the base.</li>
+          <li><b>Sight line:</b> a notch at the front of the base marks the blade line. Check it against a test cut; it’s often slightly off.</li>
+        </ul>
+      </div>
+      <figure class="fig"><div class="art" data-fig="csSetup"></div>
+        <figcaption>Left: blade depth about ¼″ below the board (side view). Right: base tilted for a 45° bevel (front view).</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Cutting a 2×10 (1½″ thick).</p>
+        <ol class="steps"><li>Depth: <span class="mono">1½ + ¼ = 1¾″</span>.</li><li>Unplugged, hold the saw beside the board edge and set the depth so the teeth hang ¼″ below.</li></ol></div>
+      <div class="block safety"><div class="tag">Safety</div><ul>
+        <li>Two hands on the saw; the blade guard must snap back freely.</li>
+        <li>Stand to the side of the cut line, not behind the saw.</li>
+        <li>Let the blade stop before lifting the saw out of the kerf.</li>
+      </ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Leaving the blade at full depth for thin stock. Several inches of exposed teeth under the board catch clamps, cords and bench tops, and make kickback violent.</p></div>
+    </article>
+
+    <article class="topic" id="d-cs-square" data-title="Cutting with a speed-square guide">
+      <div class="prose">
+        <p>For square and angled crosscuts on framing lumber, hold a speed square’s lip against the far edge of the board and run the saw’s base plate along the square’s edge. It is fast, accurate enough for framing, and works at any angle the square can pivot to.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="csSquare"></div>
+        <figcaption>Top view: the square’s lip hooks the far edge; the saw’s base plate slides along the square, with the blade on the waste side of the line.</figcaption></figure>
+      <ol class="steps steplist">
+        <li>Mark the line. Set the blade to the line on the waste side.</li>
+        <li>Slide the square up against the base plate’s edge; hook its lip on the board edge; hold it firmly.</li>
+        <li>Cut, keeping the base plate against the square the whole way.</li>
+      </ol>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A 22.5° miter on a 2×6: pivot the square to 22.5 on its degree scale (<a class="ref" href="#b-speed-pivot"></a>), hold it, and guide the saw along it.</p></div>
+      <div class="block safety"><div class="tag">Safety</div><ul><li>Keep the hand holding the square behind it, well away from the blade path.</li></ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Lining up the square with the pencil line instead of the saw. The square guides the base plate, which is offset from the blade. Set the blade on the line first, then bring the square to the plate.</p></div>
+    </article>
+
+    <article class="topic" id="d-cs-support" data-title="Supporting the cut">
+      <div class="prose">
+        <p>How the board is supported decides whether a circular-saw cut goes smoothly or pinches. If a board spans two supports and you cut between them, it sags into a V and the kerf closes on the blade: the saw binds and can kick back toward you.</p>
+        <p>Support the wood so the kerf opens as you cut: cut near the end of an overhang (let a short offcut fall), or support both sides right next to the cut (a sheet of rigid foam under the whole sheet works well).</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="csSupport"></div>
+        <figcaption>Side views. Left: cutting between two supports pinches the blade. Right: support beside the cut keeps the kerf open.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Cutting 2 feet off an 8-foot 2×6 on sawhorses.</p>
+        <ol class="steps"><li>Put the horses under the 6-foot keeper, one of them close to the cut.</li><li>Cut so the 2-foot offcut overhangs and drops away.</li></ol></div>
+      <div class="block safety"><div class="tag">Safety</div><ul><li>If the saw starts to bind, release the trigger and hold the saw still until it stops. Don’t back it out while spinning.</li></ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Supporting both ends of a long offcut and cutting in the middle. Both halves sag toward the cut and pinch the blade.</p></div>
+    </article>
+
+    <article class="topic" id="d-cs-rip" data-title="Long rips and plywood with a straightedge">
+      <div class="prose">
+        <p>For long straight cuts (ripping a sheet, trimming a door), clamp a straightedge to the work as a fence for the saw’s base plate. The straightedge sits away from the cut line by the <dfn>base offset</dfn>: the distance from the edge of the base plate to the blade.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="csRip"></div>
+        <figcaption>Top view: straightedge clamped 1½″ (this saw’s base offset) from the cut line, on the keeper side.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div>
+        <div class="eq">straightedge position = cut line + base offset (on the keeper side)</div></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Ripping 23½″ off a sheet; the saw’s base offset is 1½″ on the left side.</p>
+        <ol class="steps"><li>Snap the cut line at 23½″ (<a class="ref" href="#b-chalk"></a>).</li><li>Clamp the straightedge <span class="mono">1½″</span> from the line, on the keeper side.</li><li>Cut with the base plate tight to the straightedge.</li></ol></div>
+      <div class="block safety"><div class="tag">Safety</div><ul><li>Support the sheet on foam or across several joists so both sides stay supported; kneel on the sheet only if the saw’s path is clear of you.</li></ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Measuring the base offset from the wrong side of the blade teeth. Make a test cut along a straightedge on scrap and measure from the straightedge to the kerf.</p></div>
+    </article>
+  </div>
+
+  <!-- ===================== D4 HAND SAWS ===================== -->
+  <div class="gsection" data-title="Hand saws">
+    <article class="topic" id="d-hs-saws" data-title="Push saws, pull saws and starting a cut">
+      <div class="prose">
+        <p>A Western hand saw cuts on the <em>push</em> stroke; its teeth lean away from the handle. A Japanese saw cuts on the <em>pull</em> stroke; its thinner blade stays straight because it is in tension, so it cuts a finer kerf. Both come in crosscut and rip tooth patterns (many Japanese <dfn>ryoba</dfn> saws have one of each on opposite edges).</p>
+        <p>Starting is the hard part. Guide the blade with your thumb knuckle, start with a few short strokes at a low angle on the waste side of the line, then lengthen the strokes.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="hsSaws"></div>
+        <figcaption>Left: tooth direction on push and pull saws. Right: starting a cut with the thumb knuckle as a guide, blade on the waste side.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A 60° saw setting on a triangle frame is beyond most miter saws (<a class="ref" href="#c-polygons"></a>).</p>
+        <ol class="steps"><li>Mark the line with a protractor and square it across the edge.</li><li>Start with the pull saw at the far corner, then lower it to follow both lines at once.</li></ol></div>
+      <div class="block safety"><div class="tag">Safety</div><ul><li>Clamp the work. Keep the guiding thumb above the teeth, and move it away once the kerf is started.</li></ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Forcing the saw. Let its weight do the cutting; pushing hard makes it wander and bind.</p></div>
+    </article>
+
+    <article class="topic" id="d-hs-miterbox" data-title="Miter boxes">
+      <div class="prose">
+        <p>A <dfn>miter box</dfn> is a three-sided box (or a metal frame) with slots that guide a hand saw at fixed angles, usually 90°, 45° and sometimes 22.5°. It is quiet, cheap and accurate enough for small trim and picture frames.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="hsMiterbox"></div>
+        <figcaption>A miter box from above, with slots for 90°, 45° both ways and 22.5°.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A small frame from 1×2 stock.</p>
+        <ol class="steps"><li>Hold the piece against the back wall of the box.</li><li>Cut with the saw in the 45° slot; use the opposite 45° slot for the mating end.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Letting the work sit away from the back wall. The angle is only right when the work is tight against the box’s back.</p></div>
+    </article>
+  </div>
+
+  <!-- ===================== D5 JIGSAW AND COPING SAW ===================== -->
+  <div class="gsection" data-title="Jigsaw and coping saw">
+    <article class="topic" id="d-js-jigsaw" data-title="Jigsaw: curves and bevels">
+      <div class="prose">
+        <p>A <dfn>jigsaw</dfn> has a short blade that moves up and down. It cuts curves, holes and notches, and its base tilts for bevels. Most blades cut on the upstroke, so splinters come up on the top face: cut with the good face down, or use a reverse-tooth blade.</p>
+        <p>For tight curves, make <dfn>relief cuts</dfn> from the edge to the line first so waste falls away in small pieces instead of binding the blade.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="jsJigsaw"></div>
+        <figcaption>Left: relief cuts for a tight curve. Right: base tilted 45° for a bevel (front view).</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A 3″-radius round corner on a shelf.</p>
+        <ol class="steps"><li>Trace the curve. Make three relief cuts from the edge to within ¹⁄₁₆″ of the line.</li><li>Cut the curve; the waste falls away in pieces. Sand to the line.</li></ol></div>
+      <div class="block safety"><div class="tag">Safety</div><ul><li>Keep the base flat on the work and the blade clear of the bench, clamps and cords underneath.</li></ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Turning the saw too sharply. The blade twists, the cut goes out of square and the blade may snap. If it won’t follow, back out and add relief cuts.</p></div>
+    </article>
+
+    <article class="topic" id="d-js-coping" data-title="Coping saw">
+      <div class="prose">
+        <p>A <dfn>coping saw</dfn> holds a very thin blade in a C-shaped frame. The blade can be turned in the frame, so it follows tight curves, and it is the tool for coping trim joints (<a class="ref" href="#e-coping-how"></a>). Most people mount the blade with the teeth pointing toward the handle so it cuts on the pull stroke.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="jsCoping"></div>
+        <figcaption>A coping saw: frame, handle, and a thin blade under tension. Turning the blade pins lets it cut at an angle to the frame.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Coping a baseboard with a 15–20 teeth-per-inch blade: tension the blade until it rings when plucked, tilt the saw to back-cut about 30°, and follow the profile line.</p></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>A slack blade. It wanders and snaps. Tighten the handle until the blade is taut.</p></div>
     </article>
   </div>
 </section>
@@ -2061,54 +2986,411 @@ FIG.stockLayout = () => {
 <script>
 /* src/figures/b.js */
 /* Guide B · Measure & Mark */
-FIG.tools = () => {
-  const boardAt = (f, x0, x1, W) => f.board([[x0, 0], [x1, 0], [x1, W], [x0, W]], { seed: x0 + 20 });
-  // speed square
-  const a = fig(24);
-  boardAt(a, -2, 9, 5.5);
-  a.poly([[0, 0], [7, 0], [0, 7]], 'tool-t');
-  a.poly([[0, 0], [7, 0], [7, -0.45], [0, -0.45]], 'tool-d');
-  for (let i = 1; i < 7; i++) a.line([0.02, i], [0.35, i], 'tick');
-  for (let i = 1; i < 14; i++) { const p = K.lerp([7, 0], [0, 7], i / 14); a.line(p, K.add(p, [-0.22, -0.22]), 'tick'); }
-  a.line([-0.12, 0.05], [-0.12, 5.5], 'pencil');
-  a.line([7.1, 0.12], [1.62, 5.6], 'pencil');
-  a.note([-0.12, 4.5], [-16, -6], '90° line');
-  a.note([3.1, 4.07], [26, -18], '45° line');
-  a.note([3.5, -0.45], [0, 22], 'lip hooks the edge', { anchor: 'middle' });
-  // combination square
-  const b = fig(24);
-  boardAt(b, -3, 7, 5.5);
-  b.poly([[-2.2, -1.4], [2.2, -1.4], [2.2, 0], [-2.2, 0]], 'tool-d');
-  b.poly([[0, -1.4], [1, -1.4], [1, 7.5], [0, 7.5]], 'tool-t');
-  for (let i = 0; i < 9; i++) b.line([1, i - 0.9], [0.7, i - 0.9], 'tick');
-  b.line([1.14, 0.05], [1.14, 5.5], 'pencil');
-  b.note([1.14, 3.5], [26, -8], 'mark along the blade');
-  b.note([-1.4, -1.4], [-6, 22], 'head: 90° face on the edge', { anchor: 'middle' });
-  // sliding bevel
+
+// ---- reusable tool drawings (top views, board edge along y = 0, face above it) ----
+const boardFace = (f, x0, x1, W = 5.5, seed = 20) => f.board([[x0, 0], [x1, 0], [x1, W], [x0, W]], { seed });
+function speedSquareAt(f, P, rot = 0, o = {}) {
+  // right-angle (pivot) corner at P; lip leg along dir(rot), marking leg along dir(rot + 90)
+  const A = K.add(P, K.mul(K.dir(rot), 7)), B = K.add(P, K.mul(K.dir(rot + 90), 7));
+  const down = K.dir(rot - 90);
+  f.poly([P, A, B], 'tool-t');
+  f.poly([P, A, K.add(A, K.mul(down, 0.45)), K.add(P, K.mul(down, 0.45))], 'tool-d');
+  for (let i = 1; i < 7; i++) { const q = K.add(P, K.mul(K.dir(rot + 90), i)); f.line(q, K.add(q, K.mul(K.dir(rot), 0.35)), 'tick'); }
+  // degree scale: tick where the ray from the pivot at `a` (from the lip leg) meets the hypotenuse
+  for (let a = 0; a <= 90; a += 5) {
+    const q = K.meet(P, K.dir(rot + a), A, K.sub(B, A)), inward = K.norm(K.sub(P, q));
+    f.line(q, K.add(q, K.mul(inward, a % 10 ? 0.25 : 0.45)), 'tick');
+    if (o.scale && a % 30 === 0) f.text(K.add(q, K.mul(inward, 0.85)), String(a), { size: 9, cls: 'lbl-s' });
+  }
+  return { A, B };
+}
+function wallsOutside(f, C, L, thick) {
+  // convex corner at the origin pointing down; wall material above, between rays at 90 ± C/2
+  const a1 = 90 - C / 2, a2 = 90 + C / 2, u1 = K.dir(a1), u2 = K.dir(a2);
+  const n1 = [u1[1], -u1[0]], n2 = [-u2[1], u2[0]]; // outward (room-side) normals
+  const in1 = K.mul(n1, -thick), in2 = K.mul(n2, -thick);
+  const inner = K.meet(in1, u1, in2, u2);
+  f.poly([[0, 0], K.mul(u1, L), K.add(K.mul(u1, L), in1), inner, K.add(K.mul(u2, L), in2), K.mul(u2, L)], 'wall');
+  return { u1, u2, n1, n2, a1, a2 };
+}
+function armsTool(f, V, d1, d2, len, label, o = {}) {
+  // two-arm angle finder with its hinge at V, arms along unit directions d1, d2, offset `off` to one side
+  // o.n1, o.n2: unit normals pointing to the side each arm sits on (the room side)
+  const w = 0.5;
+  const arm = (d, nn) => { const n = K.mul(nn, w); f.poly([V, K.add(V, K.mul(d, len)), K.add(K.add(V, K.mul(d, len)), n), K.add(V, n)], 'tool-t'); };
+  arm(d1, o.n1); arm(d2, o.n2);
+  f.disc(V, 0.9, 'tool');
+  if (o.lcd) { const c = K.add(V, K.mul(K.norm(K.add(d1, d2)), o.lcdAt || 2.6)); f.rect(c[0] - 1.1, c[1] - 0.45, 2.2, 0.9, 'screen'); f.text(c, label, { cls: 'lcd', size: 13 }); }
+  else if (label) f.text(K.add(V, K.mul(K.norm(K.add(d1, d2)), o.labelAt || 2.4)), label, { cls: 'angtext halo', size: 13 });
+}
+
+/* ---------- Straight measuring ---------- */
+FIG.tapeHook = () => {
+  const tape = (f, zero, x1) => {
+    f.poly([[zero - 0.02, 1.52], [x1, 1.52], [x1, 1.72], [zero - 0.02, 1.72]], 'tape');
+    for (let i = 0; i <= Math.floor(x1 - zero); i++) { const x = zero + i; f.line([x, 1.72], [x, i % 2 ? 1.62 : 1.56], 'tapetick'); if (i && i < x1 - zero) f.text([x, 1.95], String(i), { cls: 'dimtext', size: 10 }); }
+  };
+  const a = fig(38), t = 0.22;
+  a.plank(0, 0, 8, 1.5, { seed: 2 });
+  tape(a, 0, 8.3);
+  a.poly([[-t, 0.6], [0, 0.6], [0, 1.72], [-t, 1.72]], 'tool-d');
+  a.line([0, -0.5], [0, 2.4], 'sq');
+  a.text([0, 2.65], 'true zero = board end', { cls: 'lbl-b', size: 11 });
+  a.arrow([-0.2, -0.35], [-1.3, -0.35]); a.text([-0.75, -0.75], 'hook slides out', { size: 10, cls: 'lbl-s' });
+  const b = fig(38);
+  b.rect(-1.4, -0.4, 1.4, 3.2, 'wall');
+  tape(b, 0, 8.3);
+  b.poly([[0, 1.1], [t, 1.1], [t, 1.72], [0, 1.72]], 'tool-d');
+  b.line([0, -0.3], [0, 2.4], 'sq');
+  b.text([0.3, 2.65], 'true zero = wall face', { cls: 'lbl-b', size: 11, anchor: 'start' });
+  b.arrow([0.9, 0.6], [0.25, 0.6]); b.text([1, 0.6], 'hook slides in', { size: 10, cls: 'lbl-s', anchor: 'start' });
+  b.text([-0.7, 1.2], 'wall', { cls: 'lbl-s', size: 10, rot: -90 });
+  return panels([[a.svg('Tape hooked over a board end'), 'Outside measurement: pull'], [b.svg('Tape pushed against a wall'), 'Inside measurement: push']]);
+};
+
+FIG.storyStick = () => {
+  const f = fig(9), H = 36, shelves = [7.5, 16, 24.5];
+  const side = (x, marks) => {
+    f.plank(x, 0, 0.75, H, { grain: 90, seed: x });
+    if (marks) shelves.forEach(y => f.plank(x + 0.75, y, 7, 0.75, { seed: y, sp: 5 }));
+  };
+  side(0, true); side(18, false);
+  const stick = (x) => { f.plank(x, 0, 1, H + 2, { cls: 'wood2', grain: 90, seed: x + 3, sp: 5 }); shelves.forEach((y, i) => { f.line([x, y], [x + 1, y], 'pencil'); f.text([x - 0.3, y], 'S' + (i + 1), { anchor: 'end', size: 10, cls: 'lbl-b' }); }); };
+  stick(-2.4); stick(15.8);
+  shelves.forEach(y => { f.line([16.9, y], [18, y], 'pencil'); f.line([18.75, y], [20, y], 'pencil-d'); });
+  f.text([-1.9, -1.6], 'stick', { size: 11, cls: 'lbl-s' });
+  f.text([4, -1.6], 'side 1', { size: 11, cls: 'lbl-s' });
+  f.text([16.3, -1.6], 'stick', { size: 11, cls: 'lbl-s' });
+  f.text([18.6, -3], 'side 2: marks copied', { size: 11, cls: 'lbl-s' });
+  f.line([-2.6, 0], [21, 0], 'thin'); f.text([21.2, 0], 'bottom', { size: 10, cls: 'lbl-s', anchor: 'start' });
+  return f.svg('Story stick transferring shelf heights');
+};
+
+/* ---------- Squares ---------- */
+FIG.speedSquare = () => {
+  const f = fig(40);
+  boardFace(f, -2.5, 9.5);
+  speedSquareAt(f, [0, 0], 0, { scale: true });
+  f.line([-0.1, 0.05], [-0.1, 5.5], 'pencil');
+  f.line([7.12, 0.14], [1.62, 5.64], 'pencil');
+  f.note([-0.1, 4.6], [-18, -8], '90° line');
+  f.note([2.6, 4.65], [34, -24], '45° line');
+  f.note([3.5, -0.45], [0, 24], 'lip hooks the edge', { anchor: 'middle' });
+  f.note([0, 0], [-26, 20], 'pivot corner');
+  f.note([4.6, 2.9], [46, 4], 'degree scale');
+  f.text([-1.5, 2.75], '2×6 face', { cls: 'onwood', size: 11, rot: -90 });
+  return f.svg('Speed square hooked on the edge of a 2 by 6');
+};
+
+FIG.speedPivot = () => {
+  const f = fig(36), P = [1.5, 0], th = 30;
+  boardFace(f, -3.5, 10);
+  f.line([-3.5, 0], [10, 0], 'thin');
+  speedSquareAt(f, P, -th, { scale: true });
+  const end = K.meet(P, K.dir(90 - th), [0, 5.5], [1, 0]);
+  f.line(P, end, 'pencil');
+  f.line(P, [P[0], 5.2], 'sq');
+  f.angle(P, 3.4, 90 - th, 90, 'saw 30°', { lr: 34 });
+  f.angle(P, 2.2, 0, 90 - th, '60° from edge', { lr: 50 });
+  f.note(K.meet(P, K.dir(0), K.add(P, K.mul(K.dir(-th), 7)), K.sub(K.add(P, K.mul(K.dir(90 - th), 7)), K.add(P, K.mul(K.dir(-th), 7)))), [18, 26], 'edge crosses the scale at 30');
+  f.note(P, [-24, 22], 'pivot on the edge');
+  return f.svg('Speed square pivoted to 30 degrees');
+};
+
+FIG.framingSquare = () => {
+  const a = fig(10);
+  a.poly([[0, 0], [24, 0], [24, 2], [1.5, 2], [1.5, 16], [0, 16]], 'tool');
+  for (let i = 1; i < 24; i++) a.line([i, 0], [i, i % 2 ? 0.3 : 0.5], 'tick');
+  for (let i = 1; i < 16; i++) a.line([0, i], [i % 2 ? 0.3 : 0.5, i], 'tick');
+  a.text([13, 1], 'blade 24″ × 2″', { size: 12, cls: 'lbl-b' });
+  a.text([0.75, 9], 'tongue 16″ × 1½″', { size: 12, cls: 'lbl-b', rot: -90 });
+  a.note([0, 0], [-16, 18], 'heel');
+  const b = fig(11), W = 9.25;
+  const E1 = [0, W], blade = K.dir(-26.565), H = K.add(E1, K.mul(blade, 12)), E2 = K.add(H, K.mul(K.dir(63.435), 6));
+  b.plank(-3, 0, 30, W, { seed: 5, sp: 8 });
+  const ub = K.dir(153.435), ut = K.dir(63.435);
+  b.poly([H, K.add(H, K.mul(ub, 24)), K.add(K.add(H, K.mul(ub, 24)), K.mul(ut, 2)), K.add(H, K.mul(ut, 2))], 'tool-t');
+  b.poly([H, K.add(H, K.mul(ut, 16)), K.add(K.add(H, K.mul(ut, 16)), K.mul(ub, 1.5)), K.add(H, K.mul(ub, 1.5))], 'tool-t');
+  b.line(H, E2, 'pencil'); b.line(H, E1, 'pencil');
+  b.circle(E1, 3, 'dot'); b.circle(E2, 3, 'dot');
+  b.text(E1, '12', { cls: 'lbl-b', dy: -14, size: 12 }); b.text(E2, '6', { cls: 'lbl-b', dy: -14, size: 12 });
+  b.note(K.lerp(H, E2, 0.5), [40, 18], 'tongue edge: plumb line');
+  b.note(K.lerp(H, E1, 0.55), [-10, 36], 'blade edge: level line', { anchor: 'end' });
+  return panels([[a.svg('Parts of a framing square'), 'Blade, tongue and heel'], [b.svg('Framing square set to 12 and 6 on a board edge'), 'Set at 12 and 6: a 6-in-12 slope']]);
+};
+
+FIG.comboSquare = () => {
+  const a = fig(26);
+  boardFace(a, -3, 7);
+  a.poly([[-2.2, -1.4], [2.2, -1.4], [2.2, 0], [-2.2, 0]], 'tool-d');
+  a.poly([[0, -1.4], [1, -1.4], [1, 7.5], [0, 7.5]], 'tool-t');
+  for (let i = 0; i < 9; i++) a.line([1, i - 0.9], [0.7, i - 0.9], 'tick');
+  a.line([1.14, 0.05], [1.14, 5.5], 'pencil');
+  a.note([1.14, 3.5], [26, -8], 'mark along the blade');
+  a.note([-1.4, -1.4], [-6, 22], 'head: 90° face on the edge', { anchor: 'middle' });
+  const b = fig(26), P = [3.5, 0], e = 6;
+  boardFace(b, -1, 8);
+  b.line(P, K.add(P, K.mul(K.dir(90 + e), 5.5)), 'pencil');
+  b.line(P, K.add(P, K.mul(K.dir(90 - e), 5.5)), 'pencil');
+  b.text(K.add(P, K.mul(K.dir(90 + e), 5.3)), '1st line', { size: 11, cls: 'lbl-b halo', anchor: 'end', dx: -6 });
+  b.text(K.add(P, K.mul(K.dir(90 - e), 5.3)), 'after flipping', { size: 11, cls: 'lbl-b halo', anchor: 'start', dx: 6 });
+  b.dim(K.add(P, K.mul(K.dir(90 + e), 3.6)), K.add(P, K.mul(K.dir(90 - e), 3.6)), -0.2, 'gap = 2 × error', { size: 11, lo: 14 });
+  b.line([P[0], 0], [P[0], 5.2], 'sq');
+  return panels([[a.svg('Combination square marking a square line'), 'Marking a square line'], [b.svg('Flip test for a square'), 'Flip test (exaggerated)']]);
+};
+
+/* ---------- Angle tools ---------- */
+const protractorAt = (f, O, R, o = {}) => {
+  const semi = []; for (let t = 0; t <= 180; t += 6) semi.push(K.add(O, K.mul(K.dir(t), R)));
+  f.poly(semi, 'tool-t');
+  for (let t = 0; t <= 180; t += 10) f.line(K.add(O, K.mul(K.dir(t), R)), K.add(O, K.mul(K.dir(t), R - (t % 30 ? 0.3 : 0.6))), 'tick');
+  [0, 30, 60, 90, 120, 150, 180].forEach(t => {
+    f.text(K.add(O, K.mul(K.dir(t), R - 1.05)), String(t), { size: 9, cls: 'lbl' });
+    if (o.inner) f.text(K.add(O, K.mul(K.dir(t), R - 1.75)), String(180 - t), { size: 9, cls: 'angtext' });
+  });
+  f.circle(O, 3, 'dot');
+};
+FIG.protractorRead = () => {
+  const d = fig(24), O = [4, 0], R = 3.6;
+  boardFace(d, -1.5, 9.5);
+  protractorAt(d, O, R);
+  d.line(O, K.add(O, K.mul(K.dir(60), 5.4)), 'pencil');
+  d.note(K.add(O, K.mul(K.dir(60), R)), [22, -10], 'reads 60°');
+  d.note(O, [0, 24], 'center mark on your point', { anchor: 'middle', dot: false });
+  const e = fig(34), O2 = [0, 0], R2 = 4.4;
+  protractorAt(e, O2, R2, { inner: true });
+  e.line([-5, 0], [5, 0], 'thin');
+  e.line(O2, K.mul(K.dir(60), 5.4), 'pencil');
+  e.angle(O2, 1.3, 0, 60, '60°', { lr: 14 });
+  e.note(K.mul(K.dir(60), R2 - 1.05), [34, -30], 'outer scale: 60 (0 on the right)');
+  e.note(K.mul(K.dir(60), R2 - 1.75), [38, 6], 'inner scale: 120 (0 on the left)', { cls: 'angtext' });
+  return panels([[d.svg('Protractor on a board'), 'On the board'], [e.svg('Two protractor scales'), 'Two scales, opposite directions']]);
+};
+
+FIG.angleFinder = () => {
+  const f = fig(28), C = 135;
+  const { u1, u2, n1, n2 } = walls(f, C, 9, 1);
+  armsTool(f, [0, 0], u1, u2, 7, '135°', { n1, n2, labelAt: 3.2 });
+  f.angle([0, 0], 4.3, 180 - C, 180, '', {});
+  f.text(K.mul(u1, 8), 'wall', { cls: 'lbl-s', dy: 16 });
+  return f.svg('Two arm angle finder in a 135 degree corner');
+};
+
+FIG.bevelTool = () => {
   const c = fig(24);
-  boardAt(c, -3, 9, 5.5);
+  boardFace(c, -3, 9);
   c.poly([[-2.5, -1.1], [3.2, -1.1], [3.2, 0], [-2.5, 0]], 'tool-d');
   const bu = K.dir(60), bn = [-bu[1], bu[0]], piv = [0, -0.5];
   c.poly([K.add(piv, K.mul(bn, -0.35)), K.add(K.add(piv, K.mul(bu, 7.5)), K.mul(bn, -0.35)), K.add(K.add(piv, K.mul(bu, 7.5)), K.mul(bn, 0.35)), K.add(piv, K.mul(bn, 0.35))], 'tool-t');
   c.circle(piv, 6, 'tool');
-  c.line(K.add([0.62, 0.02], [0, 0]), K.add([0.62, 0], K.mul(bu, 6.3)), 'pencil');
-  c.angle([0.3, 0], 2.2, 0, 60, 'any angle', { lr: 40 });
+  c.line([0.62, 0.02], K.add([0.62, 0], K.mul(bu, 6.3)), 'pencil');
+  c.angle([0.3, 0], 2.2, 0, 60, '60°', { lr: 16 });
   c.note(piv, [-24, 22], 'wing nut locks it');
-  // protractor
-  const d = fig(24);
-  boardAt(d, -1.5, 9.5, 5.5);
-  const O = [4, 0], R = 3.6;
-  const semi = []; for (let t = 0; t <= 180; t += 6) semi.push(K.add(O, K.mul(K.dir(t), R)));
-  d.poly(semi, 'tool-t');
-  for (let t = 0; t <= 180; t += 10) d.line(K.add(O, K.mul(K.dir(t), R)), K.add(O, K.mul(K.dir(t), R - (t % 30 ? 0.3 : 0.6))), 'tick');
-  [0, 30, 60, 90, 120, 150, 180].forEach(t => d.text(K.add(O, K.mul(K.dir(t), R - 1.05)), String(t), { size: 9, cls: 'lbl' }));
-  d.line(O, K.add(O, K.mul(K.dir(60), 5.4)), 'pencil');
-  d.circle(O, 3, 'dot');
-  d.note(K.add(O, K.mul(K.dir(60), R)), [22, -10], 'reads 60°');
-  d.note(O, [0, 24], 'center mark on your point', { anchor: 'middle', dot: false });
-  return panels([[a.svg('Speed square'), '<b>Speed square</b>'], [b.svg('Combination square'), '<b>Combination square</b>'], [c.svg('Sliding bevel'), '<b>Sliding bevel</b>'], [d.svg('Protractor'), '<b>Protractor</b>']]);
+  const s = fig(22), a = 30;
+  s.rect(-9, 0, 18, 0.9, 'fence');
+  s.rect(-9, -8, 18, 8, 'table');
+  const bd = K.dir(-90 + a);
+  s.poly([K.add([0, 0.3], K.mul([-bd[1], bd[0]], 0.12)), K.add(K.mul(bd, 7), K.mul([-bd[1], bd[0]], 0.12)), K.add(K.mul(bd, 7), K.mul([-bd[1], bd[0]], -0.12)), K.add([0, 0.3], K.mul([-bd[1], bd[0]], -0.12))], 'blade');
+  s.poly([[-6.5, -1], [-0.6, -1], [-0.6, 0], [-6.5, 0]], 'tool-d');
+  const p0 = [-0.45, -0.55], nb = [bd[1], -bd[0]];
+  s.poly([p0, K.add(p0, K.mul(bd, 5.5)), K.add(K.add(p0, K.mul(bd, 5.5)), K.mul(nb, 0.35)), K.add(p0, K.mul(nb, 0.35))], 'tool-t');
+  s.circle(p0, 5, 'tool');
+  s.text([-5, 1.5], 'FENCE', { cls: 'tagt', size: 10 });
+  s.note(K.add(p0, K.mul(bd, 4)), [-40, 10], 'bevel blade flat on the saw blade', { anchor: 'end' });
+  s.note([-3.5, -1], [-10, 22], 'handle on the fence', { anchor: 'end' });
+  return panels([[c.svg('Sliding bevel marking a board'), 'Marking the wood'], [s.svg('Sliding bevel setting a miter saw'), 'Setting the saw (top view, unplugged)']]);
 };
 
+FIG.digitalTools = () => {
+  const a = fig(26), C = 91.4;
+  const wa = walls(a, C, 7, 0.9);
+  armsTool(a, [0, 0], wa.u1, wa.u2, 6, `${C}°`, { lcd: true, lcdAt: 2.8, n1: wa.n1, n2: wa.n2 });
+  const b = fig(40), tilt = 45;
+  b.rect(-4, -0.5, 8, 0.5, 'table');
+  const up = K.dir(90 + tilt), side = K.dir(tilt);
+  const base = [0.2, 0];
+  b.poly([K.add(base, K.mul(side, -0.06)), K.add(K.add(base, K.mul(up, 3.2)), K.mul(side, -0.06)), K.add(K.add(base, K.mul(up, 3.2)), K.mul(side, 0.06)), K.add(base, K.mul(side, 0.06))], 'blade');
+  const cube = (c, a, txt, cls) => { const pts = [[-0.5, 0], [0.5, 0], [0.5, 1], [-0.5, 1]].map(p => K.add(c, K.rot(p, a))); b.poly(pts, cls); b.text(K.add(c, K.rot([0, 0.5], a)), txt, { cls: 'lcd', size: 11 }); };
+  cube([2.6, 0], 0, '0.0', 'screen');
+  cube(K.add(base, K.add(K.mul(up, 1.4), K.mul(side, 0.07))), -tilt, '45.0', 'screen');
+  b.angle(base, 1.2, 90, 90 + tilt, '45°', { lr: 14 });
+  b.line(base, K.add(base, [0, 3]), 'sq');
+  b.note([2.6, 1], [14, -14], '1. zero on the table');
+  b.note(K.add(base, K.mul(up, 2)), [-20, -20], '2. stick on the blade', { anchor: 'end' });
+  return panels([[a.svg('Digital angle finder in a corner'), 'Digital angle finder'], [b.svg('Magnetic angle gauge on a tilted blade'), 'Magnetic angle gauge (front view)']]);
+};
+
+/* ---------- Level, plumb and lines ---------- */
+FIG.levelFlip = () => {
+  const one = (flip) => {
+    const f = fig(22), L = 24, tilt = 0;
+    f.rect(-1, -1.2, L + 2, 1.2, 'wall');
+    f.rect(0, 0, L, 1.3, 'tool');
+    const vx = L / 2, off = flip ? -0.45 : 0.45;
+    f.rect(vx - 1.3, 0.3, 2.6, 0.7, 'glass');
+    f.line([vx - 0.45, 0.3], [vx - 0.45, 1], 'thin'); f.line([vx + 0.45, 0.3], [vx + 0.45, 1], 'thin');
+    f.rect(vx + off - 0.3, 0.42, 0.6, 0.46, 'bubble');
+    f.text([1, 0.65], flip ? 'B' : 'A', { cls: 'lbl-b', size: 12 });
+    f.text([L - 1, 0.65], flip ? 'A' : 'B', { cls: 'lbl-b', size: 12 });
+    f.text([L / 2, -0.6], 'surface that is actually level', { cls: 'lbl-s', size: 10 });
+    return f.svg(flip ? 'Level flipped end for end' : 'Level in first position');
+  };
+  return panels([[one(false), 'First reading: bubble right'], [one(true), 'Turned end for end: bubble left, so the level is out']]);
+};
+
+FIG.plumbLaser = () => {
+  const a = fig(9);
+  a.rect(-6, 30, 16, 3.5, 'wall'); a.text([2, 31.75], 'ceiling joists', { cls: 'lbl-s', size: 10 });
+  a.plank(-2, 28.5, 8, 1.5, { seed: 3 }); a.text([2, 29.25], 'top plate', { cls: 'onwood', size: 10 });
+  a.line([-2, 28.5], [-2, 1.2], 'pencil');
+  a.poly([[-2.5, 1.9], [-1.5, 1.9], [-2, 0.2]], 'tool');
+  a.rect(-6, -1, 16, 1, 'wall'); a.text([6, -0.5], 'floor', { cls: 'lbl-s', size: 10 });
+  a.pline([[-2.6, 0.02], [-2, 0.02], [-1.4, 0.02]], 'pencil'); a.circle([-2, 0.02], 2.5, 'dot');
+  a.note([-2, 14], [18, 0], 'string hangs plumb');
+  a.note([-2, 0.02], [30, -14], 'mark the floor here');
+  const b = fig(7);
+  b.rect(0, 0, 60, 40, 'glass');
+  b.line([0, 36], [60, 36], 'laser');
+  b.poly([[52, 0], [53, 0], [54, 34.5], [51, 34.5]], 'tool-o'); b.rect(51, 34.5, 3.4, 3, 'tool');
+  b.plank(8, 34.5, 30, 3, { seed: 4, sp: 5 });
+  b.text([23, 36], 'chair rail at the laser line', { cls: 'onwood', size: 11 });
+  b.dim([0, 0], [0, 36], 1.8, '36″', { size: 11, flat: true });
+  b.text([30, 20], 'wall', { cls: 'lbl-s', size: 11 });
+  return panels([[a.svg('Plumb bob from top plate to floor'), 'Plumb bob'], [b.svg('Laser level line on a wall'), 'Laser level']]);
+};
+
+FIG.chalkLine = () => {
+  const f = fig(5.5), W = 96, H = 48, y = 23.5;
+  f.plank(0, 0, W, H, { seed: 8, sp: 7 });
+  f.pline([[0, y], [W / 2, y + 4], [W, y]], 'chalk');
+  f.line([0, y], [W, y], 'pencil-d');
+  f.circle([0, y], 3, 'dot'); f.circle([W, y], 3, 'dot');
+  f.rect(-5, y - 1.5, 4, 3, 'tool');
+  f.hand([W / 2, y + 7.4], 90, 5.5);
+  f.arrow([W / 2 + 6, y + 1], [W / 2 + 6, y + 6]); f.text([W / 2 + 7, y + 3.5], 'lift straight up, then let go', { anchor: 'start', size: 11, cls: 'lbl' });
+  f.dim([W + 3, 0], [W + 3, y], -1, '23½″', { size: 11, flat: true });
+  f.text([W / 2, 6], '4 × 8 sheet', { cls: 'onwood', size: 12 });
+  return f.svg('Snapping a chalk line across a sheet');
+};
+
+/* ---------- Scribing ---------- */
+const baseProfile = y => y < 3.2 ? 0.75 : y < 3.6 ? 0.75 - (y - 3.2) * 0.4 : y < 4.4 ? 0.59 - 0.3 * Math.sin((y - 3.6) / 0.8 * Math.PI / 2) : 0.29;
+FIG.contour = () => {
+  const f = fig(40), top = 4.6;
+  f.rect(-1.2, -0.2, 1.2, 5.6, 'wall');
+  const prof = []; for (let y = 0; y <= top; y += 0.05) prof.push([baseProfile(y), y]);
+  f.board([[0, 0]].concat(prof, [[0, top]]), { grain: 90, seed: 3, sp: 6 });
+  for (let y = 0.1; y < 5.3; y += 0.12) { const x = y <= top ? baseProfile(y) : 0; f.line([x + 0.02, y], [x + 2.6, y], 'tick'); }
+  f.rect(1.9, -0.2, 0.35, 5.6, 'tool');
+  f.text([-0.6, 2.6], 'wall', { cls: 'lbl-s', size: 10, rot: -90 });
+  f.note([0.4, 1.5], [-30, 30], 'baseboard (side view)', { anchor: 'end' });
+  f.note([2.6, 5], [16, -10], 'pins take the shape');
+  return f.svg('Contour gauge copying a baseboard profile');
+};
+
+FIG.scribe = () => {
+  const f = fig(28), L = 20, W = 4, G = 0.8;
+  const g = x => G * (0.5 - 0.5 * Math.cos(2 * Math.PI * (x - 3) / 14)) + 0.18 * Math.sin(x * 1.3);
+  const gmin = Math.min(...Array.from({ length: 201 }, (_, i) => g(i / 10)));
+  const wall = x => W + g(x) - gmin, Gmax = Math.max(...Array.from({ length: 201 }, (_, i) => wall(i / 10) - W));
+  const pts = Array.from({ length: 81 }, (_, i) => [L * i / 80, wall(L * i / 80)]);
+  f.poly(pts.concat([[L, W + 3], [0, W + 3]]), 'wall');
+  f.plank(0, 0, L, W, { seed: 6 });
+  const scribe = pts.map(([x, y]) => [x, y - Gmax]);
+  f.poly(scribe.concat([[L, W], [0, W]]), 'waste');
+  f.pline(scribe, 'pencil');
+  const xm = pts.reduce((m, p) => (p[1] > m[1] ? p : m));
+  f.dim([xm[0], W], [xm[0], xm[1]], -1.6, '¼″ widest gap', { size: 11, flat: true });
+  const cx = 12, cy = wall(cx);
+  f.line([cx, cy], [cx + 0.9, cy + 1.6], 'tool-o'); f.line([cx, cy - Gmax], [cx + 0.9, cy + 1.6], 'tool-o');
+  f.circle([cx, cy - Gmax], 2.5, 'dot');
+  f.note([cx, cy - Gmax], [20, 26], 'compass pencil draws the scribe line');
+  f.text([L / 2, 1.5], 'shelf (top view)', { cls: 'onwood', size: 12 });
+  f.text([L / 2, W + 2.2], 'uneven wall', { cls: 'lbl-s', size: 11 });
+  return f.svg('Scribing a shelf to a wavy wall');
+};
+
+/* ---------- Measuring what you need to cut ---------- */
+function insideCorner(f, C) { const { u1, u2, n1, n2 } = walls(f, C, 8, 0.9); armsTool(f, [0, 0], u1, u2, 5.5, C + '°', { labelAt: 3, n1, n2 }); }
+function outsideCorner(f, C) {
+  const { u1, u2, n1, n2 } = wallsOutside(f, C, 8, 0.9);
+  armsTool(f, [0, 0], u1, u2, 5.5, '', { n1, n2 });
+  f.angle([0, 0], 1.6, 90 - C / 2, 90 + C / 2, C + '°', { lr: 16 });
+}
+FIG.whichTool = () => {
+  const a = fig(16); insideCorner(a, 135);
+  const b = fig(16); outsideCorner(b, 90);
+  const c = fig(14), ph = K.atan(3.5 / 12);
+  c.board([[0, 0], [20, 20 * K.tan(ph)], [20, 20 * K.tan(ph) + 5.5 / K.cos(ph)], [0, 5.5 / K.cos(ph)]], { grain: ph, seed: 2, sp: 6 });
+  const y0 = 5.5 / K.cos(ph), xc = 18;
+  const top = x => x * K.tan(ph) + y0;
+  c.rect(xc - 14, top(xc), 14, 1, 'tool');
+  c.dim([xc - 12, top(xc - 12)], [xc - 12, top(xc)], -1.2, '3½″', { size: 11, flat: true });
+  const d = fig(40), t = 45, base = [0, 0];
+  d.rect(-2.5, -0.4, 5, 0.4, 'table');
+  d.poly([[0.06, 0], K.add([0.06, 0], K.mul(K.dir(90 + t), 2.6)), K.add([-0.06, 0], K.mul(K.dir(90 + t), 2.6)), [-0.06, 0]], 'blade');
+  const cube = K.add(base, K.add(K.mul(K.dir(90 + t), 1.2), K.mul(K.dir(t), 0.07)));
+  d.poly([[-0.4, 0], [0.4, 0], [0.4, 0.8], [-0.4, 0.8]].map(p => K.add(cube, K.rot(p, -t))), 'screen');
+  d.text(K.add(cube, K.rot([0, 0.4], -t)), '45.0', { cls: 'lcd', size: 10 });
+  return panels([[a.svg('Inside corner'), '<b>Inside corner</b>: angle finder'], [b.svg('Outside corner'), '<b>Outside corner</b>: arms wrapped around'], [c.svg('Slope'), '<b>Slope</b>: level and tape'], [d.svg('Blade tilt'), '<b>Blade tilt</b>: digital gauge']]);
+};
+
+FIG.insideOutside = () => {
+  const a = fig(22); insideCorner(a, 91);
+  a.text([-4, 3.4], 'room', { cls: 'lbl-s', size: 11 });
+  const b = fig(22); outsideCorner(b, 88);
+  b.text([0, -2.6], 'room', { cls: 'lbl-s', size: 11 });
+  return panels([[a.svg('Measuring an inside corner'), '<b>Inside corner</b>: 91°'], [b.svg('Measuring an outside corner'), '<b>Outside corner</b>: 88°']]);
+};
+
+FIG.slopeMeasure = () => {
+  const f = fig(20), ph = K.atan(3.5 / 12), W = 5.5, y0 = W / K.cos(ph);
+  const top = x => x * K.tan(ph) + y0;
+  f.board([[0, 0], [26, 26 * K.tan(ph)], [26, top(26)], [0, y0]], { grain: ph, seed: 4 });
+  const xc = 25, yc = top(xc), xm = xc - 12;
+  f.rect(xc - 24, yc, 24, 1.3, 'tool');
+  f.rect(xc - 13.3, yc + 0.35, 2.6, 0.6, 'glass'); f.rect(xc - 12.3, yc + 0.42, 0.6, 0.46, 'bubble');
+  f.dim([xm, yc + 1.3], [xc, yc + 1.3], 1, '12″', { size: 11 });
+  f.line([xm, yc], [xm, top(xm)], 'tape');
+  f.dim([xm, top(xm)], [xm, yc], -1.3, '3½″ drop', { size: 11, flat: true });
+  f.angle([xc, yc], 6, 180, 180 + ph, '16.26°', { lr: 26 });
+  f.note([xc, yc], [16, -10], 'level touches the high point');
+  f.text([14, 5], 'rafter', { cls: 'onwood', size: 12 });
+  return f.svg('Measuring the rise per 12 of a sloped board');
+};
+
+/* ---------- Checking square ---------- */
+FIG.diagonals = () => {
+  const frame = (shift, cap) => {
+    const f = fig(5), w = 48, h = 30, t = 2.5;
+    const O = [[0, 0], [w, 0], [w + shift, h], [shift, h]];
+    f.poly(O, 'wood'); f.poly(O, 'edge');
+    f.poly([[t + shift * t / h, t], [w - t + shift * t / h, t], [w - t + shift * (h - t) / h, h - t], [t + shift * (h - t) / h, h - t]], 'glass');
+    const d1 = Math.hypot(w + shift, h), d2 = Math.hypot(w - shift, h);
+    f.line(O[0], O[2], 'dimline'); f.line(O[1], O[3], 'dimline');
+    f.text(K.lerp(O[0], O[2], 0.3), K.frac(d1), { cls: 'dimtext halo', size: 12 });
+    f.text(K.lerp(O[1], O[3], 0.3), K.frac(d2), { cls: 'dimtext halo', size: 12 });
+    f.dim([0, 0], [w, 0], -2.5, '48″', { size: 11 }); f.dim([w, 0], [w + shift, h], -3, '30″', { size: 11, flat: true });
+    return f.svg(cap);
+  };
+  return panels([[frame(0, 'Square frame'), '<b>Square</b>: diagonals equal'], [frame(4, 'Racked frame'), '<b>Racked</b> (exaggerated): diagonals differ']]);
+};
+
+FIG.threeFourFive = () => {
+  const f = fig(3.2), a = 72, b = 96;
+  f.rect(-20, -8, 110, 8, 'wall'); f.text([35, -4], 'house wall', { cls: 'lbl-s', size: 11 });
+  f.line([0, 0], [a + 18, 0], 'plan-line'); f.line([0, 0], [0, b + 18], 'plan-line');
+  f.right([0, 0], 0, 12);
+  f.circle([a, 0], 3, 'dot'); f.circle([0, b], 3, 'dot');
+  f.line([a, 0], [0, b], 'tape');
+  f.dim([0, 0], [a, 0], -9, '6 ft', { size: 12 });
+  f.dim([0, 0], [0, b], 9, '8 ft', { size: 12, flat: true });
+  f.text(K.lerp([a, 0], [0, b], 0.5), '10 ft', { cls: 'dimtext halo', size: 13, dx: 16, dy: 10 });
+  f.text([40, 70], 'deck', { cls: 'lbl-s', size: 12 });
+  return f.svg('3-4-5 triangle scaled to 6-8-10 feet');
+};
+
+/* ---------- Kept from the original handbook ---------- */
 FIG.transfer = () => {
   const C = 135;
   const a = fig(22);
@@ -2553,6 +3835,528 @@ FIG.taperLayout = () => {
   f.dim([0, W], [s, W], 1.2, '5″', { size: 11 });
   f.text([L / 2, W / 2], 'width drawn 4× so the taper shows', { cls: 'onwood', size: 11 });
   return f.svg('Laying out a taper on a leg');
+};
+
+</script>
+<script>
+/* src/figures/d.js */
+/* Guide D · The Saw Guide */
+
+// ---------- shared machine drawings ----------
+// thin rectangle along a segment a→b, width w (inches)
+function band(f, a, b, w, cls) { const u = K.norm(K.sub(b, a)), n = K.mul([-u[1], u[0]], w / 2); return f.poly([K.add(a, n), K.add(b, n), K.sub(b, n), K.sub(a, n)], cls); }
+// arc of a circle above y = 0 as a polygon (a saw blade poking up through a table)
+function bladeAbove(f, c, R, cut = 0) {
+  const pts = []; for (let t = 0; t <= 360; t += 4) { const p = K.add(c, K.mul(K.dir(t), R)); if (p[1] >= cut) pts.push(p); }
+  const h = c[1] - cut, half = Math.sqrt(Math.max(R * R - h * h, 0));
+  pts.sort((p, q) => Math.atan2(q[1] - c[1], q[0] - c[0]) - Math.atan2(p[1] - c[1], p[0] - c[0]));
+  return f.poly([[c[0] + half, cut]].concat(pts, [[c[0] - half, cut]]), 'bladebody');
+}
+
+// Miter saw from above: fence along y = 0, operator below. m = miter (deg, + swings the front to the right)
+function msTop(f, m, o = {}) {
+  f.rect(-11, -8.5, 22, 8.5, 'table');
+  const arc = []; for (let t = 180; t <= 360; t += 6) arc.push(K.mul(K.dir(t), 6.8));
+  f.poly(arc, 'tool-o');
+  f.rect(-11, 0, 10.6, 0.9, 'fence'); f.rect(0.4, 0, 10.6, 0.9, 'fence');
+  if (o.board !== false) f.plank(-11, -(o.W || 3.5), 22, o.W || 3.5, { seed: 3 });
+  if (o.scale !== false) {
+    f.arc([0, 0], 7.6, -140, -40, 'dimline');
+    [-45, -30, -22.5, -15, 0, 15, 22.5, 30, 45].forEach(d => {
+      const a = -90 + d; f.line(K.mul(K.dir(a), 7.6), K.mul(K.dir(a), 7.1), 'tick');
+      if (Math.abs(d) !== 22.5 && Math.abs(d) !== 15) f.text(K.mul(K.dir(a), 8.3), Math.abs(d) + '°', { size: 9, cls: 'lbl' });
+    });
+  }
+  const bd = K.dir(-90 + m);
+  band(f, K.mul(bd, -0.6), K.mul(bd, 7), 0.16, 'blade');
+  return bd;
+}
+
+// Table saw from above. Operator at the bottom (y < 0). fence: x of the fence's blade-side face (null = none)
+function tsTop(f, o = {}) {
+  const fx = o.fence === undefined ? 4 : o.fence;
+  f.rect(-15, 0, 30, 27, 'table');
+  f.rect(-6.4, 0, 0.75, 27, 'slot'); f.rect(5.65, 0, 0.75, 27, 'slot');
+  f.rect(-1.6, 8.5, 3.2, 12, 'tool-o');
+  band(f, [0, 10.3], [0, 16.7], 0.14, 'blade');
+  band(f, [0, 16.9], [0, 19.4], 0.1, 'tool-d');
+  if (fx !== null) f.rect(fx, -1.5, 1.6, 30, 'fence');
+  if (o.spin !== false) f.arrow([0.9, 15.8], [0.9, 11.2], 'spin', 'spinhead');
+  return fx;
+}
+// Table-saw blade from the side: table along y = 0, operator on the left, blade height h above the table
+function tsSide(f, h, o = {}) {
+  const R = 5, c = [0, h - R];
+  f.rect(-11, -0.9, 22, 0.9, 'table');
+  bladeAbove(f, c, R, 0);
+  f.spin(c, R + 0.8, 60, 120, { cw: false });
+  return { c, R };
+}
+
+/* ---------- D1 Miter saw ---------- */
+FIG.msAnatomy = () => {
+  const a = fig(18);
+  msTop(a, 30);
+  a.text([7, 1.5], 'FENCE', { cls: 'tagt', size: 10 });
+  a.note([3, -5.2], [40, 10], 'blade swung to 30°');
+  a.note([0, -7.6], [-30, 22], 'miter scale: 0° = square', { anchor: 'end' });
+  a.note([-7, -1.75], [-10, -34], 'board tight to the fence', { anchor: 'end' });
+  const b = fig(26), bv = 45;
+  b.rect(-7, -0.6, 14, 0.6, 'table');
+  b.plank(-7, 0, 14, 1.5, { seed: 5 });
+  b.rect(-7, 1.5, 14, 0.15, 'hidden-l');
+  const up = K.dir(90 + bv);
+  band(b, [0.6, -0.3], K.add([0.6, -0.3], K.mul(up, 5.2)), 0.14, 'blade');
+  b.line([0.6, -0.3], [0.6, 4.6], 'sq');
+  b.angle([0.6, -0.3], 3.2, 90, 90 + bv, '45° bevel', { lr: 30 });
+  b.text([-4, 0.75], 'board (front view)', { cls: 'onwood', size: 11 });
+  return panels([[a.svg('Miter saw from above'), '<b>Miter</b>: turntable swings left and right'], [b.svg('Miter saw blade tilted for a bevel'), '<b>Bevel</b>: the blade tilts over']]);
+};
+
+FIG.msSafety = () => {
+  const f = fig(18);
+  msTop(f, 0, { scale: false });
+  f.danger([[-6, -8.5], [6, -8.5], [6, 0], [-6, 0]], '');
+  f.text([0, -8], 'no-hands zone', { cls: 'cuttext halo', size: 12 });
+  f.hand([-8.5, -1.9], 90, 3);
+  f.note([-8.5, -3], [-8, 26], 'hold here, outside the zone', { anchor: 'end' });
+  f.rect(7.2, -3.9, 1.2, 4.8, 'tool-d');
+  f.note([7.8, -3.9], [10, 24], 'or clamp it');
+  f.dim([0, -8.5], [6, -8.5], -1, '6″', { size: 11 });
+  return f.svg('No hands zone around a miter saw blade');
+};
+
+FIG.msCapacity = () => {
+  const one = (m) => {
+    const f = fig(20), C0 = 5.5, bd = K.dir(-90 + m);
+    f.rect(-8, -8, 16, 8, 'table');
+    f.rect(-8, 0, 7.6, 0.9, 'fence'); f.rect(0.4, 0, 7.6, 0.9, 'fence');
+    const reach = C0 / K.cos(m) > 0 ? C0 : C0;
+    const end = K.mul(bd, C0);
+    const depth = -end[1];
+    f.plank(-8, -depth, 16, depth, { seed: m });
+    band(f, [0, 0], end, 0.16, 'blade');
+    f.dim([0, 0], end, 0.6 * Math.sign(m || 1), 'blade reach 5½″', { size: 11 });
+    f.dim([7.4, 0], [7.4, -depth], 0.9, K.dec(depth, 1) + '″ board', { size: 11, flat: true });
+    return f.svg(`Capacity at ${m} degrees`);
+  };
+  return panels([[one(0), '<b>0°</b>: cuts a 5½″ board'], [one(45), '<b>45°</b>: same reach, only 3.9″ deep']]);
+};
+
+FIG.msPairs = () => {
+  const f = fig(16), L = 24, W = 3.5;
+  const p = [[0, 0], [L, 0], [L - W, -W], [W, -W]];
+  f.rect(-4, 0, L + 8, 0.8, 'fence');
+  f.board(p, { seed: 4 });
+  f.line(p[0], p[3], 'cutline'); f.line(p[1], p[2], 'cutline');
+  const blade = (a, b, lbl, off) => { band(f, K.add(a, K.mul(K.norm(K.sub(a, b)), 1.2)), K.add(b, K.mul(K.norm(K.sub(b, a)), 1.2)), 0.12, 'blade-g'); f.text(K.lerp(a, b, 0.5), lbl, { cls: 'cuttext halo', size: 12, dx: off, dy: 20 }); };
+  blade(p[0], p[3], 'saw 45° right', -46);
+  blade(p[1], p[2], 'saw 45° left', 46);
+  f.text([L / 2, -W / 2], 'face up, same edge on the fence for both cuts', { cls: 'onwood', size: 11 });
+  f.text([L / 2, 1.5], 'FENCE', { cls: 'tagt', size: 10 });
+  f.note(p[0], [-10, -18], 'long point'); f.note(p[1], [10, -18], 'long point');
+  return f.svg('Cutting mirror image ends by swinging the saw');
+};
+
+FIG.msStop = () => {
+  const f = fig(12), L = 31, W = 3.5;
+  f.rect(-8, 0, L + 14, 0.8, 'fence');
+  f.rect(-8, -6, 12, 6, 'table');
+  band(f, [0, 0.2], [W, -W - 0.8], 0.14, 'blade');
+  const p = [[0, 0], [L, 0], [L - W, -W], [W, -W]].map(q => [q[0] + 0.1, q[1]]);
+  f.board([[L + 0.1, 0], [L - W + 0.1, -W], [W + 0.1, -W], [0.1, 0]], { seed: 2 });
+  f.line(p[0], p[3], 'cutline'); f.line(p[1], p[2], 'cutline');
+  f.rect(L + 0.1, -2.2, 1.5, 3, 'tool-d');
+  f.note([L + 0.85, -2.2], [16, 18], 'stop block, clamped');
+  f.dim([0.1, 0], [L + 0.1, 0], 1.6, '31″ from blade to stop', { size: 11 });
+  f.text([L / 2, -W / 2], 'keeper', { cls: 'onwood', size: 11 });
+  return f.svg('Stop block on a miter saw fence');
+};
+
+FIG.msCalibrate = () => {
+  const a = fig(24);
+  a.rect(-6, 0, 12, 0.8, 'fence'); a.rect(-6, -6, 12, 6, 'table');
+  band(a, [0, 0.2], [0, -5.5], 0.14, 'blade');
+  a.poly([[0.12, 0], [3.6, 0], [3.6, -0.5], [0.62, -0.5], [0.62, -5], [0.12, -5]], 'tool');
+  a.note([2, 0], [20, -16], 'square on the fence');
+  a.note([0.37, -4], [30, 12], '…and flat on the blade body');
+  const b = fig(24), W = 5.5, e = 2.5;
+  b.plank(-6, 0, 6, W, { seed: 1 });
+  b.board([[0, 0], [6, 0], [6, W], [W * K.tan(2 * e), W]], { seed: 2, cls: 'wood2' });
+  b.poly([[0, 0], [W * K.tan(2 * e), W], [0, W]], 'gap');
+  b.note([0.12, W * 0.8], [22, -18], 'gap = 2 × saw error');
+  b.text([-3, W / 2], 'piece A', { cls: 'onwood', size: 11 }); b.text([3.4, W / 2], 'piece B, flipped', { cls: 'onwood', size: 11 });
+  return panels([[a.svg('Checking a miter saw blade with a square'), 'Check with a square (unplugged)'], [b.svg('Flip test for a miter saw'), 'Flip test (exaggerated)']]);
+};
+
+/* ---------- D2 Table saw ---------- */
+FIG.tsAnatomy = () => {
+  const f = fig(14);
+  tsTop(f, { fence: 6.5 });
+  f.rect(-5.9, 4, 1, 1, 'tool');
+  f.poly([[-9.5, 4.3], [-3.6, 4.3], [-3.6, 5.3], [-9.5, 5.3]], 'tool-d');
+  f.note([0, 13.5], [-36, -40], 'blade', { anchor: 'end' });
+  f.note([0, 18], [-40, -20], 'riving knife', { anchor: 'end' });
+  f.note([-6, 24], [-18, -10], 'miter slot', { anchor: 'end' });
+  f.note([-6.5, 4.8], [-18, 18], 'miter gauge', { anchor: 'end' });
+  f.note([7.3, 24], [16, -10], 'rip fence');
+  f.note([1.6, 9], [34, 14], 'throat plate');
+  f.note([0.9, 13.5], [42, -34], 'teeth come toward you');
+  f.text([0, -3.3], 'OPERATOR', { cls: 'tagt', size: 10 });
+  return f.svg('Table saw from above with its parts');
+};
+
+FIG.tsKickback = () => {
+  const a = fig(20);
+  const { c, R } = tsSide(a, 2.25);
+  a.plank(-10, 0, 9.2, 1.5, { seed: 2 });
+  a.plank(-0.8, 0, 9, 1.5, { seed: 3, cls: 'wood2' });
+  a.danger([[1.5, 0], [4.8, 0], [4.8, 2.6], [1.5, 2.6]], '');
+  a.arrow([-2.5, 2.8], [-2.5, 1.6]); a.text([-2.5, 3.3], 'front teeth push down', { size: 11, cls: 'lbl' });
+  a.arrow([3.2, 1.8], [3.2, 3.6]); a.text([3.2, 4.1], 'rear teeth rise', { size: 11, cls: 'cuttext halo' });
+  a.feed([-9.5, 2.6], [-6, 2.6], 'feed');
+  a.text([-6, -1.8], 'operator side', { size: 10, cls: 'lbl-s' });
+  const b = fig(11);
+  tsTop(b, { fence: 4 });
+  b.danger([[-1.8, -9], [1.8, -9], [1.8, 10], [-1.8, 10]], '');
+  b.text([0, -5], 'kickback line', { cls: 'cuttext halo', size: 12, rot: -90 });
+  b.plank(0.07, 2, 3.93, 20, { seed: 4, grain: 90 });
+  b.disc([-5.5, -6.5], 1.6, 'hand'); b.text([-5.5, -9.2], 'stand here', { size: 11, cls: 'lbl-b' });
+  b.feed([2, -2], [2, 4]);
+  return panels([[a.svg('Side view of rising rear teeth'), 'Side view'], [b.svg('Kickback line on a table saw'), 'Top view']]);
+};
+
+FIG.tsPush = () => {
+  const a = fig(26);
+  tsSide(a, 1);
+  a.plank(-10, 0, 20, 0.75, { seed: 3 });
+  a.dim([7, 0.75], [7, 1], -0.6, '¼″ above the wood', { size: 11, flat: true });
+  a.dim([-8, 0], [-8, 0.75], 0.6, '¾″', { size: 11, flat: true });
+  const b = fig(11);
+  tsTop(b, { fence: 2.5 });
+  b.plank(0.07, 0.5, 2.43, 22, { grain: 90, seed: 5 });
+  b.poly([[-4, 6.2], [-0.02, 6.2], [-0.02, 7], [-4, 7]], 'tool');
+  for (let i = 0; i < 7; i++) b.line([-0.3 - i * 0.45, 7], [-0.1 - i * 0.45, 8.6], 'tool-o');
+  b.rect(-5, 6.2, 1, 3, 'tool-d');
+  b.note([-2, 7.4], [-30, -10], 'featherboard: ahead of the blade', { anchor: 'end' });
+  const ps = [[0.9, -3], [1.6, -3], [1.6, 0.5], [1.25, 0.9], [0.9, 0.5]];
+  b.poly(ps, 'tool-d');
+  b.note([1.25, -2], [30, 12], 'push stick');
+  b.feed([1.25, -6], [1.25, -3.4]);
+  return panels([[a.svg('Blade height above the wood'), 'Blade height (side view)'], [b.svg('Featherboard and push stick'), 'Featherboard and push stick (top view)']]);
+};
+
+FIG.tsSetup = () => {
+  const a = fig(14);
+  tsTop(a, { fence: null, spin: false });
+  a.circle([0.05, 10.4], 3, 'dot'); a.circle([0.05, 16.6], 3, 'dot');
+  a.dim([-5.65, 10.4], [0, 10.4], -1, 'front', { size: 11 });
+  a.dim([-5.65, 16.6], [0, 16.6], 1, 'back', { size: 11 });
+  a.text([0, -2.5], 'same tooth, front and back', { size: 11, cls: 'lbl-s' });
+  const b = fig(40);
+  b.rect(-2.5, -0.4, 5, 0.4, 'table');
+  band(b, [0, 0], [0, 2.6], 0.12, 'blade');
+  b.poly([[0.07, 1], [0.87, 1], [0.87, 1.8], [0.07, 1.8]], 'screen'); b.text([0.47, 1.4], '0.0', { cls: 'lcd', size: 10 });
+  b.poly([[1.4, 0], [2.2, 0], [2.2, 0.8], [1.4, 0.8]], 'hidden-l'); b.text([1.8, 0.4], 'zero', { size: 9, cls: 'lbl-s' });
+  b.right([0, 0], 0, 10);
+  b.note([0.87, 1.4], [16, -12], 'reads 0.0° = blade square');
+  return panels([[a.svg('Checking the blade is parallel to the miter slot'), 'Blade parallel to the slot'], [b.svg('Squaring the blade with a digital gauge'), 'Blade square to the table (front view)']]);
+};
+
+FIG.tsRip = () => {
+  const a = fig(10);
+  tsTop(a, { fence: 3.5 });
+  a.plank(-2.5, 1, 6, 24, { grain: 90, seed: 2 });
+  a.rect(-0.06, 1, 0.12, 24, 'cut');
+  a.text([1.75, 22], 'keeper', { cls: 'onwood', size: 11, rot: -90 });
+  a.text([-1.3, 22], 'offcut', { cls: 'onwood', size: 11, rot: -90 });
+  a.feed([0.8, -4], [0.8, 0.5]);
+  const b = fig(10);
+  tsTop(b, { fence: 6.8 });
+  b.plank(-2.6, 1, 9.4, 24, { grain: 90, seed: 3 });
+  b.rect(-2.6, 1, 2.54, 24, 'waste');
+  b.poly([[-7.3, 6], [-6.5, 6], [-6.5, 7.2], [-3.2, 7.2], [-3.2, 8], [-7.3, 8]], 'tool-d');
+  b.note([-3.2, 7.6], [-26, -30], 'thin-rip jig sets the strip width', { anchor: 'end' });
+  b.text([-1.3, 20], 'thin strip falls free', { cls: 'cuttext halo', size: 10, rot: -90 });
+  b.feed([3, -4], [3, 0.5]);
+  return panels([[a.svg('Standard rip on a table saw'), 'Standard rip'], [b.svg('Cutting thin strips on the far side of the blade'), 'Thin strips: cut on the far side']]);
+};
+
+FIG.tsBevel = () => {
+  const one = (away) => {
+    const f = fig(30), t = 0.75, bv = 45, fx = away ? 3.2 : -3.2;
+    f.rect(-4.6, -0.5, 9.2, 0.5, 'table');
+    f.rect(away ? fx : fx - 1, 0, 1, 2.4, 'fence');
+    const x0 = away ? -2.4 : fx, x1 = away ? fx : 2.4;
+    f.plank(x0, 0, x1 - x0, t, { seed: away ? 1 : 2 });
+    const u = K.dir(90 + bv);
+    band(f, [0, 0], K.mul(u, 2.6), 0.1, 'blade');
+    if (away) f.note([-1.4, 0.35], [-10, -30], 'free side: nothing boxes it in', { anchor: 'end' });
+    else { f.danger([[fx, 0], [0, 0], [-t, t], [fx, t]], ''); f.note([-1.9, 0.4], [-10, -34], 'piece trapped between blade and fence', { anchor: 'end' }); }
+    f.text([away ? fx + 0.5 : fx - 0.5, 2.8], 'FENCE', { cls: 'tagt', size: 10 });
+    return f.svg(away ? 'Blade tilting away from the fence' : 'Blade tilting toward the fence');
+  };
+  return panels([[one(true), '<b>Do</b>: blade tilts away from the fence'], [one(false), '<b>Don’t</b>: blade tilts toward the fence']]);
+};
+
+FIG.tsMiterGauge = () => {
+  const a = fig(10);
+  tsTop(a, { fence: 6.5, spin: false });
+  a.rect(6.5 - 2.4, 1, 2.4, 2, 'tool-d');
+  a.note([5.3, 2], [30, 14], 'stop block before the blade');
+  a.plank(-4, 3, 10.5 - 2.4 - 0.1 + 0.001 - 0.001, 3.5, { seed: 2 });
+  a.poly([[-6.4, 2], [-5.65, 2], [-5.65, 6.6], [-6.4, 6.6]], 'tool-d');
+  a.rect(-9, 2.2, 8.8, 0.8, 'tool');
+  a.feed([-3, -3], [-3, 1.6]);
+  a.note([-8, 2.6], [-14, 18], 'miter gauge + face', { anchor: 'end' });
+  const dial = (square) => {
+    const f = fig(26), R = 3;
+    const pts = []; for (let t = 0; t <= 180; t += 6) pts.push(K.mul(K.dir(t), R)); f.poly(pts, 'tool-t');
+    for (let t = 0; t <= 180; t += 15) f.line(K.mul(K.dir(t), R), K.mul(K.dir(t), R - (t % 45 ? 0.3 : 0.55)), 'tick');
+    [0, 45, 90, 135, 180].forEach(t => f.text(K.mul(K.dir(t), R - 1), String(square === 0 ? Math.abs(90 - t) : (t <= 90 ? t : 180 - t) === 90 ? 90 : Math.abs(t <= 90 ? t : 180 - t)), { size: 10, cls: 'lbl' }));
+    band(f, [0, 0], [0, R + 0.6], 0.1, 'cutline');
+    f.text([0, R + 1.1], square === 0 ? 'square cut reads 0' : 'square cut reads 90', { size: 11, cls: 'lbl-b' });
+    return f.svg('Miter gauge scale');
+  };
+  return panels([[a.svg('Crosscut with the miter gauge'), 'Crosscut: miter gauge, stop block ahead of the blade'], [dial(0) + dial(90), 'Two gauge conventions: check yours with a square']]);
+};
+
+FIG.tsSled = () => {
+  const a = fig(9);
+  tsTop(a, { fence: null });
+  a.rect(-12, 4, 24, 20, 'tool-t');
+  a.rect(-12, 21, 24, 2, 'fence');
+  a.rect(-1.5, 23, 3, 2.5, 'tool-d');
+  a.rect(-12, 4, 24, 1.2, 'tool-d');
+  a.plank(-9, 12, 18, 9, { seed: 4 });
+  a.note([0, 24], [24, -14], 'blade guard block at the back');
+  a.note([-10, 22], [-10, -18], 'fence square to the blade', { anchor: 'end' });
+  const b = fig(14), L = 12;
+  b.plank(0, 0, L, L, { seed: 6 });
+  const e = 0.35;
+  b.poly([[0, L], [L, L], [L, L - 0.9], [0, L - 0.9 + e]], 'waste');
+  [['1', [L / 2, -0.5]], ['2', [L + 0.5, L / 2]], ['3', [L / 2, L + 1.4]], ['4', [-0.5, L / 2]]].forEach(([t, p]) => b.text(p, t, { cls: 'lbl-b', size: 13 }));
+  b.text([L / 2, L - 0.45], '5: strip', { cls: 'cuttext halo', size: 11 });
+  b.dim([L, L - 0.9], [L, L], -0.8, 'A', { size: 11, flat: true });
+  b.dim([0, L - 0.9 + e], [0, L], 0.8, 'B', { size: 11, flat: true });
+  b.lines([L / 2, L / 2 - 1], ['turn the panel the same way', 'after each cut'], { cls: 'onwood', size: 11 });
+  return panels([[a.svg('Crosscut sled'), 'Crosscut sled'], [b.svg('Five cut test panel'), 'The 5-cut test']]);
+};
+
+FIG.tsMiterSled = () => {
+  const f = fig(10);
+  tsTop(f, { fence: null });
+  f.rect(-12, 3, 24, 21, 'tool-t');
+  const apex = [0, 20];
+  band(f, apex, K.add(apex, K.mul(K.dir(225), 14)), 0.9, 'fence');
+  band(f, apex, K.add(apex, K.mul(K.dir(315), 14)), 0.9, 'fence');
+  f.angle(apex, 3, 225, 315, '90°', { lr: 16 });
+  const u = K.dir(225), n = [-u[1], u[0]];
+  const p0 = K.add(apex, K.add(K.mul(u, 3), K.mul(n, 0.45)));
+  f.board([p0, K.add(p0, K.mul(u, 10)), K.add(K.add(p0, K.mul(u, 10)), K.mul(n, 2.5)), K.add(K.add(p0, K.mul(u, 0.2)), K.mul(n, 2.5))].map(q => q), { grain: 225, seed: 3 });
+  f.note([-7, 12], [-26, 10], 'left fence: one end', { anchor: 'end' });
+  f.note([7, 12], [26, 10], 'right fence: the mating end');
+  return f.svg('Miter sled with two fences at 90 degrees');
+};
+
+FIG.tsTaperJig = () => {
+  const f = fig(16), ang = F.taperAngle(0.375, 24);
+  const fx = 9;
+  f.rect(-4, -2, 18, 32, 'table');
+  f.rect(fx, -2, 1.6, 32, 'fence');
+  const jig = [[fx - 3, 0], [fx, 0], [fx, 28], [fx - 3, 28]];
+  f.poly(jig, 'tool-t');
+  const hinge = [fx - 3, 28], u = K.dir(-90 - ang * 6), n = [-u[1], u[0]];
+  const arm = [hinge, K.add(hinge, K.mul(u, 28)), K.add(K.add(hinge, K.mul(u, 28)), K.mul(n, -1.5)), K.add(hinge, K.mul(n, -1.5))];
+  f.poly(arm, 'tool');
+  f.circle(hinge, 3, 'dot'); f.note(hinge, [-10, -16], 'hinge', { anchor: 'end' });
+  const legEdge = K.add(hinge, K.mul(n, -1.5));
+  f.board([legEdge, K.add(legEdge, K.mul(u, 26)), K.add(K.add(legEdge, K.mul(u, 26)), K.mul(n, -1.75)), K.add(legEdge, K.mul(n, -1.75))], { grain: -90 - ang * 6, seed: 5 });
+  // the blade stands where the leg's outer edge passes y = 9, so everything left of it is taper waste
+  const outer = K.add(legEdge, K.mul(n, -1.75)), bx = K.meet(outer, u, [0, 9], [1, 0])[0] + 0.45;
+  band(f, [bx, 6], [bx, 12], 0.14, 'blade');
+  f.note([bx, 9], [-26, 10], 'blade', { anchor: 'end' });
+  const at = K.add(hinge, K.mul(u, 12));
+  f.dim([fx - 3, 28 - 12], at, -0.8, '³⁄₁₆″ gap at 12″', { size: 11, flat: true });
+  f.feed([fx - 4, -6], [fx - 4, -2.4]);
+  f.text([fx - 1.5, 3], 'jig rides the fence', { size: 10, cls: 'lbl', rot: -90 });
+  f.text([4, 24], 'angle drawn 6× larger', { size: 10, cls: 'lbl-s' });
+  return f.svg('Hinged taper jig against the fence');
+};
+
+FIG.tsDado = () => {
+  const end = (kind) => {
+    const f = fig(34), W = 3.5, T = 0.75;
+    let pts;
+    if (kind === 'rabbet') pts = [[0, 0], [W, 0], [W, T], [0.5, T], [0.5, T - 0.375], [0, T - 0.375]];
+    else pts = [[0, 0], [W, 0], [W, T], [2, T], [2, T - 0.25], [1.25, T - 0.25], [1.25, T], [0, T]];
+    f.poly(pts, kind === 'dado' ? 'wood' : 'endface'); f.poly(pts, 'edge');
+    if (kind === 'dado') for (let x = 0.2; x < W; x += 0.35) f.line([x, 0.05], [x, x > 1.2 && x < 2.05 ? T - 0.3 : T - 0.05], 'grain');
+    f.text([W / 2, -0.4], kind === 'groove' ? 'groove: along the grain' : kind === 'dado' ? 'dado: across the grain' : 'rabbet: a step on an edge', { size: 11, cls: 'lbl' });
+    return f.svg(kind);
+  };
+  return panels([[end('groove'), '<b>Groove</b>'], [end('dado'), '<b>Dado</b>'], [end('rabbet'), '<b>Rabbet</b>']]);
+};
+
+FIG.tsSheet = () => {
+  const f = fig(4);
+  f.rect(-15, 0, 30, 27, 'table');
+  band(f, [0, 10], [0, 17], 0.3, 'blade');
+  f.rect(4, -3, 1.6, 33, 'fence');
+  f.rect(-15, 27, 30, 36, 'tool-t'); f.text([0, 55], 'outfeed support', { size: 11, cls: 'lbl' });
+  f.rect(-50, 0, 30, 27, 'tool-t'); f.text([-35, 3], 'side support', { size: 11, cls: 'lbl' });
+  f.plank(-44, -30, 48, 96 / 2 + 30, { grain: 90, seed: 7, sp: 6 });
+  f.feed([-20, -34], [-20, -24]);
+  f.text([-20, -10], 'half sheet 48″ × 48″', { cls: 'onwood', size: 11 });
+  return f.svg('Ripping a sheet with outfeed and side support');
+};
+
+FIG.tsBlades = () => {
+  const row = (atb) => {
+    const f = fig(60), w = 0.4;
+    for (let i = 0; i < 5; i++) {
+      const x = i * 0.7, l = i % 2 ? 0.14 : -0.14;
+      const top = atb ? [[x, 0.9 + (i % 2 ? 0 : 0.12)], [x + w, 0.9 + (i % 2 ? 0.12 : 0)]] : [[x, 1], [x + w, 1]];
+      f.poly([[x, 0], [x + w, 0]].concat([top[1], top[0]]), 'metal');
+    }
+    f.text([1.55, -0.25], atb ? 'ATB: alternating bevel, slices fibres' : 'FTG: flat top, chisels along the grain', { size: 11, cls: 'lbl' });
+    return f.svg(atb ? 'Alternating bevel teeth' : 'Flat top teeth');
+  };
+  return panels([[row(false), '<b>Rip</b> · about 24 teeth'], [row(true), '<b>Crosscut</b> · 60–80 teeth']]);
+};
+
+/* ---------- D3 Circular saw ---------- */
+FIG.csSetup = () => {
+  const a = fig(24), R = 3.625, c = [1, -0.25 + R];
+  a.plank(-7, 0, 14, 1.5, { seed: 2 });
+  a.disc(c, R, 'bladebody');
+  a.rect(-3.5, 1.5, 9, 0.3, 'tool-d');
+  const guard = []; for (let t = 0; t <= 180; t += 10) guard.push(K.add(c, K.mul(K.dir(t), R + 0.5))); a.pline(guard, 'tool-o');
+  a.spin(c, R + 0.9, 200, 250);
+  a.dim([6.2, 0], [6.2, -0.25], -0.6, '¼″ below', { size: 11, flat: true });
+  a.feed([-6, 3.2], [-2.5, 3.2], 'saw moves this way', { dy: -12 });
+  a.note([c[0] + 2.2, -0.15], [30, 18], 'teeth come up through the wood: good face down');
+  const b = fig(34), bv = 45;
+  b.plank(-3, 0, 6, 1.5, { seed: 3 });
+  b.poly([[-3.4, 1.5], [3.4, 1.5], [3.4, 1.72], [-3.4, 1.72]], 'tool-d');
+  band(b, [1.0, -0.3], K.add([1.0, -0.3], K.mul(K.dir(90 + bv), 3.2)), 0.1, 'blade');
+  b.angle([1, -0.3], 1.8, 90, 90 + bv, '45°', { lr: 14 });
+  b.line([1, -0.3], [1, 2.4], 'sq');
+  b.text([0, 2.4], 'base plate flat on the board', { size: 11, cls: 'lbl', dy: -8 });
+  return panels([[a.svg('Circular saw depth setting'), 'Depth (side view)'], [b.svg('Circular saw bevel'), 'Bevel (front view)']]);
+};
+
+FIG.csSquare = () => {
+  const f = fig(22), W = 5.5, xs = 4;
+  f.plank(-3, 0, 17, W, { seed: 4 });
+  f.line([xs + 1.5, -0.4], [xs + 1.5, W + 0.4], 'pencil');
+  speedSquareAt(f, [xs, W], 180);
+  f.rect(xs, -1, 6.5, 8.2, 'tool-t');
+  band(f, [xs + 1.55, -1.6], [xs + 1.55, 7.6], 0.1, 'blade-g');
+  f.rect(xs + 1.55, 0, 8.45, W, 'waste');
+  f.note([xs, 3], [-24, 0], 'square guides the base plate', { anchor: 'end' });
+  f.note([xs + 1.55, 6.8], [26, -14], 'blade on the waste side of the line');
+  f.feed([xs + 4, -4], [xs + 4, -1.4], 'push');
+  return f.svg('Speed square as a circular saw guide');
+};
+
+FIG.csSupport = () => {
+  const horse = (f, x) => { f.poly([[x - 1.5, -6], [x - 0.3, 0], [x + 0.3, 0], [x + 1.5, -6]], 'tool-o'); f.rect(x - 1.8, -0.5, 3.6, 0.5, 'tool'); };
+  const a = fig(12);
+  horse(a, -14); horse(a, 14);
+  const sag = 1.2;
+  a.board([[-18, 0], [-0.2, -sag], [-0.2, 1.5 - sag], [-18, 1.5]], { seed: 1 });
+  a.board([[0.2, -sag], [18, 0], [18, 1.5], [0.2, 1.5 - sag]], { seed: 2 });
+  a.poly([[-0.25, 1.5 - sag], [0.25, 1.5 - sag], [0.05, -sag + 0.2]], 'gap');
+  a.note([0, 1.5 - sag], [0, -30], 'kerf closes: pinch', { cls: 'cuttext', anchor: 'middle' });
+  const b = fig(12);
+  horse(b, -14); horse(b, 2);
+  b.plank(-18, 0, 22, 1.5, { seed: 3 });
+  b.board([[4.2, 0], [14, -2.4], [14, -0.9], [4.2, 1.5]], { seed: 4, cls: 'wood2', grain: -14 });
+  b.line([4.1, -0.3], [4.1, 1.9], 'cut');
+  b.note([9, -0.8], [16, 20], 'offcut drops away: kerf opens');
+  return panels([[a.svg('Cutting between supports pinches the blade'), '<b>Don’t</b>: cut between supports'], [b.svg('Support next to the cut'), '<b>Do</b>: support beside the cut, let the offcut fall']]);
+};
+
+FIG.csRip = () => {
+  const f = fig(5), W = 96, H = 48, y = 23.5, off = 1.5;
+  f.plank(0, 0, W, H, { seed: 9, sp: 7 });
+  f.line([0, y], [W, y], 'pencil');
+  f.rect(4, y + off, 88, 1.2, 'tool');
+  f.rect(10, y + off - 0.4, 3, 2, 'tool-d'); f.rect(80, y + off - 0.4, 3, 2, 'tool-d');
+  f.rect(40, y - 4, 7, 5.5, 'tool-t');
+  band(f, [38, y], [49, y], 0.3, 'blade');
+  f.dim([60, y], [60, y + off], -2, '1½″ base offset', { size: 11, flat: true });
+  f.feed([30, y - 6], [38, y - 6], 'saw moves this way', { dy: 14 });
+  f.text([W / 2, 8], 'offcut side', { cls: 'onwood', size: 11 }); f.text([W / 2, 38], 'keeper side', { cls: 'onwood', size: 11 });
+  return f.svg('Straightedge guide for a circular saw rip');
+};
+
+/* ---------- D4 Hand saws ---------- */
+FIG.hsSaws = () => {
+  const saw = (pull) => {
+    const f = fig(28), L = 10;
+    const teeth = []; for (let i = 0; i <= 40; i++) { const x = i * L / 40; teeth.push([x, 0]); if (i < 40) teeth.push([x + (pull ? 0.07 : 0.18), -0.22]); }
+    f.poly([[0, 0.9]].concat(teeth.map(p => p), [[L, 0.9]]), 'metal');
+    f.rect(pull ? L : -2.4, 0.1, 2.4, 0.9, pull ? 'wood2' : 'wood');
+    f.arrow(pull ? [7, -0.9] : [3, -0.9], pull ? [3, -0.9] : [7, -0.9]);
+    f.text([5, -1.4], pull ? 'cuts on the pull (Japanese)' : 'cuts on the push (Western)', { size: 11, cls: 'lbl' });
+    return f.svg(pull ? 'Pull saw' : 'Push saw');
+  };
+  const b = fig(24);
+  b.plank(-2, -2, 12, 2, { seed: 2 });
+  b.line([5, -2.2], [5, 0.3], 'pencil');
+  band(b, [5.08, 0], K.add([5.08, 0], K.mul(K.dir(160), 7)), 0.12, 'metal');
+  b.hand([4.4, 1.1], 200, 2);
+  b.note([5.1, 0], [30, -16], 'start on the waste side, low angle');
+  return panels([[saw(false) + saw(true), 'Tooth direction'], [b.svg('Starting a hand saw cut'), 'Starting the cut']]);
+};
+
+FIG.hsMiterbox = () => {
+  const f = fig(22), L = 14, W = 4;
+  f.rect(0, 0, L, W, 'tool-t');
+  f.rect(0, -0.7, L, 0.7, 'tool'); f.rect(0, W, L, 0.7, 'tool');
+  const slot = (x, a, lbl, below) => {
+    const u = K.dir(90 + a);
+    f.line(K.add([x, W / 2], K.mul(u, -(W / 2 + 0.7) / u[1])), K.add([x, W / 2], K.mul(u, (W / 2 + 0.7) / u[1])), 'cut');
+    f.text(K.add([x, W / 2], K.mul(u, (below ? -1 : 1) * (W / 2 + 1.5) / u[1])), lbl, { size: 11, cls: 'lbl-b' });
+  };
+  slot(3.3, 45, '45°'); slot(7, 0, '90°'); slot(10.7, -45, '45°'); slot(11.6, -22.5, '22.5°', true);
+  f.plank(0.3, W - 1.6, L - 0.6, 1.5, { seed: 3 });
+  f.note([2, W - 0.1], [-16, -28], 'work tight to the back wall', { anchor: 'end' });
+  return f.svg('Miter box with angle slots');
+};
+
+/* ---------- D5 Jigsaw and coping saw ---------- */
+FIG.jsJigsaw = () => {
+  const a = fig(26), W = 6, r = 3;
+  const pts = [[0, 0], [8, 0]]; for (let t = 0; t <= 90; t += 6) pts.push([8 - r + r * Math.cos(t * Math.PI / 180), W - r + r * Math.sin(t * Math.PI / 180)]);
+  pts.push([0, W]);
+  a.board(pts, { seed: 3 });
+  a.poly([[8 - r, W], [8, W], [8, W - r]].concat(Array.from({ length: 16 }, (_, i) => { const t = i * 6; return [8 - r + r * Math.cos(t * Math.PI / 180), W - r + r * Math.sin(t * Math.PI / 180)]; })), 'waste');
+  [15, 45, 75].forEach(t => { const p = [8 - r + (r + 0.05) * Math.cos(t * Math.PI / 180), W - r + (r + 0.05) * Math.sin(t * Math.PI / 180)]; const q = t < 30 ? [8, p[1]] : t > 60 ? [p[0], W] : [8, W]; a.line(q, p, 'cutline'); });
+  a.note([7.6, W - 0.4], [24, -16], 'relief cuts first');
+  const b = fig(34), bv = 45;
+  b.plank(-2.5, 0, 5, 0.75, { seed: 4 });
+  b.poly([[-1.2, 0.75], [2.2, 0.75], [2.2, 0.95], [-1.2, 0.95]], 'tool-d');
+  band(b, [0.2, -0.8], K.add([0.2, -0.8], K.mul(K.dir(90 - bv), 2.2)), 0.08, 'blade');
+  b.angle([0.2, -0.8], 1.1, 90 - bv, 90, '45°', { lr: 12 });
+  b.line([0.2, -0.8], [0.2, 1.4], 'sq');
+  return panels([[a.svg('Relief cuts for a tight curve'), 'Relief cuts (top view)'], [b.svg('Jigsaw base tilted for a bevel'), 'Bevel (front view)']]);
+};
+
+FIG.jsCoping = () => {
+  const f = fig(26);
+  band(f, [0, 0], [0, 4.5], 0.25, 'metal'); band(f, [0, 4.5], [5.2, 4.5], 0.25, 'metal'); band(f, [5.2, 4.5], [5.2, 0], 0.25, 'metal');
+  f.line([0, 0], [5.2, 0], 'cutline');
+  for (let x = 0.2; x < 5.1; x += 0.25) f.line([x, 0], [x - 0.08, -0.12], 'blade-g');
+  f.rect(5.05, -2.8, 0.3, 2.8, 'tool-d');
+  f.poly([[4.8, -2.8], [5.6, -2.8], [5.6, -6], [4.8, -6]], 'wood2');
+  f.arrow([3.6, -0.7], [1.2, -0.7]);
+  f.text([2.4, -1.2], 'teeth point toward the handle: cuts on the pull', { size: 11, cls: 'lbl' });
+  f.note([2.6, 4.5], [0, -20], 'frame keeps the blade in tension', { anchor: 'middle' });
+  f.note([5.2, -4.4], [18, 0], 'handle: turn to tighten');
+  return f.svg('Coping saw');
 };
 
 </script>

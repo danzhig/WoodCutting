@@ -47,5 +47,26 @@ near('irregular corners sum', 80 + 100 + 95 + 85, 360);
 near('taper angle 3/8 over 24', F.taperAngle(0.375, 24), 0.895, 0.002);
 near('taper per foot', F.taperPerFoot(0.375, 24), 0.1875, 0.0001);
 
+// ---- Guide B ----
+near('slope 3.5 in 12', F.pitchDeg(3.5), 16.26, 0.005);
+near('diagonal 48×30', F.diagonal(48, 30), 56.60, 0.005);
+same('diagonal 48×30 frac', K.frac(F.diagonal(48, 30)), '56⅝″');
+near('combo flip error angle', K.atan((1 / 64) / 6), 0.149, 0.002);
+near('protractor 62 → saw', F.sawToGeo(62), 28);
+near('bay 131 → saw', F.sawFromCorner(131), 24.5);
+near('inside 91 → saw', F.sawFromCorner(91), 44.5);
+near('outside 88 → saw', F.sawFromCorner(88), 46);
+
+// ---- Guide D ----
+near('capacity at 45', F.capacityAtMiter(5.5, 45), 3.89, 0.01);
+near('capacity at 22.5', F.capacityAtMiter(5.5, 22.5), 5.08, 0.01);
+near('miter saw flip error', K.atan((1 / 64) / 5.5), 0.163, 0.002);
+near('octagon from 0.163°', 16 * 0.163, 2.6, 0.02);
+near('5-cut error per cut', F.fiveCutError(0.012, 18), 0.0095, 0.0002);
+near('5-cut fence shift', F.fenceShift(0.012, 18, 24), 0.004, 0.0002);
+near('taper jig gap at 12', F.jigOpening(F.taperAngle(0.375, 24), 12), 0.1875, 0.0005);
+near('rip 2×6 in half', (5.5 - 0.125) / 2, 2.6875);
+near('bevel 22.5 through 3/4', F.offset(0.75, 22.5), 0.311, 0.001);
+
 console.log(`${n - fails}/${n} checks passed`);
 process.exit(fails ? 1 : 0);
