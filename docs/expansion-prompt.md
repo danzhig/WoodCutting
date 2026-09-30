@@ -315,9 +315,9 @@ The single file is about to grow several times over, so switch to a source folde
    - The one-topic-at-a-time reader: page turning, breadcrumb, progress, contents drawer, search, deep links, resume, print choices.
    - Source folder and build step.
    - Existing content moved into Guides A, B, C, D1 and I, with no loss.
-2. **Part B (measuring & layout tools)** and **Part D (saws, including the full table-saw section).**
-3. **Parts E and F (trim, joining).**
-4. **Part G (framing & construction).**
+2. **Guide B (Measure & Mark)** and **Guide D (The Saw Guide, including the full table-saw section).**
+3. **Guides E and F (Trim & Finish, Joining Angled Work).**
+4. **Guide G (Framing & Construction).**
 5. **Guide H (spindle turning)** and the expanded **Guide I** reference, calculators and glossary.
 
 ## 10. Decisions (confirmed)
