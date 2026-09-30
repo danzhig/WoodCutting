@@ -68,5 +68,18 @@ near('taper jig gap at 12', F.jigOpening(F.taperAngle(0.375, 24), 12), 0.1875, 0
 near('rip 2×6 in half', (5.5 - 0.125) / 2, 2.6875);
 near('bevel 22.5 through 3/4', F.offset(0.75, 22.5), 0.311, 0.001);
 
+// ---- Guide E ----
+near('coping: 93° corner gap', 3.5 * K.tan(3), 0.183, 0.002);
+near('casing head SP', 30 + 2 * 3 / 16, 30.375);
+near('casing head LP', 30.375 + 2 * 2.5, 35.375);
+near('crown from framing square', K.atan(2.75 / 3.5), 38.16, 0.01);
+near('scarf overlap 45 on 5/8', F.offset(0.625, 45), 0.625);
+near('crown nested 135', F.crownNested(135), 22.5);
+near('crown 52/38 flat miter', F.compoundA(38, F.sawFromCorner(90)).miter, 31.62, 0.005);
+
+// ---- Guide F ----
+near('1×8 width change', F.movement(7.25, 0.003, 4), 0.087, 0.001);
+near('1×8 heel gap', Math.SQRT2 * F.movement(7.25, 0.003, 4), 0.123, 0.002);
+
 console.log(`${n - fails}/${n} checks passed`);
 process.exit(fails ? 1 : 0);
