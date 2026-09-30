@@ -3,7 +3,7 @@
      Formula sheet, tables, calculators and glossary. The glossary builds
      itself from every <dfn> in the handbook (see reader.js).
      ===================================================================== -->
-<section class="guide" data-letter="I" data-title="The Reference Shelf" data-sub="Every formula and table in one place, calculators for the common jobs, and a glossary of every term the handbook defines.">
+<section class="guide" data-letter="I" data-title="The Reference Shelf" data-sub="Every formula and table in one place, calculators for fractions, frames, corners, pitch, compound cuts, tapers, stairs, rafters and lathe speed, and a glossary of every term the handbook defines.">
   <div class="guide-intro">
     <div class="prose"><p>Quick look-ups for when you are at the saw. Each formula links back to the page that explains it.</p></div>
   </div>
@@ -35,6 +35,42 @@
           <li><b>Compound (tilt S, A = 180° ÷ n)</b><code>miter = atan(sin S · tan A)</code><code>bevel = asin(cos S · sin A)</code><a class="ref" href="#c-compound-settings"></a></li>
           <li><b>Taper angle</b><code>arctan(removed ÷ length)</code><a class="ref" href="#c-taper"></a></li>
         </ul></div>
+        <div class="card"><h3>Measure, mark, saws</h3><ul class="fl">
+          <li><b>Burning an inch</b><code>length = reading − 1″</code><a class="ref" href="#b-tape-hook"></a></li>
+          <li><b>Flip test (square or level)</b><code>error = difference ÷ 2</code><a class="ref" href="#b-combo-square"></a></li>
+          <li><b>Square check</b><code>diagonal = √(w² + h²)</code><a class="ref" href="#b-diagonals"></a></li>
+          <li><b>3-4-5</b><code>3² + 4² = 5²</code><a class="ref" href="#b-345"></a></li>
+          <li><b>Miter saw width at miter m</b><code>≈ capacity × cos m</code><a class="ref" href="#d-ms-capacity"></a></li>
+          <li><b>5-cut sled test</b><code>error per cut = (A − B) ÷ 4</code><a class="ref" href="#d-ts-sled"></a></li>
+          <li><b>Taper jig</b><code>gap = distance × tan(angle)</code><a class="ref" href="#d-ts-taper-jig"></a></li>
+          <li><b>Straightedge guide</b><code>cut line + base offset</code><a class="ref" href="#d-cs-rip"></a></li>
+        </ul></div>
+        <div class="card"><h3>Trim and joining</h3><ul class="fl">
+          <li><b>Inside / outside corner</b><code>front = back ∓ t × tan(saw)</code><a class="ref" href="#e-in-out-corners"></a></li>
+          <li><b>Scarf overlap</b><code>t × tan(bevel)</code><a class="ref" href="#e-scarf"></a></li>
+          <li><b>Casing head</b><code>SP–SP = opening + 2 × reveal</code><a class="ref" href="#e-casing"></a></li>
+          <li><b>Crown nested</b><code>miter = 90° − C ÷ 2, bevel 0</code><a class="ref" href="#e-crown-nested"></a></li>
+          <li><b>Wide miter gap</b><code>heel gap ≈ 1.4 × ΔW</code><a class="ref" href="#f-movement"></a></li>
+        </ul></div>
+        <div class="card"><h3>Framing</h3><ul class="fl">
+          <li><b>Layout line n</b><code>n × OC − ¾″</code><a class="ref" href="#g-stud-layout"></a></li>
+          <li><b>Wall height</b><code>stud + 1½″ × plates</code><a class="ref" href="#g-wall-height"></a></li>
+          <li><b>Header</b><code>RO width + 3″</code><a class="ref" href="#g-rough-opening"></a></li>
+          <li><b>Rafter run</b><code>span ÷ 2 − ridge ÷ 2</code><a class="ref" href="#g-rafter-length"></a></li>
+          <li><b>Rafter length</b><code>run × √(1 + (rise ÷ 12)²)</code><a class="ref" href="#g-rafter-length"></a></li>
+          <li><b>Bird’s mouth heel</b><code>seat × rise ÷ 12</code><a class="ref" href="#g-birdsmouth"></a></li>
+          <li><b>Hip slope</b><code>arctan(rise ÷ 16.97)</code><a class="ref" href="#g-hips"></a></li>
+          <li><b>Stairs</b><code>risers = ⌈rise ÷ 7½⌉, treads = risers − 1</code><a class="ref" href="#g-stair-math"></a></li>
+          <li><b>Stair comfort</b><code>2R + T ≈ 24–25″</code><a class="ref" href="#g-stair-terms"></a></li>
+          <li><b>Blocking</b><code>OC − 1½″</code><a class="ref" href="#g-braces-blocking"></a></li>
+        </ul></div>
+        <div class="card"><h3>Spindle turning</h3><ul class="fl">
+          <li><b>Speed</b><code>RPM ≈ 6,000 ÷ D to 9,000 ÷ D</code><a class="ref" href="#h-speed"></a></li>
+          <li><b>Octagon corner cut</b><code>0.293 × side</code><a class="ref" href="#h-blank"></a></li>
+          <li><b>Sizing cut depth</b><code>(D − d) ÷ 2 per side</code><a class="ref" href="#h-calipers"></a></li>
+          <li><b>Round taper half-angle</b><code>arctan((D₁ − D₂) ÷ 2L)</code><a class="ref" href="#h-taper"></a></li>
+          <li><b>Tenon</b><code>Ø = hole, length = depth − ⅛″</code><a class="ref" href="#h-tenon"></a></li>
+        </ul></div>
       </div>
       <p class="seealso"><b>See also</b><a class="ref" href="#i-tables"></a><a class="ref" href="#i-calculators"></a></p>
     </article>
@@ -47,7 +83,15 @@
         <div class="card"><h3>Compound (square box)</h3><div class="tablewrap"><table data-table="compoundMini"></table></div></div>
         <div class="card"><h3>Sixteenths → decimals</h3><div class="tablewrap"><table data-table="sixteenths"></table></div></div>
         <div class="card"><h3>Taper angles</h3><div class="tablewrap"><table data-table="taper"></table></div></div>
+        <div class="card"><h3>Lumber sizes</h3><div class="tablewrap"><table data-table="lumber"></table></div></div>
+        <div class="card"><h3>3-4-5 scaled up</h3><div class="tablewrap"><table data-table="threeFourFive"></table></div></div>
+        <div class="card"><h3>Crown by corner</h3><div class="tablewrap"><table data-table="crownCorners"></table></div></div>
+        <div class="card"><h3>Stud layout marks</h3><div class="tablewrap"><table data-table="studLayout"></table></div></div>
+        <div class="card"><h3>Rafters</h3><div class="tablewrap"><table data-table="rafterQuick"></table></div></div>
+        <div class="card"><h3>Stairs (7½″ target, 10½″ treads)</h3><div class="tablewrap"><table data-table="stairQuick"></table></div></div>
+        <div class="card"><h3>Lathe speeds</h3><div class="tablewrap"><table data-table="latheSpeed"></table></div></div>
       </div>
+      <p class="code-note">Framing and stair values are typical US (IRC) practice. Check your local code.</p>
     </article>
   </div>
 
@@ -87,7 +131,24 @@
             <label for="c-tlen">Taper length<input id="c-tlen" type="text" value="24"></label>
             <label for="c-faces">Sloping faces per direction<select id="c-faces"><option value="1" selected>1</option><option value="2">2</option></select></label></div>
             <output id="o-taper"></output></form></div>
+        <div class="card"><h3>Stairs</h3>
+          <form class="calc" id="calc-stairs"><div class="row">
+            <label for="c-rise">Total rise<input id="c-rise" type="text" value="42"></label>
+            <label for="c-tread">Tread (in)<input id="c-tread" type="number" step="0.25" value="10.5" inputmode="decimal"></label></div>
+            <output id="o-stairs"></output></form></div>
+        <div class="card"><h3>Common rafter</h3>
+          <form class="calc" id="calc-rafter"><div class="row">
+            <label for="c-span">Span<input id="c-span" type="text" value="24'"></label>
+            <label for="c-rrise">Rise per 12<input id="c-rrise" type="number" step="0.5" value="6" inputmode="decimal"></label>
+            <label for="c-ridge">Ridge (in)<input id="c-ridge" type="number" step="0.25" value="1.5" inputmode="decimal"></label>
+            <label for="c-oh">Overhang run<input id="c-oh" type="text" value="12"></label></div>
+            <output id="o-rafter"></output></form></div>
+        <div class="card"><h3>Lathe speed</h3>
+          <form class="calc" id="calc-lathe"><div class="row">
+            <label for="c-dia">Largest diameter<input id="c-dia" type="text" value="2"></label></div>
+            <output id="o-lathe"></output></form></div>
       </div>
+      <p class="code-note">Calculators follow the same formulas as the guides. Always check a result against a test cut or your plans.</p>
     </article>
   </div>
 

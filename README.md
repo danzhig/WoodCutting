@@ -12,9 +12,23 @@ The handbook is made of guides, each a small book on one subject. You read it li
 - **Turn pages** with the Previous/Next buttons at the bottom of every page, the ← → keys, or a swipe on a phone.
 - **Contents** (top left) lists every guide, section and topic, and searches titles, defined terms and text.
 - Every page has its own link (for example `plumb-and-square.html#c-offset`), and the handbook remembers where you stopped.
-- **Print** (top right) prints this page, this guide, or the whole handbook in an ink-saving scheme for white paper: line drawings, no filled backgrounds, figures never split across pages.
+- **Print** (top right) prints this page, this guide, or the whole handbook in an ink-saving scheme for white paper: line drawings, no filled backgrounds, each guide starting on a new page with its cover, and figures never split across pages. The whole handbook is about 147 US Letter pages. The browser’s own Print (Ctrl/Cmd+P) prints the page on screen.
 
 Every topic follows the same pattern: plain-language explanation → diagram → formula or steps → worked example with real numbers → common mistake, plus a safety note on any power-tool topic and links to related topics.
+
+## The guides (145 pages: home, 9 guide covers, 135 topics)
+
+| | Guide | Topics | Covers |
+| --- | --- | --- | --- |
+| A | Lumber & Numbers | 12 | Cut vocabulary, nominal vs actual sizes, grain, board defects, wood movement, reading a tape, fractions, cut lists |
+| B | Measure & Mark | 22 | Tape hook, story sticks, speed square, framing square, combination square, protractor, angle finders, sliding bevel, digital gauges, levels, plumb bobs, chalk lines, contour gauge, scribing, measuring corners and slopes, checking square |
+| C | The Angle Book | 18 | Half-angle rule, polygons, odd and irregular corners, braces, saw scale vs geometry, error build-up, offsets and lengths, pitch, plumb and level cuts, compound cuts, tapers |
+| D | The Saw Guide | 27 | Miter saw (safety, capacity, mirror pairs, stops, calibration), table saw (kickback, push sticks, setup, rips, bevels, miter gauge, sleds and the 5-cut method, taper jig, dadoes, sheet goods, blades), circular saw, hand saws, jigsaw, coping saw |
+| E | Trim & Finish | 11 | Inside and outside corners, measuring trim, coping, room order, scarf joints, returns, casing reveals, crown (spring angle, nested, flat) |
+| F | Joining Angled Work | 5 | Gluing end grain, reinforcing miters, nailing trim, clamping, wood movement in wide miters |
+| G | Framing & Construction | 21 | Layout, walls, rough openings, rafters, bird's mouth, rafter layout, hips, stairs, blocking, sheathing, decks and posts |
+| H | Spindle Turning | 15 | Lathe parts, safety, speed, blanks, mounting, tools, tool rest, riding the bevel, beads and coves, calipers, story sticks, tapers, tenons, sharpening, finishing |
+| I | The Reference Shelf | 4 | Formula sheet, tables, nine calculators, glossary (built automatically from every defined term) |
 
 ## Working on it
 

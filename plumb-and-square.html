@@ -2888,13 +2888,299 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
   </div>
 </section>
 
+<!-- src/guides/h-spindle-turning.html -->
+<!-- =====================================================================
+     GUIDE H · SPINDLE TURNING
+     ===================================================================== -->
+<section class="guide" data-letter="H" data-title="Spindle Turning" data-sub="The wood lathe for spindle work: parts, safety, speed, preparing and mounting a blank, the tools and how they cut, measuring with calipers, tapers, tenons, sharpening and finishing.">
+  <div class="guide-intro">
+    <div class="prose"><p>A lathe spins the wood while you hold the tool. This guide covers <dfn>spindle turning</dfn>: work where the grain runs along the lathe’s axis, such as table legs, tool handles, balusters, pens and candlesticks. (Bowl and faceplate turning, where the grain runs across the axis, use different tools and techniques and are not covered here.)</p></div>
+    <div class="keypoints"><h3>Key points</h3><ul>
+      <li>Face shield on, sleeves and hair secured, spin the work by hand, start slow, and stand out of the line of fire.</li>
+      <li>Speed: diameter (in) × RPM ≈ 6,000–9,000, capped by your lathe and by any vibration.</li>
+      <li>Ride the bevel and cut downhill, from larger diameter to smaller.</li>
+      <li>Size diameters with a parting tool and calipers; a round taper changes radius by half the change in diameter.</li>
+      <li>The spindle roughing gouge is for spindles only; never use it on bowls or faceplate work.</li>
+    </ul></div>
+  </div>
+
+  <div class="gsection" data-title="The lathe">
+    <article class="topic" id="h-anatomy" data-title="Parts of a wood lathe">
+      <div class="prose">
+        <ul>
+          <li><b>Bed</b> (ways): the rails everything slides along.</li>
+          <li><b>Headstock</b>: the motor end. Its <dfn>spindle</dfn> is threaded for chucks and faceplates, and hollow with a <dfn>Morse taper</dfn> (MT1 or MT2 on most small and mid-size lathes) that holds the <dfn>drive center</dfn>, a pointed center with sharp spurs that grip the wood.</li>
+          <li><b>Tailstock</b>: slides along the bed and locks. Its <dfn>quill</dfn> advances with a handwheel and holds the <dfn>live center</dfn>, a point on bearings that spins with the work.</li>
+          <li><b>Banjo</b> and <b>tool rest</b>: the banjo slides and locks on the bed; the rest sits in it and supports the tool.</li>
+          <li><b>Speed control</b> (belt steps or a dial) and often an <dfn>indexing</dfn> pin for dividing the work into equal parts.</li>
+        </ul>
+        <p>Two numbers describe a lathe: <dfn>swing</dfn> (twice the height from the bed to the center, the largest diameter it turns) and the distance between centers (the longest spindle).</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="latheAnatomy"></div>
+        <figcaption>A lathe from the front, with a spindle blank between centers.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A lathe with its centers 6″ above the bed and 20″ apart.</p>
+        <ol class="steps"><li>Swing: <span class="mono">2 × 6 = 12″</span></li><li>A 29″ table leg won’t fit; it needs a bed extension or a longer lathe.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Ordering accessories without checking the spindle thread and Morse taper size. Both vary between lathes and are printed in the manual.</p></div>
+    </article>
+
+    <article class="topic" id="h-safety" data-title="Safety at the lathe">
+      <div class="prose">
+        <p>The lathe’s hazards are different from a saw’s: the danger is being caught by spinning wood, or hit by wood that breaks or is thrown. Most of it is prevented before you switch on.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="latheSafety"></div>
+        <figcaption>Left: from above, the line of fire runs from the spinning work straight out toward the operator; stand to one side when switching on. Right: before switching on, the tool rest clears the work and the blank spins freely by hand.</figcaption></figure>
+      <div class="block safety"><div class="tag">Before every start</div><ul>
+        <li>Face shield (not just glasses) and dust protection.</li>
+        <li>No loose sleeves, gloves, ties or jewelry; long hair tied back.</li>
+        <li>Check the blank for cracks, loose knots and bark; reject anything suspect.</li>
+        <li>Tailstock and banjo locked; rest about ⅛″–¼″ from the work.</li>
+        <li><b>Spin the work by hand one full turn</b> to be sure nothing hits the rest.</li>
+        <li>Check the speed setting is <b>low</b>, then stand to the side of the line of fire and switch on.</li>
+      </ul></div>
+      <div class="block safety"><div class="tag">While turning</div><ul>
+        <li>Tool on the rest <em>before</em> it touches the wood; keep your hands behind the rest.</li>
+        <li>Stop the lathe to move the rest, to measure with a rule, or to inspect.</li>
+        <li>Swing the rest out of the way before sanding.</li>
+        <li>Never reach over or around spinning work.</li>
+      </ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Switching on a big, square or out-of-balance blank at the speed used for the last small piece. Make “speed down” the last thing you do before you turn the lathe off.</p></div>
+    </article>
+
+    <article class="topic" id="h-speed" data-title="Choosing a speed">
+      <div class="prose">
+        <p>The right speed depends mainly on diameter: the edge of a big blank moves much faster than a small one at the same RPM. A common rule of thumb keeps the product of diameter and speed between about 6,000 and 9,000. For small spindles that gives more than most lathes can do, so the lathe’s maximum becomes the limit.</p>
+        <p>Start well below the rule for anything square, long and thin, off-center or suspect, and raise the speed only while the lathe runs smoothly. Vibration means too fast.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="latheSpeed"></div>
+        <figcaption>The 6,000–9,000 band for diameters from ½″ to 6″, capped at a typical 3,500 RPM lathe maximum.</figcaption></figure>
+      <div class="block formula"><div class="tag">Rule of thumb</div>
+        <div class="eq">RPM ≈ 6,000 ÷ D  to  9,000 ÷ D</div>
+        <p class="where">D = largest diameter in inches. Never above your lathe’s maximum; lower for roughing, unbalanced or long thin work.</p></div>
+      <div class="tablewrap"><table data-table="latheSpeed"><caption>Spindle speeds (capped at 3,500 RPM)</caption></table></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Roughing a 3″ square blank, 18″ long.</p>
+        <ol class="steps"><li>Its diagonal is about <span class="mono">3 × 1.414 = 4.2″</span>, so treat it as a 4¼″ diameter.</li><li>Rule: <span class="mono">6,000 ÷ 4.25 ≈ 1,400</span> to <span class="mono">9,000 ÷ 4.25 ≈ 2,100</span> RPM.</li><li>Square and long: start around 800–1,000 RPM, raise once it is round.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Using the flat side of a square blank as its diameter. The corners reach out to the diagonal, and they are what hits the rest and your knuckles.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#i-calculators"></a></p>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Preparing and mounting">
+    <article class="topic" id="h-blank" data-title="Preparing a spindle blank">
+      <div class="prose">
+        <p>Choose straight-grained wood without cracks or loose knots, cut a little longer than the finished piece (the ends get marked by the centers). Mark the center of each end by drawing the diagonals.</p>
+        <p>Taking the corners off first, to make an <dfn>octagon</dfn>, makes roughing faster, quieter and safer. Rip them off on the table saw with the blade at 45° (<a class="ref" href="#d-ts-bevel"></a>) or plane them off.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="blankPrep"></div>
+        <figcaption>Left: diagonals on the end find the center. Right: a 2″ square with its corners cut off to make a regular octagon.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div>
+        <div class="eq">corner cut for a regular octagon = side × (1 − 1 ÷ √2) ≈ 0.293 × side</div>
+        <p class="where">Measured along each face from the corner.</p></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A 2″ square blank.</p>
+        <ol class="steps"><li>Corner cut: <span class="mono">0.293 × 2 = 0.586″</span> ≈ ⁹⁄₁₆″ along each face.</li><li>On the table saw: blade at 45°, fence set so the cut starts ⁹⁄₁₆″ in from each corner. Four passes.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Marking the center by eye. An off-center blank vibrates, wastes wood and leaves flat spots when it is turned round. Always use the diagonals, and punch the center with an awl.</p></div>
+    </article>
+
+    <article class="topic" id="h-mounting" data-title="Mounting between centers and in a chuck">
+      <div class="prose">
+        <p><b>Between centers:</b> the drive center’s spurs bite into the headstock end, the live center into the tailstock end. Seat the spurs (tap the drive center into the end with a mallet off the lathe, or snug the tailstock firmly), then tighten the tailstock until the work turns only with the drive, and lock the quill. Re-snug it after a few minutes of turning, as the centers bed in.</p>
+        <p><b>In a chuck:</b> a four-jaw <dfn>scroll chuck</dfn> grips a <dfn>tenon</dfn> (spigot) turned on one end. This leaves the other end free for work such as a goblet or the end of a handle. The tenon must match the jaws’ shape (often a slight dovetail; check yours), be a little shorter than the jaws are deep, and have a square shoulder that seats flat against the jaws.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="mounting"></div>
+        <figcaption>Left: a blank between the spur drive and a live center. Right: a four-jaw chuck gripping a tenon (section).</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A tenon for chuck jaws that close fully at 1⅞″ and are ½″ deep.</p>
+        <ol class="steps"><li>Diameter: a little over the fully-closed size, about 2″, so the jaws grip near a full circle.</li><li>Length: about ⁷⁄₁₆″, just shorter than the jaws, with a square shoulder.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>A long tenon that bottoms out in the chuck before the shoulder seats. The work then wobbles and can pull out. The shoulder, not the tenon’s end, must bear on the jaws.</p></div>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Tools and cuts">
+    <article class="topic" id="h-tools" data-title="The spindle tools">
+      <div class="prose">
+        <ul>
+          <li><b>Spindle roughing gouge</b>: a wide, deep U. Rounds square stock to a cylinder fast. <strong>Spindle work only</strong>: its tang is too weak for bowls and faceplate work.</li>
+          <li><b>Spindle gouge</b>: a shallower flute with a rounded “fingernail” tip. Beads, coves and detail.</li>
+          <li><b>Skew chisel</b>: a flat blade with its edge at an angle. Planing cuts that leave a glassy surface, V-cuts and beads. Powerful but prone to catches until you learn it.</li>
+          <li><b>Parting tool</b>: a narrow blade for sizing cuts and for parting work off. The <b>beading and parting tool</b> is a square ⅜″ version that also rolls small beads.</li>
+          <li><b>Scrapers</b>: flat bars with a burr. Light finishing cuts, held pointing slightly down.</li>
+        </ul>
+      </div>
+      <figure class="fig"><div class="art" data-fig="latheTools"></div>
+        <figcaption>The five spindle tools seen from above, with the shape of each cutting edge.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Tools for a simple tool handle, in order.</p>
+        <ol class="steps"><li>Roughing gouge: square to round.</li><li>Parting tool and calipers: size the ferrule and the grip.</li><li>Spindle gouge: coves and the end shape. Skew: a clean planing pass.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Using a spindle roughing gouge on a bowl blank. The cut is interrupted by end grain every half turn, and the tang can snap. Use a bowl gouge for bowls.</p></div>
+    </article>
+
+    <article class="topic" id="h-rest" data-title="Setting the tool rest">
+      <div class="prose">
+        <p>The tool rest supports the tool so that the wood’s force goes into the rest, not your hands. Set it parallel to the work, about ⅛″–¼″ away from the highest point, at a height where the tool’s edge meets the wood at or slightly above center when the handle is level or a little low.</p>
+        <p>As the work gets smaller, move the rest in. A rest far from the work gives the tool leverage against you.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="latheRest"></div>
+        <figcaption>End view: the rest close to the work and the tool cutting just above center.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Roughing a 3″ square blank.</p>
+        <ol class="steps"><li>Its corners sweep a 4¼″ circle, so set the rest ¼″ outside that: about 2⅜″ from the center line.</li><li>After it is round at 2¾″, stop and move the rest in to ⅛″–¼″ from the new surface.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Adjusting the rest while the lathe runs. Stop it, move the rest, spin by hand, then restart.</p></div>
+    </article>
+
+    <article class="topic" id="h-bevel" data-title="Riding the bevel and cutting downhill">
+      <div class="prose">
+        <p>A turning tool cuts cleanly when its <dfn>bevel</dfn> (the ground face behind the edge) rubs on the wood just behind the cut. The bevel supports the edge and controls the depth, like the sole of a plane. This is called <dfn>riding the bevel</dfn>.</p>
+        <p>The approach: rest the tool with the bevel touching the spinning wood and the edge not yet cutting, then slowly raise the handle until the edge starts to take a shaving. Move along with the bevel still in contact.</p>
+        <p>Always cut <dfn>downhill</dfn>: from a larger diameter toward a smaller one. That way the fibres you cut are supported by wood underneath them, like planing with the grain, and the surface comes out smooth instead of torn.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="latheBevel"></div>
+        <figcaption>Left: end view of a gouge riding its bevel. Right: side view of a bead and a cove, with arrows showing the downhill direction of every cut.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Turning a cove (a hollow).</p>
+        <ol class="steps"><li>Start at the top edge of one side and cut down to the bottom center.</li><li>Then cut the other side, again from its top edge down to the center. Never cut up the far wall.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Presenting the edge first, without bevel contact. The edge digs in with nothing to control it: a <dfn>catch</dfn>, which can tear the work or pull the tool. Bevel first, then lift the handle to cut.</p></div>
+    </article>
+
+    <article class="topic" id="h-beads-coves" data-title="Beads, coves, fillets and V-cuts">
+      <div class="prose">
+        <p>Most spindle shapes are built from a few elements:</p>
+        <ul>
+          <li><dfn>Bead</dfn>: a rounded, convex ring.</li>
+          <li><dfn>Cove</dfn>: a hollow, concave ring.</li>
+          <li><dfn>Fillet</dfn>: a short flat step that separates two shapes and makes them read crisply.</li>
+          <li><dfn>V-cut</dfn>: a sharp groove, made with the point of a skew.</li>
+        </ul>
+        <p>Lay out the positions with a pencil held on the rest while the lathe runs slowly, separate the elements with V-cuts or parting cuts, then shape each one downhill.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="beadsCoves"></div>
+        <figcaption>A spindle profile with the four basic elements.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A ¾″ bead on a 1½″ cylinder.</p>
+        <ol class="steps"><li>Mark lines ¾″ apart; mark the center line between them.</li><li>V-cut each outer line to about ⅛″ deep.</li><li>With the spindle gouge, roll from the center line down into each V, one side at a time.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Cutting away the center pencil line. It marks the top of the bead; leave it until the last pass so both halves come out symmetrical.</p></div>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Measuring and shaping">
+    <article class="topic" id="h-calipers" data-title="Calipers and sizing diameters">
+      <div class="prose">
+        <p>Diameters on the lathe are set with <dfn>outside calipers</dfn>: two curved legs that you set to the target size against a rule, then hold on the work. The standard technique is a <dfn>sizing cut</dfn>: a parting tool in one hand pushes straight in while the calipers, in the other hand, ride in the groove. The moment the calipers slip over, you have reached the diameter.</p>
+        <p>An open-end wrench of the right size makes a quick go/no-go gauge for common tenons.</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="calipers"></div>
+        <figcaption>Left: a sizing cut with a parting tool and calipers set to 1¼″. Right: a ⅝″ wrench as a gauge for a ⅝″ tenon.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Sizing a 1¼″ neck on a 1¾″ cylinder.</p>
+        <ol class="steps"><li>Set the calipers to 1¼″ against a steel rule (lathe off).</li><li>Lathe on at a low speed. Parting tool straight in, calipers lightly in the groove.</li><li>Stop when the calipers drop over. Depth of cut: <span class="mono">(1.75 − 1.25) ÷ 2 = ¼″</span> per side.</li></ol></div>
+      <div class="block safety"><div class="tag">Safety</div><ul><li>Use calipers with rounded tips, a light touch and low speed. Sharp tips or a firm grip can catch and pull the calipers around. When in doubt, stop the lathe and measure.</li></ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Forcing the calipers over. They spring open and read big, so the part comes out undersize. Let them fall over under their own weight.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-which-tool"></a></p>
+    </article>
+
+    <article class="topic" id="h-story" data-title="Story sticks and matching parts">
+      <div class="prose">
+        <p>Turning four matching legs by eye is hard. A <dfn>story stick</dfn> (<a class="ref" href="#b-story-stick"></a>) holds every position along the spindle: a thin board with a small notch at each transition, and the diameter needed at each one written beside it. Hold it on the rest against the slowly turning blank, touch a pencil into each notch, and every leg gets the same layout. Then size each position with calipers.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="latheStory"></div>
+        <figcaption>A story stick for a leg: positions notched into the edge, diameters written on the face.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <ol class="steps"><li>Turn the first leg; when you like it, mark its transitions on a stick and caliper each diameter.</li><li>For legs 2–4: rough to round, transfer the marks, size every diameter with parting cuts, then connect the sizing cuts.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Registering the stick from different ends. Mark one end “TOP” and always line it up with the top of the blank.</p></div>
+    </article>
+
+    <article class="topic" id="h-taper" data-title="Turning a taper to an angle">
+      <div class="prose">
+        <p>A turned taper changes <em>diameter</em> along its length, but the tool sees only the <em>radius</em>, which changes by half as much. So a round taper’s angle (measured from the center line, the <dfn>half-angle</dfn>) uses half the difference in diameters. Compare the flat taper in <a class="ref" href="#c-taper"></a>.</p>
+        <p>The reliable method is to set sizing cuts along the taper at calculated diameters, then turn away the wood between them down to the bottoms of the cuts, and check with a straightedge.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="latheTaper"></div>
+        <figcaption>A leg tapering from 1¾″ to 1″ over 20″, with sizing cuts at each quarter.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div>
+        <div class="eq">half-angle = arctan((D₁ − D₂) ÷ (2 × L))</div>
+        <div class="eq">diameter at x = D₁ − (D₁ − D₂) × x ÷ L</div></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>1¾″ to 1″ over 20″.</p>
+        <ol class="steps"><li>Half-angle: <span class="mono">arctan(0.75 ÷ 40) = 1.07°</span></li><li>Sizing cuts at 5″, 10″, 15″: <span class="mono">1⁹⁄₁₆″, 1⅜″, 1³⁄₁₆″</span></li><li>Turn between them down to the bottoms; check with a straightedge laid along the taper.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Using the full diameter difference as if it were one side: that doubles the angle and makes the foot far too thin.</p></div>
+    </article>
+
+    <article class="topic" id="h-tenon" data-title="Turning tenons">
+      <div class="prose">
+        <p>Chair rungs, legs and handles often end in a round <dfn>tenon</dfn> that fits a drilled hole. Its diameter matches the hole; its length is a little shorter than the hole is deep, leaving room for glue and a tight shoulder. The <dfn>shoulder</dfn> (the step where the tenon starts) should be square or slightly undercut so it closes tight.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="latheTenon"></div>
+        <figcaption>A ⅝″ tenon, 1⅛″ long, going into a ⅝″ hole drilled 1¼″ deep (section).</figcaption></figure>
+      <div class="block formula"><div class="tag">Rule</div>
+        <div class="eq">tenon diameter = hole diameter</div>
+        <div class="eq">tenon length = hole depth − about ⅛″</div></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A ⅝″ hole drilled 1¼″ deep.</p>
+        <ol class="steps"><li>Tenon: ⅝″ diameter (checked with a ⅝″ wrench or calipers), <span class="mono">1¼ − ⅛ = 1⅛″</span> long.</li><li>Undercut the shoulder slightly with the skew’s long point.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Turning the tenon a hair oversize and hammering it in. Dry wood won’t compress much; it splits the part with the hole. Aim for a push fit by hand.</p></div>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Sharpening and finishing">
+    <article class="topic" id="h-sharpen" data-title="Sharpening spindle tools">
+      <div class="prose">
+        <p>Turning tools dull quickly and cut far better sharp. Most turners sharpen on a slow-speed bench grinder with a fine wheel (friable aluminum oxide or CBN, around 80–180 grit) and jigs that hold the tool at a repeatable angle. Hone lightly afterward if you like.</p>
+        <p>Typical bevel angles, as ranges (makers and turners vary):</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="latheSharpen"></div>
+        <figcaption>Bevel angles seen from the side. Shallower bevels cut more aggressively; steeper bevels are sturdier and easier to control.</figcaption></figure>
+      <div class="tablewrap"><table class="plain"><caption>Typical bevel angles</caption>
+        <thead><tr><th scope="col" class="txt">Tool</th><th scope="col" class="txt">Typical bevel</th><th scope="col" class="txt">Notes</th></tr></thead>
+        <tbody>
+          <tr><th scope="row" class="txt">Spindle roughing gouge</th><td class="txt">about 40–45°</td><td class="txt">straight across</td></tr>
+          <tr><th scope="row" class="txt">Spindle gouge</th><td class="txt">about 30–45°</td><td class="txt">fingernail profile</td></tr>
+          <tr><th scope="row" class="txt">Skew chisel</th><td class="txt">about 20–25° per side</td><td class="txt">edge skewed about 20° across the blade</td></tr>
+          <tr><th scope="row" class="txt">Parting tool</th><td class="txt">about 20–30° per side</td><td class="txt">two bevels to a point</td></tr>
+          <tr><th scope="row" class="txt">Scraper</th><td class="txt">about 70–80°</td><td class="txt">raise a burr; used pointing down</td></tr>
+        </tbody></table></div>
+      <div class="block safety"><div class="tag">Safety</div><ul><li>Face shield at the grinder, tool rest close to the wheel, and never grind on the side of a standard wheel. Check new wheels for cracks before mounting.</li></ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Overheating the edge until it turns blue. Light passes, keep the tool moving, and don’t quench high-speed steel in water (it can crack); it doesn’t lose its temper at grinding heat the way carbon steel does.</p></div>
+    </article>
+
+    <article class="topic" id="h-finish" data-title="Sanding and finishing on the lathe">
+      <div class="prose">
+        <p>Sanding is quick on the lathe because the work does the moving. Slow the speed down (about half your turning speed), swing the tool rest out of the way, and sand from below the work with the paper moving so it doesn’t cut rings.</p>
+        <p>Work through the grits without skipping: 120, 180, 240, then 320 for fine hardwoods. Between grits, stop the lathe and sand by hand along the grain to remove circular scratches. Finishes applied on the lathe include oils, wax and friction polish (burnished on with the lathe running slowly).</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="latheFinish"></div>
+        <figcaption>Sanding from underneath with the rest swung clear and the speed turned down.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A 1½″ handle turned at about 3,000 RPM.</p>
+        <ol class="steps"><li>Sand at about 1,500 RPM: 120, 180, 240.</li><li>Stop after each grit and sand along the grain.</li><li>Apply friction polish at about 1,000 RPM with a paper towel pad.</li></ol></div>
+      <div class="block safety"><div class="tag">Safety</div><ul><li>Never wrap cloth or abrasive around your fingers or the work. Use a folded paper towel or pad that will tear free if caught.</li></ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Sanding out tool marks with coarse paper. Sanding only follows the shape; fix tearout and ridges with a sharp tool first.</p></div>
+    </article>
+  </div>
+</section>
+
 <!-- src/guides/i-reference-shelf.html -->
 <!-- =====================================================================
      GUIDE I · THE REFERENCE SHELF
      Formula sheet, tables, calculators and glossary. The glossary builds
      itself from every <dfn> in the handbook (see reader.js).
      ===================================================================== -->
-<section class="guide" data-letter="I" data-title="The Reference Shelf" data-sub="Every formula and table in one place, calculators for the common jobs, and a glossary of every term the handbook defines.">
+<section class="guide" data-letter="I" data-title="The Reference Shelf" data-sub="Every formula and table in one place, calculators for fractions, frames, corners, pitch, compound cuts, tapers, stairs, rafters and lathe speed, and a glossary of every term the handbook defines.">
   <div class="guide-intro">
     <div class="prose"><p>Quick look-ups for when you are at the saw. Each formula links back to the page that explains it.</p></div>
   </div>
@@ -2926,6 +3212,42 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
           <li><b>Compound (tilt S, A = 180° ÷ n)</b><code>miter = atan(sin S · tan A)</code><code>bevel = asin(cos S · sin A)</code><a class="ref" href="#c-compound-settings"></a></li>
           <li><b>Taper angle</b><code>arctan(removed ÷ length)</code><a class="ref" href="#c-taper"></a></li>
         </ul></div>
+        <div class="card"><h3>Measure, mark, saws</h3><ul class="fl">
+          <li><b>Burning an inch</b><code>length = reading − 1″</code><a class="ref" href="#b-tape-hook"></a></li>
+          <li><b>Flip test (square or level)</b><code>error = difference ÷ 2</code><a class="ref" href="#b-combo-square"></a></li>
+          <li><b>Square check</b><code>diagonal = √(w² + h²)</code><a class="ref" href="#b-diagonals"></a></li>
+          <li><b>3-4-5</b><code>3² + 4² = 5²</code><a class="ref" href="#b-345"></a></li>
+          <li><b>Miter saw width at miter m</b><code>≈ capacity × cos m</code><a class="ref" href="#d-ms-capacity"></a></li>
+          <li><b>5-cut sled test</b><code>error per cut = (A − B) ÷ 4</code><a class="ref" href="#d-ts-sled"></a></li>
+          <li><b>Taper jig</b><code>gap = distance × tan(angle)</code><a class="ref" href="#d-ts-taper-jig"></a></li>
+          <li><b>Straightedge guide</b><code>cut line + base offset</code><a class="ref" href="#d-cs-rip"></a></li>
+        </ul></div>
+        <div class="card"><h3>Trim and joining</h3><ul class="fl">
+          <li><b>Inside / outside corner</b><code>front = back ∓ t × tan(saw)</code><a class="ref" href="#e-in-out-corners"></a></li>
+          <li><b>Scarf overlap</b><code>t × tan(bevel)</code><a class="ref" href="#e-scarf"></a></li>
+          <li><b>Casing head</b><code>SP–SP = opening + 2 × reveal</code><a class="ref" href="#e-casing"></a></li>
+          <li><b>Crown nested</b><code>miter = 90° − C ÷ 2, bevel 0</code><a class="ref" href="#e-crown-nested"></a></li>
+          <li><b>Wide miter gap</b><code>heel gap ≈ 1.4 × ΔW</code><a class="ref" href="#f-movement"></a></li>
+        </ul></div>
+        <div class="card"><h3>Framing</h3><ul class="fl">
+          <li><b>Layout line n</b><code>n × OC − ¾″</code><a class="ref" href="#g-stud-layout"></a></li>
+          <li><b>Wall height</b><code>stud + 1½″ × plates</code><a class="ref" href="#g-wall-height"></a></li>
+          <li><b>Header</b><code>RO width + 3″</code><a class="ref" href="#g-rough-opening"></a></li>
+          <li><b>Rafter run</b><code>span ÷ 2 − ridge ÷ 2</code><a class="ref" href="#g-rafter-length"></a></li>
+          <li><b>Rafter length</b><code>run × √(1 + (rise ÷ 12)²)</code><a class="ref" href="#g-rafter-length"></a></li>
+          <li><b>Bird’s mouth heel</b><code>seat × rise ÷ 12</code><a class="ref" href="#g-birdsmouth"></a></li>
+          <li><b>Hip slope</b><code>arctan(rise ÷ 16.97)</code><a class="ref" href="#g-hips"></a></li>
+          <li><b>Stairs</b><code>risers = ⌈rise ÷ 7½⌉, treads = risers − 1</code><a class="ref" href="#g-stair-math"></a></li>
+          <li><b>Stair comfort</b><code>2R + T ≈ 24–25″</code><a class="ref" href="#g-stair-terms"></a></li>
+          <li><b>Blocking</b><code>OC − 1½″</code><a class="ref" href="#g-braces-blocking"></a></li>
+        </ul></div>
+        <div class="card"><h3>Spindle turning</h3><ul class="fl">
+          <li><b>Speed</b><code>RPM ≈ 6,000 ÷ D to 9,000 ÷ D</code><a class="ref" href="#h-speed"></a></li>
+          <li><b>Octagon corner cut</b><code>0.293 × side</code><a class="ref" href="#h-blank"></a></li>
+          <li><b>Sizing cut depth</b><code>(D − d) ÷ 2 per side</code><a class="ref" href="#h-calipers"></a></li>
+          <li><b>Round taper half-angle</b><code>arctan((D₁ − D₂) ÷ 2L)</code><a class="ref" href="#h-taper"></a></li>
+          <li><b>Tenon</b><code>Ø = hole, length = depth − ⅛″</code><a class="ref" href="#h-tenon"></a></li>
+        </ul></div>
       </div>
       <p class="seealso"><b>See also</b><a class="ref" href="#i-tables"></a><a class="ref" href="#i-calculators"></a></p>
     </article>
@@ -2938,7 +3260,15 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
         <div class="card"><h3>Compound (square box)</h3><div class="tablewrap"><table data-table="compoundMini"></table></div></div>
         <div class="card"><h3>Sixteenths → decimals</h3><div class="tablewrap"><table data-table="sixteenths"></table></div></div>
         <div class="card"><h3>Taper angles</h3><div class="tablewrap"><table data-table="taper"></table></div></div>
+        <div class="card"><h3>Lumber sizes</h3><div class="tablewrap"><table data-table="lumber"></table></div></div>
+        <div class="card"><h3>3-4-5 scaled up</h3><div class="tablewrap"><table data-table="threeFourFive"></table></div></div>
+        <div class="card"><h3>Crown by corner</h3><div class="tablewrap"><table data-table="crownCorners"></table></div></div>
+        <div class="card"><h3>Stud layout marks</h3><div class="tablewrap"><table data-table="studLayout"></table></div></div>
+        <div class="card"><h3>Rafters</h3><div class="tablewrap"><table data-table="rafterQuick"></table></div></div>
+        <div class="card"><h3>Stairs (7½″ target, 10½″ treads)</h3><div class="tablewrap"><table data-table="stairQuick"></table></div></div>
+        <div class="card"><h3>Lathe speeds</h3><div class="tablewrap"><table data-table="latheSpeed"></table></div></div>
       </div>
+      <p class="code-note">Framing and stair values are typical US (IRC) practice. Check your local code.</p>
     </article>
   </div>
 
@@ -2978,7 +3308,24 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
             <label for="c-tlen">Taper length<input id="c-tlen" type="text" value="24"></label>
             <label for="c-faces">Sloping faces per direction<select id="c-faces"><option value="1" selected>1</option><option value="2">2</option></select></label></div>
             <output id="o-taper"></output></form></div>
+        <div class="card"><h3>Stairs</h3>
+          <form class="calc" id="calc-stairs"><div class="row">
+            <label for="c-rise">Total rise<input id="c-rise" type="text" value="42"></label>
+            <label for="c-tread">Tread (in)<input id="c-tread" type="number" step="0.25" value="10.5" inputmode="decimal"></label></div>
+            <output id="o-stairs"></output></form></div>
+        <div class="card"><h3>Common rafter</h3>
+          <form class="calc" id="calc-rafter"><div class="row">
+            <label for="c-span">Span<input id="c-span" type="text" value="24'"></label>
+            <label for="c-rrise">Rise per 12<input id="c-rrise" type="number" step="0.5" value="6" inputmode="decimal"></label>
+            <label for="c-ridge">Ridge (in)<input id="c-ridge" type="number" step="0.25" value="1.5" inputmode="decimal"></label>
+            <label for="c-oh">Overhang run<input id="c-oh" type="text" value="12"></label></div>
+            <output id="o-rafter"></output></form></div>
+        <div class="card"><h3>Lathe speed</h3>
+          <form class="calc" id="calc-lathe"><div class="row">
+            <label for="c-dia">Largest diameter<input id="c-dia" type="text" value="2"></label></div>
+            <output id="o-lathe"></output></form></div>
       </div>
+      <p class="code-note">Calculators follow the same formulas as the guides. Always check a result against a test cut or your plans.</p>
     </article>
   </div>
 
@@ -5729,6 +6076,290 @@ FIG.posts = () => {
 
 </script>
 <script>
+/* src/figures/h.js */
+/* Guide H · Spindle Turning */
+
+// lathe from the front: bed along y = 0, centers at height hc above the bed; work from x = a to x = b
+function lathe(f, a, b, hc = 6, o = {}) {
+  f.rect(-6, -1.2, b + 12, 1.2, 'metal');
+  f.rect(-6, 0, 5.2, hc + 3.2, 'metal');
+  f.poly([[-0.8, hc - 0.55], [a - 0.35, hc - 0.35], [a, hc], [a - 0.35, hc + 0.35], [-0.8, hc + 0.55]], 'metal');
+  const tx = b + 0.4;
+  f.poly([[tx, hc], [tx + 0.5, hc - 0.4], [tx + 0.5, hc + 0.4]], 'metal');
+  f.rect(tx + 0.5, hc - 0.45, 2.2, 0.9, 'metal');
+  f.rect(tx + 2.7, 0, 3.6, hc + 1.3, 'metal');
+  f.disc([tx + 7.3, hc], 1.1, 'tool-o');
+  if (o.rest !== false) { const rx = o.restX ?? (a + b) / 2 - 4; f.rect(rx, 0, 2.2, 1.2, 'tool-d'); f.rect(rx + 0.8, 1.2, 0.5, hc - 2.3, 'tool-d'); f.rect(rx - 2.5, hc - 1.1, 7.2, 0.4, 'tool-d'); }
+  return { tx, hc };
+}
+
+/* ---------- The lathe ---------- */
+FIG.latheAnatomy = () => {
+  const f = fig(16), a = 0.3, b = 20, hc = 6;
+  const { tx } = lathe(f, a, b, hc, { restX: 7 });
+  // blank at centre height
+  f.board([[a, hc - 0.9], [b, hc - 0.9], [b, hc + 0.9], [a, hc + 0.9]], { seed: 3, sp: 6 });
+  f.line([-1, hc], [tx + 3, hc], 'axis');
+  f.note([-3, hc + 2.5], [-10, -20], 'headstock', { anchor: 'end' });
+  f.note([a - 0.2, hc], [-4, 34], 'drive center (spurs)', { anchor: 'end' });
+  f.note([tx + 0.2, hc], [10, 34], 'live center');
+  f.note([tx + 1.6, hc + 0.45], [20, -30], 'quill');
+  f.note([tx + 4.5, hc + 1.3], [20, -16], 'tailstock');
+  f.note([tx + 7.3, hc], [22, 12], 'handwheel');
+  f.note([8, 0.6], [-20, 26], 'banjo', { anchor: 'end' });
+  f.note([6, hc - 0.9], [-26, 30], 'tool rest', { anchor: 'end' });
+  f.note([14, -0.6], [20, 22], 'bed (ways)');
+  f.dim([b + 11, 0], [b + 11, hc], -1, 'center height', { size: 10, flat: true });
+  f.dim([a, hc + 2.3], [b, hc + 2.3], 0.6, 'distance between centers', { size: 10 });
+  return f.svg('Parts of a wood lathe');
+};
+
+FIG.latheSafety = () => {
+  const a = fig(14), L = 18;
+  a.rect(-3, -4, L + 8, 8, 'metal');
+  a.board([[0, -0.9], [L, -0.9], [L, 0.9], [0, 0.9]], { seed: 2 });
+  a.danger([[0, -0.9], [L, -0.9], [L, -12], [0, -12]], '');
+  a.text([L / 2, -8], 'line of fire', { cls: 'cuttext halo', size: 12 });
+  a.disc([L + 6, -10], 1.3, 'hand'); a.text([L + 6, -12.6], 'stand here to start', { size: 11, cls: 'lbl-b' });
+  a.spin([L / 2, 0], 1.6, 60, 300, { cw: false });
+  a.text([L / 2, 5.5], 'lathe from above', { cls: 'lbl-s', size: 11 });
+  const b = fig(40), R = 1.2;
+  b.disc([0, 0], R, 'endface');
+  b.circle([0, 0], 2, 'dot');
+  b.rect(-2.2, -R - 0.35, 1.8, 0.25, 'tool-d');
+  b.dim([-1.3, -R - 0.1], [-1.3, -R], -0.8, '⅛–¼″', { size: 10, flat: true });
+  b.spin([0, 0], R + 0.4, 100, 200);
+  b.hand([1.9, 0.3], 140, 1.6);
+  b.note([1.3, 1.3], [20, -16], 'turn it one full turn by hand');
+  b.text([0, -2.2], 'end view', { cls: 'lbl-s', size: 11 });
+  return panels([[a.svg('Line of fire at the lathe'), 'Stand out of the line of fire'], [b.svg('Spin the work by hand before starting'), 'Spin by hand first']]);
+};
+
+FIG.latheSpeed = () => {
+  // a small chart drawn to scale: x = diameter (in), y = RPM
+  const f = fig(1), X = d => d * 90, Y = r => r * 0.06, maxR = 3500;
+  const px = (d, r) => [X(d), Y(r)];
+  const band = [];
+  for (let d = 0.5; d <= 6.001; d += 0.1) band.push(px(d, Math.min(maxR, 9000 / d)));
+  for (let d = 6; d >= 0.499; d -= 0.1) band.push(px(d, Math.min(maxR, 6000 / d)));
+  f.poly(band, 'glue');
+  [0, 1000, 2000, 3000, 4000].forEach(r => { f.line(px(0, r), px(6.2, r), 'thin'); f.text(px(0, r), String(r), { anchor: 'end', dx: -6, size: 11, cls: 'lbl-s' }); });
+  [1, 2, 3, 4, 5, 6].forEach(d => { f.line(px(d, 0), px(d, -60), 'thin'); f.text(px(d, 0), d + '″', { dy: 14, size: 11, cls: 'lbl-s' }); });
+  f.line(px(0, maxR), px(6.2, maxR), 'laser'); f.text(px(6.2, maxR), 'typical lathe maximum', { anchor: 'end', dy: -10, size: 11, cls: 'cuttext' });
+  const l1 = [], l2 = []; for (let d = 0.5; d <= 6.001; d += 0.1) { l1.push(px(d, Math.min(maxR, 6000 / d))); l2.push(px(d, Math.min(maxR, 9000 / d))); }
+  f.pline(l1, 'dimline'); f.pline(l2, 'dimline');
+  f.text(px(3.3, 9000 / 3.3), '9,000 ÷ D', { cls: 'dimtext halo', size: 11, dx: 30, dy: -6 });
+  f.text(px(3.3, 6000 / 3.3), '6,000 ÷ D', { cls: 'dimtext halo', size: 11, dx: -30, dy: 14 });
+  f.circle(px(2, 3000), 3, 'dot'); f.text(px(2, 3000), '2″: 3,000–3,500', { anchor: 'start', dx: 8, dy: -8, size: 11, cls: 'lbl-b halo' });
+  f.text(px(3, -600), 'diameter', { size: 11, cls: 'lbl-s' });
+  f.text(px(-0.75, 2000), 'RPM', { size: 11, cls: 'lbl-s', rot: -90 });
+  return f.svg('Lathe speed by diameter');
+};
+
+/* ---------- Preparing and mounting ---------- */
+FIG.blankPrep = () => {
+  const a = fig(50), s = 2;
+  a.poly([[0, 0], [s, 0], [s, s], [0, s]], 'endface');
+  a.line([0, 0], [s, s], 'pencil'); a.line([s, 0], [0, s], 'pencil');
+  a.circle([s / 2, s / 2], 3, 'dot');
+  a.note([s / 2, s / 2], [30, -26], 'center: where the diagonals cross');
+  const b = fig(50), c = s * (1 - 1 / Math.SQRT2);
+  b.poly([[0, 0], [s, 0], [s, s], [0, s]], 'hidden-l');
+  const oct = [[c, 0], [s - c, 0], [s, c], [s, s - c], [s - c, s], [c, s], [0, s - c], [0, c]];
+  b.poly(oct, 'endface'); b.poly(oct, 'edge');
+  [[[0, 0], [c, 0], [0, c]], [[s, 0], [s, c], [s - c, 0]], [[s, s], [s - c, s], [s, s - c]], [[0, s], [0, s - c], [c, s]]].forEach(t => b.poly(t, 'waste'));
+  b.dim([0, 0], [c, 0], -0.25, '⁹⁄₁₆″', { size: 10 });
+  b.dim([0, s], [s, s], 0.25, '2″', { size: 10 });
+  return panels([[a.svg('Finding the center of a blank'), 'Find the center'], [b.svg('Octagon from a 2 inch square'), 'Knock off the corners']]);
+};
+
+FIG.mounting = () => {
+  const a = fig(26), L = 8, r = 0.9;
+  a.board([[0, -r], [L, -r], [L, r], [0, r]], { seed: 4 });
+  a.poly([[-1.6, -0.5], [-0.25, -0.35], [0, -0.35], [0, 0.35], [-0.25, 0.35], [-1.6, 0.5]], 'metal');
+  [-0.25, 0.25].forEach(y => a.poly([[0, y - 0.07], [0.22, y], [0, y + 0.07]], 'metal'));
+  a.poly([[0.15, 0], [-0.1, -0.08], [-0.1, 0.08]], 'metal');
+  a.poly([[L - 0.25, 0], [L + 0.3, -0.35], [L + 1.8, -0.35], [L + 1.8, 0.35], [L + 0.3, 0.35]], 'metal');
+  a.line([-2, 0], [L + 2.5, 0], 'axis');
+  a.note([0, 0.3], [-10, -30], 'spur drive', { anchor: 'end' });
+  a.note([L + 0.3, 0.2], [10, -30], 'live center');
+  const b = fig(40), D = 2, t = 0.45, R = 1.35;
+  b.board([[t, -R], [3.5, -R], [3.5, R], [t, R]], { seed: 5 });
+  b.board([[0, -D / 2], [t, -D / 2], [t, D / 2], [0, D / 2]], { seed: 6, cls: 'wood2' });
+  const jaw = (s) => b.poly([[-0.9, s * (D / 2)], [0.45, s * (D / 2)], [0.45, s * (D / 2 + 0.05)], [-0.1, s * (D / 2 + 0.7)], [-0.9, s * (D / 2 + 0.7)]], 'metal');
+  jaw(1); jaw(-1);
+  b.rect(-2, -2, 1.1, 4, 'metal');
+  b.dim([0, -D / 2], [0, D / 2], 1.3, '≈ 2″ tenon', { size: 10, flat: true });
+  b.note([t, R], [14, -16], 'square shoulder seats on the jaws');
+  b.line([-2.3, 0], [3.8, 0], 'axis');
+  return panels([[a.svg('Blank between centers'), 'Between centers'], [b.svg('Tenon in a four jaw chuck'), 'In a chuck (section)']]);
+};
+
+/* ---------- Tools and cuts ---------- */
+FIG.latheTools = () => {
+  const tool = (name, tip) => {
+    const f = fig(26), L = 7;
+    f.rect(-4, -0.35, 3.4, 0.7, 'wood2');
+    tip(f);
+    return [f.svg(name), '<b>' + name + '</b>'];
+  };
+  const shaft = (f, w, len = 3.6) => f.rect(-0.6, -w / 2, len, w, 'metal');
+  return panels([
+    tool('Spindle roughing gouge', f => { shaft(f, 1.1); f.poly([[3, -0.55], [3.35, -0.55], [3.35, 0.55], [3, 0.55]], 'metal'); f.line([3.35, -0.55], [3.35, 0.55], 'cutline'); }),
+    tool('Spindle gouge', f => { shaft(f, 0.55); const pts = [[3, -0.28]]; for (let t = -80; t <= 80; t += 10) pts.push([3 + 0.55 * K.cos(t), 0.28 * K.sin(t)]); pts.push([3, 0.28]); f.poly(pts, 'metal'); f.pline(pts.slice(1, -1), 'cutline'); }),
+    tool('Skew chisel', f => { f.poly([[-0.6, -0.5], [3, -0.5], [3.4, 0.5], [-0.6, 0.5]], 'metal'); f.line([3, -0.5], [3.4, 0.5], 'cutline'); f.text([3.5, 0.6], 'long point', { size: 9, cls: 'lbl-s', anchor: 'start' }); f.text([3.1, -0.65], 'short point', { size: 9, cls: 'lbl-s', anchor: 'start' }); }),
+    tool('Parting tool', f => { f.rect(-0.6, -0.12, 3.6, 0.24, 'metal'); f.poly([[3, -0.12], [3.4, 0], [3, 0.12]], 'metal'); f.circle([3.4, 0], 2, 'dot'); }),
+    tool('Scraper', f => { shaft(f, 0.9); f.poly([[3, -0.45], [3.25, -0.45], [3.35, 0], [3.25, 0.45], [3, 0.45]], 'metal'); f.pline([[3.25, -0.45], [3.35, 0], [3.25, 0.45]], 'cutline'); })
+  ]);
+};
+
+FIG.latheRest = () => {
+  const f = fig(40), R = 1.4;
+  f.disc([0, 0], R, 'endface');
+  f.line([-3.5, 0], [2, 0], 'axis');
+  f.rect(-3.2, -R - 0.55, 1.8, 0.4, 'tool-d');
+  const tipAt = [-R * K.cos(10), R * K.sin(10)];
+  const u = K.norm(K.sub(tipAt, [-3.6, -R - 0.15]));
+  band2(f, [-4.8, -R - 0.15 - 1.2 * u[1] / u[0] * 0], tipAt, 0.3);
+  f.dim([-1.4, -R - 0.15], [-1.4, -R + 0.02], -0.6, '⅛–¼″', { size: 10, flat: true });
+  f.note(tipAt, [26, -18], 'edge meets the wood at or just above center');
+  f.spin([0, 0], R + 0.35, 100, 190);
+  f.text([-2.3, -R - 0.9], 'tool rest', { size: 11, cls: 'lbl-s' });
+  return f.svg('Tool rest height and gap');
+};
+function band2(f, a, b, w) { const u = K.norm(K.sub(b, a)), n = K.mul([-u[1], u[0]], w / 2); return f.poly([K.add(a, n), K.add(b, n), K.sub(b, n), K.sub(a, n)], 'metal'); }
+
+FIG.latheBevel = () => {
+  const a = fig(44), R = 1.3;
+  a.disc([0, 0], R, 'endface');
+  a.rect(-3, -R - 0.5, 1.4, 0.35, 'tool-d');
+  const cut = [-R * K.cos(20), R * K.sin(20)];
+  const dir = K.dir(20 - 90 + 180 + 55);
+  const heel = K.add(cut, K.mul(K.dir(200), 0.001));
+  band2(a, K.add(cut, K.mul(K.dir(215), 3)), cut, 0.35);
+  a.note(cut, [22, -26], 'edge cutting');
+  a.note(K.add(cut, K.mul(K.dir(215), 0.35)), [-26, 26], 'bevel rubbing', { anchor: 'end' });
+  a.spin([0, 0], R + 0.35, 90, 200);
+  a.text([-1, -2.4], 'end view', { cls: 'lbl-s', size: 11 });
+  const b = fig(34), prof = [];
+  for (let x = 0; x <= 6.01; x += 0.1) { let r = 0.9; if (x > 0.5 && x < 2.5) r = 0.9 + 0.45 * Math.sin(Math.PI * (x - 0.5) / 2); if (x > 3.5 && x < 5.5) r = 0.9 - 0.4 * Math.sin(Math.PI * (x - 3.5) / 2); prof.push([x, r]); }
+  b.spindle(prof, { seed: 3 });
+  [[1.5, 1.35, 0.8, 1.05], [1.5, 1.35, 2.2, 1.05], [4.5, 0.5, 3.8, 0.8], [4.5, 0.5, 5.2, 0.8]].forEach(([x1, y1, x2, y2], i) => {
+    const from = i < 2 ? [x1, y1 + 0.2] : [x2, y2 + 0.25], to = i < 2 ? [x2, y2 + 0.25] : [x1, y1 + 0.2];
+    b.arrow(from, to, 'dimline', 'arrow');
+  });
+  b.lines([1.5, -1.9], ['bead: from the top', 'down each side'], { size: 10, cls: 'lbl' });
+  b.lines([4.5, -1.9], ['cove: from each rim', 'down to the bottom'], { size: 10, cls: 'lbl' });
+  return panels([[a.svg('Gouge riding its bevel'), 'Riding the bevel'], [b.svg('Downhill cutting on a bead and a cove'), 'Always cut downhill']]);
+};
+
+FIG.beadsCoves = () => {
+  const f = fig(40), prof = [];
+  const r0 = 0.75;
+  for (let x = 0; x <= 7.01; x += 0.05) {
+    let r = r0;
+    if (x >= 0.6 && x <= 1.6) r = r0 + 0.3 * Math.sqrt(Math.max(0, 1 - ((x - 1.1) / 0.5) ** 2));
+    else if (x > 1.6 && x < 1.9) r = r0 + 0.02;
+    else if (x >= 1.9 && x <= 3.4) r = r0 - 0.3 * Math.sin(Math.PI * (x - 1.9) / 1.5);
+    else if (x >= 3.9 && x <= 4.3) r = r0 - 0.25 * (1 - Math.abs(x - 4.1) / 0.2);
+    else if (x >= 4.8 && x <= 5.2) r = r0 + 0.12;
+    prof.push([x, r]);
+  }
+  f.spindle(prof, { seed: 4 });
+  f.note([1.1, r0 + 0.3], [0, -24], 'bead', { anchor: 'middle' });
+  f.note([2.65, r0 - 0.3], [0, -30], 'cove', { anchor: 'middle' });
+  f.note([4.1, r0 - 0.25], [0, -34], 'V-cut', { anchor: 'middle' });
+  f.note([5, r0 + 0.12], [0, -24], 'fillet', { anchor: 'middle' });
+  return f.svg('Bead, cove, V cut and fillet on a spindle');
+};
+
+/* ---------- Measuring and shaping ---------- */
+FIG.calipers = () => {
+  const a = fig(40), R = 0.875, r = 0.625, x0 = 2;
+  const prof = [[0, R], [x0 - 0.06, R], [x0 - 0.06, r], [x0 + 0.06, r], [x0 + 0.06, R], [4.5, R]];
+  a.spindle(prof, { seed: 2 });
+  band2(a, [x0, -R - 2.2], [x0, -r], 0.12);
+  const leg = (s) => { const pts = []; for (let t = 0; t <= 180; t += 10) pts.push([x0 + 0.25 + 1.2 * K.sin(t) * 0.7, s * (r + 0.02) + s * (1 - K.cos(t)) * 0.9]); a.pline(pts, 'tool-o'); };
+  a.pline([[x0, r], [x0 + 0.9, r + 0.7], [x0 + 1.6, 1.8], [x0 + 2.4, 2.4]], 'tool-o');
+  a.pline([[x0, -r], [x0 + 0.9, -r - 0.7], [x0 + 1.6, -1.8], [x0 + 2.4, -2.4]], 'tool-o');
+  a.disc([x0 + 2.4, 0], 0.12, 'tool');
+  a.pline([[x0 + 2.4, 2.4], [x0 + 2.8, 1.2], [x0 + 2.4, 0]], 'tool-o'); a.pline([[x0 + 2.4, -2.4], [x0 + 2.8, -1.2], [x0 + 2.4, 0]], 'tool-o');
+  a.dim([x0 - 0.4, -r], [x0 - 0.4, r], 0.5, '1¼″', { size: 10, flat: true });
+  a.note([x0, -R - 1.8], [-20, 10], 'parting tool from below', { anchor: 'end' });
+  const b = fig(60), rr = 0.3125;
+  b.spindle([[0, 0.6], [1.2, 0.6], [1.2, rr], [2.4, rr]], { seed: 3 });
+  b.poly([[2.1, rr], [2.9, rr], [2.9, rr + 0.25], [3.3, rr + 0.25], [3.3, -rr - 0.25], [2.9, -rr - 0.25], [2.9, -rr], [2.1, -rr], [2.1, -rr - 0.12], [2.75, -rr - 0.12], [2.75, rr + 0.12], [2.1, rr + 0.12]], 'metal');
+  b.rect(3.3, -0.2, 2.2, 0.4, 'metal');
+  b.note([2.5, rr + 0.12], [0, -24], '⅝″ wrench slides on: done', { anchor: 'middle' });
+  return panels([[a.svg('Sizing cut with a parting tool and calipers'), 'Sizing cut'], [b.svg('Open end wrench as a tenon gauge'), 'Wrench as a gauge']]);
+};
+
+FIG.latheStory = () => {
+  const f = fig(22), prof = [[0, 0.875], [4.5, 0.875], [4.8, 0.7], [5.4, 0.95], [6, 0.7], [6.3, 0.75], [24, 0.5]];
+  f.spindle(prof, { seed: 5, sp: 5 });
+  f.plank(0, 2, 24, 0.9, { seed: 6, cls: 'wood2', sp: 4 });
+  [[0, 'TOP'], [4.5, '1¾'], [5.4, '1⅞'], [6.3, '1½'], [24, '1']].forEach(([x, t]) => {
+    f.poly([[x - 0.15, 2], [x + 0.15, 2], [x, 2.3]].map(p => p), 'glass');
+    f.line([x, 2], [x, 1.1], 'pencil-d');
+    f.text([x, 3.3], t, { size: 10, cls: 'lbl-b' });
+  });
+  f.text([15, 2.45], 'story stick: notches at transitions, diameters written above', { cls: 'onwood', size: 10 });
+  return f.svg('Story stick for a turned leg');
+};
+
+FIG.latheTaper = () => {
+  const f = fig(28), L = 20, D1 = 1.75, D2 = 1, X = 1.8;
+  const prof = [[0, D1 / 2 * X], [L, D2 / 2 * X]];
+  f.spindle(prof, { seed: 6, sp: 5 });
+  [0, 5, 10, 15, 20].forEach(x => {
+    const d = D1 - (D1 - D2) * x / L, r = d / 2 * X;
+    f.line([x, r], [x, r + 0.35], 'dimline'); f.line([x, -r], [x, -r - 0.35], 'dimline');
+    f.text([x, r + 0.75], K.frac(d), { cls: 'dimtext halo', size: 11 });
+  });
+  f.dim([0, -D1 / 2 * X - 0.9], [L, -D1 / 2 * X - 0.9], 0, '20″', { size: 11 });
+  f.text([L / 2, -2.6], 'diameters drawn 1.8× so the taper shows', { cls: 'lbl-s', size: 10 });
+  return f.svg('Turned taper with sizing cuts');
+};
+
+FIG.latheTenon = () => {
+  const f = fig(44), d = 0.625, len = 1.125, depth = 1.25;
+  f.spindle([[0, 0.5], [2.2, 0.5], [2.2, d / 2], [2.2 + len, d / 2]], { seed: 2, axis: false });
+  const hx = 4.3;
+  f.board([[hx, -1.2], [hx + 2.4, -1.2], [hx + 2.4, 1.2], [hx, 1.2]], { grain: 90, seed: 3, cls: 'wood2' });
+  f.rect(hx, -d / 2, depth, d, 'glass');
+  f.dim([2.2, -d / 2], [2.2 + len, -d / 2], -0.5, '1⅛″', { size: 10 });
+  f.dim([hx, d / 2], [hx + depth, d / 2], 0.5, '1¼″ deep', { size: 10 });
+  f.dim([2.2 + len, -d / 2], [2.2 + len, d / 2], -0.35, '⅝″', { size: 10, flat: true });
+  f.arrow([3.6, 0], [4.15, 0]);
+  f.note([2.2, 0.5], [-10, -18], 'square shoulder', { anchor: 'end' });
+  return f.svg('Turned tenon and drilled hole');
+};
+
+/* ---------- Sharpening and finishing ---------- */
+FIG.latheSharpen = () => {
+  const edge = (name, angle, twoSided) => {
+    const f = fig(40), L = 2.2, t = 0.4;
+    if (twoSided) { const h = L * K.tan(angle / 2); f.poly([[0, -t], [L, -t], [L + t / K.tan(angle / 2) * 0 + 0.001, -t], [L + t / (2 * K.tan(angle / 2)), 0], [L, t], [0, t]], 'metal'); f.angle([L + t / (2 * K.tan(angle / 2)), 0], 0.55, 180 - angle / 2, 180 + angle / 2, angle + '°', { lr: 14 }); }
+    else { const run = 2 * t / K.tan(angle); f.poly([[0, -t], [L + run, -t], [L, t], [0, t]], 'metal'); f.angle([L + run, -t], 0.55, 180 - angle, 180, angle + '°', { lr: 14 }); }
+    return [f.svg(name), `<b>${name}</b>`];
+  };
+  return panels([edge('Roughing gouge', 45), edge('Spindle gouge', 35), edge('Skew (included)', 45, true), edge('Scraper', 75)]);
+};
+
+FIG.latheFinish = () => {
+  const f = fig(24), L = 10;
+  const { tx } = lathe(f, 0.3, L, 5, { rest: false });
+  f.board([[0.3, 4.2], [L, 4.2], [L, 5.8], [0.3, 5.8]], { seed: 7 });
+  f.rect(L / 2 - 1, 3.95, 2, 0.25, 'tape');
+  f.hand([L / 2, 3.1], 90, 1.6);
+  f.rect(-4, 0, 2.4, 1.2, 'hidden-l'); f.text([-2.8, 2], 'rest swung clear', { size: 10, cls: 'lbl-s' });
+  f.note([L / 2 + 1, 4.05], [30, 22], 'paper underneath, keep it moving');
+  f.text([L / 2, 7.2], 'speed: about half', { size: 11, cls: 'lbl-b' });
+  return f.svg('Sanding a spindle on the lathe');
+};
+
+</script>
+<script>
 /* =====================================================================
    TABLES. Each entry fills <table data-table="name">. All numbers come from F (formulas.js).
    ===================================================================== */
@@ -6026,6 +6657,7 @@ window.CALC = {
       return { e, s };
     }).filter(Boolean).sort((a, b) => b.s - a.s || a.e.T.index - b.e.T.index).slice(0, 40);
     const mark = s => { let out = esc(s); words.forEach(w => { out = out.replace(new RegExp('(' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig'), '<mark>$1</mark>'); }); return out; };
+    list.scrollTop = 0;
     list.innerHTML = scored.length ? `<div class="results">${scored.map(({ e }) => `<a href="#${e.T.id}">${e.T.num} ${mark(e.T.title)}<small>Guide ${e.T.guide.letter} · ${esc(e.T.guide.title)} › ${esc(e.T.section.title)}</small></a>`).join('')}</div>` : `<p class="empty">Nothing matches “${esc(q)}”. Try a tool name, a cut, or a term such as “kerf”.</p>`;
   };
   const openDrawer = () => { drawer.hidden = false; drawerBg.hidden = false; renderTree(); search.value = ''; setTimeout(() => search.focus(), 0); };
@@ -6056,6 +6688,7 @@ window.CALC = {
     if (current) { p.el.classList.remove('turn-next', 'turn-prev'); void p.el.offsetWidth; p.el.classList.add(dir); }
     current = p;
     window.scrollTo(0, 0);
+    requestAnimationFrame(() => window.scrollTo(0, 0));
     const h = $('h1, h2', p.el); if (h && fromNav) h.focus({ preventScroll: true });
     // breadcrumb
     const G = p.guide, parts = ['<a href="#home">Handbook</a>'];
@@ -6116,7 +6749,10 @@ window.CALC = {
 
   // ---------- 10. calculators and start ----------
   if (window.CALC) window.CALC.init();
+  // every page opens at its top: stop the browser jumping to the #id anchor on load
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   show(location.hash.slice(1) || 'home', false);
+  window.addEventListener('load', () => requestAnimationFrame(() => window.scrollTo(0, 0)));
   window.READER = { pages, guides, byId, show };
 })();
 

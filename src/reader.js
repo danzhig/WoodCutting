@@ -147,6 +147,7 @@
       return { e, s };
     }).filter(Boolean).sort((a, b) => b.s - a.s || a.e.T.index - b.e.T.index).slice(0, 40);
     const mark = s => { let out = esc(s); words.forEach(w => { out = out.replace(new RegExp('(' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig'), '<mark>$1</mark>'); }); return out; };
+    list.scrollTop = 0;
     list.innerHTML = scored.length ? `<div class="results">${scored.map(({ e }) => `<a href="#${e.T.id}">${e.T.num} ${mark(e.T.title)}<small>Guide ${e.T.guide.letter} · ${esc(e.T.guide.title)} › ${esc(e.T.section.title)}</small></a>`).join('')}</div>` : `<p class="empty">Nothing matches “${esc(q)}”. Try a tool name, a cut, or a term such as “kerf”.</p>`;
   };
   const openDrawer = () => { drawer.hidden = false; drawerBg.hidden = false; renderTree(); search.value = ''; setTimeout(() => search.focus(), 0); };
@@ -177,6 +178,7 @@
     if (current) { p.el.classList.remove('turn-next', 'turn-prev'); void p.el.offsetWidth; p.el.classList.add(dir); }
     current = p;
     window.scrollTo(0, 0);
+    requestAnimationFrame(() => window.scrollTo(0, 0));
     const h = $('h1, h2', p.el); if (h && fromNav) h.focus({ preventScroll: true });
     // breadcrumb
     const G = p.guide, parts = ['<a href="#home">Handbook</a>'];
@@ -237,6 +239,9 @@
 
   // ---------- 10. calculators and start ----------
   if (window.CALC) window.CALC.init();
+  // every page opens at its top: stop the browser jumping to the #id anchor on load
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   show(location.hash.slice(1) || 'home', false);
+  window.addEventListener('load', () => requestAnimationFrame(() => window.scrollTo(0, 0)));
   window.READER = { pages, guides, byId, show };
 })();

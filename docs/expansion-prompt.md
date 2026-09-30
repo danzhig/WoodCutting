@@ -1,6 +1,6 @@
 # Expansion brief: *Plumb & Square*, a woodworking handbook
 
-Status: decisions confirmed (section 10). Waiting for the go-ahead to build phase 1.
+Status: built. All five phases are done; see README.md for what shipped.
 
 ## 1. Goal
 

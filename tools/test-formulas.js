@@ -103,5 +103,19 @@ near('stringer diagonal', Math.hypot(42, 52.5), 67.2, 0.05);
 near('block 16 OC', F.blockLen(16), 14.5);
 near('deck diagonal', F.diagonal(16, 12), 20);
 
+// ---- Guide H ----
+near('swing', 2 * 6, 12);
+near('3" square diagonal', 3 * Math.SQRT2, 4.24, 0.01);
+near('rpm low 4.25', F.latheRPM(4.25).low, 1412, 1);
+near('rpm high 4.25', F.latheRPM(4.25).high, 2118, 1);
+near('octagon corner on 2"', 2 * (1 - 1 / Math.SQRT2), 0.586, 0.001);
+same('octagon corner frac', K.frac(2 * (1 - 1 / Math.SQRT2)), '⁹⁄₁₆″');
+near('rest distance', 4.25 / 2 + 0.25, 2.375);
+near('sizing depth', (1.75 - 1.25) / 2, 0.25);
+near('round taper half-angle', K.atan((1.75 - 1) / (2 * 20)), 1.074, 0.002);
+same('taper at 5', K.frac(1.75 - 0.75 * 5 / 20), '1⁹⁄₁₆″');
+same('taper at 15', K.frac(1.75 - 0.75 * 15 / 20), '1³⁄₁₆″');
+near('tenon length', 1.25 - 0.125, 1.125);
+
 console.log(`${n - fails}/${n} checks passed`);
 process.exit(fails ? 1 : 0);
