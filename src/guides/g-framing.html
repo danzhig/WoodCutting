@@ -1,0 +1,373 @@
+<!-- =====================================================================
+     GUIDE G · FRAMING & CONSTRUCTION
+     ===================================================================== -->
+<section class="guide" data-letter="G" data-title="Framing & Construction" data-sub="Layout, walls, rough openings, roof rafters, stairs, blocking, sheathing and decks: the cuts and the math of building with dimensional lumber.">
+  <div class="guide-intro">
+    <div class="prose"><p>Framing is where all the earlier guides come together at full scale: tape and square, pitch and plumb cuts, and a lot of repeated 2× cuts. Code-dependent numbers here are <b>typical US (IRC) values</b>; your local building department has the final word, and structural sizes (headers, joists, rafters) come from span tables or your plans, not from this guide.</p></div>
+    <div class="keypoints"><h3>Key points</h3><ul>
+      <li>16″ on center: first layout line at 15¼″, then every 16″. Sheet edges land on stud centers.</li>
+      <li>92⅝″ precut studs + three 1½″ plates = a 97⅛″ wall, right for an 8-foot ceiling.</li>
+      <li>Header length = rough opening + 3″.</li>
+      <li>Rafter: run = span ÷ 2 − ridge ÷ 2; length = run × slope factor. Plumb cut = slope angle.</li>
+      <li>Stairs: risers = total rise ÷ 7½, rounded up; treads = risers − 1; drop the stringer by one tread thickness.</li>
+    </ul></div>
+    <p class="code-note">Code values quoted are typical of the 2021 International Residential Code. Always check your local code before building.</p>
+  </div>
+
+  <div class="gsection" data-title="Layout basics">
+    <article class="topic" id="g-layout-marks" data-title="Layout marks and ganging plates">
+      <div class="prose">
+        <p>Walls are laid out on their plates before any stud is cut. Lay the bottom plate and the top plate side by side, edges flush and ends aligned, and mark both at once (<dfn>ganging</dfn> the plates). Then every stud lands in the same place top and bottom.</p>
+        <p>Framers use a small set of marks: a line on one side of the stud position and a letter on the side the stud goes:</p>
+        <ul>
+          <li><b>X</b>: common stud. <b>K</b>: king stud. <b>J</b>: jack (trimmer) stud. <b>C</b>: cripple.</li>
+          <li>Mark the crown of every stud and joist and install them crown-the-same-way (<a class="ref" href="#a-defects"></a>).</li>
+        </ul>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="layoutMarks"></div>
+        <figcaption>Top and bottom plates ganged together and marked in one pass: a line, then a letter on the side the stud goes.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A wall with a window between the 3rd and 5th stud positions.</p>
+        <ol class="steps"><li>Mark the regular layout (X) along the full plate first.</li><li>Mark the window’s king (K) and jack (J) studs from the rough opening, and change any X that falls inside the opening to C (cripple).</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Putting the X on the wrong side of the line. The line marks the stud’s edge; the X shows which side the 1½″ of stud occupies. Be consistent along the whole plate.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#g-stud-layout"></a></p>
+    </article>
+
+    <article class="topic" id="g-stud-layout" data-title="Stud layout at 16″ and 24″ on center">
+      <div class="prose">
+        <p><dfn>On center</dfn> (OC) spacing measures from the center of one stud to the center of the next: usually 16″ (walls, floors) or 24″. Sheets of plywood, OSB and drywall are 48″ wide, so with 16″ or 24″ layout their edges fall on the center of a stud, where they can be nailed.</p>
+        <p>The trick: hook the tape on the end of the plate and make the first line at <strong>15¼″</strong>, with the X past it. That puts the stud’s center at 16″. Every following line is 16″ further (31¼, 47¼…), which is why tapes print the 16″ marks in red.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="studLayout"></div>
+        <figcaption>16″ layout from the end of a plate. The first sheet’s 48″ edge lands on the center of the third stud.</figcaption></figure>
+      <div class="tablewrap"><table data-table="studLayout"><caption>Layout lines from the end of the plate</caption></table></div>
+      <div class="block formula"><div class="tag">Formula</div>
+        <div class="eq">layout line n = n × OC − ¾″</div>
+        <div class="eq">studs ≈ wall length ÷ OC, rounded up, + 1</div>
+        <p class="where">Plus extra studs at corners, intersections and openings.</p></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A 12-foot (144″) wall at 16″ OC.</p>
+        <ol class="steps"><li>Lines at 15¼, 31¼, 47¼, 63¼, 79¼, 95¼, 111¼, 127¼. End stud flush at 142½–144.</li><li>Studs: <span class="mono">144 ÷ 16 = 9, + 1 = 10</span> (the first at the end, eight on layout, one at the far end).</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Marking the first stud at 16″. Then its center is at 16¾″ and every sheet edge misses the studs by ¾″, leaving nothing to nail to.</p></div>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Walls">
+    <article class="topic" id="g-wall-parts" data-title="Parts of a framed wall">
+      <div class="prose">
+        <p>A stud wall is a ladder of vertical <dfn>studs</dfn> between a <dfn>bottom plate</dfn> (sole plate) and a doubled <dfn>top plate</dfn>. Openings need a few special pieces:</p>
+        <ul>
+          <li><dfn>Header</dfn>: a beam over the opening that carries the load above it.</li>
+          <li><dfn>King stud</dfn>: full-height stud on each side of the opening.</li>
+          <li><dfn>Jack stud</dfn> (trimmer): shorter stud nailed to the king that holds up the header.</li>
+          <li><dfn>Sill</dfn>: the horizontal piece at the bottom of a window opening.</li>
+          <li><dfn>Cripples</dfn>: short studs above the header and below the sill, on layout.</li>
+        </ul>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="wallParts"></div>
+        <figcaption>A wall with a window opening, seen from the side it will be sheathed.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Count the pieces for one window in a 16″ OC wall: 2 kings, 2 jacks, 1 header, 1 sill, cripples above and below wherever a layout mark falls inside the opening.</p></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Leaving out the jack studs and nailing the header to the kings. Nails alone won’t carry the load; the header must bear on jacks.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#g-rough-opening"></a></p>
+    </article>
+
+    <article class="topic" id="g-wall-height" data-title="Stud length and wall height">
+      <div class="prose">
+        <p>Wall height is the stud length plus the plates. For 8-foot ceilings, lumber yards sell <dfn>precut studs</dfn> at 92⅝″: add a 1½″ bottom plate and a doubled 1½″ top plate and the wall is 97⅛″, which leaves room for 96″ drywall sheets plus the ceiling drywall.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="wallHeight"></div>
+        <figcaption>Section through the wall: a 92⅝″ stud between one bottom plate and two top plates.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div><div class="eq">wall height = stud + 1½″ × number of plates</div></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <ol class="steps"><li>8-foot ceiling: <span class="mono">92⅝ + 3 × 1½ = 97⅛″</span></li><li>9-foot ceiling with 104⅝″ precuts: <span class="mono">104⅝ + 4½ = 109⅛″</span></li><li>A custom 100″ wall: stud = <span class="mono">100 − 4½ = 95½″</span></li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Cutting studs to 96″ for an “8-foot wall”. The wall ends up 100½″ tall and the drywall comes up short at the top.</p></div>
+    </article>
+
+    <article class="topic" id="g-rough-opening" data-title="Rough openings and headers">
+      <div class="prose">
+        <p>A <dfn>rough opening</dfn> (RO) is the framed hole a door or window goes into, a little bigger than the unit so it can be shimmed plumb. The manufacturer gives the RO; for a typical prehung interior door it is the door width + 2″ by 82½″ tall.</p>
+        <p>The header sits on the two jack studs, so it is 3″ longer than the opening (two 1½″ jacks). Its depth (2×8, 2×10, doubled or not) depends on the span and the load above it: take it from your plans or the code’s header tables.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="roughOpening"></div>
+        <figcaption>Framing for a 32″ door: a 34″ × 82½″ rough opening.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div>
+        <div class="eq">header length = RO width + 3″</div>
+        <div class="eq">jack length = RO height − bottom plate (1½″)</div>
+        <p class="where">For doors the bottom plate is cut out of the opening after the wall is up.</p></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>32″ door, RO 34″ × 82½″.</p>
+        <ol class="steps"><li>Header: <span class="mono">34 + 3 = 37″</span></li><li>Jacks: <span class="mono">82½ − 1½ = 81″</span> each</li><li>Kings: full 92⅝″ studs, nailed to the jacks.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Measuring the RO from the top of the bottom plate. Door RO heights are measured from the subfloor; the plate is later cut out of the doorway.</p></div>
+    </article>
+
+    <article class="topic" id="g-square-wall" data-title="Squaring and bracing a wall">
+      <div class="prose">
+        <p>Walls are usually framed lying flat on the floor. Before sheathing, square the frame by making its diagonals equal (<a class="ref" href="#b-diagonals"></a>), then tack it to the floor or nail on a temporary diagonal brace so it can’t rack while you sheathe and stand it up.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="squareWall"></div>
+        <figcaption>A 12-foot wall on the floor: diagonals equal, then a temporary brace from corner to corner.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>144″ × 97⅛″ wall.</p>
+        <ol class="steps"><li>Target diagonal: <span class="mono">√(144² + 97.125²) = 173.7″</span></li><li>Diagonals read 174⅛″ and 173¼″: push the long diagonal’s corners together until both read about 173¾″.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Sheathing first and squaring later. The sheathing locks in whatever shape the frame had. Square, then sheathe.</p></div>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Roof rafters">
+    <article class="topic" id="g-rafter-terms" data-title="Rafter terms: span, run, rise and pitch">
+      <div class="prose">
+        <p>A simple gable roof has pairs of <dfn>common rafters</dfn> leaning against a <dfn>ridge board</dfn> and resting on the wall’s top plates.</p>
+        <ul>
+          <li><dfn>Span</dfn>: outside of wall to outside of wall.</li>
+          <li><dfn>Run</dfn>: the horizontal distance one rafter covers, half the span for a symmetric gable.</li>
+          <li><dfn>Rise</dfn>: how far it climbs over its run. Pitch is rise per 12″ of run (<a class="ref" href="#c-pitch"></a>).</li>
+          <li><dfn>Overhang</dfn>: the part of the rafter (the <dfn>tail</dfn>) beyond the wall.</li>
+        </ul>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="rafterTerms"></div>
+        <figcaption>A 24-foot gable at 6-in-12, seen from the end.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>24′ span at 6-in-12.</p>
+        <ol class="steps"><li>Run: <span class="mono">24 ÷ 2 = 12′</span></li><li>Rise: <span class="mono">12 × 6 ÷ 12 = 6′</span> (to the ridge’s center line, at the outside of the wall)</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Using the inside wall-to-wall distance as the span. Span is outside to outside, since the rafter’s bird’s mouth sits at the outside edge of the plate.</p></div>
+    </article>
+
+    <article class="topic" id="g-rafter-length" data-title="Common rafter length and ridge reduction">
+      <div class="prose">
+        <p>The rafter runs along the slope, so its length is the run times the slope factor (<a class="ref" href="#c-pitch"></a>). One correction: the rafters stop against the ridge board, not at its center line, so each run is shorter by half the ridge thickness. This is the <dfn>ridge reduction</dfn>.</p>
+        <p>The resulting <dfn>line length</dfn> runs from the ridge plumb cut to the plumb line at the outside of the wall. Measure it between those two plumb lines along any line parallel to the rafter’s edge, such as the top edge.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="rafterLength"></div>
+        <figcaption>One rafter from ridge to wall: the run shortened by half the ridge board, times the slope factor.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div>
+        <div class="eq">run = span ÷ 2 − ridge thickness ÷ 2</div>
+        <div class="eq">line length = run × √(1 + (rise ÷ 12)²)</div></div>
+      <div class="tablewrap"><table data-table="rafterQuick"><caption>Rafter quick table</caption></table></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>24′ span, 6-in-12, 1½″ ridge board.</p>
+        <ol class="steps"><li>Run: <span class="mono">144 − 0.75 = 143¼″</span></li><li>Line length: <span class="mono">143.25 × 1.118 = 160.16″</span> ≈ <span class="mono">160³⁄₁₆″</span> (13′ 4³⁄₁₆″)</li><li>Plumb cut at the ridge: 26.6° on the saw.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Forgetting the ridge reduction. Each rafter comes out ¾″ × 1.118 ≈ ⅞″ too long and the ridge ends up higher than planned.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#i-calculators"></a></p>
+    </article>
+
+    <article class="topic" id="g-birdsmouth" data-title="The bird’s mouth">
+      <div class="prose">
+        <p>The <dfn>bird’s mouth</dfn> is the notch that lets a rafter sit flat on the top plate. It has two cuts: a level <dfn>seat cut</dfn> that bears on the plate, and a plumb <dfn>heel cut</dfn> that sits against the outside of the wall.</p>
+        <p>The seat is usually as wide as the wall (3½″ on a 2×4 wall). Don’t notch too deep: a common rule of thumb is to leave at least two-thirds of the rafter’s depth above the seat, and never cut past the plate.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="birdsmouth"></div>
+        <figcaption>A 2×6 rafter at 6-in-12 on a 2×4 wall: 3½″ level seat, 1¾″ plumb heel.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div>
+        <div class="eq">heel height (plumb) = seat length × rise ÷ 12</div></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>2×6 rafter, 6-in-12, 3½″ seat.</p>
+        <ol class="steps"><li>Heel: <span class="mono">3.5 × 6 ÷ 12 = 1¾″</span></li><li>Depth removed, measured square to the rafter: <span class="mono">1.75 × cos 26.57° = 1.57″</span>, about 28% of 5½″.</li></ol>
+        <p class="answer">Under a third of the depth: fine by the rule of thumb. Check your code and plans for the limit that applies.</p></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Overcutting the corner of the notch with a circular saw (the round blade cuts further on the bottom than the top). Stop at the line and finish the corner with a hand saw.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#c-plumb-level"></a></p>
+    </article>
+
+    <article class="topic" id="g-tail" data-title="Overhang and tail cuts">
+      <div class="prose">
+        <p>The rafter tail extends past the wall to form the <dfn>eave</dfn>. Its length along the rafter is the overhang’s horizontal run times the slope factor. The tail usually ends in a plumb cut (so a fascia board sits vertical) and sometimes a level cut underneath (to carry a flat soffit).</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="rafter"></div>
+        <figcaption>2×6 rafter tails at 6-in-12. Left: plumb-cut tail. Right: plumb and level cut.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div><div class="eq">tail length = overhang run × slope factor</div></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>12″ overhang at 6-in-12.</p>
+        <ol class="steps"><li>Tail: <span class="mono">12 × 1.118 = 13.42″</span> ≈ 13⁷⁄₁₆″ beyond the heel plumb line.</li><li>Tail plumb cut: 26.6° on the saw.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Cutting tails before the rafters are installed. Many framers leave tails long, then snap a line across all of them and cut them in place so the fascia runs dead straight.</p></div>
+    </article>
+
+    <article class="topic" id="g-speed-square-rafter" data-title="Marking rafters with a speed square">
+      <div class="prose">
+        <p>The speed square has a <dfn>COMMON</dfn> scale marked in rise per 12 (the same arc as the degree scale). To mark a plumb cut for any pitch: hold the pivot on the top edge of the rafter, swing the square until the pitch number on the COMMON scale lines up with that same edge, and draw along the pivot leg. That line is plumb when the rafter is in place.</p>
+        <p>A level line (for a seat or level cut) is square to the plumb line: slide the square along the plumb line and mark across it.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="speedSquareRafter"></div>
+        <figcaption>Pivoting to 6 on the COMMON scale on the top edge of a 2×6 marks a 6-in-12 plumb line.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <ol class="steps"><li>Ridge end: pivot on the top edge at the rafter’s end, swing to COMMON 6, mark the plumb line.</li><li>Measure the line length (160³⁄₁₆″) along the top edge, mark, and draw a second plumb line there: the heel line.</li><li>Mark the 3½″ seat square off the heel line.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Reading the COMMON scale on the degree row. On most squares 6 on the COMMON row is 26.6°; 6 on the degree row is a very different line.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-speed-pivot"></a></p>
+    </article>
+
+    <article class="topic" id="g-step-off" data-title="Framing-square step-off">
+      <div class="prose">
+        <p>The traditional layout with a framing square: set it on the rafter with 12 on the blade and the rise (6) on the tongue, both touching the top edge. Draw along the tongue for the plumb line, then <em>step</em> the square along the rafter, one step for each foot of run. A leftover part-foot is one partial step using that many inches on the blade.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="stepOff"></div>
+        <figcaption>Stepping off a 6-in-12 rafter: each step covers 12″ of run and 6″ of rise along the top edge.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Run 143¼″ = 11 feet and 11¼″.</p>
+        <ol class="steps"><li>From the ridge plumb line, make 11 full steps at 12 and 6.</li><li>One partial step: slide the square until the blade reads 11¼″ at the last mark, keeping the same angle (tongue at 5⅝″, half of 11¼).</li><li>The tongue’s line there is the heel plumb line.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Letting the square creep between steps. Use stair gauges clamped at 12 and 6 so each step lands exactly where the last one ended.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-framing-square"></a></p>
+    </article>
+
+    <article class="topic" id="g-hips" data-title="Hips and valleys (intro)">
+      <div class="prose">
+        <p>On a hip roof the corners slope too. The <dfn>hip rafter</dfn> runs diagonally, at 45° in plan, from the building’s corner up to the ridge; a <dfn>valley rafter</dfn> runs along an inside corner where two roofs meet. Because the hip runs diagonally, it covers 16.97″ of run (√2 × 12) for every 12″ that the common rafters cover, while rising the same amount. So its pitch is shallower: “6 in 16.97” for a 6-in-12 roof.</p>
+        <p>Hips also need <dfn>cheek cuts</dfn> at the top: two 45° bevels that let them nest against the ridge and commons. This is advanced layout; this page is only the idea.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="hips"></div>
+        <figcaption>A hip roof in plan. The hips run at 45° from each corner; each foot of common run is 16.97″ of hip run.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div>
+        <div class="eq">hip slope = arctan(rise ÷ 16.97)</div>
+        <div class="eq">hip length per foot of common run = √(16.97² + rise²)</div></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>6-in-12 main roof.</p>
+        <ol class="steps"><li>Hip slope: <span class="mono">arctan(6 ÷ 16.97) = 19.47°</span></li><li>Hip per foot of common run: <span class="mono">√(16.97² + 6²) = 18.0″</span></li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Cutting the hip’s plumb cuts at the common rafter’s angle. The hip is shallower, so its plumb cut is 19.5°, not 26.6°.</p></div>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Stairs">
+    <article class="topic" id="g-stair-terms" data-title="Stair terms and typical code limits">
+      <div class="prose">
+        <p>A stair climbs a <dfn>total rise</dfn> (floor to floor) in equal steps. Each step has a <dfn>riser</dfn> (the vertical height) and a <dfn>tread</dfn> (the horizontal depth you step on); the sloping boards that carry them are <dfn>stringers</dfn>. The front edge of a tread that overhangs the riser below is the <dfn>nosing</dfn>.</p>
+        <p>Every riser in a flight must be the same height (within ⅜″), because your feet expect it. Typical US residential limits:</p>
+        <ul>
+          <li>Riser height: 7¾″ maximum.</li>
+          <li>Tread depth: 10″ minimum, nosing to nosing.</li>
+          <li>Headroom: 6′8″ minimum.</li>
+          <li>Width: 36″ minimum for a main stair.</li>
+        </ul>
+        <p>A comfort check used by many builders: <span class="mono">2 × riser + tread ≈ 24–25″</span>.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="stairTerms"></div>
+        <figcaption>A short run of stairs from the side, with the parts named.</figcaption></figure>
+      <p class="code-note">Limits shown are typical of the 2021 IRC for one- and two-family homes. Check your local code; decks and commercial stairs can differ.</p>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Making the top or bottom step a different height to “use up” leftover rise. It is a classic trip hazard and fails inspection. Divide the total rise evenly.</p></div>
+    </article>
+
+    <article class="topic" id="g-stair-math" data-title="Calculating risers and treads">
+      <div class="prose">
+        <p>Start from the total rise, measured from the finished surface below to the finished surface above. Divide by a comfortable target riser (about 7½″) and round <em>up</em> to get the number of risers. Divide the total rise by that whole number for the exact riser height. There is one fewer tread than risers, because the top “tread” is the floor or deck you arrive on.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="stairMath"></div>
+        <figcaption>42″ of total rise in 6 equal risers of 7″, with 5 treads of 10½″ (drawn to scale).</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div>
+        <div class="eq">risers = total rise ÷ 7½, rounded up</div>
+        <div class="eq">riser = total rise ÷ risers</div>
+        <div class="eq">treads = risers − 1 · total run = treads × tread</div></div>
+      <div class="tablewrap"><table data-table="stairQuick"><caption>Quick stair table (target riser 7½″, max 7¾″, 10½″ treads)</caption></table></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A deck 42″ above the patio, 10½″ treads.</p>
+        <ol class="steps"><li>Risers: <span class="mono">42 ÷ 7.5 = 5.6</span> → <span class="mono">6</span></li><li>Riser height: <span class="mono">42 ÷ 6 = 7″</span></li><li>Treads: 5; total run <span class="mono">5 × 10½ = 52½″</span></li><li>Comfort: <span class="mono">2 × 7 + 10½ = 24½″</span> ✓</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Measuring total rise to the ground right under the deck edge, then building the stair to land 4½ feet out where the ground is lower. Measure the rise at the spot where the bottom step will land (a level and a straight board help).</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#i-calculators"></a></p>
+    </article>
+
+    <article class="topic" id="g-stair-layout" data-title="Laying out a stringer">
+      <div class="prose">
+        <p>Stringers are usually cut from 2×12s. Clamp <dfn>stair gauges</dfn> (small brass stops) on a framing square at the riser height on the tongue and the tread depth on the blade. Lay the square on the stringer with both gauges against the top edge, trace the riser and tread, slide along to the end of the tread, and repeat. Every step comes out identical.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="stairLayout"></div>
+        <figcaption>Laying out a 2×12 stringer with stair gauges at 7″ (tongue) and 10½″ (blade).</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>The 42″ deck stair: gauges at 7″ and 10½″.</p>
+        <ol class="steps"><li>Lay out 6 risers and 5 treads.</li><li>Stringer stock: <span class="mono">√(42² + 52.5²) = 67.2″</span> plus about a foot for the ends: an 8-foot 2×12.</li><li>Check: the throat (the narrowest wood left between the notches and the bottom edge) should be at least about 3½″–5″; follow your code.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Overcutting the notch corners with the circular saw, which weakens the stringer. Stop at the lines and finish with a hand saw or jigsaw.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-framing-square"></a></p>
+    </article>
+
+    <article class="topic" id="g-stair-drop" data-title="Dropping the stringer">
+      <div class="prose">
+        <p>Every riser is laid out the same height, but the treads add thickness to the steps. At the top, each tread raises its step by its own thickness, and so does the step below it, so the steps between treads stay equal. At the bottom there is no tread under the first step. The first step would therefore be one tread thickness too tall. To fix it, cut one tread thickness off the bottom of the stringer: <dfn>dropping the stringer</dfn>.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="stairDrop"></div>
+        <figcaption>The bottom of the stringer, dropped by the 1½″ tread thickness so the first step is 7″ once the tread is on.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>7″ risers with 1½″ (2×6) treads.</p>
+        <ol class="steps"><li>Laid out: the first riser is 7″ from the stringer’s bottom cut to the first tread line.</li><li>Cut 1½″ off the bottom: the first tread cut sits 5½″ up; with its 1½″ tread it is 7″ above the ground, like every other step.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Forgetting the drop on the bottom, which leaves the first step 1½″ taller than the rest: the step people trip on.</p></div>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Braces, blocking and sheathing">
+    <article class="topic" id="g-braces-blocking" data-title="Blocking between studs and joists">
+      <div class="prose">
+        <p><dfn>Blocking</dfn> is short lengths of framing lumber nailed between studs or joists: for fire blocking, backing for cabinets and grab bars, and to stiffen floors. Cut blocks to the clear space between framing, which at regular layout is the spacing minus one stud thickness.</p>
+        <p>Stagger blocks up and down by their own width so you can nail through the stud into each end.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="blocking"></div>
+        <figcaption>Staggered blocks between 16″ OC studs, each 14½″ long.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div><div class="eq">block length = OC spacing − 1½″</div></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <ol class="steps"><li>16″ OC: <span class="mono">16 − 1½ = 14½″</span></li><li>24″ OC: <span class="mono">22½″</span></li><li>Measure any bay that isn’t on layout (next to openings or corners) and cut that block to fit.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Cutting blocks a hair long and hammering them in. They bow the studs. Cut them exact or ¹⁄₁₆″ short.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#c-braces"></a></p>
+    </article>
+
+    <article class="topic" id="g-sheathing" data-title="Sheathing layout and cutting">
+      <div class="prose">
+        <p>Wall sheathing (plywood or OSB, 4′ × 8′) is nailed to the studs to brace the wall. Two rules make it go on right:</p>
+        <ul>
+          <li>Every vertical edge lands on a stud center. With 16″ or 24″ layout from the end of the wall, that happens automatically every 48″.</li>
+          <li>Leave about ⅛″ between sheets so they have room to swell.</li>
+        </ul>
+        <p>Sheathe right over window and door openings and cut them out afterwards, following the framing from inside with a saw or router. It is faster and the edges line up exactly.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="sheathing"></div>
+        <figcaption>Sheets on a 16″ OC wall: every joint falls on a stud center, with a ⅛″ gap.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A 12-foot wall at 16″ OC.</p>
+        <ol class="steps"><li>Sheet 1: 0–48″, edge on the stud centered at 48″.</li><li>Sheet 2: 48⅛–96⅛″; sheet 3 fills the rest, cut to about 47¾″.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Butting sheets tight. When they swell in wet weather, they buckle between studs. Use a 10d nail as a spacer for the ⅛″ gap.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-chalk"></a><a class="ref" href="#d-cs-rip"></a></p>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Decks and posts">
+    <article class="topic" id="g-deck-layout" data-title="Laying out a square deck">
+      <div class="prose">
+        <p>A deck starts with strings, not wood. Fasten the <dfn>ledger</dfn> (the board bolted to the house) level, then set up <dfn>batter boards</dfn> (small frames on stakes beyond each outside corner) and stretch mason’s strings from them to mark the deck’s outer edges. Square the strings to the house with a 3-4-5 triangle, then confirm with the diagonals.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="deckLayout"></div>
+        <figcaption>Plan view: ledger on the house, strings from batter boards, a 6-8-10 triangle at the corner, and equal diagonals.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A 16′ × 12′ deck.</p>
+        <ol class="steps"><li>Square each side string with 6-8-10 feet off the ledger.</li><li>Diagonals: <span class="mono">√(16² + 12²) = 20′</span> each. Adjust the strings until both measure 20′.</li><li>Post centers are measured along the strings; drop them to the ground with a plumb bob.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Setting posts before checking the diagonals. A string that is an inch out at the corner puts a post in the wrong hole. Check diagonals, then dig.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-345"></a><a class="ref" href="#b-plumb"></a></p>
+    </article>
+
+    <article class="topic" id="g-posts" data-title="Cutting posts to height and angled deck corners">
+      <div class="prose">
+        <p>Posts are usually set long and cut in place. Carry a level line from the ledger (with a long level on a straight board, a water level or a laser), mark it on one face, and wrap it around all four faces with a speed square. A 4×4 (3½″) is thicker than a 7¼″ circular saw cuts in one pass, so cut from two opposite sides.</p>
+        <p>For a deck with a corner cut off at 45°, the rim and decking at that corner meet at 135°: each piece takes half, so the saw is at 22.5° (<a class="ref" href="#c-odd-corners"></a>).</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="posts"></div>
+        <figcaption>Left: marking and cutting a 4×4 post to a level line from two sides. Right: a 45° deck corner; its rim joints are cut at 22.5°.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Posts that carry a doubled 2×10 beam hung below the joists.</p>
+        <ol class="steps"><li>Level line from the bottom of the ledger to each post.</li><li>Post top = that line − joist depth (9¼″) − beam depth (9¼″), if the beam sits under the joists on top of the posts.</li><li>Wrap the line, cut from two sides.</li></ol></div>
+      <div class="block safety"><div class="tag">Safety</div><ul><li>Cutting overhead or on a ladder is where circular-saw accidents happen. Cut posts at a comfortable height, or mark them and cut them on sawhorses before setting.</li></ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Marking all posts the same length from the ground. Grade is never level; always transfer height from the ledger.</p></div>
+    </article>
+  </div>
+</section>

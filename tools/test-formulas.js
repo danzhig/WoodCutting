@@ -81,5 +81,27 @@ near('crown 52/38 flat miter', F.compoundA(38, F.sawFromCorner(90)).miter, 31.62
 near('1×8 width change', F.movement(7.25, 0.003, 4), 0.087, 0.001);
 near('1×8 heel gap', Math.SQRT2 * F.movement(7.25, 0.003, 4), 0.123, 0.002);
 
+// ---- Guide G ----
+same('first layout mark', F.layoutMarks(144, 16)[0], 15.25);
+near('stud count 12 ft at 16', F.studCount(144, 16), 10);
+near('wall height 92 5/8', F.wallHeight(92.625), 97.125);
+near('wall height 104 5/8', F.wallHeight(104.625), 109.125);
+near('header 34 RO', F.headerLen(34), 37);
+near('wall diagonal', F.diagonal(144, 97.125), 173.69, 0.01);
+const R = F.rafter(288, 6, 1.5, 12);
+near('rafter run', R.run, 143.25);
+near('rafter line length', R.length, 160.16, 0.01);
+same('rafter length frac', K.frac(R.length), '160³⁄₁₆″');
+near('rafter tail', R.tail, 13.42, 0.01);
+near('birdsmouth heel', 3.5 * 6 / 12, 1.75);
+near('birdsmouth depth removed', 1.75 * K.cos(F.pitchDeg(6)), 1.565, 0.002);
+near('hip slope 6/12', F.hipRise(6).angle, 19.47, 0.01);
+near('hip per foot', Math.hypot(16.97, 6), 18.0, 0.01);
+const S = F.stairs(42);
+near('stairs 42 risers', S.risers, 6); near('stairs 42 riser', S.riser, 7); near('stairs 42 run', S.totalRun, 52.5); near('stairs comfort', S.comfort, 24.5);
+near('stringer diagonal', Math.hypot(42, 52.5), 67.2, 0.05);
+near('block 16 OC', F.blockLen(16), 14.5);
+near('deck diagonal', F.diagonal(16, 12), 20);
+
 console.log(`${n - fails}/${n} checks passed`);
 process.exit(fails ? 1 : 0);

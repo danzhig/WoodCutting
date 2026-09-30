@@ -2512,6 +2512,381 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
   </div>
 </section>
 
+<!-- src/guides/g-framing.html -->
+<!-- =====================================================================
+     GUIDE G · FRAMING & CONSTRUCTION
+     ===================================================================== -->
+<section class="guide" data-letter="G" data-title="Framing & Construction" data-sub="Layout, walls, rough openings, roof rafters, stairs, blocking, sheathing and decks: the cuts and the math of building with dimensional lumber.">
+  <div class="guide-intro">
+    <div class="prose"><p>Framing is where all the earlier guides come together at full scale: tape and square, pitch and plumb cuts, and a lot of repeated 2× cuts. Code-dependent numbers here are <b>typical US (IRC) values</b>; your local building department has the final word, and structural sizes (headers, joists, rafters) come from span tables or your plans, not from this guide.</p></div>
+    <div class="keypoints"><h3>Key points</h3><ul>
+      <li>16″ on center: first layout line at 15¼″, then every 16″. Sheet edges land on stud centers.</li>
+      <li>92⅝″ precut studs + three 1½″ plates = a 97⅛″ wall, right for an 8-foot ceiling.</li>
+      <li>Header length = rough opening + 3″.</li>
+      <li>Rafter: run = span ÷ 2 − ridge ÷ 2; length = run × slope factor. Plumb cut = slope angle.</li>
+      <li>Stairs: risers = total rise ÷ 7½, rounded up; treads = risers − 1; drop the stringer by one tread thickness.</li>
+    </ul></div>
+    <p class="code-note">Code values quoted are typical of the 2021 International Residential Code. Always check your local code before building.</p>
+  </div>
+
+  <div class="gsection" data-title="Layout basics">
+    <article class="topic" id="g-layout-marks" data-title="Layout marks and ganging plates">
+      <div class="prose">
+        <p>Walls are laid out on their plates before any stud is cut. Lay the bottom plate and the top plate side by side, edges flush and ends aligned, and mark both at once (<dfn>ganging</dfn> the plates). Then every stud lands in the same place top and bottom.</p>
+        <p>Framers use a small set of marks: a line on one side of the stud position and a letter on the side the stud goes:</p>
+        <ul>
+          <li><b>X</b>: common stud. <b>K</b>: king stud. <b>J</b>: jack (trimmer) stud. <b>C</b>: cripple.</li>
+          <li>Mark the crown of every stud and joist and install them crown-the-same-way (<a class="ref" href="#a-defects"></a>).</li>
+        </ul>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="layoutMarks"></div>
+        <figcaption>Top and bottom plates ganged together and marked in one pass: a line, then a letter on the side the stud goes.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A wall with a window between the 3rd and 5th stud positions.</p>
+        <ol class="steps"><li>Mark the regular layout (X) along the full plate first.</li><li>Mark the window’s king (K) and jack (J) studs from the rough opening, and change any X that falls inside the opening to C (cripple).</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Putting the X on the wrong side of the line. The line marks the stud’s edge; the X shows which side the 1½″ of stud occupies. Be consistent along the whole plate.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#g-stud-layout"></a></p>
+    </article>
+
+    <article class="topic" id="g-stud-layout" data-title="Stud layout at 16″ and 24″ on center">
+      <div class="prose">
+        <p><dfn>On center</dfn> (OC) spacing measures from the center of one stud to the center of the next: usually 16″ (walls, floors) or 24″. Sheets of plywood, OSB and drywall are 48″ wide, so with 16″ or 24″ layout their edges fall on the center of a stud, where they can be nailed.</p>
+        <p>The trick: hook the tape on the end of the plate and make the first line at <strong>15¼″</strong>, with the X past it. That puts the stud’s center at 16″. Every following line is 16″ further (31¼, 47¼…), which is why tapes print the 16″ marks in red.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="studLayout"></div>
+        <figcaption>16″ layout from the end of a plate. The first sheet’s 48″ edge lands on the center of the third stud.</figcaption></figure>
+      <div class="tablewrap"><table data-table="studLayout"><caption>Layout lines from the end of the plate</caption></table></div>
+      <div class="block formula"><div class="tag">Formula</div>
+        <div class="eq">layout line n = n × OC − ¾″</div>
+        <div class="eq">studs ≈ wall length ÷ OC, rounded up, + 1</div>
+        <p class="where">Plus extra studs at corners, intersections and openings.</p></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A 12-foot (144″) wall at 16″ OC.</p>
+        <ol class="steps"><li>Lines at 15¼, 31¼, 47¼, 63¼, 79¼, 95¼, 111¼, 127¼. End stud flush at 142½–144.</li><li>Studs: <span class="mono">144 ÷ 16 = 9, + 1 = 10</span> (the first at the end, eight on layout, one at the far end).</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Marking the first stud at 16″. Then its center is at 16¾″ and every sheet edge misses the studs by ¾″, leaving nothing to nail to.</p></div>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Walls">
+    <article class="topic" id="g-wall-parts" data-title="Parts of a framed wall">
+      <div class="prose">
+        <p>A stud wall is a ladder of vertical <dfn>studs</dfn> between a <dfn>bottom plate</dfn> (sole plate) and a doubled <dfn>top plate</dfn>. Openings need a few special pieces:</p>
+        <ul>
+          <li><dfn>Header</dfn>: a beam over the opening that carries the load above it.</li>
+          <li><dfn>King stud</dfn>: full-height stud on each side of the opening.</li>
+          <li><dfn>Jack stud</dfn> (trimmer): shorter stud nailed to the king that holds up the header.</li>
+          <li><dfn>Sill</dfn>: the horizontal piece at the bottom of a window opening.</li>
+          <li><dfn>Cripples</dfn>: short studs above the header and below the sill, on layout.</li>
+        </ul>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="wallParts"></div>
+        <figcaption>A wall with a window opening, seen from the side it will be sheathed.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Count the pieces for one window in a 16″ OC wall: 2 kings, 2 jacks, 1 header, 1 sill, cripples above and below wherever a layout mark falls inside the opening.</p></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Leaving out the jack studs and nailing the header to the kings. Nails alone won’t carry the load; the header must bear on jacks.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#g-rough-opening"></a></p>
+    </article>
+
+    <article class="topic" id="g-wall-height" data-title="Stud length and wall height">
+      <div class="prose">
+        <p>Wall height is the stud length plus the plates. For 8-foot ceilings, lumber yards sell <dfn>precut studs</dfn> at 92⅝″: add a 1½″ bottom plate and a doubled 1½″ top plate and the wall is 97⅛″, which leaves room for 96″ drywall sheets plus the ceiling drywall.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="wallHeight"></div>
+        <figcaption>Section through the wall: a 92⅝″ stud between one bottom plate and two top plates.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div><div class="eq">wall height = stud + 1½″ × number of plates</div></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <ol class="steps"><li>8-foot ceiling: <span class="mono">92⅝ + 3 × 1½ = 97⅛″</span></li><li>9-foot ceiling with 104⅝″ precuts: <span class="mono">104⅝ + 4½ = 109⅛″</span></li><li>A custom 100″ wall: stud = <span class="mono">100 − 4½ = 95½″</span></li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Cutting studs to 96″ for an “8-foot wall”. The wall ends up 100½″ tall and the drywall comes up short at the top.</p></div>
+    </article>
+
+    <article class="topic" id="g-rough-opening" data-title="Rough openings and headers">
+      <div class="prose">
+        <p>A <dfn>rough opening</dfn> (RO) is the framed hole a door or window goes into, a little bigger than the unit so it can be shimmed plumb. The manufacturer gives the RO; for a typical prehung interior door it is the door width + 2″ by 82½″ tall.</p>
+        <p>The header sits on the two jack studs, so it is 3″ longer than the opening (two 1½″ jacks). Its depth (2×8, 2×10, doubled or not) depends on the span and the load above it: take it from your plans or the code’s header tables.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="roughOpening"></div>
+        <figcaption>Framing for a 32″ door: a 34″ × 82½″ rough opening.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div>
+        <div class="eq">header length = RO width + 3″</div>
+        <div class="eq">jack length = RO height − bottom plate (1½″)</div>
+        <p class="where">For doors the bottom plate is cut out of the opening after the wall is up.</p></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>32″ door, RO 34″ × 82½″.</p>
+        <ol class="steps"><li>Header: <span class="mono">34 + 3 = 37″</span></li><li>Jacks: <span class="mono">82½ − 1½ = 81″</span> each</li><li>Kings: full 92⅝″ studs, nailed to the jacks.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Measuring the RO from the top of the bottom plate. Door RO heights are measured from the subfloor; the plate is later cut out of the doorway.</p></div>
+    </article>
+
+    <article class="topic" id="g-square-wall" data-title="Squaring and bracing a wall">
+      <div class="prose">
+        <p>Walls are usually framed lying flat on the floor. Before sheathing, square the frame by making its diagonals equal (<a class="ref" href="#b-diagonals"></a>), then tack it to the floor or nail on a temporary diagonal brace so it can’t rack while you sheathe and stand it up.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="squareWall"></div>
+        <figcaption>A 12-foot wall on the floor: diagonals equal, then a temporary brace from corner to corner.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>144″ × 97⅛″ wall.</p>
+        <ol class="steps"><li>Target diagonal: <span class="mono">√(144² + 97.125²) = 173.7″</span></li><li>Diagonals read 174⅛″ and 173¼″: push the long diagonal’s corners together until both read about 173¾″.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Sheathing first and squaring later. The sheathing locks in whatever shape the frame had. Square, then sheathe.</p></div>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Roof rafters">
+    <article class="topic" id="g-rafter-terms" data-title="Rafter terms: span, run, rise and pitch">
+      <div class="prose">
+        <p>A simple gable roof has pairs of <dfn>common rafters</dfn> leaning against a <dfn>ridge board</dfn> and resting on the wall’s top plates.</p>
+        <ul>
+          <li><dfn>Span</dfn>: outside of wall to outside of wall.</li>
+          <li><dfn>Run</dfn>: the horizontal distance one rafter covers, half the span for a symmetric gable.</li>
+          <li><dfn>Rise</dfn>: how far it climbs over its run. Pitch is rise per 12″ of run (<a class="ref" href="#c-pitch"></a>).</li>
+          <li><dfn>Overhang</dfn>: the part of the rafter (the <dfn>tail</dfn>) beyond the wall.</li>
+        </ul>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="rafterTerms"></div>
+        <figcaption>A 24-foot gable at 6-in-12, seen from the end.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>24′ span at 6-in-12.</p>
+        <ol class="steps"><li>Run: <span class="mono">24 ÷ 2 = 12′</span></li><li>Rise: <span class="mono">12 × 6 ÷ 12 = 6′</span> (to the ridge’s center line, at the outside of the wall)</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Using the inside wall-to-wall distance as the span. Span is outside to outside, since the rafter’s bird’s mouth sits at the outside edge of the plate.</p></div>
+    </article>
+
+    <article class="topic" id="g-rafter-length" data-title="Common rafter length and ridge reduction">
+      <div class="prose">
+        <p>The rafter runs along the slope, so its length is the run times the slope factor (<a class="ref" href="#c-pitch"></a>). One correction: the rafters stop against the ridge board, not at its center line, so each run is shorter by half the ridge thickness. This is the <dfn>ridge reduction</dfn>.</p>
+        <p>The resulting <dfn>line length</dfn> runs from the ridge plumb cut to the plumb line at the outside of the wall. Measure it between those two plumb lines along any line parallel to the rafter’s edge, such as the top edge.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="rafterLength"></div>
+        <figcaption>One rafter from ridge to wall: the run shortened by half the ridge board, times the slope factor.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div>
+        <div class="eq">run = span ÷ 2 − ridge thickness ÷ 2</div>
+        <div class="eq">line length = run × √(1 + (rise ÷ 12)²)</div></div>
+      <div class="tablewrap"><table data-table="rafterQuick"><caption>Rafter quick table</caption></table></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>24′ span, 6-in-12, 1½″ ridge board.</p>
+        <ol class="steps"><li>Run: <span class="mono">144 − 0.75 = 143¼″</span></li><li>Line length: <span class="mono">143.25 × 1.118 = 160.16″</span> ≈ <span class="mono">160³⁄₁₆″</span> (13′ 4³⁄₁₆″)</li><li>Plumb cut at the ridge: 26.6° on the saw.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Forgetting the ridge reduction. Each rafter comes out ¾″ × 1.118 ≈ ⅞″ too long and the ridge ends up higher than planned.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#i-calculators"></a></p>
+    </article>
+
+    <article class="topic" id="g-birdsmouth" data-title="The bird’s mouth">
+      <div class="prose">
+        <p>The <dfn>bird’s mouth</dfn> is the notch that lets a rafter sit flat on the top plate. It has two cuts: a level <dfn>seat cut</dfn> that bears on the plate, and a plumb <dfn>heel cut</dfn> that sits against the outside of the wall.</p>
+        <p>The seat is usually as wide as the wall (3½″ on a 2×4 wall). Don’t notch too deep: a common rule of thumb is to leave at least two-thirds of the rafter’s depth above the seat, and never cut past the plate.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="birdsmouth"></div>
+        <figcaption>A 2×6 rafter at 6-in-12 on a 2×4 wall: 3½″ level seat, 1¾″ plumb heel.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div>
+        <div class="eq">heel height (plumb) = seat length × rise ÷ 12</div></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>2×6 rafter, 6-in-12, 3½″ seat.</p>
+        <ol class="steps"><li>Heel: <span class="mono">3.5 × 6 ÷ 12 = 1¾″</span></li><li>Depth removed, measured square to the rafter: <span class="mono">1.75 × cos 26.57° = 1.57″</span>, about 28% of 5½″.</li></ol>
+        <p class="answer">Under a third of the depth: fine by the rule of thumb. Check your code and plans for the limit that applies.</p></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Overcutting the corner of the notch with a circular saw (the round blade cuts further on the bottom than the top). Stop at the line and finish the corner with a hand saw.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#c-plumb-level"></a></p>
+    </article>
+
+    <article class="topic" id="g-tail" data-title="Overhang and tail cuts">
+      <div class="prose">
+        <p>The rafter tail extends past the wall to form the <dfn>eave</dfn>. Its length along the rafter is the overhang’s horizontal run times the slope factor. The tail usually ends in a plumb cut (so a fascia board sits vertical) and sometimes a level cut underneath (to carry a flat soffit).</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="rafter"></div>
+        <figcaption>2×6 rafter tails at 6-in-12. Left: plumb-cut tail. Right: plumb and level cut.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div><div class="eq">tail length = overhang run × slope factor</div></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>12″ overhang at 6-in-12.</p>
+        <ol class="steps"><li>Tail: <span class="mono">12 × 1.118 = 13.42″</span> ≈ 13⁷⁄₁₆″ beyond the heel plumb line.</li><li>Tail plumb cut: 26.6° on the saw.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Cutting tails before the rafters are installed. Many framers leave tails long, then snap a line across all of them and cut them in place so the fascia runs dead straight.</p></div>
+    </article>
+
+    <article class="topic" id="g-speed-square-rafter" data-title="Marking rafters with a speed square">
+      <div class="prose">
+        <p>The speed square has a <dfn>COMMON</dfn> scale marked in rise per 12 (the same arc as the degree scale). To mark a plumb cut for any pitch: hold the pivot on the top edge of the rafter, swing the square until the pitch number on the COMMON scale lines up with that same edge, and draw along the pivot leg. That line is plumb when the rafter is in place.</p>
+        <p>A level line (for a seat or level cut) is square to the plumb line: slide the square along the plumb line and mark across it.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="speedSquareRafter"></div>
+        <figcaption>Pivoting to 6 on the COMMON scale on the top edge of a 2×6 marks a 6-in-12 plumb line.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <ol class="steps"><li>Ridge end: pivot on the top edge at the rafter’s end, swing to COMMON 6, mark the plumb line.</li><li>Measure the line length (160³⁄₁₆″) along the top edge, mark, and draw a second plumb line there: the heel line.</li><li>Mark the 3½″ seat square off the heel line.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Reading the COMMON scale on the degree row. On most squares 6 on the COMMON row is 26.6°; 6 on the degree row is a very different line.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-speed-pivot"></a></p>
+    </article>
+
+    <article class="topic" id="g-step-off" data-title="Framing-square step-off">
+      <div class="prose">
+        <p>The traditional layout with a framing square: set it on the rafter with 12 on the blade and the rise (6) on the tongue, both touching the top edge. Draw along the tongue for the plumb line, then <em>step</em> the square along the rafter, one step for each foot of run. A leftover part-foot is one partial step using that many inches on the blade.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="stepOff"></div>
+        <figcaption>Stepping off a 6-in-12 rafter: each step covers 12″ of run and 6″ of rise along the top edge.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Run 143¼″ = 11 feet and 11¼″.</p>
+        <ol class="steps"><li>From the ridge plumb line, make 11 full steps at 12 and 6.</li><li>One partial step: slide the square until the blade reads 11¼″ at the last mark, keeping the same angle (tongue at 5⅝″, half of 11¼).</li><li>The tongue’s line there is the heel plumb line.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Letting the square creep between steps. Use stair gauges clamped at 12 and 6 so each step lands exactly where the last one ended.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-framing-square"></a></p>
+    </article>
+
+    <article class="topic" id="g-hips" data-title="Hips and valleys (intro)">
+      <div class="prose">
+        <p>On a hip roof the corners slope too. The <dfn>hip rafter</dfn> runs diagonally, at 45° in plan, from the building’s corner up to the ridge; a <dfn>valley rafter</dfn> runs along an inside corner where two roofs meet. Because the hip runs diagonally, it covers 16.97″ of run (√2 × 12) for every 12″ that the common rafters cover, while rising the same amount. So its pitch is shallower: “6 in 16.97” for a 6-in-12 roof.</p>
+        <p>Hips also need <dfn>cheek cuts</dfn> at the top: two 45° bevels that let them nest against the ridge and commons. This is advanced layout; this page is only the idea.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="hips"></div>
+        <figcaption>A hip roof in plan. The hips run at 45° from each corner; each foot of common run is 16.97″ of hip run.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div>
+        <div class="eq">hip slope = arctan(rise ÷ 16.97)</div>
+        <div class="eq">hip length per foot of common run = √(16.97² + rise²)</div></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>6-in-12 main roof.</p>
+        <ol class="steps"><li>Hip slope: <span class="mono">arctan(6 ÷ 16.97) = 19.47°</span></li><li>Hip per foot of common run: <span class="mono">√(16.97² + 6²) = 18.0″</span></li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Cutting the hip’s plumb cuts at the common rafter’s angle. The hip is shallower, so its plumb cut is 19.5°, not 26.6°.</p></div>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Stairs">
+    <article class="topic" id="g-stair-terms" data-title="Stair terms and typical code limits">
+      <div class="prose">
+        <p>A stair climbs a <dfn>total rise</dfn> (floor to floor) in equal steps. Each step has a <dfn>riser</dfn> (the vertical height) and a <dfn>tread</dfn> (the horizontal depth you step on); the sloping boards that carry them are <dfn>stringers</dfn>. The front edge of a tread that overhangs the riser below is the <dfn>nosing</dfn>.</p>
+        <p>Every riser in a flight must be the same height (within ⅜″), because your feet expect it. Typical US residential limits:</p>
+        <ul>
+          <li>Riser height: 7¾″ maximum.</li>
+          <li>Tread depth: 10″ minimum, nosing to nosing.</li>
+          <li>Headroom: 6′8″ minimum.</li>
+          <li>Width: 36″ minimum for a main stair.</li>
+        </ul>
+        <p>A comfort check used by many builders: <span class="mono">2 × riser + tread ≈ 24–25″</span>.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="stairTerms"></div>
+        <figcaption>A short run of stairs from the side, with the parts named.</figcaption></figure>
+      <p class="code-note">Limits shown are typical of the 2021 IRC for one- and two-family homes. Check your local code; decks and commercial stairs can differ.</p>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Making the top or bottom step a different height to “use up” leftover rise. It is a classic trip hazard and fails inspection. Divide the total rise evenly.</p></div>
+    </article>
+
+    <article class="topic" id="g-stair-math" data-title="Calculating risers and treads">
+      <div class="prose">
+        <p>Start from the total rise, measured from the finished surface below to the finished surface above. Divide by a comfortable target riser (about 7½″) and round <em>up</em> to get the number of risers. Divide the total rise by that whole number for the exact riser height. There is one fewer tread than risers, because the top “tread” is the floor or deck you arrive on.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="stairMath"></div>
+        <figcaption>42″ of total rise in 6 equal risers of 7″, with 5 treads of 10½″ (drawn to scale).</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div>
+        <div class="eq">risers = total rise ÷ 7½, rounded up</div>
+        <div class="eq">riser = total rise ÷ risers</div>
+        <div class="eq">treads = risers − 1 · total run = treads × tread</div></div>
+      <div class="tablewrap"><table data-table="stairQuick"><caption>Quick stair table (target riser 7½″, max 7¾″, 10½″ treads)</caption></table></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A deck 42″ above the patio, 10½″ treads.</p>
+        <ol class="steps"><li>Risers: <span class="mono">42 ÷ 7.5 = 5.6</span> → <span class="mono">6</span></li><li>Riser height: <span class="mono">42 ÷ 6 = 7″</span></li><li>Treads: 5; total run <span class="mono">5 × 10½ = 52½″</span></li><li>Comfort: <span class="mono">2 × 7 + 10½ = 24½″</span> ✓</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Measuring total rise to the ground right under the deck edge, then building the stair to land 4½ feet out where the ground is lower. Measure the rise at the spot where the bottom step will land (a level and a straight board help).</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#i-calculators"></a></p>
+    </article>
+
+    <article class="topic" id="g-stair-layout" data-title="Laying out a stringer">
+      <div class="prose">
+        <p>Stringers are usually cut from 2×12s. Clamp <dfn>stair gauges</dfn> (small brass stops) on a framing square at the riser height on the tongue and the tread depth on the blade. Lay the square on the stringer with both gauges against the top edge, trace the riser and tread, slide along to the end of the tread, and repeat. Every step comes out identical.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="stairLayout"></div>
+        <figcaption>Laying out a 2×12 stringer with stair gauges at 7″ (tongue) and 10½″ (blade).</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>The 42″ deck stair: gauges at 7″ and 10½″.</p>
+        <ol class="steps"><li>Lay out 6 risers and 5 treads.</li><li>Stringer stock: <span class="mono">√(42² + 52.5²) = 67.2″</span> plus about a foot for the ends: an 8-foot 2×12.</li><li>Check: the throat (the narrowest wood left between the notches and the bottom edge) should be at least about 3½″–5″; follow your code.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Overcutting the notch corners with the circular saw, which weakens the stringer. Stop at the lines and finish with a hand saw or jigsaw.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-framing-square"></a></p>
+    </article>
+
+    <article class="topic" id="g-stair-drop" data-title="Dropping the stringer">
+      <div class="prose">
+        <p>Every riser is laid out the same height, but the treads add thickness to the steps. At the top, each tread raises its step by its own thickness, and so does the step below it, so the steps between treads stay equal. At the bottom there is no tread under the first step. The first step would therefore be one tread thickness too tall. To fix it, cut one tread thickness off the bottom of the stringer: <dfn>dropping the stringer</dfn>.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="stairDrop"></div>
+        <figcaption>The bottom of the stringer, dropped by the 1½″ tread thickness so the first step is 7″ once the tread is on.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>7″ risers with 1½″ (2×6) treads.</p>
+        <ol class="steps"><li>Laid out: the first riser is 7″ from the stringer’s bottom cut to the first tread line.</li><li>Cut 1½″ off the bottom: the first tread cut sits 5½″ up; with its 1½″ tread it is 7″ above the ground, like every other step.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Forgetting the drop on the bottom, which leaves the first step 1½″ taller than the rest: the step people trip on.</p></div>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Braces, blocking and sheathing">
+    <article class="topic" id="g-braces-blocking" data-title="Blocking between studs and joists">
+      <div class="prose">
+        <p><dfn>Blocking</dfn> is short lengths of framing lumber nailed between studs or joists: for fire blocking, backing for cabinets and grab bars, and to stiffen floors. Cut blocks to the clear space between framing, which at regular layout is the spacing minus one stud thickness.</p>
+        <p>Stagger blocks up and down by their own width so you can nail through the stud into each end.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="blocking"></div>
+        <figcaption>Staggered blocks between 16″ OC studs, each 14½″ long.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div><div class="eq">block length = OC spacing − 1½″</div></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <ol class="steps"><li>16″ OC: <span class="mono">16 − 1½ = 14½″</span></li><li>24″ OC: <span class="mono">22½″</span></li><li>Measure any bay that isn’t on layout (next to openings or corners) and cut that block to fit.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Cutting blocks a hair long and hammering them in. They bow the studs. Cut them exact or ¹⁄₁₆″ short.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#c-braces"></a></p>
+    </article>
+
+    <article class="topic" id="g-sheathing" data-title="Sheathing layout and cutting">
+      <div class="prose">
+        <p>Wall sheathing (plywood or OSB, 4′ × 8′) is nailed to the studs to brace the wall. Two rules make it go on right:</p>
+        <ul>
+          <li>Every vertical edge lands on a stud center. With 16″ or 24″ layout from the end of the wall, that happens automatically every 48″.</li>
+          <li>Leave about ⅛″ between sheets so they have room to swell.</li>
+        </ul>
+        <p>Sheathe right over window and door openings and cut them out afterwards, following the framing from inside with a saw or router. It is faster and the edges line up exactly.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="sheathing"></div>
+        <figcaption>Sheets on a 16″ OC wall: every joint falls on a stud center, with a ⅛″ gap.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A 12-foot wall at 16″ OC.</p>
+        <ol class="steps"><li>Sheet 1: 0–48″, edge on the stud centered at 48″.</li><li>Sheet 2: 48⅛–96⅛″; sheet 3 fills the rest, cut to about 47¾″.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Butting sheets tight. When they swell in wet weather, they buckle between studs. Use a 10d nail as a spacer for the ⅛″ gap.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-chalk"></a><a class="ref" href="#d-cs-rip"></a></p>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Decks and posts">
+    <article class="topic" id="g-deck-layout" data-title="Laying out a square deck">
+      <div class="prose">
+        <p>A deck starts with strings, not wood. Fasten the <dfn>ledger</dfn> (the board bolted to the house) level, then set up <dfn>batter boards</dfn> (small frames on stakes beyond each outside corner) and stretch mason’s strings from them to mark the deck’s outer edges. Square the strings to the house with a 3-4-5 triangle, then confirm with the diagonals.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="deckLayout"></div>
+        <figcaption>Plan view: ledger on the house, strings from batter boards, a 6-8-10 triangle at the corner, and equal diagonals.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A 16′ × 12′ deck.</p>
+        <ol class="steps"><li>Square each side string with 6-8-10 feet off the ledger.</li><li>Diagonals: <span class="mono">√(16² + 12²) = 20′</span> each. Adjust the strings until both measure 20′.</li><li>Post centers are measured along the strings; drop them to the ground with a plumb bob.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Setting posts before checking the diagonals. A string that is an inch out at the corner puts a post in the wrong hole. Check diagonals, then dig.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-345"></a><a class="ref" href="#b-plumb"></a></p>
+    </article>
+
+    <article class="topic" id="g-posts" data-title="Cutting posts to height and angled deck corners">
+      <div class="prose">
+        <p>Posts are usually set long and cut in place. Carry a level line from the ledger (with a long level on a straight board, a water level or a laser), mark it on one face, and wrap it around all four faces with a speed square. A 4×4 (3½″) is thicker than a 7¼″ circular saw cuts in one pass, so cut from two opposite sides.</p>
+        <p>For a deck with a corner cut off at 45°, the rim and decking at that corner meet at 135°: each piece takes half, so the saw is at 22.5° (<a class="ref" href="#c-odd-corners"></a>).</p>
+      </div>
+      <figure class="fig"><div class="art" data-fig="posts"></div>
+        <figcaption>Left: marking and cutting a 4×4 post to a level line from two sides. Right: a 45° deck corner; its rim joints are cut at 22.5°.</figcaption></figure>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Posts that carry a doubled 2×10 beam hung below the joists.</p>
+        <ol class="steps"><li>Level line from the bottom of the ledger to each post.</li><li>Post top = that line − joist depth (9¼″) − beam depth (9¼″), if the beam sits under the joists on top of the posts.</li><li>Wrap the line, cut from two sides.</li></ol></div>
+      <div class="block safety"><div class="tag">Safety</div><ul><li>Cutting overhead or on a ladder is where circular-saw accidents happen. Cut posts at a comfortable height, or mark them and cut them on sawhorses before setting.</li></ul></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Marking all posts the same length from the ground. Grade is never level; always transfer height from the ledger.</p></div>
+    </article>
+  </div>
+</section>
+
 <!-- src/guides/i-reference-shelf.html -->
 <!-- =====================================================================
      GUIDE I · THE REFERENCE SHELF
@@ -5004,6 +5379,351 @@ FIG.movementMiter = () => {
   f.note([0, 0], [-14, 18], 'outside tips stay closed', { anchor: 'end' });
   f.text([L - 2, Wp + 0.6], 'dashed: before shrinking', { cls: 'lbl-s', size: 11 });
   return f.svg('Wide miter opening at the heel as boards shrink');
+};
+
+</script>
+<script>
+/* src/figures/g.js */
+/* Guide G · Framing & Construction */
+
+// a vertical stud or any board seen from the side, lower-left at (x, y)
+const stud = (f, x, y, h, o = {}) => f.plank(x, y, o.w || 1.5, h, { grain: 90, seed: Math.round(x * 7 + y), sp: o.sp || 6, cls: o.cls });
+const plate = (f, x, y, w, o = {}) => f.plank(x, y, w, o.h || 1.5, { seed: Math.round(x + y * 3), sp: o.sp || 6, cls: o.cls });
+
+/* ---------- Layout basics ---------- */
+FIG.layoutMarks = () => {
+  const f = fig(7), L = 96, T = 3.5;
+  plate(f, 0, 0, L, { h: T }); plate(f, 0, T + 0.1, L, { h: T, cls: 'wood2' });
+  f.text([-1, T / 2], 'bottom', { anchor: 'end', size: 10, cls: 'lbl-s' }); f.text([-1, T * 1.5], 'top', { anchor: 'end', size: 10, cls: 'lbl-s' });
+  const mark = (x, letter, side = 1) => { f.line([x, -0.4], [x, 2 * T + 0.5], 'pencil'); f.text([x + side * 0.75, T], letter, { cls: 'lbl-b halo', size: 12 }); f.text([x + side * 0.75, 2 * T - 1.2], letter, { cls: 'lbl-b halo', size: 12 }); };
+  mark(0.02, 'X'); mark(15.25, 'X'); mark(31.25, 'X');
+  mark(38, 'K'); mark(39.5, 'J');
+  mark(47.25, 'C'); mark(63.25, 'C');
+  mark(70.25, 'J', -1); mark(71.75, 'K', -1);
+  mark(79.25, 'X'); mark(95.25 - 0.02, 'X');
+  f.dim([39.5 + 1.5, -0.4], [70.25 - 1.5 + 0.02, -0.4], -1.2, 'window rough opening', { size: 11 });
+  return f.svg('Ganged top and bottom plates with layout marks');
+};
+
+FIG.studLayout = () => {
+  const f = fig(6.5), L = 100;
+  plate(f, 0, 0, L, { h: 3.5 });
+  for (let k = 0; k <= 6; k++) { const x = k === 0 ? 0 : 16 * k - 0.75; f.rect(x, 3.6, 1.5, 6, 'wood2'); f.poly([[x, 3.6], [x + 1.5, 3.6], [x + 1.5, 9.6], [x, 9.6]], 'edge'); if (k) { f.line([x, 0], [x, 3.5], 'pencil'); f.text([x + 0.75, 1.75], 'X', { cls: 'lbl-b', size: 11 }); } }
+  f.poly([[0, 10.2], [48, 10.2], [48, 13.2], [0, 13.2]], 'tool-t'); f.text([24, 11.7], 'first 4 × 8 sheet', { size: 11, cls: 'lbl' });
+  f.line([48, 3.6], [48, 13.6], 'sq');
+  f.note([48, 13.2], [14, -14], 'sheet edge on the stud center at 48″');
+  f.poly([[0, -0.5], [L, -0.5], [L, -2], [0, -2]], 'tape');
+  for (let i = 1; i < L; i++) f.line([i, -0.5], [i, i % 16 ? -0.9 : -1.4], 'tapetick');
+  [16, 32, 48, 64, 80, 96].forEach(x => f.text([x, -1.65], String(x), { cls: 'tapered', size: 10 }));
+  f.dim([0, 3.5], [15.25, 3.5], 5.6, '15¼″', { size: 11 });
+  return f.svg('Stud layout at 16 inches on center');
+};
+
+/* ---------- Walls ---------- */
+FIG.wallParts = () => {
+  const f = fig(5), L = 96, H = 97.125, ro = [32, 64], sill = 36, hdr = 82.5;
+  plate(f, 0, 0, L); plate(f, 0, H - 3, L, { cls: 'wood2' }); plate(f, 0, H - 1.5, L);
+  const studH = H - 4.5;
+  [0, 15.25, 79.25, L - 1.5].forEach(x => stud(f, x, 1.5, studH));
+  stud(f, ro[0] - 3, 1.5, studH); stud(f, ro[1] + 1.5, 1.5, studH);
+  stud(f, ro[0] - 1.5, 1.5, hdr - 1.5, { cls: 'wood2' }); stud(f, ro[1], 1.5, hdr - 1.5, { cls: 'wood2' });
+  f.plank(ro[0] - 1.5, hdr, ro[1] - ro[0] + 3, 9.25, { seed: 9, sp: 5 });
+  f.plank(ro[0], sill - 1.5, ro[1] - ro[0], 1.5, { seed: 8, cls: 'wood2' });
+  [47.25].forEach(x => { stud(f, x, 1.5, sill - 3); stud(f, x, hdr + 9.25, H - 3 - hdr - 9.25); });
+  f.rect(ro[0], sill, ro[1] - ro[0], hdr - sill, 'glass');
+  const lab = (p, t, off) => f.note(p, off, t);
+  lab([16, H - 0.75], 'double top plate', [10, -16]); lab([8, 0.75], 'bottom plate', [0, 20]);
+  lab([ro[0] - 2.25, 60], 'king stud', [-40, 0]); lab([ro[0] - 0.75, 30], 'jack stud', [-40, 6]);
+  lab([48, hdr + 5], 'header', [60, -8]); lab([48, sill - 0.75], 'sill', [60, 6]); lab([48, 16], 'cripple', [60, 0]); lab([48, hdr + 11], 'cripple', [66, -14]);
+  f.text([48, 60], 'window rough opening', { cls: 'lbl-s', size: 11 });
+  lab([80, 50], 'stud', [30, 0]);
+  return f.svg('Parts of a framed wall with a window');
+};
+
+FIG.wallHeight = () => {
+  const f = fig(4.2), H = 97.125;
+  plate(f, 0, 0, 12); stud(f, 5.25, 1.5, 92.625); plate(f, 0, 94.125, 12, { cls: 'wood2' }); plate(f, 0, 95.625, 12);
+  f.dim([12, 1.5], [12, 94.125], -3, '92⅝″ stud', { size: 11, flat: true });
+  f.dim([-0.3, 0], [-0.3, H], 3, '97⅛″ wall', { size: 11, flat: true });
+  f.note([6, 0.75], [30, 14], 'bottom plate 1½″'); f.note([6, 96.4], [30, -10], 'double top plate 3″');
+  return f.svg('Stud length and wall height');
+};
+
+FIG.roughOpening = () => {
+  const f = fig(4.2), ro = 34, x0 = 10, hh = 82.5, hd = 9.25, H = 97.125;
+  plate(f, 0, 0, x0 + 1.5 * 2); plate(f, x0 + 3 + ro, 0, 12);
+  plate(f, 0, H - 3, x0 + 2 * 3 + ro + 12, { cls: 'wood2' }); plate(f, 0, H - 1.5, x0 + 2 * 3 + ro + 12);
+  stud(f, 0, 1.5, 92.625);
+  stud(f, x0, 1.5, 92.625); stud(f, x0 + 1.5, 1.5, hh - 1.5, { cls: 'wood2' });
+  stud(f, x0 + 3 + ro, 1.5, hh - 1.5, { cls: 'wood2' }); stud(f, x0 + 4.5 + ro, 1.5, 92.625);
+  f.plank(x0 + 1.5, hh, ro + 3, hd, { seed: 4, sp: 5 });
+  stud(f, x0 + 3 + ro / 2 - 0.75, hh + hd, H - 3 - hh - hd);
+  f.rect(x0 + 3, 0, ro, hh, 'glass');
+  f.dim([x0 + 3, 20], [x0 + 3 + ro, 20], 0, 'RO 34″', { size: 11, noext: true });
+  f.dim([x0 + 3 + ro / 2 + 4, 0], [x0 + 3 + ro / 2 + 4, hh], 0, '82½″', { size: 11, flat: true, noext: true });
+  f.dim([x0 + 1.5, hh + hd], [x0 + 4.5 + ro, hh + hd], 2, 'header 37″', { size: 11 });
+  f.note([x0 + 2.25, 40], [-26, 0], 'jack 81″', { anchor: 'end' }); f.note([x0 + 0.75, 70], [-26, 0], 'king', { anchor: 'end' });
+  f.text([x0 + 3 + ro / 2, 8], 'bottom plate cut out later', { cls: 'lbl-s', size: 10 });
+  return f.svg('Rough opening framing for a door');
+};
+
+FIG.squareWall = () => {
+  const f = fig(3.4), L = 144, H = 97.125;
+  f.plank(0, 0, L, 1.5, { seed: 1, sp: 5 }); f.plank(0, H - 1.5, L, 1.5, { seed: 2, sp: 5 });
+  for (let x = 0; x <= L - 1.5; x += 16) stud(f, Math.min(x, L - 1.5), 1.5, H - 3, { sp: 4 });
+  stud(f, L - 1.5, 1.5, H - 3, { sp: 4 });
+  f.line([0, 0], [L, H], 'dimline'); f.line([L, 0], [0, H], 'dimline');
+  f.text([L * 0.3, H * 0.3], '173¾″', { cls: 'dimtext halo', size: 12 }); f.text([L * 0.7, H * 0.3], '173¾″', { cls: 'dimtext halo', size: 12 });
+  f.poly([[3, 4], [L - 3, H - 4], [L - 6, H - 4], [6, 4]].map(p => p), 'tool-t');
+  f.note([L / 2 + 10, H / 2 + 4], [30, -24], 'temporary brace, nailed after squaring');
+  f.dim([0, 0], [L, 0], -6, '144″', { size: 11 }); f.dim([L, 0], [L, H], -6, '97⅛″', { size: 11, flat: true });
+  return f.svg('Squaring a wall with diagonals');
+};
+
+/* ---------- Rafters ---------- */
+FIG.rafterTerms = () => {
+  const f = fig(2.4), span = 288, run = 144, rise = 72, wallH = 40, oh = 12, W = 5.5, ph = F.pitchDeg(6);
+  const u = K.dir(ph), n = [-u[1], u[0]];
+  f.rect(0, 0, 5.5, wallH, 'wall'); f.rect(span - 5.5, 0, 5.5, wallH, 'wall');
+  const ridge = [run, wallH + rise];
+  const rafter = (dx) => {
+    const base = [dx > 0 ? -oh : span + oh, wallH - oh * 0.5];
+    const top = ridge;
+    const a = dx > 0 ? base : top, b = dx > 0 ? top : base;
+    f.board([a, b, K.add(b, K.mul(dx > 0 ? n : [n[0] * -1, n[1]], W)), K.add(a, K.mul(dx > 0 ? n : [n[0] * -1, n[1]], W))], { grain: dx > 0 ? ph : -ph, seed: dx > 0 ? 1 : 2, sp: 5 });
+  };
+  rafter(1); rafter(-1);
+  f.rect(run - 0.75, wallH + rise - 6, 1.5, 12, 'wood2');
+  f.dim([0, -4], [span, -4], -4, 'span 24′ (outside to outside)', { size: 11 });
+  f.dim([0, wallH], [run, wallH], -10, 'run 12′', { size: 11 });
+  f.dim([run, wallH], [run, wallH + rise], -6, 'rise 6′', { size: 11, flat: true });
+  f.dim([-oh, wallH - oh / 2], [0, wallH], 8, 'overhang', { size: 10 });
+  const o = [span - 40, wallH + 20]; f.line(o, [o[0] + 24, o[1] - 12], 'pencil'); f.pline([[o[0] + 8, o[1] - 4], [o[0] + 8, o[1] - 12], [o[0] + 24, o[1] - 12]], 'leader');
+  f.text([o[0] + 16, o[1] - 16], '12', { size: 10 }); f.text([o[0] + 6, o[1] - 8], '6', { size: 10, anchor: 'end' });
+  f.note(ridge, [16, -14], 'ridge board');
+  f.text([run, wallH / 2], 'attic / room', { cls: 'lbl-s', size: 11 });
+  return f.svg('Gable roof terms');
+};
+
+FIG.rafterLength = () => {
+  const f = fig(4.2), run = 144, ph = F.pitchDeg(6), W = 5.5, r2 = 0.75;
+  f.rect(-3.5, -10, 3.5, 10, 'wall');
+  f.rect(run - 0.75, 60, 1.5, 22, 'wood2');
+  const y0 = 0, xs = [0, run - r2], ys = xs.map(x => x * K.tan(ph));
+  const hp = W / K.cos(ph);
+  f.board([[xs[0], ys[0]], [xs[1], ys[1]], [xs[1], ys[1] + hp], [xs[0], ys[0] + hp]], { grain: ph, seed: 3, sp: 5 });
+  f.line([xs[1], ys[1]], [xs[1], ys[1] + hp], 'cutline');
+  f.line([run, 50], [run, 90], 'axis');
+  f.dim([run - r2, 88], [run, 88], 2, '¾″', { size: 10 });
+  f.dim([0, -12], [run - r2, -12], -3, 'run 143¼″ (144 − ¾)', { size: 11 });
+  f.dim([0, hp], [xs[1], ys[1] + hp], 4, 'line length 160³⁄₁₆″', { size: 11 });
+  f.note([run, 86], [18, -10], 'ridge center line');
+  f.note([0, hp / 2], [-20, 20], 'outside of wall', { anchor: 'end' });
+  return f.svg('Common rafter length with ridge reduction');
+};
+
+FIG.birdsmouth = () => {
+  // wall top plate from x = 0 (outside face, eave side) to 3.5; the rafter rises to the right toward the ridge
+  const f = fig(22), ph = F.pitchDeg(6), W = 5.5, seat = 3.5, heel = seat * K.tan(ph);
+  f.rect(0, -8, 3.5, 8, 'wall'); plate(f, 0, -3, 3.5, { cls: 'wood2' }); plate(f, 0, -1.5, 3.5);
+  const bot = x => x * K.tan(ph) - heel, hp = W / K.cos(ph);
+  const xa = -5, xb = 9;
+  const pts = [[xa, bot(xa)], [0, bot(0)], [0, 0], [3.5, 0], [xb, bot(xb)], [xb, bot(xb) + hp], [xa, bot(xa) + hp]];
+  f.board(pts, { grain: ph, seed: 4 });
+  f.line([0, 0], [3.5, 0], 'cutline'); f.line([0, 0], [0, bot(0)], 'cutline');
+  f.dim([0, 0], [3.5, 0], -0.5, '3½″ seat', { size: 11, lo: 12 });
+  f.dim([0, bot(0)], [0, 0], 1.2, '1¾″ heel', { size: 11, flat: true });
+  f.note([2.6, 0], [30, -34], 'seat cut (level)');
+  f.note([0, -1], [-40, 26], 'heel cut (plumb)', { anchor: 'end' });
+  f.text([5.5, bot(5.5) + hp / 2 + 0.4], '2×6 rafter, 6-in-12', { cls: 'onwood', size: 11 });
+  f.text([1.75, -5.5], 'wall', { cls: 'lbl-s', size: 11 });
+  f.text([-4, bot(-4) - 0.8], '← tail (eave)', { cls: 'lbl-s', size: 10 });
+  f.text([8, bot(8) + hp + 0.8], 'to the ridge →', { cls: 'lbl-s', size: 10 });
+  return f.svg('Birds mouth notch on a rafter');
+};
+
+FIG.speedSquareRafter = () => {
+  // rafter lying flat, top edge at y = W; the ridge end will be to the right, so plumb lines lean left going down
+  const f = fig(26), ph = F.pitchDeg(6), W = 5.5, P = [6, W];
+  f.plank(-2, 0, 16, W, { seed: 5 });
+  const { A, B } = speedSquareAt(f, P, 180 - ph, { scale: false });
+  const foot = K.meet(P, K.dir(270 - ph), [0, 0], [1, 0]);
+  f.line(P, foot, 'pencil');
+  f.note(P, [18, -18], 'pivot on the top edge');
+  f.note(K.meet(P, [-1, 0], A, K.sub(B, A)), [-20, -26], 'top edge crosses COMMON 6', { anchor: 'end' });
+  f.note(K.lerp(P, foot, 0.7), [30, 16], 'plumb line (vertical once installed)');
+  f.line(P, [P[0], 1.5], 'sq');
+  f.angle(P, 2.6, 270 - ph, 270, '26.6°', { lr: 26 });
+  return f.svg('Marking a plumb line with a speed square');
+};
+
+FIG.stepOff = () => {
+  const f = fig(7), ph = F.pitchDeg(6), W = 5.5;
+  const L = 64, top = x => W / K.cos(ph);
+  f.plank(0, 0, L, W, { seed: 6, sp: 6 });
+  const u = K.dir(-ph), step = 12 / K.cos(ph);
+  for (let i = 0; i < 4; i++) {
+    const E1 = [4 + i * step, W], E2 = K.add(E1, K.mul(K.dir(0), step));
+    const H = K.add(E1, K.mul(K.dir(-ph), 12 * 1));
+    const Hh = K.meet(E1, K.dir(-ph), E2, K.dir(-90 - ph + 90 - 90 + 0));
+    // blade from E1 at -ph (12), tongue from its end back up to the edge (6)
+    const heel = K.add(E1, K.mul(K.dir(-ph), 12 * K.cos(0)));
+    const blade = K.add(E1, K.mul(K.dir(-ph), 12)), tongueTop = K.add(blade, K.mul(K.dir(90 - ph), 6));
+    f.pline([E1, blade, tongueTop], i === 0 ? 'tool-o' : 'hidden-l');
+    f.line(tongueTop, blade, 'pencil');
+    f.text(K.lerp(E1, blade, 0.5), '12', { size: 10, cls: 'lbl-s', dy: 10 });
+    f.text(K.lerp(blade, tongueTop, 0.5), '6', { size: 10, cls: 'lbl-s', dx: 8 });
+    f.text([tongueTop[0], W + 1.5], String(i + 1), { size: 11, cls: 'lbl-b' });
+  }
+  f.text([L - 6, W / 2], '… 11 steps + 11¼″', { cls: 'onwood', size: 11 });
+  f.text([L / 2, -2.2], 'each step: 12″ on the blade, 6″ on the tongue, both on the top edge', { cls: 'lbl-s', size: 11 });
+  return f.svg('Stepping off a rafter with a framing square');
+};
+
+FIG.hips = () => {
+  const f = fig(2.2), L = 240, B = 168, h = B / 2;
+  f.rect(0, 0, L, B, 'glass');
+  const r0 = [h, h], r1 = [L - h, h];
+  f.line([0, 0], r0, 'plan-line'); f.line([0, B], r0, 'plan-line'); f.line([L, 0], r1, 'plan-line'); f.line([L, B], r1, 'plan-line');
+  f.line(r0, r1, 'plan-line');
+  for (let x = 24; x < L - 12; x += 24) { if (x > h - 2 && x < L - h + 2) { f.line([x, 0], [x, h - 1], 'thin'); f.line([x, B], [x, h + 1], 'thin'); } }
+  f.note([h / 2, h / 2], [-30, 20], 'hip rafter (45° in plan)', { anchor: 'end' });
+  f.note([L / 2, h], [10, -20], 'ridge');
+  f.note([L / 2, B * 0.8], [30, -10], 'common rafters');
+  f.dim([0, 0], [h, 0], -10, '12″ common run', { size: 10 });
+  f.dim([0, 0], [h * 0.9, h * 0.9], 10, '16.97″ hip run per foot', { size: 10 });
+  return f.svg('Hip roof in plan');
+};
+
+/* ---------- Stairs ---------- */
+function stairProfile(f, n, R, T, x0 = 0, y0 = 0, o = {}) {
+  const pts = [[x0, y0]];
+  let x = x0, y = y0;
+  for (let i = 0; i < n; i++) { y += R; pts.push([x, y]); if (i < n - 1) { x += T; pts.push([x, y]); } }
+  return pts;
+}
+FIG.stairTerms = () => {
+  const f = fig(7), n = 5, R = 7, T = 10.5;
+  const s = stairProfile(f, n, R, T);
+  const top = s[s.length - 1];
+  f.rect(top[0], top[1] - 9, 30, 9, 'wall'); f.text([top[0] + 15, top[1] - 4.5], 'deck / floor', { cls: 'lbl-s', size: 10 });
+  const outline = s.concat([[top[0], top[1] - 11.25], [5, -3]]);
+  f.board(outline, { grain: F.pitchDeg(R / T * 12), seed: 3, sp: 6 });
+  for (let i = 0; i < n - 1; i++) f.plank(i * T - 1, (i + 1) * R, T + 1, 1.2, { seed: i, cls: 'wood2', sp: 4 });
+  f.rect(-10, -3, 70, 3, 'wall');
+  f.dim([T * 2, 2 * R], [T * 2, 3 * R], -1.5, 'riser', { size: 10, flat: true });
+  f.dim([T, 2 * R + 1.2], [2 * T, 2 * R + 1.2], 1.2, 'tread', { size: 10 });
+  f.note([T - 1, 2 * R + 0.6], [-20, -16], 'nosing', { anchor: 'end' });
+  f.note([T * 1.5, R], [26, 24], 'stringer');
+  f.dim([-6, 0], [-6, top[1]], 2, 'total rise', { size: 10, flat: true });
+  f.dim([0, -5], [top[0], -5], -1, 'total run', { size: 10 });
+  return f.svg('Stair parts');
+};
+
+FIG.stairMath = () => {
+  const f = fig(6), s = F.stairs(42), R = s.riser, T = 10.5;
+  const pts = stairProfile(f, s.risers, R, T);
+  f.rect(pts[pts.length - 1][0], 42 - 8, 16, 8, 'wall');
+  f.board(pts.concat([[pts[pts.length - 1][0], 42 - 11.25], [6, -2]]), { grain: 33.7, seed: 7, sp: 6 });
+  f.rect(-10, -2, 80, 2, 'wall');
+  pts.forEach((p, i) => { if (i % 2 === 1 && i < pts.length - 1) f.text(K.add(p, [-1.2, -R / 2]), '7″', { cls: 'dimtext', size: 10, anchor: 'end' }); });
+  f.dim([0, 0], [0, 42], 5, '42″ = 6 × 7″', { size: 11, flat: true });
+  f.dim([0, -2], [5 * T, -2], -2.5, '52½″ = 5 × 10½″', { size: 11 });
+  return f.svg('Stair with six seven inch risers');
+};
+
+FIG.stairLayout = () => {
+  const f = fig(9), R = 7, T = 10.5, W = 11.25, ang = K.atan(R / T);
+  // stringer drawn level; the steps are laid out along its top edge
+  const L = 70;
+  f.plank(0, 0, L, W, { seed: 8, sp: 7 });
+  const hyp = Math.hypot(R, T), u = K.dir(0);
+  const notch = [];
+  for (let i = 0; i < 4; i++) {
+    const a = [6 + i * hyp, W], b = K.add(a, K.mul(K.dir(-ang), 0));
+    const pRise = K.add(a, K.mul(K.dir(-90 + 0 - 0), 0));
+    const corner = K.add(a, K.mul(K.dir(-(90 - ang)), R));
+    const next = [a[0] + hyp, W];
+    f.pline([a, corner, next], i === 0 ? 'pencil' : 'pencil');
+    if (i === 1) { f.pline([K.add(a, [0, 0]), corner, next], 'tool-o'); f.circle(a, 3, 'dot'); f.circle(next, 3, 'dot'); f.note(corner, [0, 24], 'framing square: tongue 7″, blade 10½″', { anchor: 'middle' }); }
+    f.poly([a, corner, next], 'waste');
+  }
+  f.note([6 + 2 * hyp, W], [10, -18], 'stair gauges ride the top edge');
+  f.text([L - 8, 3], '2×12 stringer', { cls: 'onwood', size: 11 });
+  return f.svg('Laying out stair notches with a framing square');
+};
+
+FIG.stairDrop = () => {
+  const f = fig(16), R = 7, T = 10.5, t = 1.5;
+  f.rect(-4, -1.5, 22, 1.5, 'wall'); f.text([14, -0.75], 'ground', { cls: 'lbl-s', size: 10 });
+  const pts = [[0, 0], [0, R - t], [T, R - t], [T, 2 * R - t], [T + 4, 2 * R - t], [T + 4, 2 * R - t - 9], [6, 0]];
+  f.board(pts, { grain: 33.7, seed: 5 });
+  f.plank(-1, R - t, T + 1, t, { cls: 'wood2', seed: 2 }); f.plank(T - 1, 2 * R - t, 5, t, { cls: 'wood2', seed: 3 });
+  f.poly([[0, 0], [8, 0], [8, -0.001], [0, -0.001]], 'edge');
+  f.rect(0, 0, 6, t, 'hidden-l'); f.note([3, t / 2], [-30, -26], 'cut off 1½″ (tread thickness)', { anchor: 'end' });
+  f.dim([T + 3, 0], [T + 3, R], -3.5, '7″', { size: 11, flat: true });
+  f.dim([T + 5, R], [T + 5, 2 * R], -1.5, '7″', { size: 11, flat: true });
+  return f.svg('Dropping the stringer by the tread thickness');
+};
+
+/* ---------- Blocking and sheathing ---------- */
+FIG.blocking = () => {
+  const f = fig(7);
+  for (let k = 0; k < 5; k++) stud(f, k * 16 - 0.75 + 0.75, 0, 40);
+  for (let k = 0; k < 4; k++) f.plank(k * 16 + 1.5, 18 + (k % 2 ? 1.5 : 0), 14.5, 1.5, { seed: k, cls: 'wood2' });
+  f.dim([1.5, 21], [16, 21], 2.6, '14½″', { size: 11 });
+  f.dim([0.75, -1], [16.75, -1], -1.5, '16″ OC', { size: 11 });
+  f.note([40, 19.5], [30, -30], 'staggered so each end can be nailed');
+  return f.svg('Staggered blocking between studs');
+};
+
+FIG.sheathing = () => {
+  const f = fig(3.6), L = 144, H = 97.125;
+  f.plank(0, 0, L, 1.5, { seed: 1, sp: 5 }); f.plank(0, H - 3, L, 3, { seed: 2, sp: 5 });
+  const xs = [0]; for (let x = 15.25; x < L - 1.5; x += 16) xs.push(x); xs.push(L - 1.5);
+  xs.forEach(x => f.rect(x, 1.5, 1.5, H - 4.5, 'wood2'));
+  [[0, 47.94], [48.06, 95.94], [96.06, 144]].forEach(([a, b], i) => { f.rect(a, 0, b - a, H, 'tool-t'); f.text([(a + b) / 2, H / 2], 'sheet ' + (i + 1), { size: 11, cls: 'lbl-b' }); });
+  [48, 96].forEach(x => { f.line([x, -3], [x, H + 3], 'sq'); f.text([x, H + 6], x + '″', { cls: 'dimtext', size: 11 }); });
+  f.note([48, 20], [24, 0], '⅛″ gap on the stud center');
+  return f.svg('Wall sheathing joints on stud centers');
+};
+
+/* ---------- Decks ---------- */
+FIG.deckLayout = () => {
+  const f = fig(2.1), L = 192, D = 144;
+  f.rect(-20, D, L + 40, 14, 'wall'); f.text([L / 2, D + 7], 'house', { cls: 'lbl-s', size: 11 });
+  f.plank(0, D - 1.5, L, 1.5, { seed: 1 }); f.note([L / 2, D - 0.75], [20, -20], 'ledger');
+  const bb = (x, y, dx, dy) => { f.line([x - 12 * dx, y], [x + 12 * dx, y], 'tool-o'); f.line([x, y - 12 * dy], [x, y + 12 * dy], 'tool-o'); };
+  f.line([0, D], [0, -30], 'chalk'); f.line([L, D], [L, -30], 'chalk'); f.line([-30, 0], [L + 30, 0], 'chalk');
+  f.line([0, D], [L, 0], 'dimline'); f.line([L, D], [0, 0], 'dimline');
+  f.text([L * 0.3, D * 0.62], '20′', { cls: 'dimtext halo', size: 12 }); f.text([L * 0.7, D * 0.62], '20′', { cls: 'dimtext halo', size: 12 });
+  f.circle([0, D - 72], 3, 'dot'); f.circle([96, D], 3, 'dot'); f.line([0, D - 72], [96, D], 'tape');
+  f.text([30, D - 20], '6-8-10', { cls: 'lbl-b halo', size: 11 });
+  f.rect(-36, -36, 24, 6, 'tool-o'); f.rect(L + 12, -36, 24, 6, 'tool-o');
+  f.note([-24, -33], [-10, 20], 'batter boards', { anchor: 'end' });
+  f.dim([0, 0], [L, 0], -18, '16′', { size: 11 }); f.dim([L, 0], [L, D], -18, '12′', { size: 11, flat: true });
+  return f.svg('Deck layout with strings and diagonals');
+};
+
+FIG.posts = () => {
+  const a = fig(20), p = 3.5;
+  a.plank(0, 0, p, 14, { grain: 90, seed: 2 });
+  a.line([-1, 10], [p + 1, 10], 'pencil');
+  a.rect(0, 10, p, 4, 'waste');
+  a.line([-3, 10], [-1, 10], 'laser'); a.text([-3.3, 10], 'level line from the ledger', { anchor: 'end', size: 11, cls: 'lbl' });
+  a.dim([p, 10], [p, 11.75], -1.2, '1¾″ from this side', { size: 10, flat: true });
+  a.dim([p, 11.75], [p, 13.5], -1.2, '… then the other', { size: 10, flat: true });
+  a.text([p / 2, 5], '4×4 post', { cls: 'onwood', size: 11, rot: -90 });
+  const b = fig(7), W = 5.5, c = 30;
+  b.board([[0, 0], [60, 0], [60, W], [W, W]].map(q => q), { seed: 3 });
+  const d = K.dir(45), n = [-d[1], d[0]];
+  const s0 = [60, 0], s1 = K.add(s0, K.mul(d, c));
+  const q = [s0, s1, K.add(s1, K.mul(n, W)), K.add(s0, K.add(K.mul(n, W), K.mul(d, -W * K.tan(22.5))))];
+  b.board([s0, s1, K.add(s1, K.mul(n, W)), K.add(s0, K.mul(n, W)).map((v, i) => v)].map(v => v), { grain: 45, seed: 4, cls: 'wood2' });
+  b.line(s0, K.add(s0, K.mul(n, W)), 'cutline');
+  b.angle(s0, 8, 45, 180, '135°', { lr: 12 });
+  b.text([30, -5], 'rim joists at a 45° corner: saw 22.5° each', { cls: 'lbl-b', size: 11 });
+  return panels([[a.svg('Cutting a post to height'), 'Post cut to a level line'], [b.svg('Angled deck corner'), 'Angled corner (plan)']]);
 };
 
 </script>
