@@ -1,0 +1,414 @@
+<!-- =====================================================================
+     GUIDE C · THE ANGLE BOOK
+     ===================================================================== -->
+<section class="guide" data-letter="C" data-title="The Angle Book" data-sub="Working out the angle and the length of any angled cut: corners, polygons, braces, offsets, slopes, compound cuts and tapers.">
+  <div class="guide-intro">
+    <div class="prose"><p>This is the math of angled cuts, always with the intuition first and a 2×4 as the running example. Every formula here is also on the <a class="ref" href="#i-formulas"></a> page and in the <a class="ref" href="#i-calculators"></a>.</p></div>
+    <div class="keypoints"><h3>Key points</h3><ul>
+      <li>Two pieces meeting at a corner each take half of it: saw = 90° − corner ÷ 2.</li>
+      <li>Polygon frames: saw = 180° ÷ number of sides.</li>
+      <li>Saw scales read from square (0° = square cut); geometry reads from the edge (90° = square cut).</li>
+      <li>Long point moves by W × tan(saw angle). At 45° it moves one full width.</li>
+      <li>Compound cuts: miter = atan(sin S · tan A), bevel = asin(cos S · sin A).</li>
+    </ul></div>
+  </div>
+
+  <div class="gsection" data-title="Finding the angle">
+    <article class="topic" id="c-half-angle" data-title="The half-angle rule">
+        <div class="prose">
+          <p>When two boards meet at a corner and both are cut, the joint line runs exactly through the middle of the corner. The fancy word is <dfn>bisector</dfn>: the line that splits an angle into two equal halves. Because the joint is shared, each board takes half of the corner.</p>
+          <p>Intuition: fold a sheet of paper so one edge lies on the other. The crease is the bisector, and it is where the two boards touch.</p>
+        </div>
+        <figure class="fig"><div class="art" data-fig="halfRule"></div>
+          <figcaption>A 90° corner. Assembled (left), each piece carries a 45° angle between its cut and its edge. Pulled apart (right), you can see the two halves.</figcaption></figure>
+        <div class="block formula"><div class="tag">Formula</div>
+          <div class="eq">angle between cut and edge = C ÷ 2</div>
+          <div class="eq">saw setting = 90° − C ÷ 2</div>
+          <p class="where">C is the corner angle: the angle between the two boards, measured on the side where they touch. The second line converts to a miter-saw reading, explained in <a class="ref" href="#c-saw-vs-geometry"></a>.</p></div>
+        <div class="block example"><div class="tag">Worked example</div>
+          <p>A square picture frame has four 90° corners.</p>
+          <ol class="steps">
+            <li>Angle between cut and edge: <span class="mono">90° ÷ 2 = 45°</span></li>
+            <li>Saw setting: <span class="mono">90° − 45° = 45°</span></li>
+          </ol>
+          <p class="answer">Every end gets a 45° miter. At 90° the two numbers happen to agree, which is why the saw’s different scale goes unnoticed until you try another corner.</p></div>
+        <div class="block mistake"><div class="tag">Common mistake</div>
+          <p>Cutting one piece at the full corner angle and leaving the other square. That only works for a <em>butt joint</em> where one board lands on the face of another (see <a class="ref" href="#c-braces"></a>). For a corner where both ends show, split the angle.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#c-saw-vs-geometry"></a><a class="ref" href="#e-in-out-corners"></a></p>
+    </article>
+    <article class="topic" id="c-polygons" data-title="Polygon frames">
+        <div class="prose">
+          <p>A regular polygon (a shape with n equal sides) has n equal corners. Walking around its outline you turn a full 360° in total, so each corner turns <span class="mono">360° ÷ n</span>. Each corner is shared by two cuts, so each cut takes half of that turn: <span class="mono">180° ÷ n</span>. That is the saw setting directly.</p>
+        </div>
+        <figure class="fig"><div class="art" data-fig="polys"></div>
+          <figcaption>A hexagon and an octagon frame made from 2×4s laid flat. Alternate pieces are shaded so you can see the joints. Purple arcs show the corner angle and the half-angle each cut makes with the outside edge.</figcaption></figure>
+        <div class="block formula"><div class="tag">Formula</div>
+          <div class="eq">saw setting = 180° ÷ n</div>
+          <div class="eq">corner angle C = 180° − 360° ÷ n</div>
+          <p class="where">n = number of sides. Check: <span class="mono">90° − C ÷ 2</span> gives the same saw setting.</p></div>
+        <div class="tablewrap"><table data-table="polygon"><caption>Miter settings for polygon frames</caption></table></div>
+        <div class="block example"><div class="tag">Worked example</div>
+          <p>An octagonal mirror frame.</p>
+          <ol class="steps">
+            <li><span class="mono">n = 8</span></li>
+            <li>Saw setting: <span class="mono">180° ÷ 8 = 22.5°</span> (most miter saws have a click-stop, called a <dfn>detent</dfn>, right at 22.5°).</li>
+            <li>Corner angle: <span class="mono">180° − 360° ÷ 8 = 135°</span>. Each cut makes <span class="mono">67.5°</span> with the edge.</li>
+          </ol>
+          <p class="answer">Cut 16 ends (both ends of 8 pieces) at 22.5°, flipping the board between cuts so the long points land on the same edge.</p></div>
+        <div class="block mistake"><div class="tag">Common mistake</div>
+          <p>Triangle frames need a 60° setting, and many miter saws stop at 45°–50°. Check your saw’s maximum before you buy wood. Beyond it, mark the line with a protractor and cut it with a handsaw, or use a jig that holds the board at an angle to the fence.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#c-inside-outside"></a><a class="ref" href="#d-ts-miter-sled"></a></p>
+    </article>
+    <article class="topic" id="c-odd-corners" data-title="Corners that aren’t 90°">
+        <div class="prose">
+          <p>Real walls are rarely perfect. A bay window may have 135° corners, a hexagonal room 120°, and an ordinary “square” corner can easily be 91° or 92°. The half-angle rule still works: measure the real corner, halve it, convert to a saw setting.</p>
+          <p>Measure on the side where the boards will sit. For baseboard in a room, that is the room side of the walls. A sliding bevel or a digital angle finder does this well (see <a class="ref" href="#b-copy-angle"></a>).</p>
+        </div>
+        <figure class="fig"><div class="art" data-fig="oddCorner"></div>
+          <figcaption>Baseboard meeting at a 135° bay-window corner, top view. The joint lies on the bisector (dashed purple). Right: one piece as it sits on the saw, standing against the fence.</figcaption></figure>
+        <div class="block formula"><div class="tag">Formula</div>
+          <div class="eq">saw setting = 90° − (measured corner ÷ 2)</div></div>
+        <div class="block example"><div class="tag">Worked example</div>
+          <ol class="steps">
+            <li>Bay corner measures 135°: <span class="mono">90° − 135° ÷ 2 = 90° − 67.5° = 22.5°</span></li>
+            <li>Hexagonal room corner 120°: <span class="mono">90° − 60° = 30°</span></li>
+            <li>A “square” corner that measures 92°: <span class="mono">90° − 46° = 44°</span></li>
+          </ol>
+          <p class="answer">The out-of-square wall needs 44°, not 45°. Cutting at 45° would leave a gap you can see.</p></div>
+        <div class="block mistake"><div class="tag">Common mistake</div>
+          <p>Assuming a room corner is 90° because it looks square. A 2° error splits into 1° per piece, which opens about <span class="mono">¹⁄₁₆″</span> on a 3½″ board. Measure every corner; it takes seconds.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-inside-outside"></a><a class="ref" href="#e-coping-why"></a></p>
+    </article>
+    <article class="topic" id="c-irregular" data-title="Irregular shapes: every corner different">
+      <div class="prose">
+        <p>Not every frame is a regular polygon. A window seat in a bay, a countertop edge along crooked walls, or a frame around an odd-shaped mirror may have every corner at a different angle. The half-angle rule still works; you just apply it <em>one joint at a time</em>.</p>
+        <p>Check your measurements with one fact: the inside corners of any closed four-sided shape add up to 360° (five sides: 540°; in general <span class="mono">(n − 2) × 180°</span>). If yours don’t, one reading is off.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="irregular"></div>
+        <figcaption>A four-sided frame with corners of 80°, 100°, 95° and 85°. Each joint gets its own saw setting; each piece gets a different angle at each end.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div>
+        <div class="eq">saw at each joint = 90° − (that corner ÷ 2)</div>
+        <div class="eq">check: sum of corners = (n − 2) × 180°</div></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Corners measured at 80°, 100°, 95° and 85°.</p>
+        <ol class="steps">
+          <li>Check: <span class="mono">80 + 100 + 95 + 85 = 360°</span> ✓</li>
+          <li>Joint 1: <span class="mono">90 − 40 = 50°</span>; joint 2: <span class="mono">90 − 50 = 40°</span></li>
+          <li>Joint 3: <span class="mono">90 − 47.5 = 42.5°</span>; joint 4: <span class="mono">90 − 42.5 = 47.5°</span></li>
+        </ol>
+        <p class="answer">The piece between joints 1 and 2 is cut 50° at one end and 40° at the other. Label each end on the wood (J1, J2…) before cutting, and use <span class="mono">W × tan θ₁ + W × tan θ₂</span> for its length (<a class="ref" href="#c-inside-outside"></a>).</p></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Measuring one corner and assuming its opposite matches. In irregular shapes they rarely do. Measure and label every corner, and write the saw setting on both pieces that meet there.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-which-tool"></a><a class="ref" href="#b-copy-angle"></a></p>
+    </article>
+    <article class="topic" id="c-braces" data-title="Braces, T-joints and boards landing on a slope">
+        <div class="prose">
+          <p>When a board ends against the <em>face</em> of another board (a T-joint, or a brace landing on a post), only the arriving board gets cut. Its end must lie flat against the surface it meets, so the cut line is parallel to that surface. There is nothing to share, so that board takes the <em>whole</em> angle, not half.</p>
+          <p>A diagonal <dfn>brace</dfn> between a post and a beam is the classic case. It has two ends, one against each member, and its two saw settings always add up to 90° when the post and beam are square to each other.</p>
+        </div>
+        <figure class="fig"><div class="art" data-fig="brace"></div>
+          <figcaption>A knee brace at 50° from horizontal. Left: installed. Right: the brace alone, laid flat as it would be on the saw, with each end’s square line and saw setting.</figcaption></figure>
+        <div class="block formula"><div class="tag">Formula</div>
+          <div class="eq">end against horizontal surface: saw = 90° − a</div>
+          <div class="eq">end against vertical surface:   saw = a</div>
+          <p class="where">a = the brace’s angle above horizontal. Both ends together: <span class="mono">(90° − a) + a = 90°</span>.</p></div>
+        <div class="block example"><div class="tag">Worked example</div>
+          <p>A brace that rises at 50° from horizontal.</p>
+          <ol class="steps">
+            <li>Top end, flat against the underside of the beam: <span class="mono">90° − 50° = 40°</span></li>
+            <li>Bottom end, flat against the side of the post: <span class="mono">50°</span></li>
+            <li>Check: <span class="mono">40° + 50° = 90°</span> ✓</li>
+          </ol>
+          <p class="answer">A 45° brace is the easy special case: 45° at both ends.</p></div>
+        <div class="block mistake"><div class="tag">Common mistake</div>
+          <p>Cutting both brace ends at the same setting because they “look alike.” Unless the brace is exactly 45°, one end needs <span class="mono">a</span> and the other <span class="mono">90° − a</span>. Hold the brace in place and mark both ends before cutting, or label them “post” and “beam.”</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#c-plumb-level"></a><a class="ref" href="#g-braces-blocking"></a></p>
+    </article>
+    <article class="topic" id="c-saw-vs-geometry" data-title="Saw scale vs geometry">
+        <div class="prose">
+          <p>In geometry, a square cut makes a 90° angle with the board’s edge. A miter saw calls that same cut <strong>0°</strong>, because its scale counts how far the blade has swung <em>away from square</em>. Bevel scales work the same way: 0° is a vertical blade.</p>
+          <p>So there are two ways to describe any cut: the <dfn>geometric angle</dfn> (between the cut line and the edge of the board) and the <dfn>saw setting</dfn> (between the cut line and a square line). They always add up to 90°.</p>
+        </div>
+        <figure class="fig"><div class="art" data-fig="sawVsGeo"></div>
+          <figcaption>Left: a miter saw table seen from above. The blade at 0° is square to the fence; the ghost blade is swung to 30°. Right: the same 30° cut drawn on the board. Measured from the edge it is 60°.</figcaption></figure>
+        <div class="block formula"><div class="tag">Formula</div>
+          <div class="eq">saw setting = 90° − geometric angle</div>
+          <div class="eq">geometric angle = 90° − saw setting</div></div>
+        <div class="tablewrap"><table data-table="convert"><caption>Converting between the two scales</caption></table></div>
+        <div class="block example"><div class="tag">Worked example</div>
+          <p>A plan says “cut the end at 70° to the edge.”</p>
+          <ol class="steps"><li><span class="mono">90° − 70° = 20°</span></li></ol>
+          <p class="answer">Set the miter saw to 20°. Setting it to 70° is impossible on most saws, which is often the hint that you have the wrong scale.</p></div>
+        <div class="block mistake"><div class="tag">Common mistake</div>
+          <p>Reading an angle off a protractor (geometry) and dialing that number straight into the saw. Before setting the saw, ask: “Is 0 a square cut here?” If it is, you are on the saw scale.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#d-ts-miter-gauge"></a><a class="ref" href="#b-protractor"></a></p>
+    </article>
+    <article class="topic" id="c-errors" data-title="Test cuts and how small errors add up">
+        <div class="prose">
+          <p>A saw that is half a degree off looks perfect on a single cut. The trouble is that a frame adds up every cut. An octagon has 16 cut ends, and all their errors pile into the last joint you close.</p>
+        </div>
+        <figure class="fig"><div class="art" data-fig="errors"></div>
+          <figcaption>Left: an octagon dry-fitted with every cut 0.5° shy of 22.5°. Joints 1–7 close tight, and the missing 8° all shows up at the last joint. Right: a single corner cut 3° shy (exaggerated) opens at the outside tips.</figcaption></figure>
+        <div class="block formula"><div class="tag">Formula</div>
+          <div class="eq">total error = (number of cut ends) × (error per cut)</div>
+          <div class="eq">gap at the joint ≈ W × tan(total error)</div></div>
+        <div class="block example"><div class="tag">Worked example</div>
+          <ol class="steps">
+            <li>Octagon, 16 cut ends, each 0.5° off: <span class="mono">16 × 0.5° = 8°</span></li>
+            <li>Gap across a 3½″ joint: <span class="mono">3.5 × tan 8° = 0.49″</span>, about ½″</li>
+            <li>Square frame, 8 cut ends, each 0.5° off: <span class="mono">4°</span> → <span class="mono">3.5 × tan 4° = 0.24″</span>, about ¼″</li>
+          </ol>
+          <p class="answer">To correct from a dry fit, divide the gap angle by the number of cut ends: an 8° gap on an octagon means each cut is <span class="mono">8° ÷ 16 = 0.5°</span> off.</p></div>
+        <div class="block tip"><div class="tag">Test-cut routine</div>
+          <ul class="steps">
+            <li>Cut two scrap pieces, put them together, and check the corner with a square. Any error you see is <em>double</em> the per-cut error.</li>
+            <li>Gap at the outside tips: the saw angle is too <em>small</em>. Gap at the inside (heel): too <em>large</em>.</li>
+            <li>For polygons, cut a full set of short test pieces and dry-fit the whole ring before cutting good wood.</li>
+          </ul></div>
+        <div class="block mistake"><div class="tag">Common mistake</div>
+          <p>Trusting the saw’s detents. Click-stops wear and can be off by half a degree from the factory. Check 90° and 45° with a combination square after any bump or blade change.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#d-ms-calibrate"></a><a class="ref" href="#d-ts-sled"></a></p>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Lengths">
+    <article class="topic" id="c-offset" data-title="The offset between long and short point">
+        <div class="prose">
+          <p>Look at the end of a mitered board from above. The cut line, the square line, and the edge of the board form a right triangle (a triangle with one 90° corner). The board’s width is one side. The distance you slide along the edge from the short point to the long point is the other side. Call it the <dfn>offset</dfn>.</p>
+          <p>The steeper the saw setting, the longer that slide. The <dfn>tangent</dfn> (tan) of an angle is simply the ratio “side across from the angle ÷ side next to it,” so it converts width into offset. Any phone calculator has a tan button; make sure it is in degrees (DEG), not radians.</p>
+        </div>
+        <figure class="fig"><div class="art" data-fig="offsetAnatomy"></div>
+          <figcaption>The end of a 2×4 face cut at a 30° saw setting. The hatched triangle is the waste; its two short sides are the board width W and the offset.</figcaption></figure>
+        <div class="block formula"><div class="tag">Formula</div>
+          <div class="eq">offset = W × tan(θ)</div>
+          <p class="where">W = width of the surface being cut across (3½″ on a 2×4 face). θ = saw setting (measured from square).</p></div>
+        <figure class="fig"><div class="art cols2" data-fig="offsetFour"></div>
+          <figcaption>The four common angles on a 3½″ 2×4 face, all drawn at the same scale.</figcaption></figure>
+        <div class="block example"><div class="tag">Worked example</div>
+          <p>2×4 face, <span class="mono">W = 3.5″</span>:</p>
+          <ol class="steps">
+            <li>22.5°: <span class="mono">3.5 × 0.4142 = 1.45″</span> ≈ <span class="mono">1⁷⁄₁₆″</span></li>
+            <li>30°: <span class="mono">3.5 × 0.5774 = 2.02″</span> ≈ <span class="mono">2″</span></li>
+            <li>45°: <span class="mono">3.5 × 1.0000 = 3.50″</span> = <span class="mono">3½″</span></li>
+            <li>60°: <span class="mono">3.5 × 1.7321 = 6.06″</span> ≈ <span class="mono">6¹⁄₁₆″</span></li>
+          </ol>
+          <p class="answer">Going from 45° to 60° almost doubles the offset. Offsets grow quickly at steep angles.</p></div>
+        <div class="block mistake"><div class="tag">Common mistake</div>
+          <p>Using the geometric angle (60° to the edge) where the formula wants the saw setting (30° from square). That swaps <span class="mono">tan 30°</span> for <span class="mono">tan 60°</span> and triples the offset. If your answer is bigger than the board is wide at anything under 45°, you’ve used the wrong angle.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#a-long-short-point"></a><a class="ref" href="#c-offset-table"></a></p>
+    </article>
+    <article class="topic" id="c-inside-outside" data-title="Inside length vs outside length">
+        <div class="prose">
+          <p>A mitered frame piece has two lengths: the <dfn>outside length</dfn> (long point to long point) and the <dfn>inside length</dfn> (short point to short point). The inside length is what you see around the opening, like the picture or the mirror. Each mitered end adds one offset, so a piece mitered at both ends is two offsets longer on the outside.</p>
+        </div>
+        <figure class="fig"><div class="art" data-fig="frame"></div>
+          <figcaption>A square frame with a 24″ opening, made from 2×4s laid flat. Left: assembled. Right: one piece pulled out, with both lengths dimensioned.</figcaption></figure>
+        <div class="block formula"><div class="tag">Formula</div>
+          <div class="eq">outside (LP–LP) = inside (SP–SP) + 2 × W × tan(θ)</div>
+          <div class="eq">inside = outside − 2 × W × tan(θ)</div>
+          <p class="where">If the two ends are cut at different angles θ₁ and θ₂ (long points on the same edge), use <span class="mono">W × tan θ₁ + W × tan θ₂</span> instead of 2 × W × tan θ.</p></div>
+        <div class="block example"><div class="tag">Worked example</div>
+          <p>“I need a square frame whose opening is 24″ × 24″, from 2×4s laid flat.”</p>
+          <ol class="steps">
+            <li>Square frame → saw at 45°. Offset: <span class="mono">3.5 × tan 45° = 3.5″</span></li>
+            <li>Long point length: <span class="mono">24 + 2 × 3.5 = 31″</span></li>
+            <li>The frame’s outside size is also 31″ × 31″.</li>
+          </ol>
+          <p class="answer">Cut four pieces at 31″ LP–LP. Second example, a hexagon with 12″ inside sides: offset <span class="mono">3.5 × tan 30° = 2.02″</span>, so each piece is <span class="mono">12 + 4.04 = 16.04″</span> ≈ <span class="mono">16¹⁄₁₆″</span> LP–LP.</p></div>
+        <div class="block mistake"><div class="tag">Common mistake</div>
+          <p>Cutting pieces to the opening size (24″) as if the corners were square. The frame then comes out 7″ too small inside. Decide first whether your number is an inside or an outside dimension, and write LP or SP next to it.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-mark-long-point"></a><a class="ref" href="#e-measuring-trim"></a></p>
+    </article>
+    <article class="topic" id="c-bevel-length" data-title="Bevel lengths">
+        <div class="prose">
+          <p>A bevel slopes through the thickness instead of across the face. The triangle is the same, it just stands on its edge. So the formula is identical; only W changes: use the thickness the blade passes through. For a 2×4 lying flat and beveled, that is <span class="mono">1½″</span>.</p>
+          <p>Typical use: a four-sided box or planter frame where the corners are beveled so no end grain shows on the outside.</p>
+        </div>
+        <figure class="fig"><div class="art" data-fig="bevelLen"></div>
+          <figcaption>One side of a 2×4 box frame, beveled 45° at both ends through the 1½″ thickness. Left: isometric. Right: edge view with both lengths.</figcaption></figure>
+        <div class="block formula"><div class="tag">Formula</div>
+          <div class="eq">offset = T × tan(bevel)</div>
+          <div class="eq">outer face = inner face + 2 × T × tan(bevel)</div>
+          <p class="where">T = thickness being cut through (1½″ for a 2×4, ¾″ for a 1×4).</p></div>
+        <div class="block example"><div class="tag">Worked example</div>
+          <p>A square 2×4 frame (boards standing on edge) that must be 20″ across on the outside, corners beveled at 45°.</p>
+          <ol class="steps">
+            <li>Offset: <span class="mono">1.5 × tan 45° = 1.5″</span></li>
+            <li>Outer face (long point to long point): <span class="mono">20″</span></li>
+            <li>Inner face: <span class="mono">20 − 2 × 1.5 = 17″</span></li>
+          </ol>
+          <p class="answer">An octagonal column wrap at 22.5° bevel on the same 2×4: offset <span class="mono">1.5 × 0.4142 = 0.62″</span> ≈ <span class="mono">⅝″</span> per end.</p></div>
+        <div class="block mistake"><div class="tag">Common mistake</div>
+          <p>Using the face width (3½″) for a bevel. The blade passes through 1½″ of wood when beveling a flat 2×4, so the offset is much smaller. Look at what the blade actually travels through.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#d-ts-bevel"></a></p>
+    </article>
+    <article class="topic" id="c-offset-table" data-title="Offset table for common lumber">
+        <div class="prose">
+          <p>Nominal sizes (what the store calls it) and actual sizes (what you measure) differ. The table uses actual sizes: 2×4 = 1½″ × 3½″, 2×6 = 1½″ × 5½″, 1×4 = ¾″ × 3½″. Face columns are for miters across the face; thickness columns are for bevels.</p>
+        </div>
+        <div class="tablewrap"><table data-table="offsets"><caption>Offset from short point to long point (decimal inches, then nearest ¹⁄₁₆″)</caption></table></div>
+        <div class="block mistake"><div class="tag">Common mistake</div>
+          <p>Using nominal sizes (4″, 6″) in the formula. A 45° miter on a “2×6” moves the long point 5½″, not 6″.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#a-lumber-sizes"></a></p>
+    </article>
+    <article class="topic" id="c-rules-of-thumb" data-title="Estimating without a calculator">
+        <div class="prose">
+          <p>A handful of ratios cover most jobs. Memorise 45° and the “one-sixteenth per degree” rule and you can sanity-check almost any cut list in your head.</p>
+        </div>
+        <figure class="fig"><div class="art" data-fig="thumbFan"></div>
+          <figcaption>Every ray starts at the long point. Where it hits the far edge gives the offset as a multiple of the board’s width W.</figcaption></figure>
+        <div class="block tip"><div class="tag">Rules of thumb</div>
+          <ul class="steps">
+            <li><b>45°:</b> offset = width. A 3½″ board moves 3½″.</li>
+            <li><b>30°:</b> a bit over half the width (× 0.58). 2×4: about 2″.</li>
+            <li><b>22.5°:</b> a bit over two-fifths (× 0.41). 2×4: about 1⁷⁄₁₆″.</li>
+            <li><b>15°:</b> about a quarter (× 0.27). 2×4: about ¹⁵⁄₁₆″.</li>
+            <li><b>60°:</b> about 1¾ widths (× 1.73). 2×4: about 6″.</li>
+            <li><b>Small angles:</b> each degree adds about <span class="mono">W ÷ 57</span>. On a 3½″ face that is almost exactly <span class="mono">¹⁄₁₆″ per degree</span>, and it stays within ¹⁄₃₂″ up to about 20°.</li>
+          </ul></div>
+        <div class="block example"><div class="tag">Worked example</div>
+          <p>A 10° miter on a 2×4 face, no calculator.</p>
+          <ol class="steps"><li><span class="mono">10° × ¹⁄₁₆″ = ⅝″</span> (exact answer 0.617″)</li></ol>
+          <p class="answer">Close enough to mark. For anything cut on a saw, you don’t need the offset at all: set the angle and measure the long-point length.</p></div>
+        <div class="block mistake"><div class="tag">Common mistake</div>
+          <p>Stretching the per-degree rule to steep angles. At 45° it predicts 2.8″ instead of 3.5″. Past about 20°, switch to the named ratios above.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#a-fractions"></a></p>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Slopes and pitch">
+    <article class="topic" id="c-pitch" data-title="Pitch: slope as inches per foot">
+        <div class="prose">
+          <p>Builders often describe a slope by how much it climbs over a horizontal foot instead of in degrees. The climb is the <dfn>rise</dfn>, the horizontal distance is the <dfn>run</dfn>, and “6-in-12” <dfn>pitch</dfn> means 6″ of rise for every 12″ of run. On roof drawings it is shown as a small triangle with 12 on the flat side.</p>
+          <p>Pitch is easy to measure with a level and a tape, and it scales: a 6-in-12 roof rises 3″ over 6″ and 5 feet over 10 feet.</p>
+        </div>
+        <figure class="fig"><div class="art" data-fig="pitch"></div>
+          <figcaption>A 6-in-12 slope. The sloped side is the length of rafter needed per 12″ of run.</figcaption></figure>
+        <div class="block formula"><div class="tag">Formula</div>
+          <div class="eq">angle = arctan(rise ÷ 12)</div>
+          <div class="eq">rise per 12 = 12 × tan(angle)</div>
+          <div class="eq">sloped length = run × √(1 + (rise ÷ 12)²)</div>
+          <p class="where">arctan (also written tan⁻¹ or atan) is the calculator button that turns a ratio back into an angle. The square-root factor is the “slope factor.”</p></div>
+        <div class="tablewrap"><table data-table="pitch"><caption>Pitch to degrees</caption></table></div>
+        <div class="block example"><div class="tag">Worked example</div>
+          <ol class="steps">
+            <li>6-in-12 to degrees: <span class="mono">arctan(6 ÷ 12) = arctan(0.5) = 26.57°</span></li>
+            <li>30° to pitch: <span class="mono">12 × tan 30° = 6.93</span> → about 7-in-12</li>
+            <li>Rafter over a 10 ft run at 6-in-12: <span class="mono">10 × √1.25 = 11.18 ft</span> = 11′ 2³⁄₁₆″</li>
+          </ol></div>
+        <div class="block mistake"><div class="tag">Common mistake</div>
+          <p>Treating pitch as a percentage or as degrees. 6-in-12 is 50% grade and 26.57°, not 6° and not 60%. Always keep the “in-12”.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#b-slope"></a><a class="ref" href="#g-rafter-terms"></a></p>
+    </article>
+    <article class="topic" id="c-plumb-level" data-title="Plumb and level cuts">
+        <div class="prose">
+          <p>A board lying on a slope usually needs its end cut <dfn>plumb</dfn> (truly vertical, so it looks right to the eye or sits flat against a vertical fascia board) or <dfn>level</dfn> (truly horizontal, so it sits flat on something or takes a soffit board). The end of a rafter that sticks out past the wall is the <dfn>rafter tail</dfn>.</p>
+          <p>This is the brace rule from <a class="ref" href="#c-braces"></a> again: a plumb cut lands on something vertical, a level cut on something horizontal.</p>
+        </div>
+        <figure class="fig"><div class="art" data-fig="rafter"></div>
+          <figcaption>A 2×6 rafter tail at 6-in-12. Left: plumb-cut tail. Right: plumb cut plus a level cut underneath.</figcaption></figure>
+        <div class="block formula"><div class="tag">Formula</div>
+          <div class="eq">plumb cut: saw setting = slope angle</div>
+          <div class="eq">level cut: saw setting = 90° − slope angle</div>
+          <div class="eq">plumb-cut offset = W × rise ÷ 12</div>
+          <p class="where">The last line is W × tan(slope) written in pitch terms, because tan(slope) is just rise ÷ 12.</p></div>
+        <div class="block example"><div class="tag">Worked example</div>
+          <p>2×6 rafter (W = 5½″) at 6-in-12:</p>
+          <ol class="steps">
+            <li>Slope angle: 26.57°, so the plumb cut is <span class="mono">26.6°</span> on the saw (a hair over the 26.5° many people use).</li>
+            <li>Plumb-cut offset: <span class="mono">5.5 × 6 ÷ 12 = 2.75″</span> = 2¾″</li>
+            <li>Level cut: <span class="mono">90° − 26.57° = 63.4°</span> from square. That is past most saws, so mark it with a square and cut it with a circular saw or handsaw.</li>
+          </ol></div>
+        <div class="block mistake"><div class="tag">Common mistake</div>
+          <p>Marking the plumb line square to the rafter instead of truly vertical. Lay a speed square or level against the rafter <em>in position</em>, or use the pitch scale on a speed square, so the line is plumb in the finished building.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#g-birdsmouth"></a><a class="ref" href="#g-speed-square-rafter"></a></p>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Compound cuts">
+    <article class="topic" id="c-compound-what" data-title="Compound cuts: what and when">
+        <div class="prose">
+          <p>You need a compound cut when the boards meeting at a corner are <em>tilted</em>, not standing straight up or lying flat. Examples: a planter whose sides lean outward, a tray with sloped sides, a hopper, and crown molding, which sits tilted between wall and ceiling.</p>
+          <p>The surprise is that neither saw setting equals the angle you see. A four-sided planter still turns 90° at each corner, but because the sides lean, the joint line is no longer a simple 45° across the face. The miter and bevel have to share the job, and how they share it depends on the tilt.</p>
+        </div>
+        <figure class="fig"><div class="art" data-fig="splay"></div>
+          <figcaption>A four-sided planter with sides leaning out 15° from vertical. Left: assembled. Right: exploded so you can see the compound cut faces (red outlines).</figcaption></figure>
+        <div class="block mistake"><div class="tag">Common mistake</div>
+          <p>Cutting a splayed box at 45° miter and 15° bevel because “it’s square with a 15° lean.” The corners will not close. Use the formulas below; the settings are 14.5° and 43.1° here.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#e-crown-spring"></a></p>
+    </article>
+    <article class="topic" id="c-compound-settings" data-title="Working out miter and bevel settings">
+        <div class="prose">
+          <p>Two limits give the intuition. If the sides stand straight up (tilt 0°), a square box is cut with a pure 45° bevel. If the sides lie flat (tilt 90°), it is a picture frame with a pure 45° miter. For tilts in between, the miter grows from 0° toward 45° and the bevel shrinks from 45° toward 0°.</p>
+        </div>
+        <figure class="fig"><div class="art" data-fig="compoundSaw"></div>
+          <figcaption>The 15° planter side as the saw sees it, lying face-down on the table. Left: from above, the miter setting. Right: from the front, the bevel (blade tilt).</figcaption></figure>
+        <div class="block formula"><div class="tag">Formula</div>
+          <div class="eq">A = 180° ÷ n     (or 90° − C ÷ 2 for any corner C)</div>
+          <div class="eq">miter = arctan( sin(S) × tan(A) )</div>
+          <div class="eq">bevel = arcsin( cos(S) × sin(A) )</div>
+          <p class="where">S = tilt of the sides from vertical. A = the flat-frame saw setting for that corner. Board lies face-down on the saw table. For crown molding, S is the angle between the molding’s back and the wall: 38° for common “52/38” crown, 45° for “45/45” crown.</p></div>
+        <div class="block example"><div class="tag">Worked example</div>
+          <p>Four-sided planter, sides tilted 15° from vertical.</p>
+          <ol class="steps">
+            <li><span class="mono">A = 180° ÷ 4 = 45°</span></li>
+            <li>Miter: <span class="mono">arctan(sin 15° × tan 45°) = arctan(0.2588 × 1) = 14.51°</span></li>
+            <li>Bevel: <span class="mono">arcsin(cos 15° × sin 45°) = arcsin(0.9659 × 0.7071) = arcsin(0.6830) = 43.08°</span></li>
+          </ol>
+          <p class="answer">Set the saw to about 14.5° miter and 43° bevel. A 45° tilt gives the well-known pair 35.26° and 30°.</p></div>
+        <div class="tablewrap"><table data-table="compound"><caption>Compound settings (board face-down on the saw)</caption></table></div>
+        <div class="block mistake"><div class="tag">Common mistake</div>
+          <p>Mixing up which way the sides are measured. This table uses tilt <em>from vertical</em>. Some charts use the slope from horizontal (90° minus our number). If a chart gives you a bevel above 45° for a square box, it is using the other convention.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#e-crown-flat"></a></p>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Tapers">
+    <article class="topic" id="c-taper" data-title="Taper angle and taper per foot">
+      <div class="prose">
+        <p>A <dfn>taper</dfn> is a board or leg that gets gradually narrower along its length, like a table leg that slims toward the floor. It is a long, shallow angled cut running <em>with</em> the grain instead of across it.</p>
+        <p>Describe a taper by how much wood comes off one face at the narrow end, over what length. From that you get the <dfn>taper angle</dfn> (what a jig or saw needs) and the <dfn>taper per foot</dfn> (how builders often specify it). Measure the width change in one direction: if only one face slopes in that direction, it loses the whole difference; if both opposite faces slope, each loses half.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="taperLeg"></div>
+        <figcaption>A table leg 1¾″ square, tapered on its two inside faces to 1⅜″ square at the floor over the lower 24″. Each tapered face loses ⅜″. Left: side view. Right: the foot seen from below.</figcaption></figure>
+      <div class="block formula"><div class="tag">Formula</div>
+        <div class="eq">removed per face = (wide − narrow) ÷ faces tapered</div>
+        <div class="eq">taper angle = arctan(removed ÷ taper length)</div>
+        <div class="eq">taper per foot = removed ÷ length × 12</div>
+        <p class="where">Measure wide and narrow in one direction. “Faces tapered” is 1 if one face slopes in that direction, 2 if both opposite faces do. Table legs are usually tapered on the two inside faces, which are adjacent, so each direction has one sloping face.</p></div>
+      <div class="tablewrap"><table data-table="taper"><caption>Taper angle for material removed from one face</caption></table></div>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>Leg 1¾″ square at the top, 1⅜″ square at the floor, tapered on the two inside faces over 24″.</p>
+        <ol class="steps">
+          <li>Removed per face (one sloping face in each direction): <span class="mono">(1.75 − 1.375) ÷ 1 = 0.375″</span> = ⅜″</li>
+          <li>Angle: <span class="mono">arctan(0.375 ÷ 24) = 0.90°</span></li>
+          <li>Per foot: <span class="mono">0.375 ÷ 24 × 12 = 0.19″</span> (about ³⁄₁₆″ per foot)</li>
+        </ol>
+        <p class="answer">Under one degree. That is why tapers are cut with a jig set by distance, not by reading a saw scale (<a class="ref" href="#d-ts-taper-jig"></a>).</p></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Mixing up “per face” and “total”. A board 4″ wide tapered to 3″ on <em>both</em> edges loses ½″ per edge; take a full 1″ off each edge and it ends up 2″ wide.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#d-ts-taper-jig"></a><a class="ref" href="#h-taper"></a></p>
+    </article>
+
+    <article class="topic" id="c-taper-layout" data-title="Laying out a taper">
+      <div class="prose">
+        <p>Before any jig or saw, draw the taper on the wood. Two measurements define it: where the taper starts (often just below a table apron) and how much comes off at the end. A straight line between those two points is the cut line.</p>
+        <p>Lay out on the face you will cut, on every leg, with the legs labelled so the tapered faces all end up on the inside of the table.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="taperLayout"></div>
+        <figcaption>Laying out one tapered face: a start mark 5″ from the top, a ⅜″ mark at the foot, and a straight line between them. The waste is hatched.</figcaption></figure>
+      <ol class="steps steplist">
+        <li>Mark the start of the taper across the face with a square (here 5″ down, where the apron ends).</li>
+        <li>At the foot, measure in the amount to remove (⅜″) from the edge that will be cut.</li>
+        <li>Join the two marks with a straightedge. Hatch the waste side.</li>
+        <li>Repeat on the second tapered face, which is adjacent to the first on a table leg.</li>
+      </ol>
+      <div class="block example"><div class="tag">Worked example</div>
+        <p>A 29″ leg, apron 5″ deep, 24″ tapered, ⅜″ off each inside face.</p>
+        <ol class="steps"><li>Start mark: 5″ from the top. Taper length: <span class="mono">29 − 5 = 24″</span>.</li><li>Foot mark: ⅜″ in from the inside edge.</li><li>After the first face is cut, lay out the second face on the adjacent inside face.</li></ol></div>
+      <div class="block mistake"><div class="tag">Common mistake</div>
+        <p>Tapering the outside faces. Mark the top of every leg with its position (front-left, etc.) and an arrow toward the inside corner of the table before laying out.</p></div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#d-ts-taper-jig"></a></p>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,100 @@
+<!-- =====================================================================
+     GUIDE I · THE REFERENCE SHELF
+     Formula sheet, tables, calculators and glossary. The glossary builds
+     itself from every <dfn> in the handbook (see reader.js).
+     ===================================================================== -->
+<section class="guide" data-letter="I" data-title="The Reference Shelf" data-sub="Every formula and table in one place, calculators for the common jobs, and a glossary of every term the handbook defines.">
+  <div class="guide-intro">
+    <div class="prose"><p>Quick look-ups for when you are at the saw. Each formula links back to the page that explains it.</p></div>
+  </div>
+
+  <div class="gsection" data-title="Formulas and tables">
+    <article class="topic" id="i-formulas" data-title="Formula sheet">
+      <div class="cheat">
+        <div class="card"><h3>Angles</h3><ul class="fl">
+          <li><b>Saw ↔ geometry</b><code>saw = 90° − geometric</code><a class="ref" href="#c-saw-vs-geometry"></a></li>
+          <li><b>Corner, both pieces cut</b><code>saw = 90° − C ÷ 2</code><a class="ref" href="#c-half-angle"></a></li>
+          <li><b>Polygon, n sides</b><code>saw = 180° ÷ n</code><a class="ref" href="#c-polygons"></a></li>
+          <li><b>Irregular shape check</b><code>Σ corners = (n − 2) × 180°</code><a class="ref" href="#c-irregular"></a></li>
+          <li><b>Brace at angle a</b><code>horizontal end 90° − a · vertical end a</code><a class="ref" href="#c-braces"></a></li>
+          <li><b>Error build-up</b><code>gap ≈ W × tan(ends × error)</code><a class="ref" href="#c-errors"></a></li>
+        </ul></div>
+        <div class="card"><h3>Lengths</h3><ul class="fl">
+          <li><b>Offset (miter)</b><code>W × tan θ</code><a class="ref" href="#c-offset"></a></li>
+          <li><b>Offset (bevel)</b><code>T × tan θ</code><a class="ref" href="#c-bevel-length"></a></li>
+          <li><b>Frame piece</b><code>LP–LP = SP–SP + W tan θ₁ + W tan θ₂</code><a class="ref" href="#c-inside-outside"></a></li>
+          <li><b>Stock needed</b><code>trim + Σ pieces + cuts × kerf</code><a class="ref" href="#a-cut-list"></a></li>
+          <li><b>Decimal → sixteenths</b><code>round(decimal part × 16)</code><a class="ref" href="#a-fractions"></a></li>
+          <li><b>Wood movement</b><code>ΔW ≈ W × C × ΔMC</code><a class="ref" href="#a-movement"></a></li>
+        </ul></div>
+        <div class="card"><h3>Slopes, compound, tapers</h3><ul class="fl">
+          <li><b>Pitch → degrees</b><code>arctan(rise ÷ 12)</code><a class="ref" href="#c-pitch"></a></li>
+          <li><b>Degrees → pitch</b><code>12 × tan(angle)</code><a class="ref" href="#c-pitch"></a></li>
+          <li><b>Slope length</b><code>run × √(1 + (rise ÷ 12)²)</code><a class="ref" href="#c-pitch"></a></li>
+          <li><b>Plumb / level cut</b><code>saw = slope · 90° − slope</code><a class="ref" href="#c-plumb-level"></a></li>
+          <li><b>Compound (tilt S, A = 180° ÷ n)</b><code>miter = atan(sin S · tan A)</code><code>bevel = asin(cos S · sin A)</code><a class="ref" href="#c-compound-settings"></a></li>
+          <li><b>Taper angle</b><code>arctan(removed ÷ length)</code><a class="ref" href="#c-taper"></a></li>
+        </ul></div>
+      </div>
+      <p class="seealso"><b>See also</b><a class="ref" href="#i-tables"></a><a class="ref" href="#i-calculators"></a></p>
+    </article>
+
+    <article class="topic" id="i-tables" data-title="Tables">
+      <div class="cheat">
+        <div class="card"><h3>Polygon frames</h3><div class="tablewrap"><table data-table="polygonMini"></table></div></div>
+        <div class="card"><h3>2×4 offsets</h3><div class="tablewrap"><table data-table="offsets2x4"></table></div></div>
+        <div class="card"><h3>Pitch → degrees</h3><div class="tablewrap"><table data-table="pitchMini"></table></div></div>
+        <div class="card"><h3>Compound (square box)</h3><div class="tablewrap"><table data-table="compoundMini"></table></div></div>
+        <div class="card"><h3>Sixteenths → decimals</h3><div class="tablewrap"><table data-table="sixteenths"></table></div></div>
+        <div class="card"><h3>Taper angles</h3><div class="tablewrap"><table data-table="taper"></table></div></div>
+      </div>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Calculators">
+    <article class="topic" id="i-calculators" data-title="Calculators">
+      <div class="prose"><p>Type into any box; answers update as you type. Lengths accept decimals (23.625), fractions (23 5/8 or 23-5/8) and feet (1' 11 5/8).</p></div>
+      <div class="cheat calc-card">
+        <div class="card"><h3>Offset &amp; frame length</h3>
+          <form class="calc" id="calc-offset"><div class="row">
+            <label for="c-w">Width W (in)<input id="c-w" type="number" step="0.125" value="3.5" inputmode="decimal"></label>
+            <label for="c-t">Saw θ (°)<input id="c-t" type="number" step="0.5" value="45" inputmode="decimal"></label>
+            <label for="c-in">Inside SP–SP (in)<input id="c-in" type="number" step="0.0625" value="24" inputmode="decimal"></label></div>
+            <output id="o-off"></output></form></div>
+        <div class="card"><h3>Corner → saw</h3>
+          <form class="calc" id="calc-corner"><div class="row">
+            <label for="c-c">Corner C (°)<input id="c-c" type="number" step="0.5" value="135" inputmode="decimal"></label>
+            <label for="c-n">or sides n<input id="c-n" type="number" step="1" min="3" value="8" inputmode="numeric"></label></div>
+            <output id="o-corner"></output></form></div>
+        <div class="card"><h3>Fractions</h3>
+          <form class="calc" id="calc-frac"><div class="row">
+            <label for="c-frac">Length<input id="c-frac" type="text" value="23 5/8" style="width:9em"></label>
+            <label for="c-den">Round to 1/<select id="c-den"><option>8</option><option selected>16</option><option>32</option></select></label></div>
+            <output id="o-frac"></output></form></div>
+        <div class="card"><h3>Pitch ↔ degrees</h3>
+          <form class="calc" id="calc-pitch"><div class="row">
+            <label for="c-p">Rise per 12<input id="c-p" type="number" step="0.5" value="6" inputmode="decimal"></label></div>
+            <output id="o-pitch"></output></form></div>
+        <div class="card"><h3>Compound miter</h3>
+          <form class="calc" id="calc-comp"><div class="row">
+            <label for="c-s">Tilt S (°)<input id="c-s" type="number" step="1" value="15" inputmode="decimal"></label>
+            <label for="c-sn">Sides n<input id="c-sn" type="number" step="1" min="3" value="4" inputmode="numeric"></label></div>
+            <output id="o-comp"></output></form></div>
+        <div class="card"><h3>Taper</h3>
+          <form class="calc" id="calc-taper"><div class="row">
+            <label for="c-wide">Wide end<input id="c-wide" type="text" value="1 3/4"></label>
+            <label for="c-narrow">Narrow end<input id="c-narrow" type="text" value="1 3/8"></label>
+            <label for="c-tlen">Taper length<input id="c-tlen" type="text" value="24"></label>
+            <label for="c-faces">Sloping faces per direction<select id="c-faces"><option value="1" selected>1</option><option value="2">2</option></select></label></div>
+            <output id="o-taper"></output></form></div>
+      </div>
+    </article>
+  </div>
+
+  <div class="gsection" data-title="Glossary">
+    <article class="topic" id="i-glossary" data-title="Glossary">
+      <div class="prose"><p>Every term the handbook defines, with the sentence that defines it and a link to its page.</p></div>
+      <dl class="gloss" id="glossary"></dl>
+    </article>
+  </div>
+</section>

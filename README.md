@@ -1,58 +1,65 @@
-# The Angled-Cut Handbook
+# Plumb & Square
 
-A single, self-contained HTML page: a beginner-friendly, illustrated guide to calculating and making angled cuts in wood.
+An illustrated, beginner-friendly woodworking handbook for cutting, framing and spindle turning.
 
-**Open `angled-cuts-guide.html` in any browser.** It works offline, with no external images, fonts, or libraries.
+**Open `plumb-and-square.html` in any browser.** It is one self-contained file that works offline, with no external images, fonts or libraries.
 
-## Printing
+## How it reads
 
-Click **Print on white paper** (top of the page, or under the sheet index on desktop), or use your browser's own Print. Both use the same ink-saving print scheme:
+The handbook is made of guides, each a small book on one subject. You read it like a textbook, **one topic per page**:
 
-- White paper, no filled backgrounds: boards print as black line drawings with light grey grain, waste as red hatch lines only.
-- Thin red, blue and purple lines keep cuts, dimensions and angles apart (on a black-and-white printer they print as greys and stay distinguishable by dash style and arrowheads).
-- Page 1 is the title, the diagram key and a contents list. Each of the 7 sheets starts on a new page.
-- Figures, formula and example boxes, and tables are never split across a page break.
-- The calculator and navigation are left out; the cheat sheet prints in two columns.
-- Dark mode doesn't matter: printing always uses the white-paper scheme.
+- **Home** shows every guide. Each guide opens to a cover page with its contents.
+- **Turn pages** with the Previous/Next buttons at the bottom of every page, the ← → keys, or a swipe on a phone.
+- **Contents** (top left) lists every guide, section and topic, and searches titles, defined terms and text.
+- Every page has its own link (for example `plumb-and-square.html#c-offset`), and the handbook remembers where you stopped.
+- **Print** (top right) prints this page, this guide, or the whole handbook in an ink-saving scheme for white paper: line drawings, no filled backgrounds, figures never split across pages.
 
-`angled-cuts-guide-print.pdf` is a sample of the result (US Letter, 30 pages). Printing on A4 also works, though page breaks fall slightly differently. Leave "Background graphics" off in the print dialog; the page doesn't need it.
+Every topic follows the same pattern: plain-language explanation → diagram → formula or steps → worked example with real numbers → common mistake, plus a safety note on any power-tool topic and links to related topics.
 
-## What's inside
+## Working on it
 
-1. **Vocabulary**: crosscut vs rip, miter vs bevel vs compound, long and short point, kerf
-2. **Finding the angle**: the half-angle rule, polygon frames (3–12 sides), out-of-square corners, braces and T-joints, saw scale vs geometry
-3. **Lengths**: offset = W × tan θ on a real 2×4, inside vs outside length, bevel lengths, offset tables for 2×4 / 2×6 / 1×4, rules of thumb
-4. **Slopes and pitch**: X-in-12 ↔ degrees, plumb and level cuts
-5. **Compound cuts**: miter and bevel settings from the tilt, lookup table including crown molding
-6. **Measuring, marking, checking**: speed square, combination square, sliding bevel, protractor, transferring angles, kerf and waste side, how errors add up
-7. **Cheat sheet**: every formula and table, plus a small calculator
+The built file is generated from `src/`. Edit the sources, then rebuild:
 
-## How the file is organised
+```sh
+node build.js                 # writes plumb-and-square.html
+node tools/test-formulas.js   # checks the worked-example numbers against the formulas
+node tools/check.js           # opens every page in Chromium (needs Playwright) and reports problems
+```
 
-Everything lives in `angled-cuts-guide.html`, in clearly commented blocks:
-
-| Block | What it holds |
+| Path | What it holds |
 | --- | --- |
-| `<style>` | Design tokens (`:root`) with light and dark palettes, then page, figure, and SVG classes |
-| HTML `<section class="sheet">` | One per section, with `<article class="topic">` per subsection |
-| `DRAWING KIT` script | `K.fig(S)`: a small SVG builder (boards with grain, dimensions, angle arcs, callouts, isometric solids). World units are inches. |
-| `SHARED DRAWING HELPERS` | `endCut`, `polyFrame`, `walls`, reused by several figures |
-| `FIGURES` script | `FIG.name = () => svg`, grouped by sheet |
-| `TABLES` script | `TABLES.name = () => rows`, all computed from the formulas |
-| `PAGE WIRING` | Renders figures and tables, numbers figures, highlights the sheet index, runs the calculator |
+| `src/shell.html` | Page skeleton: top bar, contents drawer, home page, and include markers |
+| `src/styles.css` | Design tokens (light and dark), reader layout, diagram classes, print scheme |
+| `src/guides/*.html` | One file per guide. Each topic is an `<article class="topic">` |
+| `src/figures/*.js` | Diagrams for each guide, as `FIG.name = () => svg` |
+| `src/kit.js` | The SVG drawing kit (boards, dimensions, angles, isometric solids, machines, spindles) |
+| `src/helpers.js` | Shared drawing helpers used by several guides |
+| `src/formulas.js` | Every calculation, used by text examples, tables, figures and calculators |
+| `src/tables.js` | Tables, computed from the formulas |
+| `src/calc.js` | The calculators in the Reference Shelf |
+| `src/reader.js` | The page-turning reader: numbering, covers, pagers, contents, search, printing |
 
 ### Adding a topic
 
-1. Add an `<article class="topic" id="...">` inside the right sheet (or a new `<section class="sheet" data-sheet="8">`).
-2. Put a figure placeholder in it: `<figure class="fig"><div class="art" data-fig="myFigure"></div><figcaption>…</figcaption></figure>`.
-3. Write `FIG.myFigure = () => { const f = fig(24); /* draw */ return f.svg('alt text'); };` in the FIGURES script.
-4. Add a link to the `<nav class="toc">` list.
+1. In the right `src/guides/*.html` file, add an article inside a section:
+   ```html
+   <article class="topic" id="c-my-topic" data-title="My topic">
+     …explanation, figures, formula, example, mistake…
+     <p class="seealso"><b>See also</b><a class="ref" href="#c-offset"></a></p>
+   </article>
+   ```
+2. For a figure, add `<figure class="fig"><div class="art" data-fig="myFigure"></div><figcaption>…</figcaption></figure>` and write `FIG.myFigure` in that guide's `src/figures/*.js`.
+3. Run `node build.js`.
 
-Figures are numbered automatically per sheet.
+Numbers (C2.1), page headers, pagers, the guide covers, the contents drawer, figure numbers, search and the glossary are all generated. An empty `<a class="ref" href="#id"></a>` fills itself in with the topic's number and title. Terms wrapped in `<dfn>` go into the glossary automatically.
+
+A new section is a `<div class="gsection" data-title="…">` inside a guide. A new guide is a new file in `src/guides/` with a `<section class="guide" data-letter data-title data-sub>` wrapper.
 
 ### Visual language
 
-- Tan with grain lines: **board**
-- Red hatch: **waste**. Red dashed: **planned cut**. Red solid edge: **cut face**
-- Blue with arrows: **dimensions**
-- Purple arcs: **angles**
+- Tan board with grain lines; red hatch for waste; red dashed for a planned cut; red solid edge for a cut face
+- Blue with arrows: dimensions. Purple arcs: angles
+- Bold black arrow: feed direction. Curved black arrow: rotation. Red cross-hatch: danger zone
+- Grey: machines and tools
+
+Code-dependent numbers (stairs, notching) are typical US (IRC) values; always check your local code.

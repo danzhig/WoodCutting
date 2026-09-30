@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Plumb &amp; Square</title>
+<meta name="description" content="Plumb & Square: an illustrated woodworking handbook for cutting, framing and spindle turning. Nine guides, one topic per page, works offline.">
+<!-- Built file. Edit the sources in src/ and run `node build.js`. -->
+<style>
+/*@include src/styles.css*/
+</style>
+</head>
+<body>
+
+<!-- Shared SVG patterns: kept at 0×0 (not display:none) so every browser resolves them -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect class="hatch-bg" width="7" height="7"/><line class="hatch-ln" x1="0" y1="0" x2="0" y2="7"/>
+    </pattern>
+    <pattern id="xhatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line class="xh-ln" x1="0" y1="0" x2="0" y2="8"/><line class="xh-ln" x1="0" y1="0" x2="8" y2="0"/>
+    </pattern>
+  </defs>
+</svg>
+
+<header class="bar">
+  <div class="bar-in">
+    <button type="button" class="iconbtn" id="open-drawer" aria-label="Open contents">
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.6" fill="none"/></svg><span class="lbl">Contents</span></button>
+    <a class="brand" href="#home" aria-label="Plumb and Square, handbook home">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 2v17h17" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M13 2v7" stroke="currentColor" stroke-width="1.2"/><path d="M13 9l2.2 3.2L13 16l-2.2-3.8z" fill="var(--cut)"/></svg>
+      <span>Plumb &amp; Square</span></a>
+    <nav class="crumbs" id="crumbs" aria-label="You are here"></nav>
+    <details class="printmenu" id="printmenu">
+      <summary class="iconbtn" aria-label="Print">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6V1.5h8V6M4 12H2.5A1 1 0 0 1 1.5 11V7a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H12M4 9.5h8v5H4z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg><span class="lbl">Print</span></summary>
+      <div class="menu" role="menu">
+        <button type="button" data-print="page" role="menuitem">Print this page<small>Just what’s on screen</small></button>
+        <button type="button" data-print="guide" role="menuitem">Print this guide<small>Cover and every topic in it</small></button>
+        <button type="button" data-print="all" role="menuitem">Print the whole handbook<small>All nine guides</small></button>
+        <small style="padding:6px 10px 2px;color:var(--muted);font:12px/1.35 var(--f-ui)">Prints on white paper as line drawings, with no filled backgrounds.</small>
+      </div>
+    </details>
+  </div>
+  <div class="progress" id="progress"><i></i></div>
+</header>
+
+<div class="drawer-bg" id="drawer-bg" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-label="Contents">
+  <div class="drawer-head"><h2>Contents</h2><button type="button" class="iconbtn" id="close-drawer" aria-label="Close contents">✕</button></div>
+  <div class="drawer-search"><label for="drawer-q" class="kicker" style="display:block;margin-bottom:6px">Search topics and terms</label><input id="drawer-q" type="search" placeholder="e.g. kickback, bird’s mouth, 22.5" autocomplete="off"></div>
+  <div class="drawer-list" id="drawer-list"></div>
+</aside>
+
+<main class="book" id="book">
+
+<!-- =====================================================================
+     HOME
+     ===================================================================== -->
+<div class="page" id="home">
+  <div class="page-inner">
+    <div class="home-hero">
+      <div>
+        <p class="kicker">A woodworking handbook · cutting, framing, turning</p>
+        <h1 tabindex="-1">Plumb <span>&amp;</span> Square</h1>
+        <p class="lede">Nine short guides on measuring, marking and cutting wood accurately, from reading a tape to framing a roof and turning a spindle. One topic per page: explanation, diagram, formula, worked example, common mistake.</p>
+      </div>
+      <figure class="fig"><div class="art one" data-fig="hero"></div></figure>
+    </div>
+    <div class="legend" aria-label="Diagram key">
+      <span><svg width="26" height="14" aria-hidden="true"><rect x="1" y="1" width="24" height="12" class="w-top"/></svg>Board</span>
+      <span><svg width="26" height="14" aria-hidden="true"><rect x="1" y="1" width="24" height="12" class="wastef"/></svg>Waste</span>
+      <span><svg width="30" height="14" aria-hidden="true"><line x1="2" y1="7" x2="28" y2="7" class="cut"/></svg>Cut line</span>
+      <span><svg width="34" height="14" aria-hidden="true"><line x1="4" y1="7" x2="30" y2="7" class="dimline"/><polygon class="arrow" points="2,7 10,4 10,10"/><polygon class="arrow" points="32,7 24,4 24,10"/></svg>Dimension</span>
+      <span><svg width="22" height="16" aria-hidden="true"><path d="M4 14 A12 12 0 0 1 14 3" class="ang"/><line x1="4" y1="14" x2="20" y2="14" class="ang"/></svg>Angle</span>
+      <span><svg width="34" height="14" aria-hidden="true"><line x1="2" y1="7" x2="24" y2="7" class="feed"/><polygon class="feedhead" points="33,7 22,2 22,12"/></svg>Feed direction</span>
+      <span><svg width="26" height="14" aria-hidden="true"><rect x="1" y="1" width="24" height="12" class="danger"/></svg>Danger zone</span>
+    </div>
+    <div class="continue" id="continue"></div>
+    <p class="section-label">The guides</p>
+    <div class="shelf" id="shelf"></div>
+    <div class="block tip"><div class="tag">Using the handbook</div>
+      <ul class="steps">
+        <li>Each topic is one page. Turn pages with the Previous/Next buttons at the bottom, the ← → keys, or a swipe on a phone.</li>
+        <li><b>Contents</b> (top left) lists every guide and topic, and searches titles, terms and text.</li>
+        <li><b>Print</b> (top right) prints this page, one guide, or the whole handbook on white paper.</li>
+        <li>The handbook remembers where you stopped. All sizes are in inches, using real (actual) lumber sizes.</li>
+      </ul></div>
+  </div>
+</div>
+
+<!--@include-dir src/guides/*.html-->
+
+</main>
+
+<footer class="colophon">Plumb &amp; Square · a woodworking handbook. Diagrams are drawn in the page from the same formulas the text uses. Code values are typical US (IRC) practice; always check your local building code. Check every new setup on scrap first.</footer>
+
+<noscript><p style="padding:16px">This handbook draws its pages and diagrams with JavaScript. Please enable it.</p></noscript>
+
+<script>
+/*@include src/kit.js*/
+</script>
+<script>
+/*@include src/formulas.js*/
+</script>
+<script>
+/*@include src/helpers.js*/
+</script>
+<script>
+const FIG = {};
+const { fig, panels, iso, rz, frac, deg, tan } = K;
+</script>
+<!--@include-scripts src/figures/*.js-->
+<script>
+/*@include src/tables.js*/
+</script>
+<script>
+/*@include src/calc.js*/
+</script>
+<script>
+/*@include src/reader.js*/
+</script>
+</body>
+</html>
