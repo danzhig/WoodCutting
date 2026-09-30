@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "",
+  "buildCommand": "node build.js && mkdir -p public && cp plumb-and-square.html public/index.html",
+  "outputDirectory": "public",
+  "cleanUrls": true
+}

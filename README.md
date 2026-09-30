@@ -40,6 +40,10 @@ node tools/test-formulas.js   # checks the worked-example numbers against the fo
 node tools/check.js           # opens every page in Chromium (needs Playwright) and reports problems
 ```
 
+### Hosting on Vercel
+
+Import the repository in Vercel and deploy with the default settings; `vercel.json` does the rest. Each deploy runs `node build.js`, copies the result to `public/index.html` and serves that folder, so the site always matches `src/`. It needs no dependencies and no environment variables. Pushes to `main` go to production.
+
 | Path | What it holds |
 | --- | --- |
 | `src/shell.html` | Page skeleton: top bar, contents drawer, home page, and include markers |
@@ -52,6 +56,7 @@ node tools/check.js           # opens every page in Chromium (needs Playwright) 
 | `src/tables.js` | Tables, computed from the formulas |
 | `src/calc.js` | The calculators in the Reference Shelf |
 | `src/reader.js` | The page-turning reader: numbering, covers, pagers, contents, search, printing |
+| `vercel.json` | Vercel build settings (build command, output folder) |
 
 ### Adding a topic
 
