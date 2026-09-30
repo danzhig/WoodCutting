@@ -49,6 +49,13 @@ const F = (() => {
 
   // --- wood movement: coefficient per 1% moisture change (tangential ≈ 0.0025–0.0035 for many species) ---
   const movement = (W, coef, dMC) => W * coef * dMC;
+  // coefficient from a species' shrinkage: it shrinks S% over the ~28 points from fibre saturation to oven-dry
+  const FSP = 28;
+  const shrinkCoef = S => S / 100 / FSP;
+
+  // --- species (Guide I): same size, span and load → sag scales with 1/MOE and 1/thickness³ ---
+  const sagRatio = (moeA, moeB) => moeB / moeA;             // how many times A sags compared with B
+  const sagThick = (t, tRef) => (tRef / t) ** 3;            // sag at thickness t relative to tRef
 
   // --- framing: code limits from the National Building Code – 2023 Alberta Edition (Calgary), converted to inches ---
   const MM = 25.4;
@@ -76,6 +83,6 @@ const F = (() => {
 
   return { CODE, sawFromCorner, edgeFromCorner, polySaw, polyCorner, sawToGeo, braceEnds, offset, outsideLen, insideLen, stockUsed,
     pitchDeg, pitchFromDeg, slopeFactor, compoundA, compound, crownNested, taperAngle, taperPerFoot, jigOpening,
-    errorGap, fiveCutError, fenceShift, diagonal, capacityAtMiter, movement, wallHeight, headerLen, blockLen, studCount,
+    errorGap, fiveCutError, fenceShift, diagonal, capacityAtMiter, movement, FSP, shrinkCoef, sagRatio, sagThick, wallHeight, headerLen, blockLen, studCount,
     layoutMarks, rafter, hipRise, stairs, latheRPM, RAD };
 })();

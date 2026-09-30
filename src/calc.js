@@ -1,5 +1,5 @@
 /* =====================================================================
-   CALCULATORS (Guide I). Each block wires itself only if its form exists.
+   CALCULATORS (Guide K). Each block wires itself only if its form exists.
    ===================================================================== */
 window.CALC = {
   init() {

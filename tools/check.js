@@ -38,7 +38,7 @@ const has = k => args.includes(k);
     if (shots) await page.screenshot({ path: path.join(shots, `${id}.png`), fullPage: true });
   }
   if (opt('--pdf')) {
-    await page.evaluate(() => { location.hash = 'home'; document.querySelectorAll('.page').forEach(p => p.classList.add('print-in')); document.body.dataset.print = 'all'; });
+    await page.evaluate(() => { location.hash = 'home'; document.querySelectorAll('.page').forEach(p => p.classList.add('print-in')); document.getElementById('home').classList.add('print-first'); document.body.dataset.print = 'all'; });
     await page.pdf({ path: opt('--pdf'), format: 'Letter' });
   }
   console.log(`pages: ${ids.length}`);

@@ -1,6 +1,6 @@
 # Plumb & Square
 
-An illustrated, beginner-friendly woodworking handbook for cutting, framing and spindle turning.
+An illustrated, beginner-friendly woodworking handbook for cutting, framing, spindle turning and choosing wood.
 
 **Open `plumb-and-square.html` in any browser.** It is one self-contained file that works offline, with no external images, fonts or libraries.
 
@@ -12,11 +12,11 @@ The handbook is made of guides, each a small book on one subject. You read it li
 - **Turn pages** with the Previous/Next buttons at the bottom of every page, the ← → keys, or a swipe on a phone.
 - **Contents** (top left) lists every guide, section and topic, and searches titles, defined terms and text.
 - Every page has its own link (for example `plumb-and-square.html#c-offset`), and the handbook remembers where you stopped.
-- **Print** (top right) prints this page, this guide, or the whole handbook in an ink-saving scheme for white paper: line drawings, no filled backgrounds, each guide starting on a new page with its cover, and figures never split across pages. The whole handbook is about 147 US Letter pages. The browser’s own Print (Ctrl/Cmd+P) prints the page on screen.
+- **Print** (top right) prints this page, this guide, or the whole handbook in an ink-saving scheme for white paper: line drawings, no filled backgrounds, each guide starting on a new page with its cover, and figures never split across pages. Each wood species prints on exactly one page. The whole handbook is about 179 US Letter pages. The browser’s own Print (Ctrl/Cmd+P) prints the page on screen.
 
 Every topic follows the same pattern: plain-language explanation → diagram → formula or steps → worked example with real numbers → common mistake, plus a safety note on any power-tool topic and links to related topics.
 
-## The guides (145 pages: home, 9 guide covers, 135 topics)
+## The guides (181 pages: home, 11 guide covers, 169 topics)
 
 | | Guide | Topics | Covers |
 | --- | --- | --- | --- |
@@ -28,7 +28,9 @@ Every topic follows the same pattern: plain-language explanation → diagram →
 | F | Joining Angled Work | 5 | Gluing end grain, reinforcing miters, nailing trim, clamping, wood movement in wide miters |
 | G | Framing & Construction | 21 | Layout, walls, rough openings, rafters, bird's mouth, rafter layout, hips, stairs, blocking, sheathing, decks and posts |
 | H | Spindle Turning | 15 | Lathe parts, safety, speed, blanks, mounting, tools, tool rest, riding the bevel, beads and coves, calipers, story sticks, tapers, tenons, sharpening, finishing |
-| I | The Reference Shelf | 4 | Formula sheet, tables, nine calculators, glossary (built automatically from every defined term) |
+| I | Judging Wood | 9 | Reading a species page, hardness vs strength vs stiffness, shrinkage and stability, rot and outdoor use, what carvers and turners look for, wood dust, comparison charts and tables, choosing a wood for the job |
+| J | Wood Species | 25 | One page per wood (read Guide I first): spruce (SPF), lodgepole pine, Douglas fir, white pine, western red cedar, yellow cedar, hemlock, larch, hard and soft maple, red and white oak, ash, yellow birch, cherry, walnut, hickory, beech, yellow poplar, aspen, basswood, butternut, mahogany, sapele, teak |
+| K | The Reference Shelf | 4 | Formula sheet, tables, nine calculators, glossary (built automatically from every defined term) |
 
 ## Working on it
 
@@ -54,6 +56,7 @@ Import the repository in Vercel and deploy with the default settings; `vercel.js
 | `src/helpers.js` | Shared drawing helpers used by several guides |
 | `src/formulas.js` | Every calculation, used by text examples, tables, figures and calculators |
 | `src/tables.js` | Tables, computed from the formulas |
+| `src/species.js` | Wood species data (Guides I and J): numbers, colours, ratings, and the species stat card, meters and tables drawn from them |
 | `src/calc.js` | The calculators in the Reference Shelf |
 | `src/reader.js` | The page-turning reader: numbering, covers, pagers, contents, search, printing |
 | `vercel.json` | Vercel build settings (build command, output folder) |
@@ -70,6 +73,8 @@ Import the repository in Vercel and deploy with the default settings; `vercel.js
 2. For a figure, add `<figure class="fig"><div class="art" data-fig="myFigure"></div><figcaption>…</figcaption></figure>` and write `FIG.myFigure` in that guide's `src/figures/*.js`.
 3. Run `node build.js`.
 
+A new wood species is one record in `WOODS` (`src/species.js`) plus an article with `<div class="spec" data-spec="key"></div>` in `src/guides/j-wood-species.html`; the sample, facts, numbers, meters and comparison tables follow automatically.
+
 Numbers (C2.1), page headers, pagers, the guide covers, the contents drawer, figure numbers, search and the glossary are all generated. An empty `<a class="ref" href="#id"></a>` fills itself in with the topic's number and title. Terms wrapped in `<dfn>` go into the glossary automatically.
 
 A new section is a `<div class="gsection" data-title="…">` inside a guide. A new guide is a new file in `src/guides/` with a `<section class="guide" data-letter data-title data-sub>` wrapper.
@@ -82,3 +87,5 @@ A new section is a `<div class="gsection" data-title="…">` inside a guide. A n
 - Grey: machines and tools
 
 Code-dependent numbers (stairs, guards, notching, deck permits) follow the National Building Code – 2023 Alberta Edition as used in Calgary (metric values from the code, inch values rounded to the safe side). Always check with the City of Calgary.
+
+Wood species numbers are averages at 12% moisture content from the US Forest Products Laboratory and the Wood Database; the working ratings are the handbook’s own judgement from published working notes.

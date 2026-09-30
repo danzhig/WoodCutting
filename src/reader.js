@@ -68,11 +68,16 @@
     const body = document.createElement('div'); body.className = 'topic-body';
     while (t.firstChild) body.appendChild(t.firstChild);
     const inner = document.createElement('div'); inner.className = 'page-inner';
-    inner.innerHTML = `<header class="topic-head"><div class="th-no">${esc(G.letter === 'I' ? 'Ref' : 'Topic')}<b>${T.num}</b>${G.letter}·${G.topics.indexOf(T) + 1}/${G.topics.length}</div><div class="th-main"><p class="eyebrow">Guide ${G.letter} · ${esc(G.title)} › ${esc(T.section.num)} ${esc(T.section.title)}</p><h2 tabindex="-1">${esc(T.title)}</h2></div></header>`;
+    inner.innerHTML = `<header class="topic-head"><div class="th-no">${esc('ref' in G.el.dataset ? 'Ref' : 'Topic')}<b>${T.num}</b>${G.letter}·${G.topics.indexOf(T) + 1}/${G.topics.length}</div><div class="th-main"><p class="eyebrow">Guide ${G.letter} · ${esc(G.title)} › ${esc(T.section.num)} ${esc(T.section.title)}</p><h2 tabindex="-1">${esc(T.title)}</h2></div></header>`;
     inner.appendChild(body);
     inner.insertAdjacentHTML('beforeend', '<nav class="pager" aria-label="Page"></nav>');
     t.appendChild(inner);
   }));
+
+  // species stat cards (Guide J), filled before cross-references so their links get titles too
+  $$('[data-spec]').forEach(el => {
+    try { el.innerHTML = WOODUTIL.card(el.dataset.spec); } catch (e) { el.innerHTML = `<p class="figerr">Species “${esc(el.dataset.spec)}” failed: ${esc(e.message)}</p>`; console.error(e); }
+  });
 
   // cross-references: <a class="ref" href="#id"></a> gets "C2.1 Title"
   $$('a.ref').forEach(a => {
@@ -221,11 +226,12 @@
   // ---------- 9. printing ----------
   const printMenu = $('#printmenu');
   function markPrint(mode) {
-    $$('.page.print-in').forEach(el => el.classList.remove('print-in'));
+    $$('.page.print-in').forEach(el => el.classList.remove('print-in', 'print-first'));
     let list = [current];
     if (mode === 'guide' && current.guide) list = [current.guide.cover, ...current.guide.topics];
     if (mode === 'all') list = pages;
     list.forEach(p => p.el.classList.add('print-in'));
+    list[0].el.classList.add('print-first');   // no page break before the first printed page
     document.body.dataset.print = mode;
   }
   document.addEventListener('click', e => {
@@ -234,7 +240,7 @@
     markPrint(mode); printMenu.open = false; window.print();
   });
   window.addEventListener('beforeprint', () => { if (!document.body.dataset.print) markPrint('page'); });
-  window.addEventListener('afterprint', () => { delete document.body.dataset.print; $$('.page.print-in').forEach(el => el.classList.remove('print-in')); });
+  window.addEventListener('afterprint', () => { delete document.body.dataset.print; $$('.page.print-in').forEach(el => el.classList.remove('print-in', 'print-first')); });
   document.addEventListener('click', e => { if (printMenu.open && !e.target.closest('#printmenu')) printMenu.open = false; });
 
   // ---------- 10. calculators and start ----------

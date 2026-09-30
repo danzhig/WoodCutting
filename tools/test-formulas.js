@@ -7,8 +7,8 @@ const vm = require('vm');
 
 const ctx = { Math, console };
 vm.createContext(ctx);
-for (const f of ['src/kit.js', 'src/formulas.js']) vm.runInContext(fs.readFileSync(path.join(__dirname, '..', f), 'utf8') + '\nthis.K = typeof K !== "undefined" ? K : this.K; this.F = typeof F !== "undefined" ? F : this.F;', ctx);
-const { K, F } = ctx;
+for (const f of ['src/kit.js', 'src/formulas.js', 'src/tables.js', 'src/species.js']) vm.runInContext(fs.readFileSync(path.join(__dirname, '..', f), 'utf8') + '\nthis.K = typeof K !== "undefined" ? K : this.K; this.F = typeof F !== "undefined" ? F : this.F; this.WOODS = typeof WOODS !== "undefined" ? WOODS : this.WOODS; this.WOODUTIL = typeof WOODUTIL !== "undefined" ? WOODUTIL : this.WOODUTIL;', ctx);
+const { K, F, WOODS, WOODUTIL } = ctx;
 
 let fails = 0, n = 0;
 const near = (name, got, want, tol = 0.01) => { n++; if (Math.abs(got - want) > tol) { fails++; console.log(`FAIL ${name}: got ${got}, expected ${want}`); } };
@@ -128,6 +128,31 @@ near('width 33⅞″ ≥ 860 mm', 33.875 * 25.4, 860.4, 0.1);
 same('42″ deck stair passes', F.stairs(42).riserOK && F.stairs(42).runOK, true);
 near('7″ riser in mm', 7 * 25.4, 177.8, 0.1);
 near('10½″ run in mm', 10.5 * 25.4, 266.7, 0.1);
+
+// ---- Guides I and J: wood species ----
+const W = WOODS;
+near('Doug fir hardness meter', WOODUTIL.score('hardness', W.dfir), 2);
+near('Doug fir strength meter', WOODUTIL.score('strength', W.dfir), 3);
+near('Doug fir stiffness meter', WOODUTIL.score('stiffness', W.dfir), 4);
+near('Doug fir stability meter', WOODUTIL.score('stability', W.dfir), 3);
+near('Doug fir rot meter', WOODUTIL.score('rot', W.dfir), 3);
+near('pine vs maple sag', F.sagRatio(W.wpine.moe, W.hmaple.moe), 1.48, 0.005);
+near('3/4 to 1 inch sag', F.sagThick(1, 0.75), 0.42, 0.005);
+near('1 in pine vs 3/4 maple', F.sagRatio(W.wpine.moe, W.hmaple.moe) * F.sagThick(1, 0.75), 0.62, 0.005);
+near('fir vs red oak stiffness', W.dfir.moe, 1.77); near('red oak stiffness', W.roak.moe, 1.82);
+near('fir vs red oak weight', W.dfir.wt / W.roak.wt, 0.73, 0.01);
+near('fir vs red oak hardness', W.roak.janka / W.dfir.janka, 2.08, 0.01);
+const flat = F.movement(7.25, F.shrinkCoef(W.roak.sh[1]), 4), quart = F.movement(7.25, F.shrinkCoef(W.roak.sh[0]), 4);
+near('red oak flatsawn movement', flat, 0.089, 0.001); same('flatsawn frac', K.frac(flat, 32), '³⁄₃₂″');
+near('red oak quartersawn movement', quart, 0.041, 0.001); same('quartersawn frac', K.frac(quart, 32), '¹⁄₃₂″');
+near('birch T/R', WOODUTIL.tr(W.ybirch), 1.3, 0.05); near('walnut T/R', WOODUTIL.tr(W.walnut), 1.4, 0.05);
+near('mahogany T/R', WOODUTIL.tr(W.mahogany), 1.4, 0.05); near('white pine T/R', WOODUTIL.tr(W.wpine), 2.9, 0.05);
+near('beech V', W.beech.sh[2], 17.2); near('cedar V', W.wrc.sh[2], 6.8);
+near('hickory hardest', Math.max(...Object.values(W).map(w => w.janka)), W.hickory.janka);
+near('cedar most stable', Math.min(...Object.values(W).map(w => w.sh[2])), W.wrc.sh[2]);
+near('birch stiffest after hickory', Object.values(W).map(w => w.moe).sort((a, b) => b - a)[1], W.ybirch.moe);
+near('25 species', Object.keys(W).length, 25);
+Object.entries(W).forEach(([k, w]) => { if (w.work.length !== 8 || !(w.rot >= 0 && w.rot <= 4) || !(w.sh[1] > w.sh[0])) { n++; fails++; console.log('FAIL species record ' + k); } });
 
 console.log(`${n - fails}/${n} checks passed`);
 process.exit(fails ? 1 : 0);

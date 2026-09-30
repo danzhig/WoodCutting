@@ -345,6 +345,53 @@ table.plain th[scope=row]{color:var(--ink);font-weight:600;text-align:left}
 @media (max-width:560px){.gloss div{grid-template-columns:minmax(0,1fr)}}
 footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 var(--f-ui);color:var(--muted)}
 
+/* ---------- wood species (Guides I and J) ---------- */
+.sw{fill:var(--sw)} .sw2{fill:var(--sw2)}
+.swblue{fill:#5f7d93;opacity:.35} .swdark{fill:#1c0e04;opacity:.14}
+.sgl,.sgl-b,.sgl-f,.sgl-p{fill:none;stroke:color-mix(in srgb,var(--sw) 45%,#2a1606);stroke-linecap:round}
+.sgl{stroke-width:1;opacity:.6} .sgl-b{stroke-width:2.4;opacity:.7} .sgl-f{stroke-width:.7;opacity:.45}
+.sgl-p{stroke-width:1.6;opacity:.6;stroke-dasharray:1.4 2}
+.spore{fill:color-mix(in srgb,var(--sw) 35%,#1a0d04);opacity:.75}
+.sray{stroke:color-mix(in srgb,var(--sw) 50%,#3a1f0a);stroke-width:1.3;opacity:.7}
+.heartw{fill:var(--wood-dark);stroke:var(--wood-edge);stroke-width:1;stroke-dasharray:4 3}
+.bar{fill:var(--wood-dark)} .wbar:hover .bar{fill:var(--dim)} .wgrid{stroke:var(--rule);stroke-width:.8}
+.spec{display:grid;gap:14px}
+.prereq{font:13px/1.4 var(--f-ui);color:var(--muted)}
+.prereq b{color:var(--ink);text-transform:uppercase;letter-spacing:.08em;font-size:11px;margin-right:4px}
+.prereq-block{border-width:1px 1px 1px 4px;border-color:var(--rule) var(--rule) var(--rule) var(--dim)}
+.prereq-block .tag{color:var(--dim)}
+.spec-top{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:14px;align-items:start}
+@media (max-width:760px){.spec-top{grid-template-columns:minmax(0,1fr)}}
+.spec-swatch{margin:0}
+.spec-swatch .art{padding:10px}
+.spec-swatch svg{width:100%;height:auto}
+.spec-facts{margin:0;display:grid;font:13.5px/1.4 var(--f-ui)}
+.spec-facts div{display:grid;grid-template-columns:7.2em minmax(0,1fr);gap:8px;padding:4px 0;border-bottom:1px dashed var(--rule)}
+.spec-facts div:last-child{border-bottom:0}
+.spec-facts dt{font-weight:600;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em;padding-top:2px}
+.spec-facts dd{margin:0}
+.price{font:700 12px var(--f-mono);margin-left:4px;color:var(--ink);white-space:nowrap}
+.price span{opacity:.25}
+.spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px;align-items:start}
+.spec-box{border:1.5px solid var(--ink);background:var(--paper);min-width:0}
+.spec-box h3{font-size:13px;text-transform:uppercase;letter-spacing:.1em;padding:6px 10px;border-bottom:1.5px solid var(--ink)}
+.spec-num th{font:600 12px/1.3 var(--f-ui);color:var(--muted);text-align:left;padding:4px 10px;white-space:normal}
+.spec-num td{padding:4px 10px;font:12.5px var(--f-mono);white-space:nowrap}
+.spec-num tr:last-child th,.spec-num tr:last-child td{border-bottom:0}
+.meters{list-style:none;margin:0;padding:6px 10px 8px;display:grid;gap:4px;font:13px/1.3 var(--f-ui)}
+.meters li{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.meter{display:inline-flex;gap:3px;flex:none}
+.meter i{width:14px;height:9px;border:1.2px solid var(--ink);border-radius:2px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.meter i.on{background:var(--wood-dark)}
+.sp-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 18px}
+@media (max-width:640px){.sp-cols{grid-template-columns:minmax(0,1fr)}}
+.sp-cols>div{border-left:4px solid var(--rule);padding:2px 0 2px 12px;min-width:0}
+.sp-cols .pros{border-color:var(--dim)} .sp-cols .cons{border-color:var(--cut)} .sp-cols .use{border-color:var(--wood-dark)}
+.sp-cols h3{font-size:14px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.sp-cols ul{margin:0;padding-left:1.1em;display:grid;gap:2px;font-size:15.5px;line-height:1.45}
+.sp-cols p{font-size:15.5px;line-height:1.45}
+table.choose th[scope=row]{white-space:normal;min-width:9em}
+
 /* =====================================================================
    PRINT: ink-saving scheme for white paper.
    What prints is chosen by the print menu (topic / guide / whole handbook);
@@ -369,6 +416,8 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
   .page.print-in{display:block}
   body[data-print="all"] .page.cover-page.print-in,body[data-print="guide"] .page.cover-page.print-in{break-before:page}
   body[data-print="all"] #home{break-before:auto}
+  body[data-print] section.guide[data-letter="J"] .page.topic.print-in{break-before:page;margin-top:0}
+  body[data-print] .page.print-in.print-first{break-before:auto!important}
   .page.print-in+.page.print-in.topic{margin-top:22pt}
   .page-inner,.topic-body,.prose,.fig,.cover-body{display:block}
   .page-inner>*+*,.topic-body>*+*,.cover-body>*+*{margin-top:9pt}
@@ -410,4 +459,26 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
   .toc-sec li a{font-size:9.5pt;padding:2pt 0}
   .seealso{font-size:8.5pt}
   footer.colophon{display:none}
+  .sw,.sw2,.heartw{fill:#fff} .swblue,.swdark{fill:none}
+  .sgl,.sgl-b,.sgl-f,.sgl-p,.sray{stroke:#8a8a8a} .spore{fill:#8a8a8a}
+  .bar{fill:#fff;stroke:#000;stroke-width:.8}
+  .spec,.spec-grid,.sp-cols{display:grid} .spec{gap:6pt}
+  .spec-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:8pt}
+  .spec-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:6pt}
+  .spec-swatch .art{padding:4pt}
+  .spec-swatch svg{max-height:1.25in}
+  .spec-facts{font-size:8pt;line-height:1.3}
+  .spec-facts div{padding:1.5pt 0;grid-template-columns:6.4em minmax(0,1fr)}
+  .spec-facts dt{font-size:6.5pt}
+  .spec-box{background:none;break-inside:avoid}
+  .spec-box h3{font-size:8pt;padding:2pt 6pt}
+  .spec-num th,.spec-num td{font-size:7.5pt;padding:1.5pt 6pt}
+  .meters{font-size:7.5pt;padding:3pt 6pt;gap:1.5pt}
+  .meter i{width:9pt;height:5.5pt}
+  .meter i.on{background:#000}
+  .sp-cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:5pt 12pt}
+  .sp-cols>*+*{margin-top:0}
+  .sp-cols h3{font-size:8.5pt;margin-bottom:1pt}
+  .sp-cols ul,.sp-cols p{font-size:9pt;line-height:1.35}
+  .prereq{font-size:8pt}
 }
