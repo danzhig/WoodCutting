@@ -4,6 +4,19 @@ A single, self-contained HTML page: a beginner-friendly, illustrated guide to ca
 
 **Open `angled-cuts-guide.html` in any browser.** It works offline, with no external images, fonts, or libraries.
 
+## Printing
+
+Click **Print on white paper** (top of the page, or under the sheet index on desktop), or use your browser's own Print. Both use the same ink-saving print scheme:
+
+- White paper, no filled backgrounds: boards print as black line drawings with light grey grain, waste as red hatch lines only.
+- Thin red, blue and purple lines keep cuts, dimensions and angles apart (on a black-and-white printer they print as greys and stay distinguishable by dash style and arrowheads).
+- Page 1 is the title, the diagram key and a contents list. Each of the 7 sheets starts on a new page.
+- Figures, formula and example boxes, and tables are never split across a page break.
+- The calculator and navigation are left out; the cheat sheet prints in two columns.
+- Dark mode doesn't matter: printing always uses the white-paper scheme.
+
+`angled-cuts-guide-print.pdf` is a sample of the result (US Letter, 30 pages). Printing on A4 also works, though page breaks fall slightly differently. Leave "Background graphics" off in the print dialog; the page doesn't need it.
+
 ## What's inside
 
 1. **Vocabulary**: crosscut vs rip, miter vs bevel vs compound, long and short point, kerf

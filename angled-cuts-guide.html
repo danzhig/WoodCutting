@@ -231,6 +231,115 @@ td .f{color:var(--muted);margin-left:6px;font-family:var(--f-ui)}
 .calc input,.calc select{font:600 15px var(--f-mono);width:6.5em;padding:5px 6px;border:1px solid var(--rule);border-radius:3px;background:var(--bg);color:var(--ink)}
 .calc output{display:block;font:600 14px/1.45 var(--f-mono);color:var(--dim)}
 footer{border-top:1px solid var(--rule);padding-block:24px 40px;font:13px/1.5 var(--f-ui);color:var(--muted)}
+
+/* ---------- print button ---------- */
+.printbtn{display:inline-flex;align-items:center;gap:8px;font:600 14px/1 var(--f-ui);color:var(--ink);background:var(--paper);border:1.5px solid var(--ink);border-radius:3px;padding:9px 14px;cursor:pointer}
+.printbtn:hover{border-color:var(--dim);color:var(--dim)}
+.printbtn svg{flex:none}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin-top:20px}
+.hero-actions p{font:13px/1.4 var(--f-ui);color:var(--muted);max-width:30em}
+.toc .printbtn{display:none}
+@media (min-width:1060px){.toc .printbtn{display:inline-flex;margin-top:18px;font-size:13px;padding:7px 10px}}
+.print-only{display:none}
+
+/* =====================================================================
+   PRINT: ink-saving scheme for white paper.
+   Applies to the Print button and to the browser's own Print (Ctrl/Cmd+P).
+   Boards become line drawings, no background fills, each sheet starts a page,
+   and figures, boxes and tables never split across a page break.
+   ===================================================================== */
+@page{margin:0.55in 0.6in}
+@media print{
+  :root:not(#_){
+    --bg:#fff; --paper:#fff; --ink:#000; --muted:#3d3d3d; --rule:#9a9a9a; --gridline:transparent;
+    --wood:#fff; --wood-2:#fff; --wood-side:#fff; --wood-dark:#fff; --endgrain:#fff;
+    --wood-edge:#000; --grain:#b5b5b5; --on-wood:#000;
+    --cut:#c4221a; --waste-bg:#fff; --dim:#0f4c9e; --ang:#6b2aa6;
+    --tool:#fff; --tool-edge:#222; --tape:#fff; --wall:#fff; --accent:#000;
+    color-scheme:light;
+  }
+  html{scroll-padding-top:0}
+  body{font-size:10.5pt;line-height:1.45;background:#fff}
+  .wrap{max-width:none;padding-inline:0}
+  .no-print,.printbtn,.hero-actions,.calc-card,noscript{display:none!important}
+  .print-only{display:block}
+  a{color:inherit;text-decoration:none}
+
+  /* flow layout: block boxes fragment across pages more reliably than grid */
+  .layout,main,.sheet,.topic,.prose,.fig{display:block}
+  main{padding:0}
+  .sheet{break-before:page}
+  .sheet>*+*{margin-top:14pt}
+  .topic>*+*{margin-top:9pt}
+  .prose>*+*{margin-top:6pt}
+  .fig>*+*{margin-top:4pt}
+
+  /* keep these whole */
+  .fig,.block,.tablewrap,.card,.titleblock,.panel,tr,.legend,.runex{break-inside:avoid}
+  .titleblock,.topic>h3{break-after:avoid}
+  .topic>h3{margin-top:4pt}
+  p,li{orphans:3;widows:3}
+
+  /* hero + contents fill page 1 */
+  .hero{display:block;padding:0}
+  .hero>*+*{margin-top:12pt}
+  .hero h1{font-size:34pt}
+  .hero .lede{font-size:11pt}
+  .hero .fig{max-width:3.3in}
+  .hero h1 br{display:none}
+  .runex{background:none}
+
+  /* the sheet index becomes a printed contents list */
+  .toc{position:static;margin:14pt 0 0;padding:10pt 0 0;border:0;border-top:1.5px solid #000;max-height:none;overflow:visible;background:none}
+  .toc h2{display:block;font:700 9pt/1 var(--f-ui);letter-spacing:.14em;text-transform:uppercase;color:#000;margin-bottom:6pt}
+  .toc>ol{display:block;columns:3;column-gap:18pt;overflow:visible}
+  .toc>ol>li{break-inside:avoid;margin-bottom:6pt}
+  .toc a{display:inline;border:0;background:none;padding:0;font-size:9.5pt;white-space:normal}
+  .toc a .n{margin-right:6pt}
+  .toc a.active{color:inherit}
+  .toc li>ol{display:block;margin:1pt 0 0 16pt}
+  .toc li>ol a{font-size:8.5pt;color:var(--muted);padding:0}
+  .toc li>ol li{line-height:1.3}
+
+  /* figures: white paper, thin frame, no grid */
+  .art{background:none;border:1px solid var(--rule);padding:8pt;gap:10pt;overflow:visible}
+  .pcap,figcaption{font-size:8.5pt}
+  .art.cols2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .panel svg,.art>svg{width:auto;height:auto;max-width:100%;max-height:2.6in}
+  .toc li>ol a{font-weight:400}
+  svg text{font-size-adjust:none}
+  .tool-d,.fence{fill:#fff;stroke:#000;stroke-width:1.2}
+  .table{fill:none}
+  .blade{opacity:1}
+  .kerf{opacity:1}
+  .grain{opacity:1;stroke-width:.6}
+
+  /* boxes: rules instead of fills */
+  .block{background:none;max-width:none;padding:8pt 10pt}
+  .eq{font-size:11.5pt;white-space:normal}
+  .steps{font-size:10pt}
+  .answer{font-size:10pt}
+  .mistake p,.tip p{font-size:10pt}
+  .titleblock,.tb-main,.tb-no{background:none}
+  .tb-main h2{font-size:20pt}
+  .tb-no b{font-size:24pt}
+
+  /* tables */
+  .tablewrap{overflow:visible;background:none}
+  table{font-size:8.5pt}
+  th,td{padding:3pt 6pt}
+  td.mono{font-size:8.5pt}
+  tr.hl td,tr.hl th{background:none;font-weight:700}
+
+  /* cheat sheet: two newspaper columns of cards, calculator left out */
+  .cheat{display:block;columns:2;column-gap:14pt}
+  .card{display:block;margin-bottom:12pt;background:none}
+  .card>h3{font-size:10pt;padding:5pt 8pt}
+  .fl{padding:2pt 8pt 6pt}
+  .fl li{padding:4pt 0}
+  .fl code{font-size:9pt;white-space:normal}
+  footer{padding-block:10pt 0;font-size:8pt}
+}
 </style>
 </head>
 <body>
@@ -261,6 +370,10 @@ footer{border-top:1px solid var(--rule);padding-block:24px 40px;font:13px/1.5 va
       <span><svg width="30" height="14" aria-hidden="true"><line x1="2" y1="7" x2="28" y2="7" class="cut"/></svg>Cut line</span>
       <span><svg width="34" height="14" aria-hidden="true"><line x1="4" y1="7" x2="30" y2="7" class="dimline"/><polygon class="arrow" points="2,7 10,4 10,10"/><polygon class="arrow" points="32,7 24,4 24,10"/></svg>Dimension</span>
       <span><svg width="22" height="16" aria-hidden="true"><path d="M4 14 A12 12 0 0 1 14 3" class="ang"/><line x1="4" y1="14" x2="20" y2="14" class="ang"/></svg>Angle</span>
+    </div>
+    <div class="hero-actions">
+      <button type="button" class="printbtn" data-print><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6V1.5h8V6M4 12H2.5A1 1 0 0 1 1.5 11V7a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H12M4 9.5h8v5H4z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Print on white paper</button>
+      <p>Prints as black line drawings with thin colored lines, no filled backgrounds. Each sheet starts on a new page.</p>
     </div>
     <div class="runex">
       <div data-fig="twoByFour" class="mini"></div>
@@ -323,6 +436,7 @@ footer{border-top:1px solid var(--rule);padding-block:24px 40px;font:13px/1.5 va
       </ol></li>
     <li><a href="#cheat"><span class="n">7</span>Cheat sheet</a></li>
   </ol>
+  <button type="button" class="printbtn" data-print><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6V1.5h8V6M4 12H2.5A1 1 0 0 1 1.5 11V7a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H12M4 9.5h8v5H4z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Print</button>
 </nav>
 
 <main>
@@ -868,7 +982,7 @@ footer{border-top:1px solid var(--rule);padding-block:24px 40px;font:13px/1.5 va
     <div class="card"><h3>2×4 offsets</h3><div class="tablewrap"><table data-table="offsets2x4"></table></div></div>
     <div class="card"><h3>Pitch → degrees</h3><div class="tablewrap"><table data-table="pitchMini"></table></div></div>
     <div class="card"><h3>Compound (square box)</h3><div class="tablewrap"><table data-table="compoundMini"></table></div></div>
-    <div class="card"><h3>Calculator</h3>
+    <div class="card calc-card"><h3>Calculator</h3>
       <form class="calc" id="calc" onsubmit="return false">
         <fieldset><legend>Offset &amp; frame length</legend>
           <div class="row">
@@ -1827,6 +1941,9 @@ TABLES.compoundMini = () => head(['Tilt', 'Miter', 'Bevel']) + '<tbody>' + [0, 5
   let raf = 0;
   addEventListener('scroll', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(setActive); }, { passive: true });
   setActive();
+
+  // print buttons use the print stylesheet (@media print) automatically
+  document.querySelectorAll('[data-print]').forEach(b => b.addEventListener('click', () => window.print()));
 
   // calculator
   const $ = id => document.getElementById(id);
