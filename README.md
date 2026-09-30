@@ -76,4 +76,4 @@ A new section is a `<div class="gsection" data-title="…">` inside a guide. A n
 - Bold black arrow: feed direction. Curved black arrow: rotation. Red cross-hatch: danger zone
 - Grey: machines and tools
 
-Code-dependent numbers (stairs, notching) are typical US (IRC) values; always check your local code.
+Code-dependent numbers (stairs, guards, notching, deck permits) follow the National Building Code – 2023 Alberta Edition as used in Calgary (metric values from the code, inch values rounded to the safe side). Always check with the City of Calgary.

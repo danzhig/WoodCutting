@@ -181,7 +181,7 @@ Each saw section covers: anatomy diagram, what its scales read (0 = square, or 9
 - **F4 Wood movement in wide miters:** why they open, and designs that tolerate it.
 
 ### Guide G · Framing & Construction *(new; the construction focus)*
-Label code-dependent numbers as "typical US (IRC) values, check your local code".
+Code-dependent numbers follow the National Building Code – 2023 Alberta Edition as used in Calgary (changed from US IRC values at the user's request).
 - **G1 Layout basics:** reading simple plans; layout marks (X, lines, crowns up); marking plates together.
 - **G2 Walls**
   - Parts: top and bottom plates, studs, king studs, jack/trimmer studs, headers, cripples, sills.
@@ -284,7 +284,7 @@ Show every machine diagram both from above (the operator's view) and in isometri
 ## 6. Accuracy rules
 
 - Every formula is implemented once in JavaScript. Tables, calculators, diagrams and worked examples all use it, so the numbers can never disagree.
-- Code-dependent values (stairs, notching, headers) are labelled *typical US IRC values; verify with your local building department*.
+- Code-dependent values (stairs, guards, notching, deck permits) come from the National Building Code – 2023 Alberta Edition as used in Calgary, with metric values from the code and inch conversions rounded to the safe side.
 - Tool-specific facts that vary by brand (miter-gauge scales, chuck jaw angles, saw capacities) are stated as "varies; here's how to check yours". Never as a single universal number.
 - Lathe speeds and sharpening angles are given as ranges, not single values.
 - Every worked example is checked numerically before shipping.

@@ -50,7 +50,9 @@ const F = (() => {
   // --- wood movement: coefficient per 1% moisture change (tangential ≈ 0.0025–0.0035 for many species) ---
   const movement = (W, coef, dMC) => W * coef * dMC;
 
-  // --- framing (typical US practice; always check local code) ---
+  // --- framing: code limits from the National Building Code – 2023 Alberta Edition (Calgary), converted to inches ---
+  const MM = 25.4;
+  const CODE = { riserMax: 200 / MM, riserMin: 125 / MM, runMin: 255 / MM, runMax: 355 / MM, guardDrop: 600 / MM, guardLow: 900 / MM, guardHigh: 1070 / MM, headroom: 1950 / MM, stairWidth: 860 / MM };
   const wallHeight = (stud, plates = 3) => stud + 1.5 * plates;
   const headerLen = ro => ro + 3;                           // two 1½″ jack studs
   const blockLen = oc => oc - 1.5;
@@ -61,17 +63,18 @@ const F = (() => {
     return { run, factor: f, length: run * f, tail: overhangRun * f, angle: pitchDeg(rise), plumbOffset: rise / 12 };
   };
   const hipRise = rise => ({ perRun: 16.97, factor: Math.hypot(rise, 16.97) / 16.97, angle: atan(rise / 16.97) });
-  const stairs = (totalRise, target = 7.5, maxRiser = 7.75, tread = 10.5) => {
+  const stairs = (totalRise, target = 7.5, maxRiser = CODE.riserMax, tread = 10.5) => {
     let n = Math.ceil(totalRise / target - 1e-9);
     while (totalRise / n > maxRiser) n++;
     const riser = totalRise / n, treads = n - 1;
-    return { risers: n, riser, treads, tread, totalRun: treads * tread, comfort: 2 * riser + tread, angle: atan(riser / tread), stringer: Math.hypot(treads * tread, (n - 1) * riser) };
+    return { risers: n, riser, treads, tread, totalRun: treads * tread, comfort: 2 * riser + tread, angle: atan(riser / tread), stringer: Math.hypot(treads * tread, (n - 1) * riser),
+      riserOK: riser <= CODE.riserMax + 1e-9 && riser >= CODE.riserMin, runOK: tread >= CODE.runMin && tread <= CODE.runMax };
   };
 
   // --- lathe ---
   const latheRPM = d => ({ low: 6000 / d, high: 9000 / d });
 
-  return { sawFromCorner, edgeFromCorner, polySaw, polyCorner, sawToGeo, braceEnds, offset, outsideLen, insideLen, stockUsed,
+  return { CODE, sawFromCorner, edgeFromCorner, polySaw, polyCorner, sawToGeo, braceEnds, offset, outsideLen, insideLen, stockUsed,
     pitchDeg, pitchFromDeg, slopeFactor, compoundA, compound, crownNested, taperAngle, taperPerFoot, jigOpening,
     errorGap, fiveCutError, fenceShift, diagonal, capacityAtMiter, movement, wallHeight, headerLen, blockLen, studCount,
     layoutMarks, rafter, hipRise, stairs, latheRPM, RAD };

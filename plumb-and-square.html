@@ -2519,7 +2519,7 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
      ===================================================================== -->
 <section class="guide" data-letter="G" data-title="Framing & Construction" data-sub="Layout, walls, rough openings, roof rafters, stairs, blocking, sheathing and decks: the cuts and the math of building with dimensional lumber.">
   <div class="guide-intro">
-    <div class="prose"><p>Framing is where all the earlier guides come together at full scale: tape and square, pitch and plumb cuts, and a lot of repeated 2× cuts. Code-dependent numbers here are <b>typical US (IRC) values</b>; your local building department has the final word, and structural sizes (headers, joists, rafters) come from span tables or your plans, not from this guide.</p></div>
+    <div class="prose"><p>Framing is where all the earlier guides come together at full scale: tape and square, pitch and plumb cuts, and a lot of repeated 2× cuts. Code numbers here are from the <b>National Building Code – 2023 Alberta Edition</b> (Part 9, housing), which applies in Calgary. The code is written in millimetres; the inch values are conversions rounded to the safe side. The City of Calgary issues permits and has the final word, and structural sizes (headers, joists, rafters) come from the code’s span tables or your plans, not from this guide.</p></div>
     <div class="keypoints"><h3>Key points</h3><ul>
       <li>16″ on center: first layout line at 15¼″, then every 16″. Sheet edges land on stud centers.</li>
       <li>92⅝″ precut studs + three 1½″ plates = a 97⅛″ wall, right for an 8-foot ceiling.</li>
@@ -2527,7 +2527,7 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
       <li>Rafter: run = span ÷ 2 − ridge ÷ 2; length = run × slope factor. Plumb cut = slope angle.</li>
       <li>Stairs: risers = total rise ÷ 7½, rounded up; treads = risers − 1; drop the stringer by one tread thickness.</li>
     </ul></div>
-    <p class="code-note">Code values quoted are typical of the 2021 International Residential Code. Always check your local code before building.</p>
+    <p class="code-note">Code values quoted are from the National Building Code – 2023 Alberta Edition, in force in Calgary since May 1, 2024. Check with the City of Calgary before building; permits are required for most structural work.</p>
   </div>
 
   <div class="gsection" data-title="Layout basics">
@@ -2607,7 +2607,7 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
     <article class="topic" id="g-rough-opening" data-title="Rough openings and headers">
       <div class="prose">
         <p>A <dfn>rough opening</dfn> (RO) is the framed hole a door or window goes into, a little bigger than the unit so it can be shimmed plumb. The manufacturer gives the RO; for a typical prehung interior door it is the door width + 2″ by 82½″ tall.</p>
-        <p>The header sits on the two jack studs, so it is 3″ longer than the opening (two 1½″ jacks). Its depth (2×8, 2×10, doubled or not) depends on the span and the load above it: take it from your plans or the code’s header tables.</p>
+        <p>The header sits on the two jack studs, so it is 3″ longer than the opening (two 1½″ jacks). Its depth (2×8, 2×10, doubled or not) depends on the span and the load above it: take it from your plans or the lintel span tables in Part 9 of the Alberta building code (the code calls headers <dfn>lintels</dfn>).</p>
       </div>
       <figure class="fig"><div class="art one" data-fig="roughOpening"></div>
         <figcaption>Framing for a 32″ door: a 34″ × 82½″ rough opening.</figcaption></figure>
@@ -2678,7 +2678,7 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
     <article class="topic" id="g-birdsmouth" data-title="The bird’s mouth">
       <div class="prose">
         <p>The <dfn>bird’s mouth</dfn> is the notch that lets a rafter sit flat on the top plate. It has two cuts: a level <dfn>seat cut</dfn> that bears on the plate, and a plumb <dfn>heel cut</dfn> that sits against the outside of the wall.</p>
-        <p>The seat is usually as wide as the wall (3½″ on a 2×4 wall). Don’t notch too deep: a common rule of thumb is to leave at least two-thirds of the rafter’s depth above the seat, and never cut past the plate.</p>
+        <p>The seat is usually as wide as the wall (3½″ on a 2×4 wall). Don’t notch too deep. The building code limits notches in roof framing to one-third of the member’s depth, and the usual rule for a bird’s mouth matches: leave at least two-thirds of the rafter’s depth above the seat, and never cut past the plate.</p>
       </div>
       <figure class="fig"><div class="art one" data-fig="birdsmouth"></div>
         <figcaption>A 2×6 rafter at 6-in-12 on a 2×4 wall: 3½″ level seat, 1¾″ plumb heel.</figcaption></figure>
@@ -2687,7 +2687,7 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
       <div class="block example"><div class="tag">Worked example</div>
         <p>2×6 rafter, 6-in-12, 3½″ seat.</p>
         <ol class="steps"><li>Heel: <span class="mono">3.5 × 6 ÷ 12 = 1¾″</span></li><li>Depth removed, measured square to the rafter: <span class="mono">1.75 × cos 26.57° = 1.57″</span>, about 28% of 5½″.</li></ol>
-        <p class="answer">Under a third of the depth: fine by the rule of thumb. Check your code and plans for the limit that applies.</p></div>
+        <p class="answer">Under a third of the depth, within the one-third limit. Your plans or the City may set other limits for engineered roofs.</p></div>
       <div class="block mistake"><div class="tag">Common mistake</div>
         <p>Overcutting the corner of the notch with a circular saw (the round blade cuts further on the bottom than the top). Stop at the line and finish the corner with a hand saw.</p></div>
       <p class="seealso"><b>See also</b><a class="ref" href="#c-plumb-level"></a></p>
@@ -2757,18 +2757,20 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
     <article class="topic" id="g-stair-terms" data-title="Stair terms and typical code limits">
       <div class="prose">
         <p>A stair climbs a <dfn>total rise</dfn> (floor to floor) in equal steps. Each step has a <dfn>riser</dfn> (the vertical height) and a <dfn>tread</dfn> (the horizontal depth you step on); the sloping boards that carry them are <dfn>stringers</dfn>. The front edge of a tread that overhangs the riser below is the <dfn>nosing</dfn>.</p>
-        <p>Every riser in a flight must be the same height (within ⅜″), because your feet expect it. Typical US residential limits:</p>
+        <p>Every riser in a flight must be the same height, because your feet expect it. Limits for stairs in a house (the code’s <dfn>private stairs</dfn>) under the Alberta building code:</p>
         <ul>
-          <li>Riser height: 7¾″ maximum.</li>
-          <li>Tread depth: 10″ minimum, nosing to nosing.</li>
-          <li>Headroom: 6′8″ minimum.</li>
-          <li>Width: 36″ minimum for a main stair.</li>
+          <li><b>Rise:</b> 125–200 mm per step (about 5″ to 7⅞″).</li>
+          <li><b>Run:</b> 255–355 mm (about 10¹⁄₁₆″ to 14″), nosing to nosing. Each tread’s depth is from the run to the run + 25 mm (1″).</li>
+          <li><b>Uniformity:</b> neighbouring risers or runs within 5 mm (³⁄₁₆″); tallest and shortest in a flight within 10 mm (⅜″).</li>
+          <li><b>Headroom:</b> 1950 mm (6′4⅞″) minimum.</li>
+          <li><b>Width:</b> 860 mm (33⅞″) minimum.</li>
+          <li><b>Handrail:</b> 865–965 mm (34″–38″) above the nosings; exterior stairs with more than 3 risers need at least one.</li>
         </ul>
         <p>A comfort check used by many builders: <span class="mono">2 × riser + tread ≈ 24–25″</span>.</p>
       </div>
       <figure class="fig"><div class="art one" data-fig="stairTerms"></div>
         <figcaption>A short run of stairs from the side, with the parts named.</figcaption></figure>
-      <p class="code-note">Limits shown are typical of the 2021 IRC for one- and two-family homes. Check your local code; decks and commercial stairs can differ.</p>
+      <p class="code-note">Private-stair limits from Part 9 of the National Building Code – 2023 Alberta Edition. Stairs serving more than one dwelling or a public building have stricter limits. Check with the City of Calgary.</p>
       <div class="block mistake"><div class="tag">Common mistake</div>
         <p>Making the top or bottom step a different height to “use up” leftover rise. It is a classic trip hazard and fails inspection. Divide the total rise evenly.</p></div>
     </article>
@@ -2783,10 +2785,10 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
         <div class="eq">risers = total rise ÷ 7½, rounded up</div>
         <div class="eq">riser = total rise ÷ risers</div>
         <div class="eq">treads = risers − 1 · total run = treads × tread</div></div>
-      <div class="tablewrap"><table data-table="stairQuick"><caption>Quick stair table (target riser 7½″, max 7¾″, 10½″ treads)</caption></table></div>
+      <div class="tablewrap"><table data-table="stairQuick"><caption>Quick stair table (target riser 7½″, max 200 mm ≈ 7⅞″, 10½″ runs)</caption></table></div>
       <div class="block example"><div class="tag">Worked example</div>
         <p>A deck 42″ above the patio, 10½″ treads.</p>
-        <ol class="steps"><li>Risers: <span class="mono">42 ÷ 7.5 = 5.6</span> → <span class="mono">6</span></li><li>Riser height: <span class="mono">42 ÷ 6 = 7″</span></li><li>Treads: 5; total run <span class="mono">5 × 10½ = 52½″</span></li><li>Comfort: <span class="mono">2 × 7 + 10½ = 24½″</span> ✓</li></ol></div>
+        <ol class="steps"><li>Risers: <span class="mono">42 ÷ 7.5 = 5.6</span> → <span class="mono">6</span></li><li>Riser height: <span class="mono">42 ÷ 6 = 7″</span></li><li>Treads: 5; total run <span class="mono">5 × 10½ = 52½″</span></li><li>Comfort: <span class="mono">2 × 7 + 10½ = 24½″</span> ✓</li><li>Code check: 7″ = 178 mm (≤ 200 ✓); 10½″ = 267 mm (≥ 255 ✓).</li></ol></div>
       <div class="block mistake"><div class="tag">Common mistake</div>
         <p>Measuring total rise to the ground right under the deck edge, then building the stair to land 4½ feet out where the ground is lower. Measure the rise at the spot where the bottom step will land (a level and a straight board help).</p></div>
       <p class="seealso"><b>See also</b><a class="ref" href="#i-calculators"></a></p>
@@ -2800,7 +2802,7 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
         <figcaption>Laying out a 2×12 stringer with stair gauges at 7″ (tongue) and 10½″ (blade).</figcaption></figure>
       <div class="block example"><div class="tag">Worked example</div>
         <p>The 42″ deck stair: gauges at 7″ and 10½″.</p>
-        <ol class="steps"><li>Lay out 6 risers and 5 treads.</li><li>Stringer stock: <span class="mono">√(42² + 52.5²) = 67.2″</span> plus about a foot for the ends: an 8-foot 2×12.</li><li>Check: the throat (the narrowest wood left between the notches and the bottom edge) should be at least about 3½″–5″; follow your code.</li></ol></div>
+        <ol class="steps"><li>Lay out 6 risers and 5 treads.</li><li>Stringer stock: <span class="mono">√(42² + 52.5²) = 67.2″</span> plus about a foot for the ends: an 8-foot 2×12.</li><li>Check: the throat (the narrowest wood left between the notches and the bottom edge) should be at least about 3½″–5″; the City’s deck guide or your plans give the minimum.</li></ol></div>
       <div class="block mistake"><div class="tag">Common mistake</div>
         <p>Overcutting the notch corners with the circular saw, which weakens the stringer. Stop at the lines and finish with a hand saw or jigsaw.</p></div>
       <p class="seealso"><b>See also</b><a class="ref" href="#b-framing-square"></a></p>
@@ -2866,6 +2868,13 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
       <div class="block example"><div class="tag">Worked example</div>
         <p>A 16′ × 12′ deck.</p>
         <ol class="steps"><li>Square each side string with 6-8-10 feet off the ledger.</li><li>Diagonals: <span class="mono">√(16² + 12²) = 20′</span> each. Adjust the strings until both measure 20′.</li><li>Post centers are measured along the strings; drop them to the ground with a plumb bob.</li></ol></div>
+      <div class="block tip"><div class="tag">Calgary deck rules</div><ul class="steps">
+        <li>A building permit is needed for an uncovered deck more than 0.6 m (2′) above grade at any point, and for rebuilding, extending or adding stairs to one.</li>
+        <li>Guards are required where the walking surface is more than 600 mm (23⅝″) above the ground beside it.</li>
+        <li>Guard height: at least 900 mm (35½″) where the deck is up to 1800 mm (5′11″) above the ground; 1070 mm (42¼″) where it is higher.</li>
+        <li>Openings in guards must stop a 100 mm (4″) ball from passing through.</li>
+        <li>Deck stairs follow the private-stair limits in <a class="ref" href="#g-stair-terms"></a>.</li>
+      </ul></div>
       <div class="block mistake"><div class="tag">Common mistake</div>
         <p>Setting posts before checking the diagonals. A string that is an inch out at the corner puts a post in the wrong hole. Check diagonals, then dig.</p></div>
       <p class="seealso"><b>See also</b><a class="ref" href="#b-345"></a><a class="ref" href="#b-plumb"></a></p>
@@ -3239,6 +3248,8 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
           <li><b>Hip slope</b><code>arctan(rise ÷ 16.97)</code><a class="ref" href="#g-hips"></a></li>
           <li><b>Stairs</b><code>risers = ⌈rise ÷ 7½⌉, treads = risers − 1</code><a class="ref" href="#g-stair-math"></a></li>
           <li><b>Stair comfort</b><code>2R + T ≈ 24–25″</code><a class="ref" href="#g-stair-terms"></a></li>
+          <li><b>Alberta private stairs</b><code>rise 125–200 mm · run 255–355 mm</code><a class="ref" href="#g-stair-terms"></a></li>
+          <li><b>Alberta guards</b><code>over 600 mm drop · 900 mm high (1070 mm above 1800 mm)</code><a class="ref" href="#g-deck-layout"></a></li>
           <li><b>Blocking</b><code>OC − 1½″</code><a class="ref" href="#g-braces-blocking"></a></li>
         </ul></div>
         <div class="card"><h3>Spindle turning</h3><ul class="fl">
@@ -3265,10 +3276,10 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
         <div class="card"><h3>Crown by corner</h3><div class="tablewrap"><table data-table="crownCorners"></table></div></div>
         <div class="card"><h3>Stud layout marks</h3><div class="tablewrap"><table data-table="studLayout"></table></div></div>
         <div class="card"><h3>Rafters</h3><div class="tablewrap"><table data-table="rafterQuick"></table></div></div>
-        <div class="card"><h3>Stairs (7½″ target, 10½″ treads)</h3><div class="tablewrap"><table data-table="stairQuick"></table></div></div>
+        <div class="card"><h3>Stairs (7½″ target, 200 mm max, 10½″ runs)</h3><div class="tablewrap"><table data-table="stairQuick"></table></div></div>
         <div class="card"><h3>Lathe speeds</h3><div class="tablewrap"><table data-table="latheSpeed"></table></div></div>
       </div>
-      <p class="code-note">Framing and stair values are typical US (IRC) practice. Check your local code.</p>
+      <p class="code-note">Code values are from the National Building Code – 2023 Alberta Edition (as used in Calgary). Check with the City of Calgary.</p>
     </article>
   </div>
 
@@ -3340,7 +3351,7 @@ footer.colophon{max-width:980px;margin:0 auto;padding:0 16px 40px;font:13px/1.5 
 
 </main>
 
-<footer class="colophon">Plumb &amp; Square · a woodworking handbook. Diagrams are drawn in the page from the same formulas the text uses. Code values are typical US (IRC) practice; always check your local building code. Check every new setup on scrap first.</footer>
+<footer class="colophon">Plumb &amp; Square · a woodworking handbook. Diagrams are drawn in the page from the same formulas the text uses. Code values are from the National Building Code – 2023 Alberta Edition, as used in Calgary; check with the City of Calgary before building. Check every new setup on scrap first.</footer>
 
 <noscript><p style="padding:16px">This handbook draws its pages and diagrams with JavaScript. Please enable it.</p></noscript>
 
@@ -3674,7 +3685,9 @@ const F = (() => {
   // --- wood movement: coefficient per 1% moisture change (tangential ≈ 0.0025–0.0035 for many species) ---
   const movement = (W, coef, dMC) => W * coef * dMC;
 
-  // --- framing (typical US practice; always check local code) ---
+  // --- framing: code limits from the National Building Code – 2023 Alberta Edition (Calgary), converted to inches ---
+  const MM = 25.4;
+  const CODE = { riserMax: 200 / MM, riserMin: 125 / MM, runMin: 255 / MM, runMax: 355 / MM, guardDrop: 600 / MM, guardLow: 900 / MM, guardHigh: 1070 / MM, headroom: 1950 / MM, stairWidth: 860 / MM };
   const wallHeight = (stud, plates = 3) => stud + 1.5 * plates;
   const headerLen = ro => ro + 3;                           // two 1½″ jack studs
   const blockLen = oc => oc - 1.5;
@@ -3685,17 +3698,18 @@ const F = (() => {
     return { run, factor: f, length: run * f, tail: overhangRun * f, angle: pitchDeg(rise), plumbOffset: rise / 12 };
   };
   const hipRise = rise => ({ perRun: 16.97, factor: Math.hypot(rise, 16.97) / 16.97, angle: atan(rise / 16.97) });
-  const stairs = (totalRise, target = 7.5, maxRiser = 7.75, tread = 10.5) => {
+  const stairs = (totalRise, target = 7.5, maxRiser = CODE.riserMax, tread = 10.5) => {
     let n = Math.ceil(totalRise / target - 1e-9);
     while (totalRise / n > maxRiser) n++;
     const riser = totalRise / n, treads = n - 1;
-    return { risers: n, riser, treads, tread, totalRun: treads * tread, comfort: 2 * riser + tread, angle: atan(riser / tread), stringer: Math.hypot(treads * tread, (n - 1) * riser) };
+    return { risers: n, riser, treads, tread, totalRun: treads * tread, comfort: 2 * riser + tread, angle: atan(riser / tread), stringer: Math.hypot(treads * tread, (n - 1) * riser),
+      riserOK: riser <= CODE.riserMax + 1e-9 && riser >= CODE.riserMin, runOK: tread >= CODE.runMin && tread <= CODE.runMax };
   };
 
   // --- lathe ---
   const latheRPM = d => ({ low: 6000 / d, high: 9000 / d });
 
-  return { sawFromCorner, edgeFromCorner, polySaw, polyCorner, sawToGeo, braceEnds, offset, outsideLen, insideLen, stockUsed,
+  return { CODE, sawFromCorner, edgeFromCorner, polySaw, polyCorner, sawToGeo, braceEnds, offset, outsideLen, insideLen, stockUsed,
     pitchDeg, pitchFromDeg, slopeFactor, compoundA, compound, crownNested, taperAngle, taperPerFoot, jigOpening,
     errorGap, fiveCutError, fenceShift, diagonal, capacityAtMiter, movement, wallHeight, headerLen, blockLen, studCount,
     layoutMarks, rafter, hipRise, stairs, latheRPM, RAD };
@@ -6482,8 +6496,9 @@ window.CALC = {
     wire('calc-stairs', () => {
       const r = parseIn($('c-rise').value), tr = num('c-tread');
       if (!(isFinite(r) && r > 4 && isFinite(tr) && tr > 6)) { $('o-stairs').textContent = 'Enter the total rise in inches and a tread depth.'; return; }
-      const s = F.stairs(r, 7.5, 7.75, tr);
-      $('o-stairs').innerHTML = `${s.risers} risers at ${s.riser.toFixed(3)}″ (${fr(s.riser)})<br>${s.treads} treads at ${fr(tr)} · total run ${fr(s.totalRun)}<br>2R + T = ${s.comfort.toFixed(2)}″ ${s.comfort >= 24 && s.comfort <= 25.5 ? '(comfortable)' : '(outside the 24–25″ comfort range)'}`;
+      const s = F.stairs(r, 7.5, F.CODE.riserMax, tr);
+      const mm = v => Math.round(v * 25.4);
+      $('o-stairs').innerHTML = `${s.risers} risers at ${s.riser.toFixed(3)}″ (${fr(s.riser)}, ${mm(s.riser)} mm)<br>${s.treads} treads at ${fr(tr)} (${mm(tr)} mm) · total run ${fr(s.totalRun)}<br>2R + T = ${s.comfort.toFixed(2)}″ ${s.comfort >= 24 && s.comfort <= 25.5 ? '(comfortable)' : '(outside the 24–25″ comfort range)'}<br>Alberta code: rise ${s.riserOK ? 'OK' : 'outside 125–200 mm'} · run ${s.runOK ? 'OK' : 'outside 255–355 mm'}`;
     });
     wire('calc-rafter', () => {
       const span = parseIn($('c-span').value), rise = num('c-rrise'), ridge = num('c-ridge'), oh = parseIn($('c-oh').value || '0');

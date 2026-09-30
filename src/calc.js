@@ -48,8 +48,9 @@ window.CALC = {
     wire('calc-stairs', () => {
       const r = parseIn($('c-rise').value), tr = num('c-tread');
       if (!(isFinite(r) && r > 4 && isFinite(tr) && tr > 6)) { $('o-stairs').textContent = 'Enter the total rise in inches and a tread depth.'; return; }
-      const s = F.stairs(r, 7.5, 7.75, tr);
-      $('o-stairs').innerHTML = `${s.risers} risers at ${s.riser.toFixed(3)}″ (${fr(s.riser)})<br>${s.treads} treads at ${fr(tr)} · total run ${fr(s.totalRun)}<br>2R + T = ${s.comfort.toFixed(2)}″ ${s.comfort >= 24 && s.comfort <= 25.5 ? '(comfortable)' : '(outside the 24–25″ comfort range)'}`;
+      const s = F.stairs(r, 7.5, F.CODE.riserMax, tr);
+      const mm = v => Math.round(v * 25.4);
+      $('o-stairs').innerHTML = `${s.risers} risers at ${s.riser.toFixed(3)}″ (${fr(s.riser)}, ${mm(s.riser)} mm)<br>${s.treads} treads at ${fr(tr)} (${mm(tr)} mm) · total run ${fr(s.totalRun)}<br>2R + T = ${s.comfort.toFixed(2)}″ ${s.comfort >= 24 && s.comfort <= 25.5 ? '(comfortable)' : '(outside the 24–25″ comfort range)'}<br>Alberta code: rise ${s.riserOK ? 'OK' : 'outside 125–200 mm'} · run ${s.runOK ? 'OK' : 'outside 255–355 mm'}`;
     });
     wire('calc-rafter', () => {
       const span = parseIn($('c-span').value), rise = num('c-rrise'), ridge = num('c-ridge'), oh = parseIn($('c-oh').value || '0');

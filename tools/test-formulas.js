@@ -117,5 +117,17 @@ same('taper at 5', K.frac(1.75 - 0.75 * 5 / 20), '1⁹⁄₁₆″');
 same('taper at 15', K.frac(1.75 - 0.75 * 15 / 20), '1³⁄₁₆″');
 near('tenon length', 1.25 - 0.125, 1.125);
 
+// ---- Alberta code conversions (Calgary) ----
+same('max rise 200 mm', K.frac(F.CODE.riserMax), '7⅞″');
+near('min run 255 mm in inches', F.CODE.runMin, 10.039, 0.001);
+near('10 1/16 is at least 255 mm', 10.0625 * 25.4, 255.6, 0.1);
+near('headroom 6′4⅞″ ≥ 1950 mm', (76 + 7 / 8) * 25.4, 1952.6, 0.1);
+near('guard 35½″ ≥ 900 mm', 35.5 * 25.4, 901.7, 0.1);
+near('guard 42¼″ ≥ 1070 mm', 42.25 * 25.4, 1073.2, 0.1);
+near('width 33⅞″ ≥ 860 mm', 33.875 * 25.4, 860.4, 0.1);
+same('42″ deck stair passes', F.stairs(42).riserOK && F.stairs(42).runOK, true);
+near('7″ riser in mm', 7 * 25.4, 177.8, 0.1);
+near('10½″ run in mm', 10.5 * 25.4, 266.7, 0.1);
+
 console.log(`${n - fails}/${n} checks passed`);
 process.exit(fails ? 1 : 0);
